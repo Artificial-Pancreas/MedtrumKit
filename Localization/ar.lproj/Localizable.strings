@@ -1,35 +1,35 @@
 /* Generic loading text */
-"loading" = "التحميل";
+"loading" = "جاري التحميل";
 
 /* Title for PumpManager deletion action sheet. */
 "Remove Pump" = "إزالة المضخة";
 
 /* Message for PumpManager deletion action sheet */
-"Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?" = "هل أنت متأكد من أنك تريد التوقف عن استخدام Medtrum TouchCare Nano 200u/300u؟";
+"Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?" = "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?";
 
 /* Button text to confirm PumpManager deletion */
 "Delete pump" = "حذف المضخة";
 
 /* Message warning heartbeat disable (1: app name) */
-"Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled" = "حاليا، أنت تستخدم وضع نبض القلب. هذا مطلوب لإبقاء %1$@ قيد التشغيل في الخلفية. قد يكون هذا مثيراً للاهتمام إذا كان CGM الخاص بك يوفر مسبقاً نبض القلب. من المستحسن إبقاء هذه الميزة ممكنة";
+"Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled" = "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled";
 
 /* Message warning heartbeat disable (1: app name) */
-"Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature" = "حالياً، أنت لا تستخدم وضع نبض القلب. هناك حاجة إلى نبض القلب لإبقاء %1$@ قيد التشغيل في الخلفية. من المستحسن الحفاظ على تمكين هذه الميزة";
+"Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature" = "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature";
 
 /* Button text to disable heartbeat mode */
-"Yes, Disable heartbeat mode" = "نعم، قم بتعطيل وضع حبات القلب";
+"Yes, Disable heartbeat mode" = "Yes, Disable heartbeat mode";
 
 /* Button text to enable heartbeat mode */
-"Yes, Enable heartbeat mode" = "نعم، تمكين وضع نبضات القلب";
+"Yes, Enable heartbeat mode" = "Yes, Enable heartbeat mode";
 
 /* Title for toggle heartbeat mode action sheet. */
-"Toggle heartbeat mode" = "تبديل وضع نبضات القلب";
+"Toggle heartbeat mode" = "Toggle heartbeat mode";
 
 /* Button text to cancel actionsheet */
-"No, Keep as is" = "لا، احتفظ كما هو";
+"No, Keep as is" = "لا، احتفظ بها كما هي";
 
 /* Text for patch state */
-"Patch state" = "تصحيح الحالة";
+"Patch state" = "Patch state";
 
 /* Text for last sync */
 "Last sync" = "آخر مزامنة";
@@ -38,79 +38,79 @@
 "Status" = "الحالة";
 
 /* disconnect from patch */
-"Disconnect" = "قطع الاتصال";
+"Disconnect" = "Disconnect";
 
 /* reconnect to patch */
-"Reconnect" = "إعادة الاتصال";
+"Reconnect" = "Reconnect";
 
 /* sync pump */
-"Sync patch data" = "مزامنة بيانات التصحيح";
+"Sync patch data" = "Sync patch data";
 
 /* label for activate patch */
-"Activate patch" = "تنشيط التصحيح";
+"Activate patch" = "Activate patch";
 
 /* deactivate patch */
-"Deactivate Patch" = "إلغاء تنشيط التصحيح";
+"Deactivate Patch" = "Deactivate Patch";
 
 /* Configuration section */
-"Configuration" = "الإعدادات";
+"Configuration" = "ضبط";
 
 /* Text for selecting insulin type */
 "Insulin Type" = "نوع الإنسولين";
 
 /* Text for patch settings view */
-"Patch settings" = "إعدادات التصحيح";
+"Patch settings" = "Patch settings";
 
 /* The title for patch/pump information */
-"Information" = "معلومات";
+"Information" = "Information";
 
 /* Text for pumpSN */
-"Pump base SN" = "مضخة قاعدة SN";
+"Pump base SN" = "Pump base SN";
 
 /* Text for model */
-"Pump base model" = "نموذج مضخة الأساس";
+"Pump base model" = "Pump base model";
 
 /* Text for patchId */
-"Patch ID" = "معرف التصحيح";
+"Patch ID" = "Patch ID";
 
 /* Text for activatedAt */
-"Patch activated at" = "تم تفعيل التصحيح في";
+"Patch activated at" = "Patch activated at";
 
 /* Text for expiresAt */
-"Patch expires at" = "انتهت صلاحية التصحيح في";
+"Patch expires at" = "Patch expires at";
 
 /* Text for battery voltageB */
-"Battery" = "البطارية";
+"Battery" = "Battery";
 
 /* label for previous patch details */
-"Previous Patch Details" = "تفاصيل التصحيح السابقة";
+"Previous Patch Details" = "Previous Patch Details";
 
 /* Text for deactivatedAt */
-"Deactivated at" = "غير مفعّل في";
+"Deactivated at" = "Deactivated at";
 
 /* Share logs */
-"Share Medtrum patch logs" = "مشاركة سجلات التصحيح ميدتروم";
+"Share Medtrum patch logs" = "Share Medtrum patch logs";
 
 /* Label for PumpManager deletion button */
-"Delete Pump" = "حذف مضخة";
+"Delete Pump" = "حذف المضخة";
 
 /* Header for insulin remaining on pod settings screen */
-"Insulin Remaining" = "الإنسولين المتبقي";
+"Insulin Remaining" = "الأنسولين المتبقي";
 
 /* Text shown in insulin delivery space when insulin suspended */
-"Insulin\nSuspended" = "الأنسولين\nمعلق";
+"Insulin\nSuspended" = "الإنسولين\nموقف مؤقتاً";
 
 /* Text shown when no patch active */
-"No active patch" = "لا يوجد تعديل نشط";
+"No active patch" = "No active patch";
 
 /* Text shown while patch is active */
-"Age:" = "العمر:";
+"Age:" = "Age:";
 
 /* Unit for singular day */
 "day" = "يوم";
 
 /* Unit for plural days */
-"days" = "أيام";
+"days" = "days";
 
 /* Unit for singular hour */
 "hour" = "ساعة";
@@ -125,187 +125,187 @@
 "minutes" = "دقائق";
 
 /* Text shown when patch expired */
-"Patch expired" = "انتهت صلاحية التصحيح";
+"Patch expired" = "Patch expired";
 
 /* Button for closing settings */
-"Done" = "تم";
+"Done" = "تمّ";
 
 /* label for connected */
-"Connected" = "متصل";
+"Connected" = "Connected";
 
 /* label for reconnecting */
 "Reconnecting..." = "إعادة الاتصال...";
 
 /* label for disconnected */
-"Disconnected" = "قطع";
+"Disconnected" = "Disconnected";
 
 /* Title of insulin delivery section */
-"Scheduled Basal" = "قاعدة مجدولة";
+"Scheduled Basal" = "الجرعة الأساسية المجدولة";
 
 /* Pump Event title for UnfinalizedDose with doseType of .tempBasal */
-"Temp Basal" = "قالب أساسي";
+"Temp Basal" = "Temp Basal";
 
 /* Title of insulin delivery section */
-"Insulin Delivery" = "توصيل الإنسولين";
+"Insulin Delivery" = "توصيل الأنسولين";
 
 /* Continue */
-"Continue" = "متابعة";
+"Continue" = "تابع";
 
 /* Title for insulin type */
-"Select insulin type" = "حدد نوع الأنسولين";
+"Select insulin type" = "Select insulin type";
 
 /* Title text for insulin type confirmation page */
-"Select the type of insulin that you will be using" = "حدد نوع الأنسولين الذي ستستخدمه";
+"Select the type of insulin that you will be using" = "Select the type of insulin that you will be using";
 
 /* Label for maximum hourly insulin delivery */
-"Max hourly insulin" = "الانسولين في الساعة القصوى";
+"Max hourly insulin" = "Max hourly insulin";
 
 /* Label for maximum daily insulin delivery */
-"Max daily insulin" = "أقصى الأنسولين اليومي";
+"Max daily insulin" = "Max daily insulin";
 
 /* Label for alarm settings */
-"Alarm setting" = "إعداد المنبه";
+"Alarm setting" = "Alarm setting";
 
 /* Label for alarm options: light, vibrate and beep */
-"Light, vibrate and, beep" = "الضوء والاهتزاز والتنبيه";
+"Light, vibrate and, beep" = "Light, vibrate and, beep";
 
 /* Label for alarm options: light and vibrate */
-"Light and vibrate" = "الضوء والاهتزاز";
+"Light and vibrate" = "Light and vibrate";
 
 /* Label for alarm options: light and beep */
-"Light and beep" = "ضوء ونبش";
+"Light and beep" = "Light and beep";
 
 /* Label for alarm options: light */
-"Light-only" = "الضوء فقط";
+"Light-only" = "Light-only";
 
 /* Label for alarm options: vibrate and beep */
-"Vibrate and beep" = "الاهتزاز والتنبيه";
+"Vibrate and beep" = "Vibrate and beep";
 
 /* Label for alarm options: vibrate */
-"Vibrate-only" = "فيبرايت فقط";
+"Vibrate-only" = "Vibrate-only";
 
 /* Label for alarm options: beep */
-"Beep-only" = "بيب-فقط";
+"Beep-only" = "Beep-only";
 
 /* Label for alarm options: none */
-"Silence" = "صمت";
+"Silence" = "Silence";
 
 /* Label for expiration alarm */
-"Patch lifetime" = "تعديل عمر";
+"Patch lifetime" = "Patch lifetime";
 
 /* Label for extended lifetime */
-"Use extended lifetime (continue till battery empty)" = "استخدام تمديد العمر (الاستمرار حتى تكون البطارية فارغة)";
+"Use extended lifetime (continue till battery empty)" = "Use extended lifetime (continue till battery empty)";
 
 /* Label for normal patch lifetime */
-"Use normal lifetime (3d 8h)" = "استخدام الحياة العادية (3d 8 ساعة)";
+"Use normal lifetime (3d 8h)" = "Use normal lifetime (3d 8h)";
 
 /* Label for expired patch notification */
-"Notification for expirate patch" = "إشعار بتصحيح انتهاء الصلاحية";
+"Notification for expirate patch" = "Notification for expirate patch";
 
 /* Instructions for deactivate patch */
-"When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch." = "عند النقر على الزر، ستحصل على طلب من القياسات الحيوية. بمجرد اكتمال التصحيح سوف يتم تعطيله وسيتم مطالبتك باقران تعديل جديد.";
+"When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch." = "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch.";
 
 /* Authenticate and deactivate label */
-"Authenticate & deactivate patch" = "المصادقة و تعطيل التصحيح";
+"Authenticate & deactivate patch" = "Authenticate & deactivate patch";
 
 /* Header deactivate patch */
-"Deactivate patch" = "إلغاء تنشيط التصحيح";
+"Deactivate patch" = "Deactivate patch";
 
 /* Label for serial number */
-"Serial number" = "الرقم التسلسلي";
+"Serial number" = "Serial number";
 
 /* Label for checking SN */
-"Make sure the Serial Number is correct before connecting it to the patch." = "تأكد من أن الرقم التسلسلي صحيح قبل توصيل التصحيح.";
+"Make sure the Serial Number is correct before connecting it to the patch." = "Make sure the Serial Number is correct before connecting it to the patch.";
 
 /* Pump base settings header */
-"Pump base settings" = "إعدادات الأساس المضخة";
+"Pump base settings" = "Pump base settings";
 
 /* save and continue */
-"Save and continue" = "حفظ ومتابعة";
+"Save and continue" = "Save and continue";
 
 /* Label for prime step 2.1 */
-"Connect your pump base to the patch." = "قم بتوصيل قاعدة المضخة الخاصة بك إلى التصحيح.";
+"Connect your pump base to the patch." = "Connect your pump base to the patch.";
 
 /* Label for prime step 2.2 */
-"Fill the syringe with insulin" = "املأ المحاقنة بالأنسولين";
+"Fill the syringe with insulin" = "Fill the syringe with insulin";
 
 /* Label for prime step 2.3 */
-"Place the syringe in the patch and pull out 1 to 2 dashes of air." = "ضع المحاقنة في التصحيح وسحب 1 إلى 2 شرطة من الهواء.";
+"Place the syringe in the patch and pull out 1 to 2 dashes of air." = "Place the syringe in the patch and pull out 1 to 2 dashes of air.";
 
 /* Label for prime step 2.4 */
-"Fill the patch with insulin. NOTE: A minimum of 70U is required for activation." = "املأ التصحيح بالأنسينين. ملاحظة: مطلوب على الأقل 70U للتفعيل.";
+"Fill the patch with insulin. NOTE: A minimum of 70U is required for activation." = "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation.";
 
 /* Label for pressing needle button step 2.5 */
-"Press the needle button and start the priming process." = "اضغط على زر الإبرة وابدأ عملية التمهيد.";
+"Press the needle button and start the priming process." = "Press the needle button and start the priming process.";
 
 /* Label for warning priming */
-"Do not attach the patch to the body yet" = "لا تقم بإرفاق التصحيح إلى الجسم بعد";
+"Do not attach the patch to the body yet" = "Do not attach the patch to the body yet";
 
 /* label for prime start action */
-"Start priming" = "ابدأ التحديث";
+"Start priming" = "Start priming";
 
 /* Priming header */
-"Patch priming" = "تركيب التصحيح";
+"Patch priming" = "Patch priming";
 
 /* Label for inserting needle step 1 */
-"Remove the safety cover from the patch." = "إزالة غلاف الأمان من التصحيح.";
+"Remove the safety cover from the patch." = "Remove the safety cover from the patch.";
 
 /* Label for inserting needle step 2 */
-"Attach the pump to the body." = "إرفاق المضخات إلى الجسم.";
+"Attach the pump to the body." = "Attach the pump to the body.";
 
 /* Label for inserting needle step 3 */
-"Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process." = "اضغط على زر الإبرة لإدراج الإبرة. انقر على \"تفعيل\" لإكمال عملية التفعيل.";
+"Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process." = "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process.";
 
 /* Patch activation header */
-"Patch activation" = "تنشيط التصحيح";
+"Patch activation" = "Patch activation";
 
 /* welcome header*/
-"Welcome" = "مرحبا بك";
+"Welcome" = "Welcome";
 
 /* Welcome text for MedtrumKit */
-"You will start by setting up your insulin type & basic patch settings before activating your patch." = "ستبدأ بإعداد نوع الأنسولين وإعدادات التصحيح الأساسية قبل تفعيل التصحيح الخاص بك.";
+"You will start by setting up your insulin type & basic patch settings before activating your patch." = "You will start by setting up your insulin type & basic patch settings before activating your patch.";
 
 /* label for go to pump base patch */
-"Go back to pump base" = "العودة إلى قاعدة المضخة";
+"Go back to pump base" = "Go back to pump base";
 
 /* label for go to prime patch */
-"Go back to priming" = "العودة إلى الإعداد الأولي";
+"Go back to priming" = "Go back to priming";
 
 /* Title expire reminder notification */
-"Your patch will expire soon!" = "ستنتهي صلاحية التصحيح الخاص بك قريباً!";
+"Your patch will expire soon!" = "Your patch will expire soon!";
 
 /* Body expire reminder notification */
-"Your patch has %i hours left" = "يتبقى لديك %i ساعة";
+"Your patch has %i hours left" = "Your patch has %i hours left";
 
 /* Title insulin suspended notification */
-"Insulin has been suspended!" = "تم تعليق الأنسولين";
+"Insulin has been suspended!" = "Insulin has been suspended!";
 
 /* Body daily max notification */
-"Your patch has reached its daily maximum!" = "لقد وصلت رقعتك إلى الحد الأقصى اليومي!";
+"Your patch has reached its daily maximum!" = "Your patch has reached its daily maximum!";
 
 /* Body hourly max notification */
-"Your patch has reached its hourly maximum!" = "لقد وصلت رقعة التصحيح الخاصة بك إلى الحد الأقصى لكل ساعة!";
+"Your patch has reached its hourly maximum!" = "Your patch has reached its hourly maximum!";
 
 /* Title replace patch notification */
-"Replace your patch now!" = "استبدل الرقعة الآن!";
+"Replace your patch now!" = "Replace your patch now!";
 
 /* Body occlussion notification */
-"Your patch has detected an occlussion!" = "لقد اكتشف التصحيح الخاص بك وجود خلل!";
+"Your patch has detected an occlussion!" = "Your patch has detected an occlussion!";
 
 /* Body fault notification */
-"Your patch is in Fault state!" = "التصحيح الخاص بك في حالة خطأ!";
+"Your patch is in Fault state!" = "Your patch is in Fault state!";
 
 /* Body reservoir empty notification */
-"Your patch is out of insulin!" = "لقد نفدت رقعة الأنسولين الخاص بك!";
+"Your patch is out of insulin!" = "Your patch is out of insulin!";
 
 /* Force remove */
-"Force remove" = "الإزالة القسرية";
+"Force remove" = "Force remove";
 
 /* title force remove */
 "Are you sure?" = "هل أنت متأكد؟";
 
 /* body force remove */
-"It is recommended to deactivate first" = "يوصى بإلغاء التنشيط أولاً";
+"It is recommended to deactivate first" = "It is recommended to deactivate first";
 
 /* confirm force remove */
 "Confirm" = "تأكيد";

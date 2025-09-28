@@ -2,34 +2,34 @@
 "loading" = "загрузка";
 
 /* Title for PumpManager deletion action sheet. */
-"Remove Pump" = "Снимите насос";
+"Remove Pump" = "Снимите Под";
 
 /* Message for PumpManager deletion action sheet */
-"Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?" = "Вы уверены, что хотите прекратить использование Medtrum TouchCare Nano 200u/300u?";
+"Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?" = "Вы уверены, что хотите прекратить использование Medtrum Nano 200u/300u?";
 
 /* Button text to confirm PumpManager deletion */
-"Delete pump" = "Удалить насос";
+"Delete pump" = "Удалить помпу";
 
 /* Message warning heartbeat disable (1: app name) */
-"Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled" = "В данный момент вы используете режим heartbeat. Необходимо держать %1$@ в фоновом режиме. Это может быть интересно если ваш CGM уже предоставляет сердечный процесс. Рекомендуется сохранить эту функцию";
+"Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled" = "Вы используете режим heartbeat, необходимый для работы %1$@ в фоновом режиме. Это может быть полезно, если ваш CGM уже предоставляет heartbeat. Рекомендуется оставить эту функцию включённой";
 
 /* Message warning heartbeat disable (1: app name) */
-"Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature" = "В данный момент вы НЕ используете режим heartbeat. Для продолжения работы %1$@ в фоновом режиме, необходимо использовать heartbeat. Рекомендуется включить эту функцию";
+"Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature" = "Вы НЕ используете режим heartbeat. Heartbeat необходим для работы %1$@ в фоновом режиме. Рекомендуется включить эту функцию";
 
 /* Button text to disable heartbeat mode */
-"Yes, Disable heartbeat mode" = "Да, отключить режим heartbeat";
+"Yes, Disable heartbeat mode" = "Да, выключить heartbeat режим";
 
 /* Button text to enable heartbeat mode */
-"Yes, Enable heartbeat mode" = "Да, включить режим heartbeat";
+"Yes, Enable heartbeat mode" = "Да, включить heartbeat режим";
 
 /* Title for toggle heartbeat mode action sheet. */
-"Toggle heartbeat mode" = "Вкл/выкл режим сердца";
+"Toggle heartbeat mode" = "Переключить heartbeat режим";
 
 /* Button text to cancel actionsheet */
-"No, Keep as is" = "Нет, Держите как это";
+"No, Keep as is" = "Нет, оставить как есть";
 
 /* Text for patch state */
-"Patch state" = "Статус патча";
+"Patch state" = "Состояние патча";
 
 /* Text for last sync */
 "Last sync" = "Последняя синхронизация";
@@ -38,7 +38,7 @@
 "Status" = "Статус";
 
 /* disconnect from patch */
-"Disconnect" = "Отключиться";
+"Disconnect" = "Отключить";
 
 /* reconnect to patch */
 "Reconnect" = "Переподключить";
@@ -50,13 +50,13 @@
 "Activate patch" = "Активировать патч";
 
 /* deactivate patch */
-"Deactivate Patch" = "Отключить патч";
+"Deactivate Patch" = "Деактивировать патч";
 
 /* Configuration section */
 "Configuration" = "Конфигурация";
 
 /* Text for selecting insulin type */
-"Insulin Type" = "Тип изоляции";
+"Insulin Type" = "Тип инсулина";
 
 /* Text for patch settings view */
 "Patch settings" = "Настройки патча";
@@ -65,10 +65,10 @@
 "Information" = "Информация";
 
 /* Text for pumpSN */
-"Pump base SN" = "Базовый насос SN";
+"Pump base SN" = "Серийный номер базы";
 
 /* Text for model */
-"Pump base model" = "Базовая модель насоса";
+"Pump base model" = "Модель помпы";
 
 /* Text for patchId */
 "Patch ID" = "ID патча";
@@ -83,22 +83,22 @@
 "Battery" = "Батарея";
 
 /* label for previous patch details */
-"Previous Patch Details" = "Предыдущие детали патча";
+"Previous Patch Details" = "Данные предыдущего патча";
 
 /* Text for deactivatedAt */
-"Deactivated at" = "Отключено в";
+"Deactivated at" = "Деактивировано в";
 
 /* Share logs */
-"Share Medtrum patch logs" = "Поделиться журналами Medtrum";
+"Share Medtrum patch logs" = "Поделиться журналом работы патча";
 
 /* Label for PumpManager deletion button */
-"Delete Pump" = "Удалить насос";
+"Delete Pump" = "Удалить помпу";
 
 /* Header for insulin remaining on pod settings screen */
-"Insulin Remaining" = "Оставшиеся инсулины";
+"Insulin Remaining" = "Осталось инсулина";
 
 /* Text shown in insulin delivery space when insulin suspended */
-"Insulin\nSuspended" = "Инсулин\nприостановлен";
+"Insulin\nSuspended" = "Подача\nПриостановлена";
 
 /* Text shown when no patch active */
 "No active patch" = "Нет активного патча";
@@ -122,10 +122,10 @@
 "minute" = "минута";
 
 /* Unit for plural minutes */
-"minutes" = "минуты";
+"minutes" = "минут";
 
 /* Text shown when patch expired */
-"Patch expired" = "Истек срок действия патча";
+"Patch expired" = "Патч истекает";
 
 /* Button for closing settings */
 "Done" = "Готово";
@@ -137,55 +137,55 @@
 "Reconnecting..." = "Переподключение...";
 
 /* label for disconnected */
-"Disconnected" = "Отключено";
+"Disconnected" = "Разъединено";
 
 /* Title of insulin delivery section */
 "Scheduled Basal" = "Запланированный Базал";
 
 /* Pump Event title for UnfinalizedDose with doseType of .tempBasal */
-"Temp Basal" = "Временный базал";
+"Temp Basal" = "Врем. базал";
 
 /* Title of insulin delivery section */
-"Insulin Delivery" = "Инсулин доставки";
+"Insulin Delivery" = "Подача инсулина";
 
 /* Continue */
 "Continue" = "Продолжить";
 
 /* Title for insulin type */
-"Select insulin type" = "Выберите тип инсулина";
+"Select insulin type" = "Выбрать тип инсулина";
 
 /* Title text for insulin type confirmation page */
-"Select the type of insulin that you will be using" = "Выберите тип инсулина который вы будете использовать";
+"Select the type of insulin that you will be using" = "Выберите тип инсулина, который вы будете использовать";
 
 /* Label for maximum hourly insulin delivery */
-"Max hourly insulin" = "Макс. почасовой инсулин";
+"Max hourly insulin" = "Максимум инсулина в час";
 
 /* Label for maximum daily insulin delivery */
-"Max daily insulin" = "Максимальное количество инсулинов";
+"Max daily insulin" = "Максимум инсулина в сутки";
 
 /* Label for alarm settings */
-"Alarm setting" = "Настройка будильника";
+"Alarm setting" = "Настройки оповещения";
 
 /* Label for alarm options: light, vibrate and beep */
-"Light, vibrate and, beep" = "Светлая, вибрация и пчела";
+"Light, vibrate and, beep" = "Свет, вибрация и звук";
 
 /* Label for alarm options: light and vibrate */
-"Light and vibrate" = "Светлая и вибрация";
+"Light and vibrate" = "Свет и вибрация";
 
 /* Label for alarm options: light and beep */
-"Light and beep" = "Светлый и пчеловый";
+"Light and beep" = "Свет и звук";
 
 /* Label for alarm options: light */
-"Light-only" = "Только для света";
+"Light-only" = "Только свет";
 
 /* Label for alarm options: vibrate and beep */
-"Vibrate and beep" = "Вибрация и пчела";
+"Vibrate and beep" = "Вибрация и звук";
 
 /* Label for alarm options: vibrate */
 "Vibrate-only" = "Только вибрация";
 
 /* Label for alarm options: beep */
-"Beep-only" = "Только пип";
+"Beep-only" = "Только звук";
 
 /* Label for alarm options: none */
 "Silence" = "Тишина";
@@ -194,19 +194,19 @@
 "Patch lifetime" = "Время жизни патча";
 
 /* Label for extended lifetime */
-"Use extended lifetime (continue till battery empty)" = "Длительное время службы (продолжайте до тех пор, пока не разрядите аккумулятор)";
+"Use extended lifetime (continue till battery empty)" = "Использовать продлённый срок службы (продолжать до полной разрядки батареи)";
 
 /* Label for normal patch lifetime */
-"Use normal lifetime (3d 8h)" = "Использовать нормальное время жизни (3d 8h)";
+"Use normal lifetime (3d 8h)" = "Использовать стандартный срок службы (3 дня 8 часов)";
 
 /* Label for expired patch notification */
-"Notification for expirate patch" = "Уведомление об истечении срока действия патча";
+"Notification for expirate patch" = "Уведомление об истечении патча";
 
 /* Instructions for deactivate patch */
-"When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch." = "Нажав на кнопку, вы получите запрос на биометрию. После завершения, патч будет деактивирован и вам будет предложено парять новый патч.";
+"When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch." = "При нажатии кнопки появится запрос на биометрию. После подтверждения патч деактивируется, и вам предложат подключить новый.";
 
 /* Authenticate and deactivate label */
-"Authenticate & deactivate patch" = "Аутентификация и деактивация патча";
+"Authenticate & deactivate patch" = "Аутентифицировать и деактивировать патч";
 
 /* Header deactivate patch */
 "Deactivate patch" = "Деактивировать патч";
@@ -215,100 +215,100 @@
 "Serial number" = "Серийный номер";
 
 /* Label for checking SN */
-"Make sure the Serial Number is correct before connecting it to the patch." = "Убедитесь, что серийный номер указан верно, прежде чем подключить его к патчу.";
+"Make sure the Serial Number is correct before connecting it to the patch." = "Убедитесь, что серийный номер верен, перед подключением к патчу.";
 
 /* Pump base settings header */
-"Pump base settings" = "Базовые настройки насоса";
+"Pump base settings" = "Настройки базы помпы";
 
 /* save and continue */
 "Save and continue" = "Сохранить и продолжить";
 
 /* Label for prime step 2.1 */
-"Connect your pump base to the patch." = "Подключите базу насоса к патчу.";
+"Connect your pump base to the patch." = "Подключите базу помпы к патчу.";
 
 /* Label for prime step 2.2 */
 "Fill the syringe with insulin" = "Заполните шприц инсулином";
 
 /* Label for prime step 2.3 */
-"Place the syringe in the patch and pull out 1 to 2 dashes of air." = "Поместите шприц в патч и вытащите от 1 до 2 дефис воздуха.";
+"Place the syringe in the patch and pull out 1 to 2 dashes of air." = "Вставьте шприц в патч и выведите от 1 до 2 единиц воздуха.";
 
 /* Label for prime step 2.4 */
-"Fill the patch with insulin. NOTE: A minimum of 70U is required for activation." = "Заполните патч инсулином. ПРИМЕЧАНИЕ: Для активации требуется не менее 70U.";
+"Fill the patch with insulin. NOTE: A minimum of 70U is required for activation." = "Заполните патч инсулином. Примечание: минимум 70 ед. для активации.";
 
 /* Label for pressing needle button step 2.5 */
-"Press the needle button and start the priming process." = "Нажимаем на иглу и начинаем привязку.";
+"Press the needle button and start the priming process." = "Нажмите кнопку иглы и начните заправку.";
 
 /* Label for warning priming */
-"Do not attach the patch to the body yet" = "Не прикрепляйте патч к телу";
+"Do not attach the patch to the body yet" = "Не прикрепляйте патч к телу пока";
 
 /* label for prime start action */
-"Start priming" = "Начать привязку";
+"Start priming" = "Начать заправку";
 
 /* Priming header */
-"Patch priming" = "Привязка патча";
+"Patch priming" = "Заправка патча";
 
 /* Label for inserting needle step 1 */
-"Remove the safety cover from the patch." = "Удалите крышку безопасности из патча.";
+"Remove the safety cover from the patch." = "Снимите защитный колпачок с патча.";
 
 /* Label for inserting needle step 2 */
-"Attach the pump to the body." = "Прикрепите насос к кузову.";
+"Attach the pump to the body." = "Прикрепите помпу к телу.";
 
 /* Label for inserting needle step 3 */
-"Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process." = "Нажмите на кнопку иглы, чтобы вставить иглу. Нажмите на кнопку \"Активировать\", чтобы завершить процесс активации.";
+"Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process." = "Нажмите кнопку иглы для ввода. Нажмите \"Активировать\" для завершения.";
 
 /* Patch activation header */
-"Patch activation" = "Активация исправлений";
+"Patch activation" = "Активация патча";
 
 /* welcome header*/
 "Welcome" = "Добро пожаловать";
 
 /* Welcome text for MedtrumKit */
-"You will start by setting up your insulin type & basic patch settings before activating your patch." = "Перед активацией патча вы начнете с установки типа инсулин и базовых настроек патча.";
+"You will start by setting up your insulin type & basic patch settings before activating your patch." = "Начните с настройки типа инсулина и базовых параметров патча перед активацией.";
 
 /* label for go to pump base patch */
-"Go back to pump base" = "Вернитесь на базу насосов";
+"Go back to pump base" = "Вернуться к базе помпы";
 
 /* label for go to prime patch */
-"Go back to priming" = "Вернитесь к грунтовке";
+"Go back to priming" = "Вернуться к заправке";
 
 /* Title expire reminder notification */
-"Your patch will expire soon!" = "Срок действия вашего патча скоро истечет!";
+"Your patch will expire soon!" = "Срок патча истекает!";
 
 /* Body expire reminder notification */
-"Your patch has %i hours left" = "У вашего патча осталось %i часов.";
+"Your patch has %i hours left" = "У патча осталось %i часов";
 
 /* Title insulin suspended notification */
-"Insulin has been suspended!" = "Действие инсулина приостановлено!";
+"Insulin has been suspended!" = "Подача инсулина остановлена!";
 
 /* Body daily max notification */
-"Your patch has reached its daily maximum!" = "Ваш патч достиг дневного максимума!";
+"Your patch has reached its daily maximum!" = "У патча закончился срок!";
 
 /* Body hourly max notification */
-"Your patch has reached its hourly maximum!" = "Ваш патч достиг своего часового максимума!";
+"Your patch has reached its hourly maximum!" = "Время жизни патча закончилось!";
 
 /* Title replace patch notification */
 "Replace your patch now!" = "Замените патч прямо сейчас!";
 
 /* Body occlussion notification */
-"Your patch has detected an occlussion!" = "Ваш патч обнаружил окклюзию!";
+"Your patch has detected an occlussion!" = "Обнаружена закупорка патча!";
 
 /* Body fault notification */
-"Your patch is in Fault state!" = "Ваш патч находится в состоянии неисправности!";
+"Your patch is in Fault state!" = "Ошибка патча!";
 
 /* Body reservoir empty notification */
-"Your patch is out of insulin!" = "В вашем пластыре закончился инсулин!";
+"Your patch is out of insulin!" = "Закончился инсулин!";
 
 /* Force remove */
-"Force remove" = "Принудительное удаление";
+"Force remove" = "Удалить принудительно";
 
 /* title force remove */
 "Are you sure?" = "Вы уверены?";
 
 /* body force remove */
-"It is recommended to deactivate first" = "Рекомендуется сначала деактивировать";
+"It is recommended to deactivate first" = "Сначала деактивируйте патч, затем снимите";
 
 /* confirm force remove */
-"Confirm" = "Подтвердите";
+"Confirm" = "Подтверждаю";
 
 /* cancel force remove */
 "Cancel" = "Отмена";

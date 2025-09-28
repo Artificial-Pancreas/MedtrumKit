@@ -1,14 +1,14 @@
 /* Generic loading text */
-"loading" = "yükleme";
+"loading" = "loading";
 
 /* Title for PumpManager deletion action sheet. */
-"Remove Pump" = "Pompayı Çıkart";
+"Remove Pump" = "Remove Pump";
 
 /* Message for PumpManager deletion action sheet */
 "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?" = "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?";
 
 /* Button text to confirm PumpManager deletion */
-"Delete pump" = "Pompayı sil";
+"Delete pump" = "Delete pump";
 
 /* Message warning heartbeat disable (1: app name) */
 "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled" = "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled";
@@ -26,16 +26,16 @@
 "Toggle heartbeat mode" = "Toggle heartbeat mode";
 
 /* Button text to cancel actionsheet */
-"No, Keep as is" = "Hayır, olduğu gibi kalsın";
+"No, Keep as is" = "No, Keep as is";
 
 /* Text for patch state */
 "Patch state" = "Patch state";
 
 /* Text for last sync */
-"Last sync" = "Son senkronizasyon";
+"Last sync" = "Last sync";
 
 /* Text for status */
-"Status" = "Durum";
+"Status" = "Estado";
 
 /* disconnect from patch */
 "Disconnect" = "Disconnect";
@@ -53,10 +53,10 @@
 "Deactivate Patch" = "Deactivate Patch";
 
 /* Configuration section */
-"Configuration" = "Yapılandırma";
+"Configuration" = "Ajustes";
 
 /* Text for selecting insulin type */
-"Insulin Type" = "İnsülin Tipi";
+"Insulin Type" = "Tipo de Insulina";
 
 /* Text for patch settings view */
 "Patch settings" = "Patch settings";
@@ -80,7 +80,7 @@
 "Patch expires at" = "Patch expires at";
 
 /* Text for battery voltageB */
-"Battery" = "Pil";
+"Battery" = "Battery";
 
 /* label for previous patch details */
 "Previous Patch Details" = "Previous Patch Details";
@@ -92,13 +92,13 @@
 "Share Medtrum patch logs" = "Share Medtrum patch logs";
 
 /* Label for PumpManager deletion button */
-"Delete Pump" = "Pompayı Sil";
+"Delete Pump" = "Deletar Bomba";
 
 /* Header for insulin remaining on pod settings screen */
-"Insulin Remaining" = "Kalan İnsülin";
+"Insulin Remaining" = "Insulin Remaining";
 
 /* Text shown in insulin delivery space when insulin suspended */
-"Insulin\nSuspended" = "İnsülin\nDurduldu";
+"Insulin\nSuspended" = "Insulin\nSuspended";
 
 /* Text shown when no patch active */
 "No active patch" = "No active patch";
@@ -107,49 +107,49 @@
 "Age:" = "Age:";
 
 /* Unit for singular day */
-"day" = "gün";
+"day" = "day";
 
 /* Unit for plural days */
-"days" = "gün";
+"days" = "days";
 
 /* Unit for singular hour */
-"hour" = "saat";
+"hour" = "hour";
 
 /* Unit for plural hours */
-"hours" = "saat";
+"hours" = "horas";
 
 /* Unit for singular minute */
-"minute" = "dakika";
+"minute" = "minute";
 
 /* Unit for plural minutes */
-"minutes" = "dakika";
+"minutes" = "minutos";
 
 /* Text shown when patch expired */
 "Patch expired" = "Patch expired";
 
 /* Button for closing settings */
-"Done" = "Tamam";
+"Done" = "OK";
 
 /* label for connected */
-"Connected" = "Bağlandı";
+"Connected" = "Conectado";
 
 /* label for reconnecting */
-"Reconnecting..." = "Yeniden bağlanıyor...";
+"Reconnecting..." = "Reconnecting...";
 
 /* label for disconnected */
-"Disconnected" = "Bağlantı kesildi";
+"Disconnected" = "Desconectado";
 
 /* Title of insulin delivery section */
-"Scheduled Basal" = "Programlanmış Bazal";
+"Scheduled Basal" = "Scheduled Basal";
 
 /* Pump Event title for UnfinalizedDose with doseType of .tempBasal */
-"Temp Basal" = "Geçici Bazal Oranı";
+"Temp Basal" = "Temp Basal";
 
 /* Title of insulin delivery section */
-"Insulin Delivery" = "İnsülin İletimi";
+"Insulin Delivery" = "Insulin Delivery";
 
 /* Continue */
-"Continue" = "Devam et";
+"Continue" = "Continuar";
 
 /* Title for insulin type */
 "Select insulin type" = "Select insulin type";
@@ -302,13 +302,13 @@
 "Force remove" = "Force remove";
 
 /* title force remove */
-"Are you sure?" = "Emin misiniz?";
+"Are you sure?" = "Tem certeza?";
 
 /* body force remove */
 "It is recommended to deactivate first" = "It is recommended to deactivate first";
 
 /* confirm force remove */
-"Confirm" = "Onayla";
+"Confirm" = "Confirm";
 
 /* cancel force remove */
-"Cancel" = "Vazgeç";
+"Cancel" = "Cancelar";
