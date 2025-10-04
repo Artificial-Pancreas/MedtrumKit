@@ -80,7 +80,7 @@
 "Patch expires at" = "Patch expires at";
 
 /* Text for battery voltageB */
-"Battery" = "Battery";
+"Battery" = "Töltöttség";
 
 /* label for previous patch details */
 "Previous Patch Details" = "Previous Patch Details";
