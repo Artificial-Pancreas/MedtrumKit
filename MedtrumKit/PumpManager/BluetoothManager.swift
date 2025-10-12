@@ -261,6 +261,7 @@ extension BluetoothManager {
 
         if let pumpManager = self.pumpManager {
             pumpManager.state.isConnected = false
+            pumpManager.checkBolusDone()
             pumpManager.notifyStateDidChange()
         }
 

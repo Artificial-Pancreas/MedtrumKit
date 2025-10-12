@@ -13,33 +13,6 @@ struct MedtrumKitSettings: View {
 
     var supportedInsulinTypes: [InsulinType]
 
-    var heartbeatModeToggleWarning: ActionSheet {
-        let message = viewModel.usingHeartbeatMode ?
-            LocalizedString(
-                "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled",
-                comment: "Message warning heartbeat disable (1: app name)"
-            ) :
-            LocalizedString(
-                "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature",
-                comment: "Message warning heartbeat disable (1: app name)"
-            )
-
-        let enableLabel = viewModel.usingHeartbeatMode ?
-            LocalizedString("Yes, Disable heartbeat mode", comment: "Button text to disable heartbeat mode") :
-            LocalizedString("Yes, Enable heartbeat mode", comment: "Button text to enable heartbeat mode")
-
-        return ActionSheet(
-            title: Text(LocalizedString("Toggle heartbeat mode", comment: "Title for toggle heartbeat mode action sheet.")),
-            message: Text(String(format: message, appName)),
-            buttons: [
-                .default(Text(enableLabel)) {
-                    self.viewModel.toggleHeartbeat()
-                },
-                .cancel(Text(LocalizedString("No, Keep as is", comment: "Button text to cancel actionsheet")))
-            ]
-        )
-    }
-
     var body: some View {
         List {
             Section {
@@ -113,18 +86,16 @@ struct MedtrumKitSettings: View {
                     }
                 }
 
-                if viewModel.usingHeartbeatMode {
-                    Button(action: { viewModel.checkConnection() }) {
-                        HStack {
-                            if viewModel.isConnected {
-                                Text(LocalizedString("Disconnect", comment: "disconnect from patch"))
-                            } else {
-                                Text(LocalizedString("Reconnect", comment: "reconnect to patch"))
-                            }
-                            Spacer()
-                            if viewModel.isReconnecting {
-                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
-                            }
+                Button(action: { viewModel.checkConnection() }) {
+                    HStack {
+                        if viewModel.isConnected {
+                            Text(LocalizedString("Disconnect", comment: "disconnect from patch"))
+                        } else {
+                            Text(LocalizedString("Reconnect", comment: "reconnect to patch"))
+                        }
+                        Spacer()
+                        if viewModel.isReconnecting {
+                            ActivityIndicator(isAnimating: .constant(true), style: .medium)
                         }
                     }
                 }
@@ -178,6 +149,7 @@ struct MedtrumKitSettings: View {
                 NavigationLink(destination: InsulinTypeSelector(
                     initialValue: viewModel.insulinType,
                     supportedInsulinTypes: supportedInsulinTypes,
+                    showSave: true,
                     didConfirm: viewModel.didChangeInsulinType
                 )) {
                     HStack {
@@ -204,12 +176,6 @@ struct MedtrumKitSettings: View {
                     Spacer()
                     Text(viewModel.pumpBaseSN)
                         .foregroundColor(.secondary)
-                }
-                .onLongPressGesture {
-                    viewModel.showingHeartbeatWarning = true
-                }
-                .actionSheet(isPresented: $viewModel.showingHeartbeatWarning) {
-                    heartbeatModeToggleWarning
                 }
                 HStack {
                     Text(LocalizedString("Pump base model", comment: "Text for model"))
@@ -256,16 +222,6 @@ struct MedtrumKitSettings: View {
                     Text(viewModel.batteryText(for: viewModel.battery))
                         .foregroundColor(.secondary)
                 }
-
-                if let sessionToken = viewModel.patchSessionToken {
-                    HStack {
-                        Text(LocalizedString("Session token", comment: "Text for session token"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text(sessionToken)
-                            .foregroundColor(.secondary)
-                    }
-                }
             }
 
             if let previousPatch = viewModel.previousPatch {
@@ -307,6 +263,15 @@ struct MedtrumKitSettings: View {
                         Spacer()
                         Text(viewModel.batteryText(for: previousPatch.battery))
                             .foregroundColor(.secondary)
+                    }
+                    if let reservoirLevel = previousPatch.reservoirLevel, let maxInsulin = previousPatch.maxInsulin {
+                        HStack {
+                            Text(LocalizedString("Insulin used", comment: "Text for Insulin used"))
+                                .foregroundColor(Color.primary)
+                            Spacer()
+                            Text(viewModel.reservoirText(for: Double(maxInsulin) - reservoirLevel))
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
             }
@@ -400,8 +365,13 @@ struct MedtrumKitSettings: View {
                 }
             case .active:
                 HStack {
-                    Text(LocalizedString("Age:", comment: "Text shown while patch is active"))
-                        .foregroundStyle(.secondary)
+                    if viewModel.patchLifecycleExpiration {
+                        Text(LocalizedString("Expires in:", comment: "Text shown while patch is active"))
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text(LocalizedString("Age:", comment: "Text shown while patch is active"))
+                            .foregroundStyle(.secondary)
+                    }
                     Spacer()
                     viewModel.patchLifecycleDays.map { days in
                         timeComponent(
@@ -436,8 +406,10 @@ struct MedtrumKitSettings: View {
                 }
             }
 
-            ProgressView(progress: viewModel.patchLifecycleProgress)
-                .padding(.top, -5)
+            if viewModel.patchLifecycleExpiration {
+                ProgressView(progress: viewModel.patchLifecycleProgress)
+                    .padding(.top, -5)
+            }
         }
     }
 

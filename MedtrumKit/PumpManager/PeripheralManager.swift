@@ -245,7 +245,7 @@ extension PeripheralManager: CBPeripheralDelegate {
 
         let service = peripheral.services?.first(where: { $0.uuid == PeripheralManager.SERVICE_UUID })
         guard let service = service else {
-            let localizedError = "No Metrum service found - " +
+            let localizedError = "No Medtrum service found - " +
                 (peripheral.services?.map(\.uuid.uuidString).joined(separator: ", ") ?? "No services discovered")
             log.error(localizedError)
             completion?(.failedToDiscoverServices(localizedError: localizedError))

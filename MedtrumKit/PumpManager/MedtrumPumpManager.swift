@@ -522,11 +522,10 @@ public extension MedtrumPumpManager {
 
             self.log.info("Delivery suspended for 120min!")
 
-            let dose = DoseEntry.suspend()
             self.pumpDelegate.notify { delegate in
                 delegate?.pumpManager(
                     self,
-                    hasNewPumpEvents: [NewPumpEvent.suspend(dose: dose)],
+                    hasNewPumpEvents: [NewPumpEvent.suspend(dose: DoseEntry.suspend())],
                     lastReconciliation: Date.now,
                     replacePendingEvents: true,
                     completion: { _ in }
@@ -732,9 +731,15 @@ public extension MedtrumPumpManager {
                 self.notifyStateDidChange()
 
                 self.pumpDelegate.notify { delegate in
+                    var events = [NewPumpEvent.replacedPump()]
+
+                    if let insulinType = self.state.insulinType {
+                        events.append(NewPumpEvent.resume(dose: DoseEntry.resume(insulinType: insulinType)))
+                    }
+
                     delegate?.pumpManager(
                         self,
-                        hasNewPumpEvents: [NewPumpEvent.replacedPump()],
+                        hasNewPumpEvents: events,
                         lastReconciliation: Date.now,
                         replacePendingEvents: true,
                         completion: { _ in }
@@ -773,13 +778,25 @@ public extension MedtrumPumpManager {
                 lastSyncAt: self.state.lastSync,
                 battery: self.state.battery,
                 activatedAt: self.state.patchActivatedAt,
-                deactivatedAt: Date.now
+                deactivatedAt: Date.now,
+                reservoirLevel: self.state.reservoir,
+                maxInsulin: self.state.pumpName.contains("300U") ? 300 : 200
             )
 
             self.state.patchId = Data()
             self.state.pumpState = .none
             self.state.sessionToken = Data()
             self.notifyStateDidChange()
+
+            self.pumpDelegate.notify { delegate in
+                delegate?.pumpManager(
+                    self,
+                    hasNewPumpEvents: [NewPumpEvent.suspend(dose: DoseEntry.suspend())],
+                    lastReconciliation: Date.now,
+                    replacePendingEvents: true,
+                    completion: { _ in }
+                )
+            }
 
             self.log.info("Patch deactivated")
             completion(.success)
@@ -868,6 +885,24 @@ public extension MedtrumPumpManager {
                     completion: { _ in }
                 )
             }
+        }
+    }
+
+    internal func checkBolusDone() {
+        guard let doseEntry = self.doseEntry else {
+            // Disconnect was done after bolus was complete!
+            return
+        }
+
+        log.warning("Bolus was not completed... \(doseEntry.deliveredUnits)U of the \(doseEntry.value)U")
+
+        // There was a bolus going on, unsure if the bolus is completed...
+        state.bolusState = .noBolus
+        self.doseEntry = nil
+        notifyStateDidChange()
+
+        pumpDelegate.notify { delegate in
+            delegate?.pumpManager(self, didError: .uncertainDelivery)
         }
     }
 }

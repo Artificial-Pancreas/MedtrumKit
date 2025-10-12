@@ -19,6 +19,8 @@ public struct PreviousPatch: Codable {
     public var battery: Double
     public var activatedAt: Date
     public var deactivatedAt: Date
+    public var reservoirLevel: Double?
+    public var maxInsulin: Int?
 }
 
 public class MedtrumPumpState: RawRepresentable {

@@ -108,6 +108,7 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
             return hostingController(rootView: InsulinTypeSelector(
                 initialValue: allowedInsulinTypes[0],
                 supportedInsulinTypes: allowedInsulinTypes,
+                showSave: false,
                 didConfirm: nextStep
             ))
 

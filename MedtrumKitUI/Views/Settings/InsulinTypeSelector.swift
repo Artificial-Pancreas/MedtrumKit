@@ -8,11 +8,18 @@ struct InsulinTypeSelector: View {
     @State private var insulinType: InsulinType?
     private var supportedInsulinTypes: [InsulinType]
     private var didConfirm: (InsulinType) -> Void
+    private let showSave: Bool
 
-    init(initialValue: InsulinType, supportedInsulinTypes: [InsulinType], didConfirm: @escaping (InsulinType) -> Void) {
+    init(
+        initialValue: InsulinType,
+        supportedInsulinTypes: [InsulinType],
+        showSave: Bool,
+        didConfirm: @escaping (InsulinType) -> Void
+    ) {
         _insulinType = State(initialValue: initialValue)
         self.supportedInsulinTypes = supportedInsulinTypes
         self.didConfirm = didConfirm
+        self.showSave = showSave
     }
 
     func continueWithType(_ insulinType: InsulinType?) {
@@ -42,7 +49,11 @@ struct InsulinTypeSelector: View {
             Spacer()
 
             Button(action: { self.continueWithType(insulinType) }) {
-                Text(LocalizedString("Continue", comment: "Continue"))
+                if showSave {
+                    Text(LocalizedString("Save", comment: "save"))
+                } else {
+                    Text(LocalizedString("Continue", comment: "Continue"))
+                }
             }
             .buttonStyle(ActionButtonStyle())
             .padding([.bottom, .horizontal])

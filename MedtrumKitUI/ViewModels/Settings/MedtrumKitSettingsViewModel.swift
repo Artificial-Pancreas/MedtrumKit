@@ -26,6 +26,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var basalRate: Double = 0
     @Published var insulinType: InsulinType = .novolog
     @Published var lastSync = Date.distantPast
+    @Published var patchLifecycleExpiration: Bool = false
     @Published var patchLifecycleProgress: Double = 0
     @Published var patchLifecycleState: PatchLifecycleState = .noPatch
     @Published var patchActivatedAt = Date.distantPast
@@ -38,7 +39,6 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var showingHeartbeatWarning = false
     @Published var showingDeleteConfirmation = false
     @Published var previousPatch: PreviousPatch? = nil
-    @Published var patchSessionToken: String? = nil
 
     public let patchSettingsViewModel: PatchSettingsViewModel
 
@@ -122,12 +122,23 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
             return nil
         }
 
+        if patchLifecycleExpiration {
+            return Int((patchExpiresAt.timeIntervalSince1970 - Date.now.timeIntervalSince1970).days.rounded(.towardZero))
+        }
+
         return Int((Date.now.timeIntervalSince1970 - patchActivatedAt.timeIntervalSince1970).days.rounded(.towardZero))
     }
 
     var patchLifecycleHours: Int? {
         guard patchLifecycleState == .active else {
             return nil
+        }
+
+        if patchLifecycleExpiration {
+            return Int(
+                (patchExpiresAt.timeIntervalSince1970 - Date.now.timeIntervalSince1970).hours
+                    .truncatingRemainder(dividingBy: 24).rounded(.towardZero)
+            )
         }
 
         return Int(
@@ -139,6 +150,13 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     var patchLifecycleMinutes: Int? {
         guard patchLifecycleState == .active else {
             return nil
+        }
+
+        if patchLifecycleExpiration {
+            return Int(
+                (patchExpiresAt.timeIntervalSince1970 - Date.now.timeIntervalSince1970).minutes
+                    .truncatingRemainder(dividingBy: 60).rounded(.towardZero)
+            )
         }
 
         return Int(
@@ -311,7 +329,6 @@ extension MedtrumKitSettingsViewModel {
         pumpBaseSN = state.pumpSN.hexEncodedString().uppercased()
         pumpName = state.pumpName
         patchId = state.patchId.toUInt64()
-        patchSessionToken = state.sessionToken.hexEncodedString()
         usingHeartbeatMode = state.usingHeartbeatMode
         patchState = state.pumpState
         patchStateString = state.pumpState.description
@@ -319,6 +336,7 @@ extension MedtrumKitSettingsViewModel {
         basalType = state.basalState
         basalRate = basalType == .tempBasal ? (state.tempBasalUnits ?? state.currentBaseBasalRate) : state.currentBaseBasalRate
         lastSync = state.lastSync
+        patchLifecycleExpiration = state.expirationTimer == 1
         patchActivatedAt = state.patchActivatedAt
         patchExpiresAt = state.patchExpiresAt ?? state.patchActivatedAt.addingTimeInterval(.hours(80))
         battery = state.battery

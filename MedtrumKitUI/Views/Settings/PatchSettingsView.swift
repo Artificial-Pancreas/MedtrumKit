@@ -150,7 +150,11 @@ struct PatchSettingsView: View {
                 viewModel.save()
             }) {
                 if !viewModel.isUpdating {
-                    Text(LocalizedString("Continue", comment: "Continue"))
+                    if viewModel.updatePatch {
+                        Text(LocalizedString("Save", comment: "save"))
+                    } else {
+                        Text(LocalizedString("Continue", comment: "Continue"))
+                    }
                 } else {
                     ActivityIndicator(isAnimating: .constant(true), style: .medium)
                 }
