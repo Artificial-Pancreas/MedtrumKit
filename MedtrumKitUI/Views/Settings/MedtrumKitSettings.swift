@@ -146,23 +146,33 @@ struct MedtrumKitSettings: View {
             }
 
             Section(header: SectionHeader(label: LocalizedString("Configuration", comment: "Configuration section"))) {
-                NavigationLink(destination: InsulinTypeSelector(
-                    initialValue: viewModel.insulinType,
-                    supportedInsulinTypes: supportedInsulinTypes,
-                    showSave: true,
-                    didConfirm: viewModel.didChangeInsulinType
-                )) {
-                    HStack {
-                        Text(LocalizedString("Insulin Type", comment: "Text for selecting insulin type"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text(viewModel.insulinType.brandName)
-                            .foregroundColor(.secondary)
-                    }
+                HStack {
+                    Text(LocalizedString("Insulin Type", comment: "Text for selecting insulin type"))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                    Text(viewModel.insulinType.brandName)
+                        .foregroundColor(.secondary)
+                        .padding(.trailing, 3)
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: UIFont.systemFontSize, weight: .medium))
+                        .opacity(0.3)
                 }
-                NavigationLink(destination: PatchSettingsView(viewModel: viewModel.patchSettingsViewModel)) {
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    viewModel.toInsulinType()
+                }
+
+                HStack {
                     Text(LocalizedString("Patch settings", comment: "Text for patch settings view"))
                         .foregroundColor(Color.primary)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: UIFont.systemFontSize, weight: .medium))
+                        .opacity(0.3)
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    viewModel.toSettings()
                 }
             }
 
@@ -222,6 +232,15 @@ struct MedtrumKitSettings: View {
                     Text(viewModel.batteryText(for: viewModel.battery))
                         .foregroundColor(.secondary)
                 }
+                if let initialReservoirLevel = viewModel.initialReservoirLevel {
+                    HStack {
+                        Text(LocalizedString("Insulin used", comment: "Text for Insulin used"))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                        Text(viewModel.reservoirText(for: initialReservoirLevel - viewModel.reservoirLevel))
+                            .foregroundColor(.secondary)
+                    }
+                }
             }
 
             if let previousPatch = viewModel.previousPatch {
@@ -264,12 +283,14 @@ struct MedtrumKitSettings: View {
                         Text(viewModel.batteryText(for: previousPatch.battery))
                             .foregroundColor(.secondary)
                     }
-                    if let reservoirLevel = previousPatch.reservoirLevel, let maxInsulin = previousPatch.maxInsulin {
+                    if let reservoirLevel = previousPatch.reservoirLevel,
+                       let initialReservoirLevel = previousPatch.initialReservoirLevel
+                    {
                         HStack {
                             Text(LocalizedString("Insulin used", comment: "Text for Insulin used"))
                                 .foregroundColor(Color.primary)
                             Spacer()
-                            Text(viewModel.reservoirText(for: Double(maxInsulin) - reservoirLevel))
+                            Text(viewModel.reservoirText(for: initialReservoirLevel - reservoirLevel))
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -401,7 +422,7 @@ struct MedtrumKitSettings: View {
             case .expired:
                 HStack {
                     Text(LocalizedString("Patch expired", comment: "Text shown when patch expired"))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.red)
                     Spacer()
                 }
             }

@@ -103,18 +103,32 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 self.pumpManager?.state.insulinType = insulinType
                 self.pumpManager?.notifyStateDidChange()
 
+                if let pumpManager = self.pumpManager, pumpManager.isOnboarded {
+                    return
+                }
+
                 self.navigateTo(.patchSettingsScreen)
             }
             return hostingController(rootView: InsulinTypeSelector(
-                initialValue: allowedInsulinTypes[0],
+                initialValue: pumpManager?.state.insulinType ?? allowedInsulinTypes[0],
                 supportedInsulinTypes: allowedInsulinTypes,
-                showSave: false,
+                showSave: pumpManager?.isOnboarded ?? false,
                 didConfirm: nextStep
             ))
 
         case .patchSettingsScreen:
-            let nextStep = { self.navigateTo(.pumpBaseSettingsScreen) }
-            let viewModel = PatchSettingsViewModel(pumpManager, updatePatch: false, nextStep: nextStep)
+            let nextStep = {
+                if let pumpManager = self.pumpManager, pumpManager.isOnboarded {
+                    return
+                }
+
+                self.navigateTo(.pumpBaseSettingsScreen)
+            }
+            let viewModel = PatchSettingsViewModel(
+                pumpManager,
+                updatePatch: pumpManager?.isOnboarded ?? false,
+                nextStep: nextStep
+            )
             return hostingController(rootView: PatchSettingsView(viewModel: viewModel, doDirtyCheck: false))
 
         case .deactivatePatchScreen:
@@ -171,8 +185,21 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
             let toActivation: (Bool) -> Void = { alreadyPrimed in
                 self.navigateTo(alreadyPrimed ? .patchActivationScreen : .patchPrimingScreen)
             }
+            let toSettings = {
+                self.navigateTo(.patchSettingsScreen)
+            }
+            let toInsulinType = {
+                self.navigateTo(.insulinTypeScreen)
+            }
 
-            let viewModel = MedtrumKitSettingsViewModel(pumpManager, toDeactivation, toActivation, pumpRemoval)
+            let viewModel = MedtrumKitSettingsViewModel(
+                pumpManager,
+                toDeactivation,
+                toActivation,
+                toSettings,
+                toInsulinType,
+                pumpRemoval
+            )
             return hostingController(rootView: MedtrumKitSettings(
                 viewModel: viewModel,
                 supportedInsulinTypes: allowedInsulinTypes

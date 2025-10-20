@@ -17,6 +17,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var patchId: UInt64 = 0
     @Published var is300u: Bool = false
     @Published var usingHeartbeatMode = false
+    @Published var initialReservoirLevel: Double? = nil
     @Published var reservoirLevel: Double = 0
     @Published var battery: Double = 0
     @Published var maxReservoirLevel: Double = 1
@@ -39,8 +40,6 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var showingHeartbeatWarning = false
     @Published var showingDeleteConfirmation = false
     @Published var previousPatch: PreviousPatch? = nil
-
-    public let patchSettingsViewModel: PatchSettingsViewModel
 
     let reservoirVolumeFormatter: QuantityFormatter = {
         let formatter = QuantityFormatter(for: .internationalUnit())
@@ -79,6 +78,8 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
 
     let deactivatePatchAction: () -> Void
     let pumpRemovalAction: () -> Void
+    let toSettings: () -> Void
+    let toInsulinType: () -> Void
     let pumpActivationAction: (Bool) -> Void
     private let log = MedtrumLogger(category: "settingsViewModel")
     private let pumpManager: MedtrumPumpManager?
@@ -86,13 +87,16 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
         _ pumpManager: MedtrumPumpManager?,
         _ deactivatePatchAction: @escaping () -> Void,
         _ pumpActivationAction: @escaping (Bool) -> Void,
+        _ toSettings: @escaping () -> Void,
+        _ toInsulinType: @escaping () -> Void,
         _ pumpRemovalAction: @escaping () -> Void
     ) {
         self.pumpManager = pumpManager
-        patchSettingsViewModel = PatchSettingsViewModel(pumpManager, updatePatch: true, nextStep: nil)
         self.deactivatePatchAction = deactivatePatchAction
         self.pumpActivationAction = pumpActivationAction
         self.pumpRemovalAction = pumpRemovalAction
+        self.toInsulinType = toInsulinType
+        self.toSettings = toSettings
 
         guard let pumpManager = pumpManager else {
             return
@@ -332,6 +336,7 @@ extension MedtrumKitSettingsViewModel {
         usingHeartbeatMode = state.usingHeartbeatMode
         patchState = state.pumpState
         patchStateString = state.pumpState.description
+        initialReservoirLevel = state.initialReservoir
         reservoirLevel = state.reservoir
         basalType = state.basalState
         basalRate = basalType == .tempBasal ? (state.tempBasalUnits ?? state.currentBaseBasalRate) : state.currentBaseBasalRate
@@ -346,7 +351,7 @@ extension MedtrumKitSettingsViewModel {
                 (Date.now.timeIntervalSince1970 - state.patchActivatedAt.timeIntervalSince1970) / TimeInterval(days: 3),
                 1
             )
-            patchLifecycleState = patchLifecycleProgress == 1 ? .expired : .active
+            patchLifecycleState = patchLifecycleProgress == 1 && state.expirationTimer == 0 ? .expired : .active
         } else {
             patchLifecycleState = .noPatch
         }

@@ -227,11 +227,6 @@ extension PeripheralManager {
             delegate: nil,
             pumpManager: pumpManager
         )
-
-        if let bolusProgress = syncResponse.bolus {
-            pumpManager.updateBolusProgress(delivered: bolusProgress.delivered, completed: bolusProgress.completed)
-        }
-        pumpManager.notifyStateDidChange()
     }
 }
 

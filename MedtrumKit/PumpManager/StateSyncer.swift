@@ -11,6 +11,9 @@ enum StateSyncer {
 
         if let reservoir = syncResponse.reservoir {
             state.reservoir = reservoir
+            if state.initialReservoir == nil {
+                state.initialReservoir = state.reservoir
+            }
             delegate?.pumpManager(pumpManager, didReadReservoirValue: state.reservoir.rounded(toPlaces: 1), at: Date.now) { _ in }
         }
 
@@ -63,7 +66,13 @@ enum StateSyncer {
             state.patchId = UInt64(storage.patchId).toData(length: 4)
         }
 
+        if let bolusProgress = syncResponse.bolus {
+            pumpManager.updateBolusProgress(delivered: bolusProgress.delivered, completed: bolusProgress.completed)
+        }
+
         state.lastSync = Date.now
+
+        pumpManager.notifyStateDidChange()
     }
 
     private static func updatePumpState(

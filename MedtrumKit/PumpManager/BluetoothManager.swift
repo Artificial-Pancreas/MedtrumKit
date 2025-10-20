@@ -3,7 +3,7 @@ import CoreBluetooth
 class BluetoothManager: NSObject, CBCentralManagerDelegate {
     public var pumpManager: MedtrumPumpManager?
 
-    let log = MedtrumLogger(category: "BluetoothManager")
+    let logger = MedtrumLogger(category: "BluetoothManager")
 
     var manager: CBCentralManager!
     let managerQueue = DispatchQueue(label: "com.nightscout.MedtrumKit.bluetoothManagerQueue", qos: .unspecified)
@@ -51,7 +51,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         scanCompletion = completion
         manager.scanForPeripherals(withServices: [])
 
-        log.info("Started scanning")
+        logger.info("Started scanning")
         // TODO: Add scan timeout - 15s?
     }
 
@@ -61,7 +61,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             scanCompletion = nil
         }
 
-        log.info("Connecting to \(peripheral)")
+        logger.info("Connecting to \(peripheral)")
 
         self.peripheral = peripheral
         manager.connect(peripheral)
@@ -102,7 +102,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         }
 
         guard var pumpSNState = pumpManager?.state.pumpSN else {
-            log.error("No pump serial number found")
+            logger.error("No pump serial number found")
             completion(.failedToFindDevice)
             return
         }
@@ -114,7 +114,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         startScan { result in
             switch result {
             case let .failure(error):
-                self.log.error("Error during scanning: \(error.localizedDescription)")
+                self.logger.error("Error during scanning: \(error.localizedDescription)")
                 self.manager.stopScan()
                 completion(.failedToFindDevice)
 
@@ -138,7 +138,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
                     return
                 }
 
-                self.log.error("Failed to connect: Timeout reached...")
+                self.logger.error("Failed to connect: Timeout reached...")
 
                 connectionCallback(.failedToConnectToDevice)
                 self.connectCompletion = nil
@@ -173,12 +173,12 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
 
 extension BluetoothManager {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        log.info("\(String(describing: central.state.rawValue))")
+        logger.info("\(String(describing: central.state.rawValue))")
 
         if central.state == .poweredOn, !isConnected, pumpManager?.state.pumpState == .active {
             ensureConnected { error in
                 if let error = error {
-                    self.log.error("Failed to auto reconnect on boot: \(error)")
+                    self.logger.error("Failed to auto reconnect on boot: \(error)")
                 }
             }
         }
@@ -200,7 +200,7 @@ extension BluetoothManager {
 
         let manufacturerData = advertisementData["kCBAdvDataManufacturerData"]
         guard let manufacturerData = manufacturerData as? Data, manufacturerData.count >= 7 else {
-            log.warning("No ManufacturerData or too short - " + advertisementData.keys.joined(separator: ", "))
+            logger.warning("No ManufacturerData or too short - " + advertisementData.keys.joined(separator: ", "))
             return
         }
 
@@ -220,7 +220,7 @@ extension BluetoothManager {
     }
 
     func centralManager(_: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        log.info("Connected to pump: \(peripheral.name ?? "<NO_NAME>")!")
+        logger.info("Connected to pump: \(peripheral.name ?? "<NO_NAME>")!")
 
         guard let completion = connectCompletion, let pumpManager = pumpManager else {
             return
@@ -234,30 +234,30 @@ extension BluetoothManager {
     func centralManager(_: CBCentralManager, willRestoreState dict: [String: Any]) {
         let peripherals = dict["CBCentralManagerRestoredCentrals"] as? [CBPeripheral] ?? []
         guard !peripherals.isEmpty, let peripheral = peripherals.first else {
-            log.warning("No restored peripherals!")
+            logger.warning("No restored peripherals!")
             return
         }
 
         guard let pumpManager = pumpManager else {
-            log.warning("Couldnt restore state, since no pumpManager is available...")
+            logger.warning("Couldnt restore state, since no pumpManager is available...")
             return
         }
 
         self.peripheral = peripheral
         peripheralManager = PeripheralManager(peripheral, self, pumpManager) { reconnectResult in
             if let error = reconnectResult {
-                self.log.warning("Couldnt reconnect to pump: \(error)")
+                self.logger.warning("Couldnt reconnect to pump: \(error)")
                 return
             }
 
-            self.log.info("Reconnected to patch using restored state!")
+            self.logger.info("Reconnected to patch using restored state!")
         }
 
         peripheral.discoverServices([PeripheralManager.SERVICE_UUID])
     }
 
     func centralManager(_: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error _: Error?) {
-        log.info("Device disconnected, name: \(peripheral.name ?? "<NO_NAME>")")
+        logger.info("Device disconnected, name: \(peripheral.name ?? "<NO_NAME>")")
 
         if let pumpManager = self.pumpManager {
             pumpManager.state.isConnected = false
@@ -268,10 +268,16 @@ extension BluetoothManager {
         if peripheralManager != nil {
             peripheralManager = nil
         }
+
+        ensureConnected { error in
+            if let error = error {
+                self.logger.error("Failed to auto reconnect - \(error)")
+            }
+        }
     }
 
     func centralManager(_: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        log.info("Device connect error, name: \(peripheral.name ?? "<NO_NAME>"), error: \(error!.localizedDescription)")
+        logger.info("Device connect error, name: \(peripheral.name ?? "<NO_NAME>"), error: \(error!.localizedDescription)")
 
         guard let pumpManager = self.pumpManager else {
             return
