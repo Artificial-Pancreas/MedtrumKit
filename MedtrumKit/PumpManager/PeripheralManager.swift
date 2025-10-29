@@ -107,74 +107,11 @@ extension PeripheralManager {
             pumpManager.state.deviceType = authResponse.deviceType
             pumpManager.state.swVersion = authResponse.swVersion
 
-            await getTime()
-        }
-    }
-
-    // Connect step 2
-    private func getTime() async {
-        let timeData = await writePacket(GetTimePacket())
-
-        switch timeData {
-        case let .failure(error):
-            log.error("Failed to get time: \(error.localizedDescription)")
-            completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
-
-        case let .success(data):
-            guard let timeResponse = data as? GetTimePacketResponse else {
-                log.error("Failed to get time: invalid response")
-                completion?(.failedToCompleteAuthorizationFlow(localizedError: "invalid response"))
-                return
-            }
-
-            // Allow 10sec time drift
-            if abs(Date.now.timeIntervalSince1970 - timeResponse.time.timeIntervalSince1970) < .seconds(10) {
-                pumpManager.state.pumpTime = timeResponse.time
-                pumpManager.state.pumpTimeSyncedAt = Date.now
-
-                await synchronize()
-            } else {
-                log.info("Time drift detected, resetting time")
-                await setTime()
-            }
-        }
-    }
-
-    // Connect step 2.1 -> Fix timedrift
-    private func setTime() async {
-        let timeData = await writePacket(SetTimePacket(date: Date.now))
-
-        switch timeData {
-        case let .failure(error):
-            log.error("Failed to set time: \(error.localizedDescription)")
-            completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
-
-        case .success:
-            log.info("Successfully set time")
-            await setTimeZone()
-        }
-    }
-
-    // Connect step 2.2 -> Fix timezone
-    private func setTimeZone() async {
-        let timeZoneData = await writePacket(SetTimeZonePacket(date: Date.now, timeZone: TimeZone.current))
-
-        switch timeZoneData {
-        case let .failure(error):
-            log.error("Failed to set time: \(error.localizedDescription)")
-            completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
-
-        case .success:
-            log.info("Successfully set timezone")
-
-            pumpManager.state.pumpTime = Date.now
-            pumpManager.state.pumpTimeSyncedAt = Date.now
-
             await synchronize()
         }
     }
 
-    // Connect step 3
+    // Connect step 2
     private func synchronize() async {
         let syncData = await writePacket(SynchronizePacket())
 
@@ -224,7 +161,6 @@ extension PeripheralManager {
         StateSyncer.sync(
             syncResponse: syncResponse,
             state: pumpManager.state,
-            delegate: nil,
             pumpManager: pumpManager
         )
     }

@@ -49,7 +49,6 @@
 		3E6B082D2DF2224900A484C6 /* BasalScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B082C2DF2224500A484C6 /* BasalScheduleTests.swift */; };
 		3E767D022D67B315004B1971 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E767CFD2D67B192004B1971 /* LocalizedString.swift */; };
 		3E767D032D67B319004B1971 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E767CE42D67AF35004B1971 /* OSLog.swift */; };
-		3E767D042D67B3FC004B1971 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E767CFB2D67B13C004B1971 /* Localizable.strings */; };
 		3E767D4D2D67BA71004B1971 /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E767D4C2D67BA71004B1971 /* LoopKitUI.framework */; };
 		3E767D522D67BC2E004B1971 /* MedtrumKitPumpManager+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E767CE22D67ADFA004B1971 /* MedtrumKitPumpManager+UI.swift */; };
 		3E767D532D67BC33004B1971 /* MedtrumHUDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E767CFE2D67B1A9004B1971 /* MedtrumHUDProvider.swift */; };
@@ -123,6 +122,7 @@
 		3EEA52072D7E2265000C9E1E /* SetBolusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA52062D7E2264000C9E1E /* SetBolusPacket.swift */; };
 		3EF31CC62DF5DC5500EA6300 /* StateSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF31CC52DF5DC5200EA6300 /* StateSyncer.swift */; };
 		3EFBC4F42DFB527400E0E295 /* DeleteDriverActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBC4F32DFB526900E0E295 /* DeleteDriverActionSheet.swift */; };
+		B6E920502EAFBB390076D719 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B6E9204F2EAFBB380076D719 /* Localizable.xcstrings */; };
 		B7189AE72C15A52800703DE2 /* MedtrumPumpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7189AE52C15A52800703DE2 /* MedtrumPumpManager.swift */; };
 		B7189AEA2C15A8CE00703DE2 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7189AE92C15A8CE00703DE2 /* LoopKit.framework */; };
 		B7D3A8DB2C148CC4002EE003 /* MedtrumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D3A8D02C148CC4002EE003 /* MedtrumKit.framework */; };
@@ -202,28 +202,6 @@
 		3E6B082C2DF2224500A484C6 /* BasalScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalScheduleTests.swift; sourceTree = "<group>"; };
 		3E767CE22D67ADFA004B1971 /* MedtrumKitPumpManager+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedtrumKitPumpManager+UI.swift"; sourceTree = "<group>"; };
 		3E767CE42D67AF35004B1971 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
-		3E767CE52D67B13C004B1971 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ../Localization/ar.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CE62D67B13C004B1971 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = ../Localization/cs.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CE72D67B13C004B1971 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = ../Localization/da.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CE82D67B13C004B1971 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = ../Localization/de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CE92D67B13C004B1971 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../Localization/en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CEA2D67B13C004B1971 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = ../Localization/es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CEB2D67B13C004B1971 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = ../Localization/fi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CEC2D67B13C004B1971 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../Localization/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CED2D67B13C004B1971 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = ../Localization/he.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CEE2D67B13C004B1971 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = ../Localization/it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CEF2D67B13C004B1971 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ../Localization/ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF02D67B13C004B1971 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = ../Localization/nb.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF12D67B13C004B1971 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = ../Localization/nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF22D67B13C004B1971 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = ../Localization/pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF32D67B13C004B1971 /* pt_BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_BR; path = ../Localization/pt_BR.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF42D67B13C004B1971 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ../Localization/ro.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF52D67B13C004B1971 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ../Localization/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF62D67B13C004B1971 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = ../Localization/sk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF72D67B13C004B1971 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = ../Localization/sv.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF82D67B13C004B1971 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = ../Localization/tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CF92D67B13C004B1971 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../Localization/vi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E767CFA2D67B13C004B1971 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../Localization/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3E767CFD2D67B192004B1971 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		3E767CFE2D67B1A9004B1971 /* MedtrumHUDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedtrumHUDProvider.swift; sourceTree = "<group>"; };
 		3E767D052D67B4A0004B1971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -297,6 +275,7 @@
 		3EEA52062D7E2264000C9E1E /* SetBolusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBolusPacket.swift; sourceTree = "<group>"; };
 		3EF31CC52DF5DC5200EA6300 /* StateSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateSyncer.swift; sourceTree = "<group>"; };
 		3EFBC4F32DFB526900E0E295 /* DeleteDriverActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDriverActionSheet.swift; sourceTree = "<group>"; };
+		B6E9204F2EAFBB380076D719 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B7189AE52C15A52800703DE2 /* MedtrumPumpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedtrumPumpManager.swift; sourceTree = "<group>"; };
 		B7189AE92C15A8CE00703DE2 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D3A8D02C148CC4002EE003 /* MedtrumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MedtrumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -472,7 +451,6 @@
 				3E45665A2D83712D00FE1E0C /* Views */,
 				3E767CFE2D67B1A9004B1971 /* MedtrumHUDProvider.swift */,
 				3E767CE22D67ADFA004B1971 /* MedtrumKitPumpManager+UI.swift */,
-				3E767CFB2D67B13C004B1971 /* Localizable.strings */,
 				3E26BE0C2D906A0D00E595B0 /* MedtrumUI.xcassets */,
 			);
 			path = MedtrumKitUI;
@@ -557,6 +535,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		B6E920442EAFB8C20076D719 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B6E9204F2EAFBB380076D719 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		B7189AE62C15A52800703DE2 /* PumpManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,6 +570,7 @@
 		B7D3A8C62C148CC4002EE003 = {
 			isa = PBXGroup;
 			children = (
+				B6E920442EAFB8C20076D719 /* Localization */,
 				3E767CE32D67AF2B004B1971 /* Common */,
 				B7D3A8D22C148CC4002EE003 /* MedtrumKit */,
 				3E767CE12D67AD91004B1971 /* MedtrumKitUI */,
@@ -765,7 +752,10 @@
 				cs,
 				hi,
 				sk,
-				pt_BR,
+				sl,
+				ce,
+				hu,
+				uk,
 			);
 			mainGroup = B7D3A8C62C148CC4002EE003;
 			productRefGroup = B7D3A8D12C148CC4002EE003 /* Products */;
@@ -792,7 +782,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E26BE0D2D906A0D00E595B0 /* MedtrumUI.xcassets in Resources */,
-				3E767D042D67B3FC004B1971 /* Localizable.strings in Resources */,
+				B6E920502EAFBB390076D719 /* Localizable.xcstrings in Resources */,
 				3E15A4802DA2B857007F7D3C /* MedtrumReservoirView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -953,38 +943,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		3E767CFB2D67B13C004B1971 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E767CE52D67B13C004B1971 /* ar */,
-				3E767CE62D67B13C004B1971 /* cs */,
-				3E767CE72D67B13C004B1971 /* da */,
-				3E767CE82D67B13C004B1971 /* de */,
-				3E767CE92D67B13C004B1971 /* en */,
-				3E767CEA2D67B13C004B1971 /* es */,
-				3E767CEB2D67B13C004B1971 /* fi */,
-				3E767CEC2D67B13C004B1971 /* fr */,
-				3E767CED2D67B13C004B1971 /* he */,
-				3E767CEE2D67B13C004B1971 /* it */,
-				3E767CEF2D67B13C004B1971 /* ja */,
-				3E767CF02D67B13C004B1971 /* nb */,
-				3E767CF12D67B13C004B1971 /* nl */,
-				3E767CF22D67B13C004B1971 /* pl */,
-				3E767CF32D67B13C004B1971 /* pt_BR */,
-				3E767CF42D67B13C004B1971 /* ro */,
-				3E767CF52D67B13C004B1971 /* ru */,
-				3E767CF62D67B13C004B1971 /* sk */,
-				3E767CF72D67B13C004B1971 /* sv */,
-				3E767CF82D67B13C004B1971 /* tr */,
-				3E767CF92D67B13C004B1971 /* vi */,
-				3E767CFA2D67B13C004B1971 /* zh-Hans */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		3E767D492D67B790004B1971 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1124,6 +1082,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1183,6 +1142,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
