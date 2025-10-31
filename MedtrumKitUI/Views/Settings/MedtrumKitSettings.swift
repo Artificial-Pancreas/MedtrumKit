@@ -3,6 +3,7 @@ import LoopKitUI
 import SwiftUI
 
 struct MedtrumKitSettings: View {
+    @State private var showingTimeSyncConfirmation: Bool = false
     @State private var isSharePresented: Bool = false
     @ObservedObject var viewModel: MedtrumKitSettingsViewModel
 
@@ -12,6 +13,22 @@ struct MedtrumKitSettings: View {
     @Environment(\.appName) private var appName
 
     var supportedInsulinTypes: [InsulinType]
+    
+    var syncPumpTime: ActionSheet {
+        ActionSheet(
+            title: Text(LocalizedString("Time Change Detected", comment: "Title for pod sync time action sheet.")),
+            message: Text(LocalizedString(
+                "The time on your pump is different from the current time. Do you want to update the time on your pump to the current time?",
+                comment: "Message for pod sync time action sheet"
+            )),
+            buttons: [
+                .default(Text(LocalizedString("Yes, Sync to Current Time", comment: "Button text to confirm pump time sync"))) {
+                    self.viewModel.syncPumpTime()
+                },
+                .cancel(Text(LocalizedString("No, Keep Pump As Is", comment: "Button text to cancel pump time sync")))
+            ]
+        )
+    }
 
     var body: some View {
         List {
@@ -27,6 +44,18 @@ struct MedtrumKitSettings: View {
                     reservoirStatus
                 }
                 .padding(.bottom, 5)
+                
+                if viewModel.showPumpTimeSyncWarning {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(LocalizedString("Time Change Detected", comment: "title for time change detected notice"))
+                            .font(Font.subheadline.weight(.bold))
+                        Text(LocalizedString(
+                            "The time on your pump is different from the current time. Your pump’s time controls your scheduled therapy settings. Scroll down to Pump Time row to review the time difference and configure your pump.",
+                            comment: "description for time change detected notice"
+                        ))
+                            .font(Font.footnote.weight(.semibold))
+                    }.padding(.vertical, 8)
+                }
             }
 
             Section {
@@ -132,17 +161,6 @@ struct MedtrumKitSettings: View {
                             .foregroundColor(.secondary)
                     }
                 }
-
-                if viewModel.usingHeartbeatMode {
-                    HStack {
-                        Text(LocalizedString("Status", comment: "Text for status")).foregroundColor(Color.primary)
-                        Spacer()
-                        HStack(spacing: 10) {
-                            connectionStatusText
-                            connectionStatusIcon
-                        }
-                    }
-                }
             }
 
             Section(header: SectionHeader(label: LocalizedString("Configuration", comment: "Configuration section"))) {
@@ -240,6 +258,41 @@ struct MedtrumKitSettings: View {
                         Text(viewModel.reservoirText(for: initialReservoirLevel - viewModel.reservoirLevel))
                             .foregroundColor(.secondary)
                     }
+                }
+            }
+            
+            Section(header: SectionHeader(label: LocalizedString(
+                "Patch time",
+                comment: "The title for patch time"
+            ))) {
+                HStack {
+                    Text(LocalizedString("Patch time", comment: "Text for pump time"))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                    if viewModel.showPumpTimeSyncWarning {
+                        Image(systemName: "clock.fill")
+                            .foregroundColor(guidanceColors.warning)
+                    }
+                    Text(String(viewModel.dateFormatter.string(from: viewModel.pumpTime)))
+                        .foregroundColor(viewModel.showPumpTimeSyncWarning ? guidanceColors.warning : .secondary)
+                }
+                HStack {
+                    Text(LocalizedString("Checked at", comment: "Text for pump time synced at"))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                    Text(String(viewModel.dateFormatter.string(from: viewModel.pumpTimeSyncedAt)))
+                        .foregroundColor(.secondary)
+                }
+
+                Button(action: {
+                    showingTimeSyncConfirmation = true
+                }) {
+                    Text(LocalizedString("Manually sync Pump time", comment: "Label for syncing the time on the pump"))
+                        .foregroundColor(.accentColor)
+                }
+                .disabled(viewModel.isUpdatingPumpState)
+                .actionSheet(isPresented: $showingTimeSyncConfirmation) {
+                    syncPumpTime
                 }
             }
 

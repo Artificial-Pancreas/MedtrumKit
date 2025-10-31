@@ -21,24 +21,6 @@ extension MedtrumPumpManager: PumpManagerUI {
         return .userInteractionRequired(vc)
     }
 
-    // NOTE: iAPS support
-    public static func setupViewController(
-        initialSettings settings: LoopKitUI.PumpManagerSetupSettings,
-        bluetoothProvider _: LoopKit.BluetoothProvider,
-        colorPalette: LoopKitUI.LoopUIColorPalette,
-        allowDebugFeatures: Bool,
-        allowedInsulinTypes: [LoopKit.InsulinType]
-    ) -> LoopKitUI.SetupUIResult<LoopKitUI.PumpManagerViewController, LoopKitUI.PumpManagerUI> {
-        let vc = MedtrumKitUICoordinator(
-            colorPalette: colorPalette,
-            pumpManagerSettings: settings,
-            allowDebugFeatures: allowDebugFeatures,
-            allowedInsulinTypes: allowedInsulinTypes
-        )
-
-        return .userInteractionRequired(vc)
-    }
-
     public func settingsViewController(
         bluetoothProvider _: BluetoothProvider,
         colorPalette: LoopUIColorPalette,
@@ -127,6 +109,26 @@ extension MedtrumPumpManager: PumpManagerUI {
     // LoopKit only requires here to show "time sync required"
     // But this is handled during connection and can be left empty
     public var pumpStatusBadge: DeviceStatusBadge? {
-        nil
+        state.shouldShowTimeWarning() ? MedtrumStatusBadge.timeSyncNeeded : nil
+    }
+}
+
+extension MedtrumPumpManager {
+    private enum MedtrumStatusBadge: DeviceStatusBadge {
+        case timeSyncNeeded
+
+        public var image: UIImage? {
+            switch self {
+            case .timeSyncNeeded:
+                return UIImage(systemName: "clock.fill")
+            }
+        }
+
+        public var state: DeviceStatusBadgeState {
+            switch self {
+            case .timeSyncNeeded:
+                return .warning
+            }
+        }
     }
 }

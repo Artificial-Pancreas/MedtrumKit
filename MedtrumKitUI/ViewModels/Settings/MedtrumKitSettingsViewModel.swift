@@ -16,11 +16,13 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var model: String = ""
     @Published var patchId: UInt64 = 0
     @Published var is300u: Bool = false
-    @Published var usingHeartbeatMode = false
+    @Published var showPumpTimeSyncWarning = false
     @Published var initialReservoirLevel: Double? = nil
     @Published var reservoirLevel: Double = 0
     @Published var battery: Double = 0
     @Published var maxReservoirLevel: Double = 1
+    @Published var pumpTime: Date = Date.distantPast
+    @Published var pumpTimeSyncedAt: Date = Date.distantPast
     @Published var patchState: PatchState = .none
     @Published var patchStateString: String = PatchState.none.description
     @Published var basalType: BasalState = .active
@@ -222,16 +224,6 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
         pumpActivationAction(alreadyPrimed)
     }
 
-    func toggleHeartbeat() {
-        guard let pumpManager = self.pumpManager else {
-            return
-        }
-
-        pumpManager.state.usingHeartbeatMode.toggle()
-        pumpManager.notifyStateDidChange()
-        checkConnection()
-    }
-
     func suspendResumeButtonPressed() {
         guard let pumpManager = self.pumpManager else {
             return
@@ -284,7 +276,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
             return
         }
 
-        if pumpManager.state.usingHeartbeatMode, !pumpManager.bluetooth.isConnected {
+        if !pumpManager.bluetooth.isConnected {
             // Reconnect to patch
             isReconnecting = true
             pumpManager.bluetooth.ensureConnected { _ in
@@ -293,12 +285,25 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
                 }
             }
             return
-        }
-
-        if !pumpManager.state.usingHeartbeatMode, pumpManager.bluetooth.isConnected {
+        } else {
             // Disconnect from patch
             pumpManager.bluetooth.disconnect()
             return
+        }
+    }
+    
+    func syncPumpTime() {
+        guard let pumpManager = pumpManager else {
+            return
+        }
+        
+        isUpdatingPumpState = true
+        
+        Task {
+            await StateSyncer.syncTime(pumpManager: pumpManager)
+            await MainActor.run {
+                isUpdatingPumpState = false
+            }
         }
     }
 }
@@ -333,10 +338,12 @@ extension MedtrumKitSettingsViewModel {
         pumpBaseSN = state.pumpSN.hexEncodedString().uppercased()
         pumpName = state.pumpName
         patchId = state.patchId.toUInt64()
-        usingHeartbeatMode = state.usingHeartbeatMode
+        showPumpTimeSyncWarning = state.shouldShowTimeWarning()
         patchState = state.pumpState
         patchStateString = state.pumpState.description
         initialReservoirLevel = state.initialReservoir
+        pumpTime = state.pumpTime
+        pumpTimeSyncedAt = state.pumpTimeSyncedAt
         reservoirLevel = state.reservoir
         basalType = state.basalState
         basalRate = basalType == .tempBasal ? (state.tempBasalUnits ?? state.currentBaseBasalRate) : state.currentBaseBasalRate
@@ -351,7 +358,7 @@ extension MedtrumKitSettingsViewModel {
                 (Date.now.timeIntervalSince1970 - state.patchActivatedAt.timeIntervalSince1970) / TimeInterval(days: 3),
                 1
             )
-            patchLifecycleState = patchLifecycleProgress == 1 && state.expirationTimer == 0 ? .expired : .active
+            patchLifecycleState = patchLifecycleProgress == 1 && state.expirationTimer == 1 ? .expired : .active
         } else {
             patchLifecycleState = .noPatch
         }

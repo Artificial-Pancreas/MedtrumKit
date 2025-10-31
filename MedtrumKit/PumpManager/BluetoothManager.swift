@@ -67,14 +67,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         manager.connect(peripheral)
     }
 
-    func ensureConnected(autoDisconnect: Bool = true, _ completionAsync: @escaping (MedtrumConnectError?) async -> Void) {
+    func ensureConnected(_ completionAsync: @escaping (MedtrumConnectError?) async -> Void) {
         let completion = { (_ result: MedtrumConnectError?) -> Void in
             Task {
                 await completionAsync(result)
-                if autoDisconnect {
-                    self.disconnect()
-                }
-
                 self.connectCompletion = nil
             }
         }
@@ -155,11 +151,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     }
 
     func disconnect() {
-        if let pumpManager = self.pumpManager, pumpManager.state.usingHeartbeatMode {
-            // We are using heartbeat mode, so prevent disconnect
-            return
-        }
-
         if let peripheral = self.peripheral, peripheral.state == .connected {
             manager.cancelPeripheralConnection(peripheral)
         }

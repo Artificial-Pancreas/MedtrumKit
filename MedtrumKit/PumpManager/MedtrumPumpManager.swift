@@ -177,7 +177,7 @@ public extension MedtrumPumpManager {
         case .canceling:
             return .canceling
         case .inProgress:
-            if let dose = doseEntry?.toDoseEntry() {
+            if let dose = doseEntry?.toDoseEntry(isMutable: true) {
                 return .inProgress(dose)
             }
 
@@ -228,8 +228,8 @@ public extension MedtrumPumpManager {
                 return
             }
 
-            let syncPacket = SynchronizePacket()
-            let syncResult = await self.bluetooth.write(syncPacket)
+            let syncResult = await self.bluetooth.write(SynchronizePacket())
+            await StateSyncer.timeSync(pumpManager: self)
 
             switch syncResult {
             case let .failure(error):
@@ -250,13 +250,18 @@ public extension MedtrumPumpManager {
                     self.log.warning("State update: Failed to encode JSON")
                 }
 
+                StateSyncer.sync(
+                    syncResponse: syncResponse,
+                    state: self.state,
+                    pumpManager: self
+                )
+                
                 self.pumpDelegate.notify { delegate in
-                    StateSyncer.sync(
-                        syncResponse: syncResponse,
-                        state: self.state,
-                        delegate: delegate,
-                        pumpManager: self
-                    )
+                    delegate?.pumpManager(
+                        self,
+                        didReadReservoirValue: self.state.reservoir.rounded(toPlaces: 1),
+                        at: self.state.lastSync
+                    ) { _ in }
                 }
 
                 completion?(Date.now)
@@ -293,7 +298,7 @@ public extension MedtrumPumpManager {
             return
         }
 
-        bluetooth.ensureConnected(autoDisconnect: false) { error in
+        bluetooth.ensureConnected { error in
             if let error = error {
                 self.log.error("Failed to connect: \(error.localizedDescription)")
                 self.resetBolusState()
@@ -335,7 +340,7 @@ public extension MedtrumPumpManager {
                 delegate.pumpManager(
                     self,
                     hasNewPumpEvents: [event],
-                    lastReconciliation: Date.now,
+                    lastReconciliation: self.state.lastSync,
                     replacePendingEvents: false,
                     completion: { _ in }
                 )
@@ -403,7 +408,7 @@ public extension MedtrumPumpManager {
                 delegate?.pumpManager(
                     self,
                     hasNewPumpEvents: [NewPumpEvent.bolus(dose: dose, units: dose.deliveredUnits ?? 0, date: dose.startDate)],
-                    lastReconciliation: Date.now,
+                    lastReconciliation: self.state.lastSync,
                     replacePendingEvents: true,
                     completion: { _ in }
                 )
@@ -453,7 +458,7 @@ public extension MedtrumPumpManager {
                         delegate?.pumpManager(
                             self,
                             hasNewPumpEvents: [NewPumpEvent.basal(dose: dose)],
-                            lastReconciliation: Date.now,
+                            lastReconciliation: self.state.lastSync,
                             replacePendingEvents: true,
                             completion: { _ in }
                         )
@@ -488,7 +493,7 @@ public extension MedtrumPumpManager {
                     delegate?.pumpManager(
                         self,
                         hasNewPumpEvents: [NewPumpEvent.tempBasal(dose: dose, units: unitsPerHour, duration: duration)],
-                        lastReconciliation: Date.now,
+                        lastReconciliation: self.state.lastSync,
                         replacePendingEvents: true,
                         completion: { _ in }
                     )
@@ -528,7 +533,7 @@ public extension MedtrumPumpManager {
                 delegate?.pumpManager(
                     self,
                     hasNewPumpEvents: [NewPumpEvent.suspend(dose: DoseEntry.suspend())],
-                    lastReconciliation: Date.now,
+                    lastReconciliation: self.state.lastSync,
                     replacePendingEvents: true,
                     completion: { _ in }
                 )
@@ -569,7 +574,7 @@ public extension MedtrumPumpManager {
                     delegate?.pumpManager(
                         self,
                         hasNewPumpEvents: [NewPumpEvent.resume(dose: dose)],
-                        lastReconciliation: Date.now,
+                        lastReconciliation: self.state.lastSync,
                         replacePendingEvents: true,
                         completion: { _ in }
                     )
@@ -624,7 +629,7 @@ public extension MedtrumPumpManager {
                     delegate?.pumpManager(
                         self,
                         hasNewPumpEvents: [NewPumpEvent.basal(dose: dose)],
-                        lastReconciliation: Date.now,
+                        lastReconciliation: self.state.lastSync,
                         replacePendingEvents: true,
                         completion: { _ in }
                     )
@@ -659,7 +664,7 @@ public extension MedtrumPumpManager {
             notifyStateDidChange()
         }
 
-        bluetooth.ensureConnected(autoDisconnect: false) { error in
+        bluetooth.ensureConnected { error in
             if let error = error {
                 self.log.error("Failed to connect to pump: \(error)")
                 completion(.failure(error: .connectionFailure(reason: error.errorDescription ?? "EMPTY")))
@@ -743,7 +748,7 @@ public extension MedtrumPumpManager {
                     delegate?.pumpManager(
                         self,
                         hasNewPumpEvents: events,
-                        lastReconciliation: Date.now,
+                        lastReconciliation: self.state.lastSync,
                         replacePendingEvents: true,
                         completion: { _ in }
                     )
@@ -795,7 +800,7 @@ public extension MedtrumPumpManager {
                 delegate?.pumpManager(
                     self,
                     hasNewPumpEvents: [NewPumpEvent.suspend(dose: DoseEntry.suspend())],
-                    lastReconciliation: Date.now,
+                    lastReconciliation: self.state.lastSync,
                     replacePendingEvents: true,
                     completion: { _ in }
                 )
@@ -880,13 +885,22 @@ public extension MedtrumPumpManager {
             notifyStateDidChange()
 
             pumpDelegate.notify { delegate in
-                delegate?.pumpManager(
+                guard let delegate = delegate else {
+                    return
+                }
+                
+                delegate.pumpManager(
+                    self,
+                    didReadReservoirValue: self.state.reservoir.rounded(toPlaces: 1),
+                    at: self.state.lastSync
+                ) { _ in }
+                
+                delegate.pumpManager(
                     self,
                     hasNewPumpEvents: [NewPumpEvent.bolus(dose: dose, units: doseEntry.deliveredUnits, date: dose.startDate)],
-                    lastReconciliation: Date.now,
-                    replacePendingEvents: true,
-                    completion: { _ in }
-                )
+                    lastReconciliation: self.state.lastSync,
+                    replacePendingEvents: true
+                ) { _ in }
             }
         }
     }
@@ -921,7 +935,7 @@ public extension MedtrumPumpManager {
                         date: dose.startDate
                     )
                 ],
-                lastReconciliation: Date(),
+                lastReconciliation: self.state.lastSync,
                 replacePendingEvents: true,
                 completion: { _ in }
             )

@@ -10,7 +10,7 @@ enum MedtrumWriteError: LocalizedError {
     case noManager
     case noWriteCharacteristic
 
-    public var errorDescription: String? {
+    public var errorDescription: String {
         switch self {
         case .timeout:
             return "Timeout hit"
