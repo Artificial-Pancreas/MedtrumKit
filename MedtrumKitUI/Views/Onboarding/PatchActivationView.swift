@@ -50,6 +50,7 @@ struct PatchActivationView: View {
             Spacer()
             if !viewModel.activationError.isEmpty {
                 Text(viewModel.activationError)
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(.red)
             }
 

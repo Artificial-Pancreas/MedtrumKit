@@ -8,6 +8,7 @@ struct PatchSettingsView: View {
     @State var isEditingAlarmSetting = false
     @State var isEditingExpirationTimer = false
     @State var isEditingNotificationAfterActivation = false
+    @State var isEditingLowReservoir = false
 
     var doDirtyCheck = true
 
@@ -32,6 +33,7 @@ struct PatchSettingsView: View {
                             self.isEditingAlarmSetting = false
                             self.isEditingExpirationTimer = false
                             self.isEditingNotificationAfterActivation = false
+                            self.isEditingLowReservoir = false
                         }
                     }
 
@@ -49,6 +51,7 @@ struct PatchSettingsView: View {
                             self.isEditingAlarmSetting = false
                             self.isEditingExpirationTimer = false
                             self.isEditingNotificationAfterActivation = false
+                            self.isEditingLowReservoir = false
                         }
                     }
 
@@ -88,6 +91,7 @@ struct PatchSettingsView: View {
                             self.isEditingAlarmSetting.toggle()
                             self.isEditingExpirationTimer = false
                             self.isEditingNotificationAfterActivation = false
+                            self.isEditingLowReservoir = false
                         }
                     }
 
@@ -115,6 +119,7 @@ struct PatchSettingsView: View {
                             self.isEditingAlarmSetting = false
                             self.isEditingExpirationTimer.toggle()
                             self.isEditingNotificationAfterActivation = false
+                            self.isEditingLowReservoir = false
                         }
                     }
 
@@ -136,7 +141,35 @@ struct PatchSettingsView: View {
                                 self.isEditingAlarmSetting = false
                                 self.isEditingExpirationTimer = false
                                 self.isEditingNotificationAfterActivation.toggle()
+                                self.isEditingLowReservoir = false
                             }
+                        }
+                    }
+
+                    sectionItem(
+                        title: LocalizedString(
+                            "Notification for low reservoir",
+                            comment: "Label for low reservoir notification"
+                        ),
+                        isEditing: isEditingLowReservoir,
+                        value: $viewModel.lowReservoirNotification,
+                        valueRange: Array(0 ... 10).map({ Double($0 * 5) }),
+                        formatter: { value in
+                            if value == 0 {
+                                return LocalizedString("Disabled", comment: "label for disabled")
+                            }
+
+                            return "\(String(format: "%.0f", value))\(unitText)"
+                        }
+                    )
+                    .onTapGesture {
+                        withAnimation {
+                            self.isEditingMaxHourly = false
+                            self.isEditingMaxDaily = false
+                            self.isEditingAlarmSetting = false
+                            self.isEditingExpirationTimer = false
+                            self.isEditingNotificationAfterActivation = false
+                            self.isEditingLowReservoir.toggle()
                         }
                     }
                 }
@@ -179,7 +212,7 @@ struct PatchSettingsView: View {
             Spacer()
             Text(formatter(value.wrappedValue))
         }
-        .foregroundColor(isEditing ? Color.blue : Color.primary)
+        .foregroundColor(isEditing ? Color.accentColor : Color.primary)
 
         if isEditing {
             ResizeablePicker(

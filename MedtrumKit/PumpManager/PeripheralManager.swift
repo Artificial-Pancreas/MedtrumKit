@@ -17,9 +17,8 @@ class PeripheralManager: NSObject {
     private var writeSequence: UInt8 = 0
     private var currentPacket: (any MedtrumBasePacketProtocol)?
 
-    private var writeQueue: [UInt8: CheckedContinuation<MedtrumWriteResult<Any>, Never>] = [:]
+    private var writeQueue: AsyncStream<MedtrumWriteResult<Any>>.Continuation?
     private var writeTimeoutTask: Task<Void, Never>?
-    private let writeSemaphore = DispatchSemaphore(value: 1)
 
     public init(
         _ peripheral: CBPeripheral,
@@ -38,48 +37,60 @@ class PeripheralManager: NSObject {
     }
 
     func writePacket(_ packet: any MedtrumBasePacketProtocol) async -> MedtrumWriteResult<Any> {
-        await withCheckedContinuation { continuation in
-            // Wait for the other write to complete...
-            self.writeSemaphore.wait()
+        guard writeQueue == nil else {
+            log.error("A command is already running")
+            return .failure(error: .alreadyRunning)
+        }
 
-            guard let writeCharacteristic = self.writeCharacteristic else {
-                log.error("No write characteristic found... Device might be disconnected...")
-                continuation.resume(returning: .failure(error: .noWriteCharacteristic))
-                return
-            }
+        guard let writeCharacteristic = self.writeCharacteristic else {
+            log.error("No write characteristic found... Device might be disconnected...")
+            return .failure(error: .noWriteCharacteristic)
+        }
 
-            writeQueue[packet.commandType] = continuation
-            currentPacket = packet
+        let stream = AsyncStream<MedtrumWriteResult<Any>> { continuation in
+            self.writeQueue = continuation
+            self.write(packet, for: writeCharacteristic)
+        }
 
-            let packages = packet.encode(sequenceNumber: self.writeSequence)
-            self.writeSequence = UInt8(self.writeSequence + 1)
-            if self.writeSequence >= 254 {
-                self.writeSequence = 0
-            }
+        // Now we wait for a response or we return timeout
+        for await value in stream {
+            return value
+        }
 
-            for package in packages {
-                self.log.debug("Writing data: \(package.hexEncodedString())")
-                self.connectedDevice.writeValue(package, for: writeCharacteristic, type: .withResponse)
-            }
+        return .failure(error: .noData)
+    }
 
-            self.writeTimeoutTask = Task {
-                do {
-                    try await Task.sleep(nanoseconds: UInt64(.seconds(30)) * 1_000_000_000)
-                    guard let queueItem = self.writeQueue[packet.commandType] else {
-                        // We did what we must!
-                        return
-                    }
+    private func write(_ packet: any MedtrumBasePacketProtocol, for characteristic: CBCharacteristic) {
+        currentPacket = packet
 
-                    // We hit a timeout...
-                    self.bluetoothManager.manager.cancelPeripheralConnection(self.connectedDevice)
-                    queueItem.resume(returning: .failure(error: .timeout))
+        let packages = packet.encode(sequenceNumber: writeSequence)
+        writeSequence = UInt8(writeSequence + 1)
+        if writeSequence >= 254 {
+            writeSequence = 0
+        }
 
-                    self.writeQueue[packet.commandType] = nil
-                    self.writeTimeoutTask = nil
-                    self.writeSemaphore.signal()
-                } catch {
-                    // Task was cancelled because message has been received
+        for package in packages {
+            log.debug("Writing data: \(package.hexEncodedString())")
+            connectedDevice.writeValue(package, for: characteristic, type: .withResponse)
+        }
+
+        writeTimeoutTask = Task {
+            do {
+                try await Task.sleep(nanoseconds: UInt64(.seconds(30)) * 1_000_000_000)
+                guard let stream = self.writeQueue else {
+                    // We did what we must!
+                    return
                 }
+
+                // By not sending a yield, we trigger a timeout error in writePacket
+                log.warning("Timeout has been reached...")
+
+                stream.yield(.failure(error: .timeout))
+                stream.finish()
+                self.writeQueue = nil
+                self.writeTimeoutTask = nil
+            } catch {
+                // Task was cancelled because message has been received
             }
         }
     }
@@ -212,7 +223,7 @@ extension PeripheralManager: CBPeripheralDelegate {
                 return
             }
 
-            self.log.info("Enable notify for: \(characteristic.uuid.uuidString)")
+            self.log.debug("Enable notify for: \(characteristic.uuid.uuidString)")
             peripheral.setNotifyValue(true, for: characteristic)
         }
 
@@ -267,10 +278,9 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
-        guard let writeCallback = writeQueue[packet.commandType] else {
+        guard let writeCallback = writeQueue else {
             // Timeout is hit...
             currentPacket = nil
-            writeSemaphore.signal()
             return
         }
 
@@ -279,19 +289,22 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
+        writeTimeoutTask?.cancel()
+        writeTimeoutTask = nil
+
         if packet.responseCode != 0 {
             // Examples for invalid codes:
             // 7 -> Invalid authorization: propably wrong session token used
             // 8 -> Invalid state: The patch is not in state 32 (active), which is required for that command
-            writeCallback.resume(returning: .failure(error: .invalidResponse(code: packet.responseCode)))
+            writeCallback.yield(.failure(error: .invalidResponse(code: packet.responseCode)))
         } else if packet.failed {
-            writeCallback.resume(returning: .failure(error: .invalidData))
+            writeCallback.yield(.failure(error: .invalidData))
         } else {
-            writeCallback.resume(returning: .success(data: packet.parseResponse()))
+            writeCallback.yield(.success(data: packet.parseResponse()))
         }
 
-        writeQueue[packet.commandType] = nil
+        writeCallback.finish()
+        writeQueue = nil
         currentPacket = nil
-        writeSemaphore.signal()
     }
 }

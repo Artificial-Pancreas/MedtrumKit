@@ -186,7 +186,9 @@ public extension MedtrumPumpManager {
     }
 
     func ensureCurrentPumpData(completion: ((Date?) -> Void)?) {
-        guard Date.now.timeIntervalSince(state.lastSync) > .minutes(4) else {
+        guard Date.now.timeIntervalSince(state.lastSync) > .minutes(4) ||
+            Date.now.timeIntervalSince(state.patchActivatedAt) < .minutes(4)
+        else {
             log.warning("Skipping status update -> data is fresh: \(Date.now.timeIntervalSince(state.lastSync)) sec")
             completion?(state.lastSync)
             return
@@ -255,7 +257,7 @@ public extension MedtrumPumpManager {
                     state: self.state,
                     pumpManager: self
                 )
-                
+
                 self.pumpDelegate.notify { delegate in
                     delegate?.pumpManager(
                         self,
@@ -289,14 +291,14 @@ public extension MedtrumPumpManager {
         activationType: LoopKit.BolusActivationType,
         completion: @escaping (LoopKit.PumpManagerError?) -> Void
     ) {
-        let duration = estimatedDuration(toBolus: units)
-        log.info("Enact bolus - \(units)U, \(duration)sec")
-
         guard let insulinType = state.insulinType else {
             log.error("Insulin type is nil...")
             completion(.configuration(.none))
             return
         }
+
+        let duration = estimatedDuration(toBolus: units)
+        log.info("Enact bolus - \(units)U, \(duration)sec")
 
         bluetooth.ensureConnected { error in
             if let error = error {
@@ -341,9 +343,8 @@ public extension MedtrumPumpManager {
                     self,
                     hasNewPumpEvents: [event],
                     lastReconciliation: self.state.lastSync,
-                    replacePendingEvents: false,
-                    completion: { _ in }
-                )
+                    replacePendingEvents: false
+                ) { _ in }
             }
 
             self.doseEntry = doseEntry
@@ -651,6 +652,8 @@ public extension MedtrumPumpManager {
     }
 
     func primePatch(_ completion: @escaping (MedtrumPrimePatchResult) -> Void) {
+        log.info("Start priming patch...")
+
         if state.pumpSN.isEmpty {
             // Need to scan for pump base first
             log.warning("No pump base known yet...")
@@ -659,6 +662,8 @@ public extension MedtrumPumpManager {
         }
 
         if state.sessionToken.isEmpty {
+            log.debug("Refreshing session token...")
+
             // Patch has been disabled and thus a new session token is needed
             state.sessionToken = Crypto.genSessionToken()
             notifyStateDidChange()
@@ -705,6 +710,8 @@ public extension MedtrumPumpManager {
                 completion(.success)
                 return
             }
+
+            await StateSyncer.syncTime(pumpManager: self)
 
             let packet = ActivatePacket(
                 expirationTimer: self.state.expirationTimer,
@@ -888,13 +895,13 @@ public extension MedtrumPumpManager {
                 guard let delegate = delegate else {
                     return
                 }
-                
+
                 delegate.pumpManager(
                     self,
                     didReadReservoirValue: self.state.reservoir.rounded(toPlaces: 1),
                     at: self.state.lastSync
                 ) { _ in }
-                
+
                 delegate.pumpManager(
                     self,
                     hasNewPumpEvents: [NewPumpEvent.bolus(dose: dose, units: doseEntry.deliveredUnits, date: dose.startDate)],
@@ -937,8 +944,7 @@ public extension MedtrumPumpManager {
                 ],
                 lastReconciliation: self.state.lastSync,
                 replacePendingEvents: true,
-                completion: { _ in }
-            )
+            ) { _ in }
         }
     }
 }

@@ -13,7 +13,7 @@ struct MedtrumKitSettings: View {
     @Environment(\.appName) private var appName
 
     var supportedInsulinTypes: [InsulinType]
-    
+
     var syncPumpTime: ActionSheet {
         ActionSheet(
             title: Text(LocalizedString("Time Change Detected", comment: "Title for pod sync time action sheet.")),
@@ -44,7 +44,7 @@ struct MedtrumKitSettings: View {
                     reservoirStatus
                 }
                 .padding(.bottom, 5)
-                
+
                 if viewModel.showPumpTimeSyncWarning {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(LocalizedString("Time Change Detected", comment: "title for time change detected notice"))
@@ -161,6 +161,15 @@ struct MedtrumKitSettings: View {
                             .foregroundColor(.secondary)
                     }
                 }
+
+                HStack {
+                    Text(LocalizedString("Status", comment: "Text for status")).foregroundColor(Color.primary)
+                    Spacer()
+                    HStack(spacing: 10) {
+                        connectionStatusText
+                        connectionStatusIcon
+                    }
+                }
             }
 
             Section(header: SectionHeader(label: LocalizedString("Configuration", comment: "Configuration section"))) {
@@ -260,7 +269,7 @@ struct MedtrumKitSettings: View {
                     }
                 }
             }
-            
+
             Section(header: SectionHeader(label: LocalizedString(
                 "Patch time",
                 comment: "The title for patch time"
@@ -287,8 +296,16 @@ struct MedtrumKitSettings: View {
                 Button(action: {
                     showingTimeSyncConfirmation = true
                 }) {
-                    Text(LocalizedString("Manually sync Pump time", comment: "Label for syncing the time on the pump"))
-                        .foregroundColor(.accentColor)
+                    HStack {
+                        Text(LocalizedString("Manually sync Pump time", comment: "Label for syncing the time on the pump"))
+                            .foregroundColor(.accentColor)
+
+                        Spacer()
+
+                        if viewModel.isUpdatingPumpState {
+                            ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                        }
+                    }
                 }
                 .disabled(viewModel.isUpdatingPumpState)
                 .actionSheet(isPresented: $showingTimeSyncConfirmation) {

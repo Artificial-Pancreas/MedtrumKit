@@ -9,6 +9,14 @@ enum StateSyncer {
         StateSyncer.updatePumpState(syncResponse: syncResponse, state: state)
 
         if let reservoir = syncResponse.reservoir {
+            if let lowReservoirWarning = state.lowReservoirWarning,
+               state.reservoir > lowReservoirWarning,
+               reservoir < lowReservoirWarning
+            {
+                // Send low reservoir warning notification to user
+                NotificationManager.reservoirLowNotification(reservoir)
+            }
+
             state.reservoir = reservoir
             if state.initialReservoir == nil {
                 state.initialReservoir = state.reservoir
@@ -72,47 +80,48 @@ enum StateSyncer {
 
         pumpManager.notifyStateDidChange()
     }
-    
+
     public static func timeSync(pumpManager: MedtrumPumpManager) async {
         let logger = MedtrumLogger(category: "TimeSync")
         let timeData = await pumpManager.bluetooth.write(GetTimePacket())
-        
+
         switch timeData {
-        case .failure(error: let error):
+        case let .failure(error: error):
             logger.warning("Failed to get current Patch time: \(error.errorDescription)")
             return
-        case .success(data: let data):
+        case let .success(data: data):
             guard let timeResponse = data as? GetTimePacketResponse else {
                 logger.error("Failed to get time: invalid response")
                 return
             }
-            
+
             pumpManager.state.pumpTime = timeResponse.time
             pumpManager.state.pumpTimeSyncedAt = Date.now
+            pumpManager.notifyStateDidChange()
         }
     }
-    
+
     public static func syncTime(pumpManager: MedtrumPumpManager) async {
         let logger = MedtrumLogger(category: "TimeSync")
-        
+
         let timeData = await pumpManager.bluetooth.write(SetTimePacket(date: Date.now))
         switch timeData {
-        case .failure(error: let error):
+        case let .failure(error: error):
             logger.error("Failed to sync time: \(error.errorDescription)")
             return
         default:
             break
         }
-        
+
         let timeZoneData = await pumpManager.bluetooth.write(
             SetTimeZonePacket(date: Date.now, timeZone: TimeZone.current)
         )
         switch timeZoneData {
-        case .failure(error: let error):
+        case let .failure(error: error):
             logger.error("Failed to sync timezone: \(error.errorDescription)")
             return
         default:
-            break
+            await StateSyncer.timeSync(pumpManager: pumpManager)
         }
     }
 

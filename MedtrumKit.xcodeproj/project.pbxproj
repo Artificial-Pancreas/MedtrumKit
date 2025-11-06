@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0406E02EB7872E0013E362 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0406DF2EB7872C0013E362 /* Binding.swift */; };
 		3E0489052D74B82000E0B75A /* BasalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0489042D74B81D00E0B75A /* BasalType.swift */; };
 		3E1390102D6E534C00A146C1 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13900F2D6E534600A146C1 /* BluetoothManager.swift */; };
 		3E1390122D6E59B500A146C1 /* MedtrumPumpState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1390112D6E59B000A146C1 /* MedtrumPumpState.swift */; };
@@ -160,6 +161,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E0406DF2EB7872C0013E362 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3E0489042D74B81D00E0B75A /* BasalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalType.swift; sourceTree = "<group>"; };
 		3E13900F2D6E534600A146C1 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		3E1390112D6E59B000A146C1 /* MedtrumPumpState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedtrumPumpState.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 		3E767CE32D67AF2B004B1971 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3E0406DF2EB7872C0013E362 /* Binding.swift */,
 				3E15A47D2DA2B723007F7D3C /* NibLoadable.swift */,
 				3E15A47B2DA2B718007F7D3C /* IdentifiableClass.swift */,
 				3E9D8B112D88A8F100008AF2 /* NewPumpEvent.swift */,
@@ -866,6 +869,7 @@
 				3EA87D672D7A3F8C007DD959 /* PollPatchPacket.swift in Sources */,
 				3E9D8B0E2D88A59200008AF2 /* DoseEntry.swift in Sources */,
 				3EF31CC62DF5DC5500EA6300 /* StateSyncer.swift in Sources */,
+				3E0406E02EB7872E0013E362 /* Binding.swift in Sources */,
 				3E24AECA2DA17B7F00C7733C /* PatchActivationView.swift in Sources */,
 				3E15A47E2DA2B723007F7D3C /* NibLoadable.swift in Sources */,
 				3ED27C072DB67ED5001B7C95 /* MedtrumUpdatePatchResult.swift in Sources */,

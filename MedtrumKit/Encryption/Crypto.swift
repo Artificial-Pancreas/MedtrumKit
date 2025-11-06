@@ -1,5 +1,6 @@
 enum Crypto {
     private static let MEDTRUM_CIPHER: Int64 = 1_344_751_489
+    private static let logger = MedtrumLogger(category: "MedtrumCrypto")
 
     static func genKey(_ pumpSN: Data) -> Data {
         let sn = pumpSN.toInt64()
@@ -13,8 +14,17 @@ enum Crypto {
         let status = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
 
         guard status == 0 else {
-            return Data()
+            logger
+                .warning("Failed to generate security token - SecRandomCopyBytes error: \(status) -> Using less secure fallback")
+
+            return Data([
+                UInt8.random(in: 0 ..< 255),
+                UInt8.random(in: 0 ..< 255),
+                UInt8.random(in: 0 ..< 255),
+                UInt8.random(in: 0 ..< 255)
+            ])
         }
+
         return Data(bytes)
     }
 

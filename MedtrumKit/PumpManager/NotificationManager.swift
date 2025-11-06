@@ -85,6 +85,20 @@ class NotificationManager {
         }
     }
 
+    public static func reservoirLowNotification(_ reservoir: Double) {
+        ensureCanSendNotification {
+            let content = UNMutableNotificationContent()
+            content.title = String(
+                format:
+                LocalizedString("Reservoir low (%iU)", comment: "Title low reservoir notification"),
+                Int(reservoir)
+            )
+            content.body = LocalizedString("Your patch is running out of insulin!", comment: "Body low reservoir notification")
+
+            addRequest(identifier: .reservoirEmptyNotification, content: content, triggerAfter: nil, deleteOld: true)
+        }
+    }
+
     private static func addRequest(
         identifier: Identifiers,
         content: UNMutableNotificationContent,
