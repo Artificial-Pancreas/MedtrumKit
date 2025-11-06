@@ -30,6 +30,7 @@ public class MedtrumPumpState: RawRepresentable {
         isOnboarded = rawValue["isOnboarded"] as? Bool ?? false
         lastSync = rawValue["lastSync"] as? Date ?? Date.distantPast
         pumpSN = rawValue["pumpSN"] as? Data ?? Data()
+        lowReservoirWarning = rawValue["lowReservoirWarning"] as? Double
         sessionToken = rawValue["sessionToken"] as? Data ?? Data()
         patchId = rawValue["patchId"] as? Data ?? Data()
         patchActivatedAt = rawValue["patchActivatedAt"] as? Date ?? Date.distantPast
@@ -95,6 +96,7 @@ public class MedtrumPumpState: RawRepresentable {
         isOnboarded = false
         lastSync = Date.distantPast
         pumpSN = Data()
+        lowReservoirWarning = nil
         sessionToken = Data()
         patchId = Data()
         patchActivatedAt = Date.distantPast
@@ -132,6 +134,7 @@ public class MedtrumPumpState: RawRepresentable {
         value["isOnboarded"] = isOnboarded
         value["lastSync"] = lastSync
         value["insulinType"] = insulinType?.rawValue
+        value["lowReservoirWarning"] = lowReservoirWarning
         value["pumpSN"] = pumpSN
         value["sessionToken"] = sessionToken
         value["patchId"] = patchId
@@ -170,6 +173,7 @@ public class MedtrumPumpState: RawRepresentable {
     public var insulinType: InsulinType?
     public var lastSync: Date
     public var pumpSN: Data
+    public var lowReservoirWarning: Double?
 
     // Patch specific data
     public var sessionToken: Data
@@ -270,10 +274,10 @@ public class MedtrumPumpState: RawRepresentable {
             return "TouchCare Nano 200U"
         }
     }
-    
+
     func shouldShowTimeWarning() -> Bool {
         // Allow a 15 sec diff in time
-        return abs(pumpTimeSyncedAt.timeIntervalSince1970 - pumpTime.timeIntervalSince1970) > 15
+        abs(pumpTimeSyncedAt.timeIntervalSince1970 - pumpTime.timeIntervalSince1970) > 15
     }
 
     public var debugDescription: String {

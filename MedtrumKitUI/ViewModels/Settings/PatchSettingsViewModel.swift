@@ -21,6 +21,10 @@ class PatchSettingsViewModel: ObservableObject {
         didSet { checkDirtyState() }
     }
 
+    @Published var lowReservoirNotification: Double = 0 {
+        didSet { checkDirtyState() }
+    }
+
     @Published var isDirty: Bool = false
     @Published var is300u: Bool = false
     @Published var isUpdating = false
@@ -64,6 +68,13 @@ class PatchSettingsViewModel: ObservableObject {
         pumpManager.state.alarmSetting = AlarmSettings(rawValue: UInt8(alarmSettings)) ?? .None
         pumpManager.state.expirationTimer = UInt8(expirationTimer)
         pumpManager.state.notificationAfterActivation = .hours(notificationAfterActivation)
+
+        if lowReservoirNotification == 0 {
+            pumpManager.state.lowReservoirWarning = nil
+        } else {
+            pumpManager.state.lowReservoirWarning = lowReservoirNotification
+        }
+
         pumpManager.notifyStateDidChange()
 
         NotificationManager.activatePatchExpiredNotification(after: .hours(notificationAfterActivation))
@@ -100,7 +111,8 @@ class PatchSettingsViewModel: ObservableObject {
                     pumpManager.state.maxHourlyInsulin != self.maxHourlyInsulin ||
                     pumpManager.state.alarmSetting.rawValue != UInt8(self.alarmSettings) ||
                     pumpManager.state.expirationTimer != UInt8(self.expirationTimer) ||
-                    pumpManager.state.notificationAfterActivation.hours != self.notificationAfterActivation
+                    pumpManager.state.notificationAfterActivation.hours != self.notificationAfterActivation ||
+                    (pumpManager.state.lowReservoirWarning ?? 0) != self.lowReservoirNotification
             )
         }
     }
@@ -126,6 +138,7 @@ extension PatchSettingsViewModel: PumpManagerStatusObserver {
             self.alarmSettings = Double(state.alarmSetting.rawValue)
             self.expirationTimer = Double(state.expirationTimer)
             self.notificationAfterActivation = state.notificationAfterActivation.hours
+            self.lowReservoirNotification = state.lowReservoirWarning ?? 0
 
             if state.pumpSN.isEmpty {
                 // If no serial number is available, we should show the options that are supported by both 200u & 300u
