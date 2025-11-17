@@ -195,7 +195,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "%llu"
           }
         },
@@ -325,7 +325,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "1."
           }
         },
@@ -455,7 +455,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "2."
           }
         },
@@ -585,7 +585,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "3."
           }
         },
@@ -715,7 +715,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "4."
           }
         },
@@ -845,7 +845,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "5."
           }
         },
@@ -975,7 +975,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "6."
           }
         },
@@ -1105,7 +1105,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "7."
           }
         },
@@ -1235,7 +1235,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "8."
           }
         },
@@ -1365,7 +1365,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "1234ABCD"
           }
         },
@@ -11025,8 +11025,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch time"
+            "state" : "translated",
+            "value" : "Patch tijd"
           }
         },
         "pl" : {
@@ -12819,8 +12819,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir laag (%iU)"
           }
         },
         "pl" : {
@@ -12849,14 +12849,14 @@
         },
         "sk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Nízky stav zásobníka (%iU)"
           }
         },
         "sv" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoar låg (%iU)"
           }
         },
         "tr" : {
@@ -12873,8 +12873,8 @@
         },
         "vi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Insulin sắp hết (%iU)"
           }
         },
         "zh-Hans" : {
@@ -17235,8 +17235,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "Je patch heeft bijna geen insuline meer!"
           }
         },
         "pl" : {
@@ -17265,14 +17265,14 @@
         },
         "sk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "Vašej náplasti dochádza inzulín!"
           }
         },
         "sv" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "Din patch-pump håller på att ta slut på insulin!"
           }
         },
         "tr" : {
@@ -17289,8 +17289,8 @@
         },
         "vi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "Patch của bạn sắp cạn insulin!"
           }
         },
         "zh-Hans" : {
