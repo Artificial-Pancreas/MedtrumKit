@@ -12867,8 +12867,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Низький рівень у резервуарі (%iU)"
           }
         },
         "vi" : {
@@ -17283,8 +17283,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "У вашому Патчі закінчується інсулін!"
           }
         },
         "vi" : {
