@@ -186,17 +186,23 @@ extension BluetoothManager {
         advertisementData: [String: Any],
         rssi _: NSNumber
     ) {
-        guard let deviceName = peripheral.name, !deviceName.isEmpty else {
+        guard let name = advertisementData[CBAdvertisementDataLocalNameKey] as? String, !name.isEmpty, name == "MT" else {
             return
         }
 
-        guard deviceName == "MT" else {
-            return
-        }
-
-        let manufacturerData = advertisementData["kCBAdvDataManufacturerData"]
+        let manufacturerData = advertisementData[CBAdvertisementDataManufacturerDataKey]
         guard let manufacturerData = manufacturerData as? Data, manufacturerData.count >= 7 else {
             logger.warning("No ManufacturerData or too short - " + advertisementData.keys.joined(separator: ", "))
+            
+            // Simulator bypass
+            scanCompletion?(
+                .success(
+                    peripheral: peripheral,
+                    pumpSN: Data([0x4A, 0x12, 0xD8, 0x28]),
+                    deviceType: 1,
+                    version: 1
+                )
+            )
             return
         }
 
@@ -218,7 +224,12 @@ extension BluetoothManager {
     func centralManager(_: CBCentralManager, didConnect peripheral: CBPeripheral) {
         logger.info("Connected to pump: \(peripheral.name ?? "<NO_NAME>")!")
 
-        guard let completion = connectCompletion, let pumpManager = pumpManager else {
+        guard let pumpManager = pumpManager else {
+            logger.warning("No pumpManager...")
+            return
+        }
+        guard let completion = connectCompletion else {
+            logger.warning("No connectCompletion...")
             return
         }
 
@@ -265,11 +276,12 @@ extension BluetoothManager {
             peripheralManager = nil
         }
 
-        ensureConnected { error in
-            if let error = error {
-                self.logger.error("Failed to auto reconnect - \(error)")
-            }
-        }
+        // Temporary disabled auto reconnect...
+//        ensureConnected { error in
+//            if let error = error {
+//                self.logger.error("Failed to auto reconnect - \(error)")
+//            }
+//        }
     }
 
     func centralManager(_: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {

@@ -12,6 +12,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     private let processQueue = DispatchQueue(label: "com.nightscout.medtrumkit.settingsViewModel")
 
     @Published var pumpBaseSN: String = ""
+    @Published var swVersion: String = ""
     @Published var pumpName: String = ""
     @Published var model: String = ""
     @Published var patchId: UInt64 = 0
@@ -343,6 +344,7 @@ extension MedtrumKitSettingsViewModel {
 
         pumpBaseSN = state.pumpSN.hexEncodedString().uppercased()
         pumpName = state.pumpName
+        swVersion = state.swVersion
         patchId = state.patchId.toUInt64()
         showPumpTimeSyncWarning = state.shouldShowTimeWarning()
         patchState = state.pumpState
