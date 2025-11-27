@@ -36,6 +36,18 @@ class PeripheralManager: NSObject {
         peripheral.delegate = self
     }
 
+    deinit {
+        if let queue = writeQueue {
+            queue.finish()
+            writeQueue = nil
+        }
+
+        if let timeout = writeTimeoutTask {
+            timeout.cancel()
+            writeTimeoutTask = nil
+        }
+    }
+
     func writePacket(_ packet: any MedtrumBasePacketProtocol) async -> MedtrumWriteResult<Any> {
         guard writeQueue == nil else {
             log.error("A command is already running")

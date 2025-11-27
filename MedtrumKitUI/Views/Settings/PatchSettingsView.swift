@@ -173,7 +173,25 @@ struct PatchSettingsView: View {
                         }
                     }
                 }
+
+                if viewModel.expirationTimer == 0 {
+                    Section {
+                        VStack {
+                            Text(LocalizedString("Use at your own risk!", comment: "warning title"))
+                                .font(.headline)
+                                .bold()
+                                .padding(.bottom, 10)
+
+                            Text(LocalizedString(
+                                "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime.",
+                                comment: "warning body"
+                            ))
+                        }
+                    }
+                    .listRowBackground(Color.orange)
+                }
             }
+
             Spacer()
             if !viewModel.errorMessage.isEmpty {
                 Text(viewModel.errorMessage)

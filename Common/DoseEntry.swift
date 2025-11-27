@@ -10,7 +10,7 @@ public extension DoseEntry {
         insulinType: InsulinType?,
         startDate: Date = Date.now
     ) -> DoseEntry {
-        return DoseEntry(
+        DoseEntry(
             type: .bolus,
             startDate: startDate,
             endDate: Date.now.addingTimeInterval(duration),
