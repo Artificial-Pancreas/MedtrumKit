@@ -87,6 +87,7 @@ final class SynchronizePacketTests: XCTestCase {
         packet.decode(response2)
         XCTAssertFalse(packet.failed)
         XCTAssertTrue(packet.isComplete)
+        XCTAssertTrue(packet.hasEnoughData)
 
         let actual = packet.parseResponse()
         XCTAssertEqual(actual.state, .filled)

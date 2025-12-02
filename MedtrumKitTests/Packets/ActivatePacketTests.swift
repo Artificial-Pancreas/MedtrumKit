@@ -24,7 +24,7 @@ final class ActivatePacketTests: XCTestCase {
     }
 
     func testResponseGivenPacketWhenValuesSetThenReturnCorrectValues() throws {
-        let response = Data([26, 18, 19, 1, 0, 0, 41, 0, 0, 0, 152, 91, 28, 17, 1, 30, 0, 1, 0, 41, 0, 224, 238, 88, 17, 184])
+        let response = Data([26, 18, 19, 1, 0, 0, 41, 0, 0, 0, 152, 91, 28, 17, 1, 30, 0, 1, 0, 41, 0, 224, 238, 88, 17, 184, 0])
         var packet = ActivatePacket(
             expirationTimer: 1,
             alarmSetting: .BeepOnly,
@@ -36,6 +36,8 @@ final class ActivatePacketTests: XCTestCase {
 
         packet.decode(response)
         XCTAssertFalse(packet.failed)
+        XCTAssertTrue(packet.isComplete)
+        XCTAssertTrue(packet.hasEnoughData)
 
         let actual = packet.parseResponse()
         XCTAssertEqual(actual.patchId, Data([41, 0, 0, 0]))

@@ -37,10 +37,9 @@ class PatchActivationViewModel: ObservableObject {
             activationError = ""
             pumpManager.activatePatch { result in
                 DispatchQueue.main.async {
-                    self.isActivating = false
-
                     if case let .failure(error) = result {
                         self.activationError = error.localizedDescription
+                        self.isActivating = false
                         return
                     }
 

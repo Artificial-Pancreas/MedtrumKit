@@ -478,8 +478,18 @@ public extension MedtrumPumpManager {
             if duration < .ulpOfOne {
                 // Need to cancel temp basal, but is already cancelled
                 // Only need to report back to algorithm
-                let dose = DoseEntry.basal(rate: self.state.currentBaseBasalRate, insulinType: self.state.insulinType)
-                var events = [NewPumpEvent.basal(dose: dose)]
+                let startDate = Date.now
+                var events = [
+                    NewPumpEvent.basal(
+                        dose: DoseEntry.basal(
+                            rate: self.state.currentBaseBasalRate,
+                            insulinType: self.state.insulinType,
+                            startDate: startDate
+                        ),
+                        date: startDate
+                    )
+                ]
+
                 if let tempBasalEvent = self.getTempBasalEvent(endDate: Date.now) {
                     events.append(tempBasalEvent)
                 }
@@ -515,14 +525,18 @@ public extension MedtrumPumpManager {
 
             self.log.info("Set temp basal!")
 
-            let dose = DoseEntry
-                .tempBasal(absoluteUnit: unitsPerHour, duration: duration, insulinType: self.state.insulinType)
-            let events = [
-                NewPumpEvent.tempBasal(dose: dose)
-            ]
+            let startDate = Date.now
+            let dose = NewPumpEvent.tempBasal(
+                dose: DoseEntry.tempBasal(
+                    absoluteUnit: unitsPerHour,
+                    duration: duration,
+                    insulinType: self.state.insulinType
+                ),
+                date: startDate
+            )
 
             self.state.basalState = .tempBasal
-            self.state.basalStateSince = Date.now
+            self.state.basalStateSince = startDate
             self.state.tempBasalUnits = unitsPerHour
             self.state.tempBasalDuration = duration
             self.state.lastSync = Date.now
@@ -531,7 +545,7 @@ public extension MedtrumPumpManager {
             self.pumpDelegate.notify { delegate in
                 delegate?.pumpManager(
                     self,
-                    hasNewPumpEvents: events,
+                    hasNewPumpEvents: [dose],
                     lastReconciliation: self.state.lastSync,
                     replacePendingEvents: true,
                 ) { error in
@@ -738,7 +752,7 @@ public extension MedtrumPumpManager {
             let primeResult = await self.bluetooth.write(packet)
             if case let .failure(error) = primeResult {
                 self.log.error("Failed to start priming pump: \(error)")
-                completion(.failure(error: .unknownError(reason: error.errorDescription ?? "EMPTY")))
+                completion(.failure(error: .unknownError(reason: error)))
                 return
             }
 
@@ -1069,14 +1083,14 @@ public extension MedtrumPumpManager {
         }
 
         return NewPumpEvent.tempBasal(
-            dose:
-            DoseEntry.tempBasal(
+            dose: DoseEntry.tempBasal(
                 absoluteUnit: unitsPerHour,
                 duration: duration,
                 insulinType: state.insulinType,
                 startDate: state.basalStateSince,
                 endDate: endDate
-            )
+            ),
+            date: state.basalStateSince
         )
     }
 }

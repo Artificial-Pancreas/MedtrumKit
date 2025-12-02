@@ -37,7 +37,6 @@
 		3E4566652D837A4900FE1E0C /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4566642D837A4800FE1E0C /* Bundle.swift */; };
 		3E5060142D70E5CB00376609 /* Crc8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5060132D70E5C900376609 /* Crc8.swift */; };
 		3E5060182D70EAF800376609 /* MedtrumWriteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5060172D70EAF400376609 /* MedtrumWriteResult.swift */; };
-		3E50601A2D70F2F500376609 /* GetDeviceTypePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5060192D70F2F300376609 /* GetDeviceTypePacket.swift */; };
 		3E50601C2D70F69900376609 /* GetTimePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50601B2D70F69800376609 /* GetTimePacket.swift */; };
 		3E50601E2D70F7A900376609 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50601D2D70F7A700376609 /* Date.swift */; };
 		3E5060202D70F97500376609 /* SetTimePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50601F2D70F97500376609 /* SetTimePacket.swift */; };
@@ -81,15 +80,8 @@
 		3EA87D512D7A29A4007DD959 /* CancelBolusPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D502D7A29A1007DD959 /* CancelBolusPacketTests.swift */; };
 		3EA87D532D7A2A31007DD959 /* CancelTempBasalPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D522D7A2A2B007DD959 /* CancelTempBasalPacket.swift */; };
 		3EA87D552D7A33AD007DD959 /* CancelTempBasalPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D542D7A33A6007DD959 /* CancelTempBasalPacketTests.swift */; };
-		3EA87D572D7A3573007DD959 /* ClearPumpAlarmPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D562D7A356E007DD959 /* ClearPumpAlarmPacket.swift */; };
 		3EA87D592D7A35D1007DD959 /* ClearAlarmType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D582D7A35C7007DD959 /* ClearAlarmType.swift */; };
-		3EA87D5B2D7A3632007DD959 /* ClearPumpAlarmPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D5A2D7A3627007DD959 /* ClearPumpAlarmPacketTests.swift */; };
-		3EA87D5F2D7A36CB007DD959 /* GetDeviceTypePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D5E2D7A36C4007DD959 /* GetDeviceTypePacketTests.swift */; };
-		3EA87D612D7A3813007DD959 /* GetRecordPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D602D7A380D007DD959 /* GetRecordPacket.swift */; };
-		3EA87D632D7A3B9B007DD959 /* GetRecordPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D622D7A3B95007DD959 /* GetRecordPacketTests.swift */; };
 		3EA87D652D7A3DCE007DD959 /* GetTimePacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D642D7A3DCA007DD959 /* GetTimePacketTest.swift */; };
-		3EA87D672D7A3F8C007DD959 /* PollPatchPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D662D7A3F88007DD959 /* PollPatchPacket.swift */; };
-		3EA87D692D7A3FC2007DD959 /* PollPatchPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D682D7A3FBE007DD959 /* PollPatchPacketTests.swift */; };
 		3EA87D6B2D7A402C007DD959 /* PrimePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D6A2D7A4027007DD959 /* PrimePacket.swift */; };
 		3EA87D6D2D7A404C007DD959 /* PrimePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87D6C2D7A4046007DD959 /* PrimePacketTests.swift */; };
 		3EB1A3B12D7784410031C044 /* BasalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1A3B02D77843E0031C044 /* BasalSchedule.swift */; };
@@ -112,14 +104,10 @@
 		3EE340AE2E4D1A880040E346 /* MedtrumKitPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D3A8ED2C14F0EF002EE003 /* MedtrumKitPlugin.swift */; };
 		3EE340B42E4D1C6F0040E346 /* MedtrumKitPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EE340B32E4D1C6F0040E346 /* MedtrumKitPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EE340B62E4D1E740040E346 /* MedtrumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EE340B52E4D1E740040E346 /* MedtrumKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3EEA51F72D7DF061000C9E1E /* ReadBolusStatePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA51F62D7DF061000C9E1E /* ReadBolusStatePacket.swift */; };
-		3EEA51F92D7E13E6000C9E1E /* ReadBolusStatePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA51F82D7E13E6000C9E1E /* ReadBolusStatePacketTests.swift */; };
 		3EEA51FB2D7E1BF8000C9E1E /* ResumePumpPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA51FA2D7E1BF2000C9E1E /* ResumePumpPacket.swift */; };
 		3EEA51FD2D7E1C27000C9E1E /* ResumePumpPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA51FC2D7E1C23000C9E1E /* ResumePumpPacketTests.swift */; };
 		3EEA51FF2D7E1D12000C9E1E /* SetBasalProfilePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA51FE2D7E1D0D000C9E1E /* SetBasalProfilePacket.swift */; };
 		3EEA52012D7E1E10000C9E1E /* SetBasalProfilePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA52002D7E1E0D000C9E1E /* SetBasalProfilePacketTests.swift */; };
-		3EEA52032D7E1F9F000C9E1E /* SetBolusMotorPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA52022D7E1F9D000C9E1E /* SetBolusMotorPacket.swift */; };
-		3EEA52052D7E21DB000C9E1E /* SetBolusMotorPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA52042D7E21D9000C9E1E /* SetBolusMotorPacketTests.swift */; };
 		3EEA52072D7E2265000C9E1E /* SetBolusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA52062D7E2264000C9E1E /* SetBolusPacket.swift */; };
 		3EF31CC62DF5DC5500EA6300 /* StateSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF31CC52DF5DC5200EA6300 /* StateSyncer.swift */; };
 		3EFBC4F42DFB527400E0E295 /* DeleteDriverActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBC4F32DFB526900E0E295 /* DeleteDriverActionSheet.swift */; };
@@ -191,7 +179,6 @@
 		3E4566642D837A4800FE1E0C /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		3E5060132D70E5C900376609 /* Crc8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crc8.swift; sourceTree = "<group>"; };
 		3E5060172D70EAF400376609 /* MedtrumWriteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedtrumWriteResult.swift; sourceTree = "<group>"; };
-		3E5060192D70F2F300376609 /* GetDeviceTypePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeviceTypePacket.swift; sourceTree = "<group>"; };
 		3E50601B2D70F69800376609 /* GetTimePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimePacket.swift; sourceTree = "<group>"; };
 		3E50601D2D70F7A700376609 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3E50601F2D70F97500376609 /* SetTimePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimePacket.swift; sourceTree = "<group>"; };
@@ -235,15 +222,8 @@
 		3EA87D502D7A29A1007DD959 /* CancelBolusPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBolusPacketTests.swift; sourceTree = "<group>"; };
 		3EA87D522D7A2A2B007DD959 /* CancelTempBasalPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTempBasalPacket.swift; sourceTree = "<group>"; };
 		3EA87D542D7A33A6007DD959 /* CancelTempBasalPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTempBasalPacketTests.swift; sourceTree = "<group>"; };
-		3EA87D562D7A356E007DD959 /* ClearPumpAlarmPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearPumpAlarmPacket.swift; sourceTree = "<group>"; };
 		3EA87D582D7A35C7007DD959 /* ClearAlarmType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearAlarmType.swift; sourceTree = "<group>"; };
-		3EA87D5A2D7A3627007DD959 /* ClearPumpAlarmPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearPumpAlarmPacketTests.swift; sourceTree = "<group>"; };
-		3EA87D5E2D7A36C4007DD959 /* GetDeviceTypePacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeviceTypePacketTests.swift; sourceTree = "<group>"; };
-		3EA87D602D7A380D007DD959 /* GetRecordPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecordPacket.swift; sourceTree = "<group>"; };
-		3EA87D622D7A3B95007DD959 /* GetRecordPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecordPacketTests.swift; sourceTree = "<group>"; };
 		3EA87D642D7A3DCA007DD959 /* GetTimePacketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimePacketTest.swift; sourceTree = "<group>"; };
-		3EA87D662D7A3F88007DD959 /* PollPatchPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPatchPacket.swift; sourceTree = "<group>"; };
-		3EA87D682D7A3FBE007DD959 /* PollPatchPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPatchPacketTests.swift; sourceTree = "<group>"; };
 		3EA87D6A2D7A4027007DD959 /* PrimePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimePacket.swift; sourceTree = "<group>"; };
 		3EA87D6C2D7A4046007DD959 /* PrimePacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimePacketTests.swift; sourceTree = "<group>"; };
 		3EB1A3B02D77843E0031C044 /* BasalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalSchedule.swift; sourceTree = "<group>"; };
@@ -266,14 +246,10 @@
 		3EE340B12E4D1C510040E346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EE340B32E4D1C6F0040E346 /* MedtrumKitPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedtrumKitPlugin.h; sourceTree = "<group>"; };
 		3EE340B52E4D1E740040E346 /* MedtrumKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedtrumKit.h; sourceTree = "<group>"; };
-		3EEA51F62D7DF061000C9E1E /* ReadBolusStatePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBolusStatePacket.swift; sourceTree = "<group>"; };
-		3EEA51F82D7E13E6000C9E1E /* ReadBolusStatePacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBolusStatePacketTests.swift; sourceTree = "<group>"; };
 		3EEA51FA2D7E1BF2000C9E1E /* ResumePumpPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePumpPacket.swift; sourceTree = "<group>"; };
 		3EEA51FC2D7E1C23000C9E1E /* ResumePumpPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePumpPacketTests.swift; sourceTree = "<group>"; };
 		3EEA51FE2D7E1D0D000C9E1E /* SetBasalProfilePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBasalProfilePacket.swift; sourceTree = "<group>"; };
 		3EEA52002D7E1E0D000C9E1E /* SetBasalProfilePacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBasalProfilePacketTests.swift; sourceTree = "<group>"; };
-		3EEA52022D7E1F9D000C9E1E /* SetBolusMotorPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBolusMotorPacket.swift; sourceTree = "<group>"; };
-		3EEA52042D7E21D9000C9E1E /* SetBolusMotorPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBolusMotorPacketTests.swift; sourceTree = "<group>"; };
 		3EEA52062D7E2264000C9E1E /* SetBolusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBolusPacket.swift; sourceTree = "<group>"; };
 		3EF31CC52DF5DC5200EA6300 /* StateSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateSyncer.swift; sourceTree = "<group>"; };
 		3EFBC4F32DFB526900E0E295 /* DeleteDriverActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDriverActionSheet.swift; sourceTree = "<group>"; };
@@ -336,17 +312,11 @@
 				3E1532432D6F94E20020F015 /* AuthorizePacket.swift */,
 				3EA87D4E2D7A292A007DD959 /* CancelBolusPacket.swift */,
 				3EA87D522D7A2A2B007DD959 /* CancelTempBasalPacket.swift */,
-				3EA87D562D7A356E007DD959 /* ClearPumpAlarmPacket.swift */,
-				3E5060192D70F2F300376609 /* GetDeviceTypePacket.swift */,
-				3EA87D602D7A380D007DD959 /* GetRecordPacket.swift */,
 				3E50601B2D70F69800376609 /* GetTimePacket.swift */,
-				3EA87D662D7A3F88007DD959 /* PollPatchPacket.swift */,
 				3EA87D6A2D7A4027007DD959 /* PrimePacket.swift */,
 				3EA87C3C2DAC2F9700E897ED /* NotificationPacket.swift */,
-				3EEA51F62D7DF061000C9E1E /* ReadBolusStatePacket.swift */,
 				3EEA51FA2D7E1BF2000C9E1E /* ResumePumpPacket.swift */,
 				3EEA51FE2D7E1D0D000C9E1E /* SetBasalProfilePacket.swift */,
-				3EEA52022D7E1F9D000C9E1E /* SetBolusMotorPacket.swift */,
 				3EEA52062D7E2264000C9E1E /* SetBolusPacket.swift */,
 				3ED27E082D80BAC50026488B /* SetPatchPacket.swift */,
 				3ED27E0C2D80BD4D0026488B /* SetTempBasalPacket.swift */,
@@ -502,16 +472,10 @@
 				3EA87D4C2D7A25E5007DD959 /* AuthorizePacketTests.swift */,
 				3EA87D502D7A29A1007DD959 /* CancelBolusPacketTests.swift */,
 				3EA87D542D7A33A6007DD959 /* CancelTempBasalPacketTests.swift */,
-				3EA87D5A2D7A3627007DD959 /* ClearPumpAlarmPacketTests.swift */,
-				3EA87D5E2D7A36C4007DD959 /* GetDeviceTypePacketTests.swift */,
-				3EA87D622D7A3B95007DD959 /* GetRecordPacketTests.swift */,
 				3EA87D642D7A3DCA007DD959 /* GetTimePacketTest.swift */,
-				3EA87D682D7A3FBE007DD959 /* PollPatchPacketTests.swift */,
 				3EA87D6C2D7A4046007DD959 /* PrimePacketTests.swift */,
-				3EEA51F82D7E13E6000C9E1E /* ReadBolusStatePacketTests.swift */,
 				3EEA51FC2D7E1C23000C9E1E /* ResumePumpPacketTests.swift */,
 				3EEA52002D7E1E0D000C9E1E /* SetBasalProfilePacketTests.swift */,
-				3EEA52042D7E21D9000C9E1E /* SetBolusMotorPacketTests.swift */,
 				3ED27E062D80BA130026488B /* SetBolusPacketTests.swift */,
 				3ED27E0A2D80BC900026488B /* SetPatchPacketTests.swift */,
 				3ED27E0E2D80BFF40026488B /* SetTempBasalPacketTests.swift */,
@@ -820,7 +784,6 @@
 				3E5060202D70F97500376609 /* SetTimePacket.swift in Sources */,
 				3E9D8B122D88A8F600008AF2 /* NewPumpEvent.swift in Sources */,
 				3E9547FB2D8D963600EEF259 /* MedtrumPrimePatchResult.swift in Sources */,
-				3EA87D612D7A3813007DD959 /* GetRecordPacket.swift in Sources */,
 				3EA87D4F2D7A2930007DD959 /* CancelBolusPacket.swift in Sources */,
 				3E1390172D6E5EA000A146C1 /* MedtrumConnectResult.swift in Sources */,
 				3E26BE112D906E5700E595B0 /* ReservoirView.swift in Sources */,
@@ -864,16 +827,12 @@
 				3E6A00F02DA0421A0085E6A4 /* DeactivatePatchViewModel.swift in Sources */,
 				3E9547FD2D8D9CD600EEF259 /* MedtrumActivatePatchResult.swift in Sources */,
 				3ED27E152D80C9010026488B /* StopPatchPacket.swift in Sources */,
-				3EEA51F72D7DF061000C9E1E /* ReadBolusStatePacket.swift in Sources */,
-				3EEA52032D7E1F9F000C9E1E /* SetBolusMotorPacket.swift in Sources */,
-				3EA87D672D7A3F8C007DD959 /* PollPatchPacket.swift in Sources */,
 				3E9D8B0E2D88A59200008AF2 /* DoseEntry.swift in Sources */,
 				3EF31CC62DF5DC5500EA6300 /* StateSyncer.swift in Sources */,
 				3E0406E02EB7872E0013E362 /* Binding.swift in Sources */,
 				3E24AECA2DA17B7F00C7733C /* PatchActivationView.swift in Sources */,
 				3E15A47E2DA2B723007F7D3C /* NibLoadable.swift in Sources */,
 				3ED27C072DB67ED5001B7C95 /* MedtrumUpdatePatchResult.swift in Sources */,
-				3E50601A2D70F2F500376609 /* GetDeviceTypePacket.swift in Sources */,
 				3E15A4782DA2B6E6007F7D3C /* MedtrumReservoirView.swift in Sources */,
 				3E9A5C962DA1460700A4102D /* PumpBaseSettingsView.swift in Sources */,
 				3E9D8B0C2D88A3FA00008AF2 /* MedtrumDoseProgressReporter.swift in Sources */,
@@ -886,7 +845,6 @@
 				3ED27E1F2D80D2660026488B /* PatchState.swift in Sources */,
 				3EE2DAC52D8A076200EA2EAD /* SuspendPumpPacket.swift in Sources */,
 				3E5060182D70EAF800376609 /* MedtrumWriteResult.swift in Sources */,
-				3EA87D572D7A3573007DD959 /* ClearPumpAlarmPacket.swift in Sources */,
 				3EA87D592D7A35D1007DD959 /* ClearAlarmType.swift in Sources */,
 				3E50601E2D70F7A900376609 /* Date.swift in Sources */,
 				3E1390152D6E5C5E00A146C1 /* MedtrumScanResult.swift in Sources */,
@@ -907,25 +865,19 @@
 				3ED27E0B2D80BC960026488B /* SetPatchPacketTests.swift in Sources */,
 				3EA87D6D2D7A404C007DD959 /* PrimePacketTests.swift in Sources */,
 				3EA87D652D7A3DCE007DD959 /* GetTimePacketTest.swift in Sources */,
-				3EA87D632D7A3B9B007DD959 /* GetRecordPacketTests.swift in Sources */,
 				3ED27E192D80CA3B0026488B /* SubscribePacketTests.swift in Sources */,
 				3ED27E112D80C4320026488B /* SetTimePacketTests.swift in Sources */,
-				3EA87D692D7A3FC2007DD959 /* PollPatchPacketTests.swift in Sources */,
 				3EA87C3B2DAC2DBE00E897ED /* SynchronizeNotificationPacketTests.swift in Sources */,
 				3E6B082D2DF2224900A484C6 /* BasalScheduleTests.swift in Sources */,
 				3ED27E0F2D80BFF90026488B /* SetTempBasalPacketTests.swift in Sources */,
 				3ED27E072D80BA130026488B /* SetBolusPacketTests.swift in Sources */,
-				3EEA51F92D7E13E6000C9E1E /* ReadBolusStatePacketTests.swift in Sources */,
-				3EEA52052D7E21DB000C9E1E /* SetBolusMotorPacketTests.swift in Sources */,
 				3EEA51FD2D7E1C27000C9E1E /* ResumePumpPacketTests.swift in Sources */,
 				3EA87D4B2D7A2165007DD959 /* ActivatePacketTests.swift in Sources */,
 				3EA87D552D7A33AD007DD959 /* CancelTempBasalPacketTests.swift in Sources */,
 				3E77FEBC2D72F90000A15134 /* MedtrumBasePacketTests.swift in Sources */,
-				3EA87D5B2D7A3632007DD959 /* ClearPumpAlarmPacketTests.swift in Sources */,
 				3E77FEBA2D723AD400A15134 /* CryptoTests.swift in Sources */,
 				3ED27E172D80C9ED0026488B /* StopPatchPacketTests.swift in Sources */,
 				3EEA52012D7E1E10000C9E1E /* SetBasalProfilePacketTests.swift in Sources */,
-				3EA87D5F2D7A36CB007DD959 /* GetDeviceTypePacketTests.swift in Sources */,
 				3ED27E1B2D80CAC40026488B /* SynchronizePacketTests.swift in Sources */,
 				3EA87D4D2D7A25ED007DD959 /* AuthorizePacketTests.swift in Sources */,
 			);

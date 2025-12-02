@@ -15,11 +15,13 @@ final class CancelTempBasalPacketTests: XCTestCase {
     }
 
     func testResponseGivenPacketWhenValuesSetThenReturnCorrectValues() throws {
-        let response = Data([18, 25, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17, 88])
+        let response = Data([17, 25, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17, 52])
         var packet = CancelTempBasalPacket()
 
         packet.decode(response)
         XCTAssertFalse(packet.failed)
+        XCTAssertTrue(packet.isComplete)
+        XCTAssertTrue(packet.hasEnoughData)
 
         let actual = packet.parseResponse()
         XCTAssertEqual(actual.basalType, BasalType.STANDARD)
@@ -30,7 +32,7 @@ final class CancelTempBasalPacketTests: XCTestCase {
     }
 
     func testResponseGivenResponseWhenMessageTooShortThenResultFalse() throws {
-        let response = Data([18, 25, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17])
+        let response = Data([17, 25, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17])
         var packet = CancelTempBasalPacket()
 
         packet.decode(response)

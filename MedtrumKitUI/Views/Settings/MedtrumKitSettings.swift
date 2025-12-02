@@ -242,6 +242,7 @@ struct MedtrumKitSettings: View {
                     if viewModel.patchLifecycleState != .noPatch {
                         Text(viewModel.dateTimeFormatter.string(from: viewModel.patchActivatedAt))
                             .foregroundColor(.secondary)
+                            .multilineTextAlignment(.trailing)
                     } else {
                         Text("-")
                             .foregroundColor(.secondary)
@@ -254,6 +255,7 @@ struct MedtrumKitSettings: View {
                     if viewModel.patchLifecycleState != .noPatch {
                         Text(viewModel.dateTimeFormatter.string(from: viewModel.patchExpiresAt))
                             .foregroundColor(.secondary)
+                            .multilineTextAlignment(.trailing)
                     } else {
                         Text("-")
                             .foregroundColor(.secondary)

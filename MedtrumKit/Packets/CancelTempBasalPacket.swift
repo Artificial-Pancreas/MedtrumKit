@@ -10,6 +10,7 @@ class CancelTempBasalPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = CancelTempBasalPacketResponse
 
     let commandType: UInt8 = CommandType.CANCEL_TEMP_BASAL
+    let mimimumDataSize: Int = 17
 
     func getRequestBytes() -> Data {
         Data([])

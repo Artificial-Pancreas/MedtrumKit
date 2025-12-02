@@ -2,6 +2,7 @@ protocol MedtrumBasePacketProtocol {
     associatedtype T
 
     var commandType: UInt8 { get }
+    var mimimumDataSize: Int { get }
 
     // Needed to parse
     var dataSize: UInt8 { get set }
@@ -96,5 +97,9 @@ extension MedtrumBasePacketProtocol {
 
     var isComplete: Bool {
         totalData.count == dataSize
+    }
+
+    var hasEnoughData: Bool {
+        totalData.count >= mimimumDataSize
     }
 }

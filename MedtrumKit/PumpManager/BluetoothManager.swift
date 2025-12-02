@@ -74,7 +74,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
                 await completionAsync(result)
             }
         }
-        
+
         if let peripheral = peripheral, peripheral.state == .connected {
             logger.debug("Already connect!")
             connectCompletion?(nil)
@@ -169,12 +169,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
 extension BluetoothManager {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         logger.info("\(String(describing: central.state.rawValue))")
-
-        if central.state == .resetting {
-            // CoreBluetooth crashed, lets remove all references and scan for device once it's back
-            peripheral = nil
-            peripheralManager = nil
-        }
 
         if central.state == .poweredOn, !isConnected, pumpManager?.state.pumpState == .active {
             ensureConnected { error in

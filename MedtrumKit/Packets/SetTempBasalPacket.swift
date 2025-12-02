@@ -9,6 +9,7 @@ struct SetTempBasalResponse {
 class SetTempBasalPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SetTempBasalResponse
     let commandType: UInt8 = CommandType.SET_TEMP_BASAL
+    let mimimumDataSize: Int = 17
 
     let type: UInt8 = 6 // Fixed to temp basal value for now
     let rate: Double

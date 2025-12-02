@@ -3,9 +3,9 @@ import XCTest
 
 final class SetBolusPacketTests: XCTestCase {
     func testRequestGivenPacketWhenValuesSetThenReturnCorrectByteArray() throws {
-        let input = SetBolusPacket(bolusAmount: 2.35)
+        let input = SetBolusPacket(bolusAmount: 1.40)
 
-        let expected = Data([8, 19, 0, 0, 1, 47, 0, 159, 0])
+        let expected = Data([9, 19, 0, 0, 1, 28, 0, 0, 253, 0])
 
         let sequence: UInt8 = 0
         let actual = input.encode(sequenceNumber: sequence)

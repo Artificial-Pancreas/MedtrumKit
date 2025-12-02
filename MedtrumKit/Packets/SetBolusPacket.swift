@@ -3,6 +3,7 @@ struct SetBolusResponse {}
 class SetBolusPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SetBolusResponse
     let commandType: UInt8 = CommandType.SET_BOLUS
+    let mimimumDataSize: Int = 0
 
     // Bolus types:
     // 1 = normal

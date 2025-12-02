@@ -4,6 +4,7 @@ class SetTimeZonePacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SetTimeZonePacketResponse
 
     let commandType: UInt8 = CommandType.SET_TIME_ZONE
+    let mimimumDataSize: Int = 0
     let date: Date
     let timeZone: TimeZone
 

@@ -12,6 +12,7 @@ class ActivatePacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = ActivatePacketResponse
 
     let commandType: UInt8 = CommandType.ACTIVATE
+    let mimimumDataSize: Int = 25
 
     let autoSuspendEnable: UInt8 = 0
     let autoSuspendTime: UInt8 = 12 // unknown why this value needs to be this
