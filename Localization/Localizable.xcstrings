@@ -14475,8 +14475,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "De patch dient slechts 3 dagen en 8 uur te worden gebruikt. Het overschrijden van deze tijd kan ervoor zorgen dat de patch onbetrouwbaar wordt. Dit wordt niet aanbevolen. Overweeg om de normale levensduur te gebruiken."
           }
         },
         "pl" : {
@@ -14529,8 +14529,8 @@
         },
         "vi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Miếng dán (patch) chỉ được thiết kế để sử dụng trong 3 ngày và 8 giờ. Vượt quá thời gian này có thể khiến miếng dán hoạt động không còn đáng tin cậy. Điều này KHÔNG được khuyến nghị. Hãy cân nhắc sử dụng trong thời gian hoạt động tiêu chuẩn."
           }
         },
         "zh-Hans" : {
@@ -15165,8 +15165,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Gebruik op eigen risico!"
           }
         },
         "pl" : {
@@ -15219,8 +15219,8 @@
         },
         "vi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Tự chịu rủi ro khi sử dụng!"
           }
         },
         "zh-Hans" : {
