@@ -3,6 +3,7 @@ struct SetPatchResponse {}
 class SetPatchPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SetPatchResponse
     let commandType: UInt8 = CommandType.SET_PATCH
+    let mimimumDataSize: Int = 0
 
     let alarmSettings: AlarmSettings
     let hourlyMaxInsulin: Double

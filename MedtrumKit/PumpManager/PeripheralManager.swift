@@ -2,6 +2,7 @@ import CoreBluetooth
 
 class PeripheralManager: NSObject {
     private let log = MedtrumLogger(category: "PeripheralManager")
+    private let queue = DispatchQueue(label: "org.nightscout.MedtrumKit.message-queue")
 
     private let connectedDevice: CBPeripheral
     private let bluetoothManager: BluetoothManager
@@ -34,6 +35,18 @@ class PeripheralManager: NSObject {
         super.init()
 
         peripheral.delegate = self
+    }
+
+    deinit {
+        if let queue = writeQueue {
+            queue.finish()
+            writeQueue = nil
+        }
+
+        if let timeout = writeTimeoutTask {
+            timeout.cancel()
+            writeTimeoutTask = nil
+        }
     }
 
     func writePacket(_ packet: any MedtrumBasePacketProtocol) async -> MedtrumWriteResult<Any> {
@@ -235,7 +248,7 @@ extension PeripheralManager: CBPeripheralDelegate {
 
     func peripheral(_: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         if let error = error {
-            log.error("\(error.localizedDescription)")
+            log.error("Got error from didUpdateValueFor: \(error.localizedDescription)")
             if let connectCompletion = completion {
                 connectCompletion(.failedToEnableNotify(localizedError: error.localizedDescription))
             }
@@ -243,68 +256,81 @@ extension PeripheralManager: CBPeripheralDelegate {
         }
 
         guard var data = characteristic.value else {
+            log.warning("No data in didUpdateValueFor - characteristic: \(characteristic.uuid.uuidString)")
             return
         }
 
-        if characteristic.uuid.uuidString.lowercased() == PeripheralManager.READ_UUID.uuidString.lowercased() {
-            guard data[1] != 0x00 else {
-                // Ignore all ping messages from patch pomp
+        queue.async {
+            if characteristic.uuid.uuidString.lowercased() == PeripheralManager.READ_UUID.uuidString.lowercased() {
+                guard data[1] != 0x00 else {
+                    // Ignore all ping messages from patch pomp
+                    return
+                }
+
+                self.log.debug("READ -> Got data: \(data.hexEncodedString())")
+                data.append(0x00) // Little CRC hack. The notification lacks the CRC value, thus add an empty value there
+
+                var packet = NotificationPacket()
+                packet.decode(data)
+
+                self.parseStateUpdate(packet.parseResponse())
                 return
             }
 
-            log.debug("READ -> Got data: \(data.hexEncodedString())")
-            data.append(0x00) // Little CRC hack. The notification lacks the CRC value, thus add an empty value there
+            // Processing data
+            self.log.debug("Got data: \(data.hexEncodedString())")
+            guard var packet = self.currentPacket else {
+                self.log.warning("No packet available...")
+                return
+            }
 
-            var packet = NotificationPacket()
             packet.decode(data)
+            self.currentPacket = packet
 
-            parseStateUpdate(packet.parseResponse())
-            return
+            guard packet.isComplete else {
+                self.log.debug("Waiting for more data...")
+                return
+            }
+
+            guard let writeCallback = self.writeQueue else {
+                // Timeout is hit...
+                self.currentPacket = nil
+                return
+            }
+
+            if packet.responseCode == 16384 {
+                // Need to skip to packet
+                self.log.debug("Skipping this message - data: \(packet.totalData.hexEncodedString())")
+                return
+            }
+
+            self.writeTimeoutTask?.cancel()
+            self.writeTimeoutTask = nil
+
+            if packet.responseCode != 0 {
+                // Examples for invalid codes:
+                // 7 -> Invalid authorization: propably wrong session token used
+                // 8 -> Invalid state: The patch is not in state 32 (active), which is required for that command
+                self.log.error("Invalid responseCode: \(packet.responseCode)")
+                writeCallback.yield(.failure(error: .invalidResponse(code: packet.responseCode)))
+            } else if packet.failed {
+                self.log.error("Failed to parse message, either wrong command type or CRC check failed...")
+                writeCallback.yield(.failure(error: .invalidData))
+            } else {
+                if !packet.hasEnoughData {
+                    let message =
+                        "Packet has too little data - expected: \(packet.mimimumDataSize), data: \(packet.totalData.hexEncodedString())"
+                    self.log.error(message)
+
+                    writeCallback.yield(.failure(error: .invalidData))
+                } else {
+                    writeCallback.yield(.success(data: packet.parseResponse()))
+                }
+            }
+
+            writeCallback.finish()
+            self.writeQueue = nil
+            self.currentPacket = nil
         }
-
-        // Processing data
-        guard var packet = currentPacket else {
-            log.warning("No packet available...")
-            // No packet available to validate against
-            return
-        }
-
-        log.debug("Got data: \(data.hexEncodedString())")
-        packet.decode(data)
-        currentPacket = packet
-
-        guard packet.isComplete else {
-            // Wait for more data
-            return
-        }
-
-        guard let writeCallback = writeQueue else {
-            // Timeout is hit...
-            currentPacket = nil
-            return
-        }
-
-        if packet.responseCode == 16384 {
-            // Need to skip to packet
-            return
-        }
-
-        writeTimeoutTask?.cancel()
-        writeTimeoutTask = nil
-
-        if packet.responseCode != 0 {
-            // Examples for invalid codes:
-            // 7 -> Invalid authorization: propably wrong session token used
-            // 8 -> Invalid state: The patch is not in state 32 (active), which is required for that command
-            writeCallback.yield(.failure(error: .invalidResponse(code: packet.responseCode)))
-        } else if packet.failed {
-            writeCallback.yield(.failure(error: .invalidData))
-        } else {
-            writeCallback.yield(.success(data: packet.parseResponse()))
-        }
-
-        writeCallback.finish()
-        writeQueue = nil
-        currentPacket = nil
     }
 }

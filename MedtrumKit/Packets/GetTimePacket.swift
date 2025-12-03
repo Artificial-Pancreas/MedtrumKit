@@ -6,6 +6,7 @@ class GetTimePacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = GetTimePacketResponse
 
     let commandType: UInt8 = CommandType.GET_TIME
+    let mimimumDataSize: Int = 10
 
     func getRequestBytes() -> Data {
         Data()

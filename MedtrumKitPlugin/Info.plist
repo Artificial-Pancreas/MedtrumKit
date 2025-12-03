@@ -21,7 +21,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
 	<key>com.loopkit.Loop.PumpManagerDisplayName</key>
-	<string>Medtrum Nano Touch 200U/300U</string>
+	<string>Medtrum Nano</string>
 	<key>com.loopkit.Loop.PumpManagerIdentifier</key>
 	<string>Medtrum</string>
 	<key>NSPrincipalClass</key>

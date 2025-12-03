@@ -6,6 +6,7 @@ struct StopPatchResponse {
 class StopPatchPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = StopPatchResponse
     let commandType: UInt8 = CommandType.STOP_PATCH
+    let mimimumDataSize: Int = 10
 
     func getRequestBytes() -> Data {
         Data()

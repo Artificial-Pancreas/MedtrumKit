@@ -2,6 +2,7 @@ class SynchronizePacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SynchronizePacketResponse
 
     let commandType: UInt8 = CommandType.SYNCHRONIZE
+    let mimimumDataSize: Int = 9
 
     func getRequestBytes() -> Data {
         Data()

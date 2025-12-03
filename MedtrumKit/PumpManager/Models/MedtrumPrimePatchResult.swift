@@ -7,7 +7,7 @@ public enum MedtrumPrimePatchError: LocalizedError {
     case needToDeactivateFirst
     case connectionFailure(reason: String)
     case noKnownPumpBase
-    case unknownError(reason: String)
+    case unknownError(reason: LocalizedError)
 
     var description: String {
         switch self {

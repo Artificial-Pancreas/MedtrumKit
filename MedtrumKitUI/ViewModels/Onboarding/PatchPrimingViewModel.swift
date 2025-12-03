@@ -85,7 +85,6 @@ extension PatchPrimingViewModel: PumpManagerStatusObserver {
             }
 
             DispatchQueue.main.async {
-                self.isPriming = pumpManager.state.pumpState == .priming
                 self.primeProgress = Double(pumpManager.state.primeProgress) / 240
 
                 if pumpManager.state.pumpState.rawValue > PatchState.priming.rawValue,

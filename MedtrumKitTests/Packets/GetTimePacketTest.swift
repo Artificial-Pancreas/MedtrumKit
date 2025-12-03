@@ -15,18 +15,20 @@ final class GetTimePacketTests: XCTestCase {
     }
 
     func testResponseGivenPacketWhenValuesSetThenReturnCorrectValues() throws {
-        let response = Data([0, 11, 0, 0, 0, 0, 224, 238, 88, 17, 22])
+        let response = Data([10, 11, 0, 0, 0, 0, 224, 238, 88, 17, 137])
         var packet = GetTimePacket()
 
         packet.decode(response)
         XCTAssertFalse(packet.failed)
+        XCTAssertTrue(packet.isComplete)
+        XCTAssertTrue(packet.hasEnoughData)
 
         let actual = packet.parseResponse()
         XCTAssertEqual(actual.time, Date(timeIntervalSince1970: 1_679_575_392))
     }
 
     func testResponseGivenResponseWhenMessageTooShortThenResultFalse() throws {
-        let response = Data([0, 11, 0, 0, 0, 0, 224, 238, 88, 17])
+        let response = Data([10, 11, 0, 0, 0, 0, 224, 238, 88, 17])
         var packet = GetTimePacket()
 
         packet.decode(response)

@@ -12,7 +12,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     private let processQueue = DispatchQueue(label: "com.nightscout.medtrumkit.settingsViewModel")
 
     @Published var pumpBaseSN: String = ""
-    @Published var pumpName: String = ""
+    @Published var swVersion: String = ""
     @Published var model: String = ""
     @Published var patchId: UInt64 = 0
     @Published var is300u: Bool = false
@@ -42,6 +42,10 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var showingHeartbeatWarning = false
     @Published var showingDeleteConfirmation = false
     @Published var previousPatch: PreviousPatch? = nil
+
+    public var pumpName: String {
+        pumpManager?.state.pumpName ?? "Medtrum Nano"
+    }
 
     let reservoirVolumeFormatter: QuantityFormatter = {
         let formatter = QuantityFormatter(for: .internationalUnit())
@@ -342,7 +346,7 @@ extension MedtrumKitSettingsViewModel {
         }
 
         pumpBaseSN = state.pumpSN.hexEncodedString().uppercased()
-        pumpName = state.pumpName
+        swVersion = state.swVersion
         patchId = state.patchId.toUInt64()
         showPumpTimeSyncWarning = state.shouldShowTimeWarning()
         patchState = state.pumpState

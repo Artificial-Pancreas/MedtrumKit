@@ -7,6 +7,7 @@ class AuthorizePacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = AuthorizeResponse
 
     let commandType: UInt8 = CommandType.AUTH_REQ
+    let mimimumDataSize: Int = 10
 
     private let role: UInt8 = 2
     private let pumpSN: Data

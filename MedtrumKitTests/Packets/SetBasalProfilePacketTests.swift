@@ -15,11 +15,13 @@ final class SetBasalProfilePacketTests: XCTestCase {
     }
 
     func testResponseGivenPacketWhenValuesSetThenReturnCorrectValues() throws {
-        let response = Data([18, 21, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17, 64])
+        let response = Data([17, 21, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17, 44])
         var packet = SetBasalProfilePacket(basalProfile: Data([3, 16, 14, 0, 0, 1, 2, 12, 12, 12]))
 
         packet.decode(response)
         XCTAssertFalse(packet.failed)
+        XCTAssertTrue(packet.isComplete)
+        XCTAssertTrue(packet.hasEnoughData)
 
         let actual = packet.parseResponse()
         XCTAssertEqual(actual.basalType, BasalType.STANDARD)
@@ -30,7 +32,7 @@ final class SetBasalProfilePacketTests: XCTestCase {
     }
 
     func testResponseGivenResponseWhenMessageTooShortThenResultFalse() throws {
-        let response = Data([18, 21, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17])
+        let response = Data([17, 21, 16, 0, 0, 0, 1, 22, 0, 3, 0, 146, 0, 224, 238, 88, 17])
         var packet = SetBasalProfilePacket(basalProfile: Data([3, 16, 14, 0, 0, 1, 2, 12, 12, 12]))
 
         packet.decode(response)

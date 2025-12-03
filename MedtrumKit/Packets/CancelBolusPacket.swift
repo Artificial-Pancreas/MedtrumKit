@@ -4,6 +4,7 @@ class CancelBolusPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = CancelBolusPacketResponse
 
     let commandType: UInt8 = CommandType.CANCEL_BOLUS
+    let mimimumDataSize: Int = 0
 
     /**
         1 -> Normal bolus

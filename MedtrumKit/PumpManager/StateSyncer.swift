@@ -76,8 +76,6 @@ enum StateSyncer {
             pumpManager.updateBolusProgress(delivered: bolusProgress.delivered, completed: bolusProgress.completed)
         }
 
-        state.lastSync = Date.now
-
         pumpManager.notifyStateDidChange()
     }
 

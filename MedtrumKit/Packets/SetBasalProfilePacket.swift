@@ -10,6 +10,7 @@ class SetBasalProfilePacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SetBasalProfilePacketResponse
 
     let commandType: UInt8 = CommandType.SET_BASAL_PROFILE
+    let mimimumDataSize: Int = 17
     let basalType: UInt8 = 1 // Fixed to normal basal profile
     let basalProfile: Data
 

@@ -3,6 +3,7 @@ struct SuspendPumpResponse {}
 class SuspendPumpPacket: MedtrumBasePacket, MedtrumBasePacketProtocol {
     typealias T = SuspendPumpResponse
     let commandType: UInt8 = CommandType.SUSPEND_PUMP
+    let mimimumDataSize: Int = 0
 
     let duration: TimeInterval
     init(duration: TimeInterval) {
