@@ -14407,9 +14407,135 @@
       "comment" : "warning body",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náplasť je určená na používanie len na 3 dni a 8 hodín. Prekročenie tohto času môže spôsobiť, že náplasť bude nespoľahlivá. Toto sa NEODPORÚČA. Zvážte používanie bežnej doby životnosti."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pumpen är avsett att användas i endast 3 dagar och 8 timmar. Mer än denna tid rekommenderas INTE. Överväg att använda normal livstid."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
             "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
           }
         }
@@ -14971,9 +15097,135 @@
       "comment" : "warning title",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Použitie na vlastné riziko!"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd på egen risk!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
             "value" : "Use at your own risk!"
           }
         }
