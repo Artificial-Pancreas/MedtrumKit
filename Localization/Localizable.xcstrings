@@ -87,6 +87,12 @@
             "value" : "-"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "-"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -212,6 +218,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%llu"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%llu"
@@ -347,6 +359,12 @@
             "value" : "1."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "1."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -472,6 +490,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "2."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "2."
@@ -607,6 +631,12 @@
             "value" : "3."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "3."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -732,6 +762,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "4."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "4."
@@ -867,6 +903,12 @@
             "value" : "5."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "5."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -992,6 +1034,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "6."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "6."
@@ -1127,6 +1175,12 @@
             "value" : "7."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "7."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -1257,6 +1311,12 @@
             "value" : "8."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "8."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -1382,6 +1442,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "1234ABCD"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "1234ABCD"
@@ -1525,6 +1591,12 @@
             "value" : "Activate patch"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Activate patch"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1658,6 +1730,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Age:"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Age:"
@@ -1801,6 +1879,12 @@
             "value" : "Alarm setting"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Alarm setting"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1934,6 +2018,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?"
@@ -2077,6 +2167,12 @@
             "value" : "Tem certeza?"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Are you sure?"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2210,6 +2306,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Attach the pump to the body."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Attach the pump to the body."
@@ -2353,6 +2455,12 @@
             "value" : "Authenticate & deactivate patch"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Authenticate & deactivate patch"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2486,6 +2594,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Battery"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Battery"
@@ -2629,6 +2743,12 @@
             "value" : "Beep-only"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Beep-only"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2767,6 +2887,12 @@
             "value" : "Cancelar"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2900,6 +3026,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Checked at"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Checked at"
@@ -3043,6 +3175,12 @@
             "value" : "Ajustes"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Configuration"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3176,6 +3314,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Confirm"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Confirm"
@@ -3319,6 +3463,12 @@
             "value" : "Connect your pump base to the patch."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Connect your pump base to the patch."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3455,6 +3605,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conectado"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Connected"
           }
         },
         "ru" : {
@@ -3595,6 +3751,12 @@
             "value" : "Continuar"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Continue"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3728,6 +3890,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
@@ -3871,6 +4039,12 @@
             "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4004,6 +4178,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "day"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "day"
@@ -4147,6 +4327,12 @@
             "value" : "days"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "days"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4280,6 +4466,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Deactivate patch"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Deactivate patch"
@@ -4423,6 +4615,12 @@
             "value" : "Deactivate Patch"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Deactivate Patch"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4556,6 +4754,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Deactivated at"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Deactivated at"
@@ -4699,6 +4903,12 @@
             "value" : "Delete pump"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete pump"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4837,6 +5047,12 @@
             "value" : "Deletar Bomba"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete Pump"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4970,6 +5186,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Disabled"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Disabled"
@@ -5113,6 +5335,12 @@
             "value" : "Disconnect"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Disconnect"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5251,6 +5479,12 @@
             "value" : "Desconectado"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Disconnected"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5384,6 +5618,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Do not attach the patch to the body yet"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Do not attach the patch to the body yet"
@@ -5527,6 +5767,12 @@
             "value" : "OK"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Done"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5660,6 +5906,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
@@ -5803,6 +6055,12 @@
             "value" : "Fill the syringe with insulin"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fill the syringe with insulin"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5936,6 +6194,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Force remove"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Force remove"
@@ -6079,6 +6343,12 @@
             "value" : "Go back to priming"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Go back to priming"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6212,6 +6482,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Go back to pump base"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Go back to pump base"
@@ -6355,6 +6631,12 @@
             "value" : "hour"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "hour"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6493,6 +6775,12 @@
             "value" : "horas"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "hours"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6626,6 +6914,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Information"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Information"
@@ -6769,6 +7063,12 @@
             "value" : "Insulina\nSuspenso"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Insulin\nSuspended"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6902,6 +7202,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Insulin Delivery"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Insulin Delivery"
@@ -7045,6 +7351,12 @@
             "value" : "Insulin has been suspended!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Insulin has been suspended!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7178,6 +7490,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Insulin Remaining"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Insulin Remaining"
@@ -7321,6 +7639,12 @@
             "value" : "Tipo de Insulina"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Insulin Type"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7454,6 +7778,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "It is recommended to deactivate first"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "It is recommended to deactivate first"
@@ -7597,6 +7927,12 @@
             "value" : "Last sync"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last sync"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7730,6 +8066,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Light and beep"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Light and beep"
@@ -7873,6 +8215,12 @@
             "value" : "Light and vibrate"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Light and vibrate"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8006,6 +8354,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Light-only"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Light-only"
@@ -8149,6 +8503,12 @@
             "value" : "Light, vibrate and, beep"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Light, vibrate and, beep"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8282,6 +8642,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "loading"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "loading"
@@ -8425,6 +8791,12 @@
             "value" : "Make sure the Serial Number is correct before connecting it to the patch."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Make sure the Serial Number is correct before connecting it to the patch."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8558,6 +8930,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Manually sync Pump time"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Manually sync Pump time"
@@ -8701,6 +9079,12 @@
             "value" : "Max daily insulin"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max daily insulin"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8834,6 +9218,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max hourly insulin"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Max hourly insulin"
@@ -8977,6 +9367,12 @@
             "value" : "minute"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "minute"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9115,6 +9511,12 @@
             "value" : "minutos"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "minutes"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9248,6 +9650,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No active patch"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No active patch"
@@ -9391,6 +9799,12 @@
             "value" : "No, Keep as is"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No, Keep as is"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9524,6 +9938,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No, Keep Pump As Is"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No, Keep Pump As Is"
@@ -9667,6 +10087,12 @@
             "value" : "Notification for expirate patch"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Notification for expirate patch"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9800,6 +10226,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch activated at"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch activated at"
@@ -9943,6 +10375,12 @@
             "value" : "Patch activation"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch activation"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10076,6 +10514,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch expired"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch expired"
@@ -10219,6 +10663,12 @@
             "value" : "Patch expires at"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch expires at"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10352,6 +10802,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch ID"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch ID"
@@ -10495,6 +10951,12 @@
             "value" : "Patch lifetime"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch lifetime"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10628,6 +11090,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch priming"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch priming"
@@ -10771,6 +11239,12 @@
             "value" : "Patch settings"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch settings"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10904,6 +11378,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch state"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch state"
@@ -11047,6 +11527,12 @@
             "value" : "Patch time"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Patch time"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -11180,6 +11666,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
@@ -11323,6 +11815,12 @@
             "value" : "Press the needle button and start the priming process."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Press the needle button and start the priming process."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11456,6 +11954,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process."
@@ -11599,6 +12103,12 @@
             "value" : "Previous Patch Details"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Previous Patch Details"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11732,6 +12242,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pump base model"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Pump base model"
@@ -11875,6 +12391,12 @@
             "value" : "Pump base settings"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pump base settings"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12008,6 +12530,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pump base SN"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Pump base SN"
@@ -12151,6 +12679,12 @@
             "value" : "Reconnect"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reconnect"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12284,6 +12818,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reconnecting..."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Reconnecting..."
@@ -12427,6 +12967,12 @@
             "value" : "Remove Pump"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove Pump"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12560,6 +13106,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove the safety cover from the patch."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Remove the safety cover from the patch."
@@ -12703,6 +13255,12 @@
             "value" : "Replace your patch now!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Replace your patch now!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12836,6 +13394,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reservoir low (%iU)"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Reservoir low (%iU)"
@@ -12979,6 +13543,12 @@
             "value" : "Save and continue"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save and continue"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13112,6 +13682,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scheduled Basal"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Scheduled Basal"
@@ -13255,6 +13831,12 @@
             "value" : "Select insulin type"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select insulin type"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13388,6 +13970,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select the type of insulin that you will be using"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Select the type of insulin that you will be using"
@@ -13531,6 +14119,12 @@
             "value" : "Serial number"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Serial number"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13664,6 +14258,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Medtrum patch logs"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Share Medtrum patch logs"
@@ -13807,6 +14407,12 @@
             "value" : "Silence"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Silence"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13940,6 +14546,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Start priming"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Start priming"
@@ -14083,6 +14695,12 @@
             "value" : "Estado"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Status"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14216,6 +14834,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync patch data"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Sync patch data"
@@ -14359,6 +14983,12 @@
             "value" : "Temp Basal"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Temp Basal"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14492,6 +15122,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
@@ -14635,6 +15271,12 @@
             "value" : "The time on your pump is different from the current time. Do you want to update the time on your pump to the current time?"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The time on your pump is different from the current time. Do you want to update the time on your pump to the current time?"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14768,6 +15410,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The time on your pump is different from the current time. Your pump’s time controls your scheduled therapy settings. Scroll down to Pump Time row to review the time difference and configure your pump."
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "The time on your pump is different from the current time. Your pump’s time controls your scheduled therapy settings. Scroll down to Pump Time row to review the time difference and configure your pump."
@@ -14911,6 +15559,12 @@
             "value" : "Time Change Detected"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Time Change Detected"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15044,6 +15698,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Toggle heartbeat mode"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Toggle heartbeat mode"
@@ -15187,6 +15847,12 @@
             "value" : "Use at your own risk!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -15320,6 +15986,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use extended lifetime (continue till battery empty)"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Use extended lifetime (continue till battery empty)"
@@ -15463,6 +16135,12 @@
             "value" : "Use normal lifetime (3d 8h)"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use normal lifetime (3d 8h)"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15596,6 +16274,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Vibrate and beep"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Vibrate and beep"
@@ -15739,6 +16423,12 @@
             "value" : "Vibrate-only"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Vibrate-only"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15872,6 +16562,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Welcome"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Welcome"
@@ -16015,6 +16711,12 @@
             "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16148,6 +16850,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Yes, Disable heartbeat mode"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Yes, Disable heartbeat mode"
@@ -16291,6 +16999,12 @@
             "value" : "Yes, Enable heartbeat mode"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Yes, Enable heartbeat mode"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16424,6 +17138,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Yes, Sync to Current Time"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Yes, Sync to Current Time"
@@ -16567,6 +17287,12 @@
             "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16700,6 +17426,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch has %i hours left"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your patch has %i hours left"
@@ -16843,6 +17575,12 @@
             "value" : "Your patch has detected an occlussion!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch has detected an occlussion!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16976,6 +17714,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch has reached its daily maximum!"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your patch has reached its daily maximum!"
@@ -17119,6 +17863,12 @@
             "value" : "Your patch has reached its hourly maximum!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch has reached its hourly maximum!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17252,6 +18002,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch is in Fault state!"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your patch is in Fault state!"
@@ -17395,6 +18151,12 @@
             "value" : "Your patch is out of insulin!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch is out of insulin!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17533,6 +18295,12 @@
             "value" : "Your patch is running out of insulin!"
           }
         },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch is running out of insulin!"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
@@ -17666,6 +18434,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your patch will expire soon!"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your patch will expire soon!"
