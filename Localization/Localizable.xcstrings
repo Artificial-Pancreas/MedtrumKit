@@ -1503,8 +1503,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Activate patch"
+            "state" : "translated",
+            "value" : "تفعيل اللصقة (Patch)"
           }
         },
         "da" : {
@@ -1647,8 +1647,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Age:"
+            "state" : "translated",
+            "value" : "العمر:"
           }
         },
         "da" : {
@@ -1791,8 +1791,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Alarm setting"
+            "state" : "translated",
+            "value" : "إعدادات التنبيه (المنبه)"
           }
         },
         "da" : {
@@ -1935,8 +1935,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?"
+            "state" : "translated",
+            "value" : "هل أنت متأكد/ة أنك تريد إيقاف استخدام Medtrum TouchCare Nano 200u/300u؟"
           }
         },
         "da" : {
@@ -2223,8 +2223,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Attach the pump to the body."
+            "state" : "translated",
+            "value" : "إلصاق المضخة بالجسم."
           }
         },
         "da" : {
@@ -2367,8 +2367,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Authenticate & deactivate patch"
+            "state" : "translated",
+            "value" : "المصادقة وإلغاء تفعيل اللصقة"
           }
         },
         "da" : {
@@ -2655,8 +2655,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Beep-only"
+            "state" : "translated",
+            "value" : "صوت تنبيه فقط"
           }
         },
         "da" : {
@@ -3375,8 +3375,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Connect your pump base to the patch."
+            "state" : "translated",
+            "value" : "قم بتوصيل قاعدة المضخة الخاصة بك باللصقة."
           }
         },
         "da" : {
@@ -3807,8 +3807,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "حالياً، أنت لا تستخدم وضع نبضات القلب (Heartbeat Mode). نبضة القلب ضرورية للحفاظ على تشغيل %1$@ في الخلفية. يوصى بالاستمرار في تمكين هذه الميزة"
           }
         },
         "da" : {
@@ -3951,8 +3951,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "حالياً، أنت تستخدم وضع نبضات القلب (Heartbeat Mode). هذا ضروري للحفاظ على تشغيل %1$@ في الخلفية. قد يكون هذا مثيراً للاهتمام إذا كان جهاز مراقبة الغلوكوز المستمر (CGM) الخاص بك يوفر بالفعل نبضة قلب. يوصى بالإبقاء على هذه الميزة مُمكَّنة"
           }
         },
         "da" : {
@@ -4383,8 +4383,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate patch"
+            "state" : "translated",
+            "value" : "إلغاء تفعيل اللصقة"
           }
         },
         "da" : {
@@ -4527,8 +4527,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate Patch"
+            "state" : "translated",
+            "value" : "إلغاء تفعيل اللصقة (Patch)"
           }
         },
         "da" : {
@@ -4671,8 +4671,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivated at"
+            "state" : "translated",
+            "value" : "تاريخ إلغاء التفعيل"
           }
         },
         "da" : {
@@ -5247,8 +5247,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Disconnect"
+            "state" : "translated",
+            "value" : "قطع الاتصال"
           }
         },
         "da" : {
@@ -5535,8 +5535,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Do not attach the patch to the body yet"
+            "state" : "translated",
+            "value" : "لا تقم بإلصاق اللصقة بالجسم بعد"
           }
         },
         "da" : {
@@ -5823,8 +5823,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
+            "state" : "translated",
+            "value" : "املأ اللصقة بالأنسولين. ملاحظة: مطلوب حد أدنى 70 وحدة (U) للتفعيل."
           }
         },
         "da" : {
@@ -5967,8 +5967,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the syringe with insulin"
+            "state" : "translated",
+            "value" : "املأ المحقنة بالأنسولين"
           }
         },
         "da" : {
@@ -6111,8 +6111,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Force remove"
+            "state" : "translated",
+            "value" : "إزالة قسرية (فرض الإزالة)"
           }
         },
         "da" : {
@@ -6255,8 +6255,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Go back to priming"
+            "state" : "translated",
+            "value" : "العودة إلى التعبئة الأولية"
           }
         },
         "da" : {
@@ -6399,8 +6399,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Go back to pump base"
+            "state" : "translated",
+            "value" : "العودة إلى قاعدة المضخة"
           }
         },
         "da" : {
@@ -6831,8 +6831,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Information"
+            "state" : "translated",
+            "value" : "معلومات"
           }
         },
         "da" : {
@@ -7263,8 +7263,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Insulin has been suspended!"
+            "state" : "translated",
+            "value" : "تم تعليق الأنسولين!"
           }
         },
         "da" : {
@@ -7695,8 +7695,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "It is recommended to deactivate first"
+            "state" : "translated",
+            "value" : "يوصى بإلغاء التفعيل أولاً"
           }
         },
         "da" : {
@@ -7983,8 +7983,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and beep"
+            "state" : "translated",
+            "value" : "ضوء وصوت تنبيه"
           }
         },
         "da" : {
@@ -8127,8 +8127,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and vibrate"
+            "state" : "translated",
+            "value" : "ضوء واهتزاز"
           }
         },
         "da" : {
@@ -8271,8 +8271,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light-only"
+            "state" : "translated",
+            "value" : "ضوء فقط"
           }
         },
         "da" : {
@@ -8415,8 +8415,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light, vibrate and, beep"
+            "state" : "translated",
+            "value" : "ضوء، واهتزاز، وصوت تنبيه"
           }
         },
         "da" : {
@@ -8703,8 +8703,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Make sure the Serial Number is correct before connecting it to the patch."
+            "state" : "translated",
+            "value" : "تأكد من أن **الرقم التسلسلي** صحيح قبل توصيله باللصقة."
           }
         },
         "da" : {
@@ -8991,8 +8991,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max daily insulin"
+            "state" : "translated",
+            "value" : "الحد الأقصى اليومي للأنسولين"
           }
         },
         "da" : {
@@ -9135,8 +9135,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max hourly insulin"
+            "state" : "translated",
+            "value" : "الحد الأقصى للأنسولين في الساعة"
           }
         },
         "da" : {
@@ -9567,8 +9567,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No active patch"
+            "state" : "translated",
+            "value" : "لا توجد لصقة مُفعّلة"
           }
         },
         "da" : {
@@ -9999,8 +9999,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Notification for expirate patch"
+            "state" : "translated",
+            "value" : "إشعار انتهاء صلاحية اللصقة"
           }
         },
         "da" : {
@@ -10143,8 +10143,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
+            "state" : "translated",
+            "value" : "تاريخ تفعيل اللصقة (Patch activated at)"
           }
         },
         "da" : {
@@ -10287,8 +10287,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "تفعيل اللصقة"
           }
         },
         "da" : {
@@ -10431,8 +10431,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired"
+            "state" : "translated",
+            "value" : "انتهت صلاحية اللصقة"
           }
         },
         "da" : {
@@ -10575,8 +10575,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
+            "state" : "translated",
+            "value" : "انتهاء صلاحية اللصقة"
           }
         },
         "da" : {
@@ -10719,8 +10719,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch ID"
+            "state" : "translated",
+            "value" : "معرّف اللصقة (Patch ID)"
           }
         },
         "da" : {
@@ -10863,8 +10863,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch lifetime"
+            "state" : "translated",
+            "value" : "عمر اللصقة الافتراضي"
           }
         },
         "da" : {
@@ -11007,8 +11007,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch priming"
+            "state" : "translated",
+            "value" : "التعبئة الأولية للَّصقة"
           }
         },
         "da" : {
@@ -11151,8 +11151,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch settings"
+            "state" : "translated",
+            "value" : "إعدادات اللصقة (Patch)"
           }
         },
         "da" : {
@@ -11295,8 +11295,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch state"
+            "state" : "translated",
+            "value" : "حالة اللصقة (Patch)"
           }
         },
         "da" : {
@@ -11583,8 +11583,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
+            "state" : "translated",
+            "value" : "ضع المحقنة في اللصقة واسحب 1 إلى 2 شرطة من الهواء."
           }
         },
         "da" : {
@@ -11727,8 +11727,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Press the needle button and start the priming process."
+            "state" : "translated",
+            "value" : "اضغط على زر الإبرة وابدأ عملية التعبئة الأولية (Priming)."
           }
         },
         "da" : {
@@ -11871,8 +11871,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process."
+            "state" : "translated",
+            "value" : "اضغط على زر الإبرة لإدخال الإبرة. انقر على \"تفعيل\" لإكمال عملية التفعيل."
           }
         },
         "da" : {
@@ -12015,8 +12015,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Previous Patch Details"
+            "state" : "translated",
+            "value" : "تفاصيل اللصقة السابقة"
           }
         },
         "da" : {
@@ -12159,8 +12159,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base model"
+            "state" : "translated",
+            "value" : "طراز قاعدة المضخة (Pump Base Model)"
           }
         },
         "da" : {
@@ -12303,8 +12303,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base settings"
+            "state" : "translated",
+            "value" : "إعدادات قاعدة المضخة"
           }
         },
         "da" : {
@@ -12447,8 +12447,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base SN"
+            "state" : "translated",
+            "value" : "الرقم التسلسلي لقاعدة المضخة (Pump Base SN)"
           }
         },
         "da" : {
@@ -12591,8 +12591,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reconnect"
+            "state" : "translated",
+            "value" : "إعادة الاتصال"
           }
         },
         "da" : {
@@ -13023,8 +13023,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove the safety cover from the patch."
+            "state" : "translated",
+            "value" : "قم بإزالة غطاء الأمان من اللصقة."
           }
         },
         "da" : {
@@ -13167,8 +13167,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Replace your patch now!"
+            "state" : "translated",
+            "value" : "حان الوقت لاستبدال لصقتك الآن!"
           }
         },
         "da" : {
@@ -13743,8 +13743,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select insulin type"
+            "state" : "translated",
+            "value" : "اختر نوع الأنسولين"
           }
         },
         "da" : {
@@ -13887,8 +13887,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select the type of insulin that you will be using"
+            "state" : "translated",
+            "value" : "حدد نوع الأنسولين الذي ستستخدمه"
           }
         },
         "da" : {
@@ -14031,8 +14031,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Serial number"
+            "state" : "translated",
+            "value" : "الرقم التسلسلي"
           }
         },
         "da" : {
@@ -14175,8 +14175,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Share Medtrum patch logs"
+            "state" : "translated",
+            "value" : "مشاركة سجلات (Logs) لصقة Medtrum"
           }
         },
         "da" : {
@@ -14319,8 +14319,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Silence"
+            "state" : "translated",
+            "value" : "اسكات"
           }
         },
         "da" : {
@@ -14463,8 +14463,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Start priming"
+            "state" : "translated",
+            "value" : "ابدأ التعبئة الأولية (Priming)"
           }
         },
         "da" : {
@@ -14751,8 +14751,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "مزامنة بيانات اللصقة (Patch)"
           }
         },
         "da" : {
@@ -15159,8 +15159,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Патч призначений для використання лише 3 дні та 8 годин. Перевищення цього часу може призвести до втрати його надійності. Це НЕ рекомендується. Розгляньте можливість використання звичайного терміну служби."
           }
         },
         "vi" : {
@@ -15615,8 +15615,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Toggle heartbeat mode"
+            "state" : "translated",
+            "value" : "تبديل وضع نبضات القلب"
           }
         },
         "da" : {
@@ -15879,8 +15879,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Використовуйте на свій страх і ризик!"
           }
         },
         "vi" : {
@@ -15903,8 +15903,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "استخدام العمر الافتراضي الممتد (الاستمرار حتى نفاذ البطارية)"
           }
         },
         "da" : {
@@ -16047,8 +16047,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use normal lifetime (3d 8h)"
+            "state" : "translated",
+            "value" : "استخدام العمر الافتراضي العادي (3 أيام و 8 ساعات)"
           }
         },
         "da" : {
@@ -16191,8 +16191,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate and beep"
+            "state" : "translated",
+            "value" : "اهتزاز وصوت تنبيه"
           }
         },
         "da" : {
@@ -16335,8 +16335,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate-only"
+            "state" : "translated",
+            "value" : "اهتزاز فقط"
           }
         },
         "da" : {
@@ -16479,8 +16479,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Welcome"
+            "state" : "translated",
+            "value" : "مرحبًا"
           }
         },
         "da" : {
@@ -16623,8 +16623,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
+            "state" : "translated",
+            "value" : "عند النقر على الزر، سيظهر لك مُوجّه القياسات الحيوية (Biometrics prompt). بمجرد الانتهاء، سيتم إلغاء تفعيل اللصقة وستُطالَب بإقران لصقة جديدة."
           }
         },
         "da" : {
@@ -16767,8 +16767,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Disable heartbeat mode"
+            "state" : "translated",
+            "value" : "نعم، تعطيل وضع نبضات القلب"
           }
         },
         "da" : {
@@ -16911,8 +16911,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Enable heartbeat mode"
+            "state" : "translated",
+            "value" : "نعم، تمكين وضع نبضات القلب"
           }
         },
         "da" : {
@@ -17199,8 +17199,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
+            "state" : "translated",
+            "value" : "ستبدأ بإعداد نوع الأنسولين الخاص بك وإعدادات اللصقة الأساسية قبل تفعيل اللصقة."
           }
         },
         "da" : {
@@ -17343,8 +17343,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "تبقى على لصقتك **%i ساعة**"
           }
         },
         "da" : {
@@ -17487,8 +17487,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has detected an occlussion!"
+            "state" : "translated",
+            "value" : "لقد اكتشفت لصقتك انسدادًا!"
           }
         },
         "da" : {
@@ -17631,8 +17631,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its daily maximum!"
+            "state" : "translated",
+            "value" : "لقد وصلت لصقتك إلى الحد الأقصى اليومي!"
           }
         },
         "da" : {
@@ -17775,8 +17775,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its hourly maximum!"
+            "state" : "translated",
+            "value" : "لقد وصلت لصقتك إلى الحد الأقصى للساعة!"
           }
         },
         "da" : {
@@ -17919,8 +17919,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is in Fault state!"
+            "state" : "translated",
+            "value" : "لصقتك في حالة عطل (Fault)!"
           }
         },
         "da" : {
@@ -18063,8 +18063,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is out of insulin!"
+            "state" : "translated",
+            "value" : "لقد نفد الأنسولين من لصقتك!"
           }
         },
         "da" : {
@@ -18351,8 +18351,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch will expire soon!"
+            "state" : "translated",
+            "value" : "ستنتهي صلاحية لصقتك قريبًا!"
           }
         },
         "da" : {
