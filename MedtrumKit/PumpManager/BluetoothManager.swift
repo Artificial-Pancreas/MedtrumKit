@@ -68,6 +68,14 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     }
 
     func ensureConnected(_ completionAsync: @escaping (MedtrumConnectError?) async -> Void) {
+        guard connectCompletion == nil else {
+            logger.error("EnsureConnected is already running...")
+            Task {
+                await completionAsync(.failedToConnectToDevice)
+            }
+            return
+        }
+
         connectCompletion = { (_ result: MedtrumConnectError?) -> Void in
             Task {
                 self.connectCompletion = nil
@@ -238,8 +246,8 @@ extension BluetoothManager {
     }
 
     func centralManager(_: CBCentralManager, willRestoreState dict: [String: Any]) {
-        let peripherals = dict["CBCentralManagerRestoredCentrals"] as? [CBPeripheral] ?? []
-        guard !peripherals.isEmpty, let peripheral = peripherals.first else {
+        let peripherals = dict[CBCentralManagerRestoredStatePeripheralsKey] as? [CBPeripheral] ?? []
+        guard let peripheral = peripherals.first else {
             logger.warning("No restored peripherals!")
             return
         }

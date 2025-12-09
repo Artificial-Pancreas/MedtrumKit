@@ -9705,6 +9705,150 @@
         }
       }
     },
+    "No patch" : {
+      "comment" : "Status highlight when no patch is active.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا توجد رقعة"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádná náplast"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intet plaster"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Patch"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No patch"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin parche"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei korjausta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas de patch"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna patch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッチなし"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen lapp"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen patch"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak poprawki"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem patch"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu există patch-uri"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет патча"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadna náplasť"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brez popravkov"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen patch"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yama yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нема латки"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có bản vá"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无补丁"
+          }
+        }
+      }
+    },
     "No, Keep as is" : {
       "comment" : "Button text to cancel actionsheet",
       "extractionState" : "manual",
@@ -15039,20 +15183,26 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "من المفترض استخدام اللصقة لمدة 3 أيام و8 ساعات فقط. قد يؤدي تجاوز هذه المدة إلى عدم الاعتماد على اللصقة. لا يوصى بذلك. ضع في اعتبارك استخدام مدى الحياة العادي."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náplast je určena k použití pouze po dobu 3 dnů a 8 hodin. Překročení této doby může způsobit nespolehlivost náplasti. To se NEDOPORUČUJE. Zvažte použití normální životnosti."
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Plasteret er kun beregnet til at blive brugt i 3 dage og 8 timer. Overskridelse af denne tid kan medføre, at plasteret bliver upålideligt. Dette anbefales IKKE. Overvej at bruge normal levetid."
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Das Pflaster soll nur 3 Tage und 8 Stunden lang verwendet werden. Eine Überschreitung dieser Zeit kann dazu führen, dass das Pflaster unzuverlässig wird. Dies wird NICHT empfohlen. Erwägen Sie die Verwendung der normalen Lebensdauer."
           }
         },
         "en" : {
@@ -15063,116 +15213,110 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "El parche sólo debe utilizarse durante 3 días y 8 horas. Si se supera este tiempo, el parche puede dejar de ser fiable. NO se recomienda. Considere el uso normal de por vida."
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Laastari on tarkoitettu käytettäväksi vain 3 päivän ja 8 tunnin ajan. Tämän ajan ylittäminen voi aiheuttaa laastarin epäluotettavuuden. Tätä EI suositella. Harkitse normaalin käyttöiän käyttämistä."
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Le patch est destiné à être utilisé pendant 3 jours et 8 heures seulement. Si vous dépassez cette durée, le patch risque de ne plus être fiable. Ceci n'est PAS recommandé. Envisagez d'utiliser la durée de vie normale."
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Il cerotto deve essere utilizzato solo per 3 giorni e 8 ore. Il superamento di questo tempo può causare l'inaffidabilità del cerotto. Questo non è raccomandato. Considerare l'utilizzo della normale durata di vita."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッチは3日と8時間のみ使用することを意図しています。この時間を超えると、パッチが信頼できなくなることがあります。これは推奨されません。通常の寿命の使用を検討してください。"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Plasteret er kun ment å brukes i 3 dager og 8 timer. Overskridelse av denne tiden kan føre til at plasteret blir upålitelig. Dette anbefales IKKE. Vurder å bruke normal levetid."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De patch dient slechts 3 dagen en 8 uur te worden gebruikt. Het overschrijden van deze tijd kan ervoor zorgen dat de patch onbetrouwbaar wordt. Dit wordt niet aanbevolen. Overweeg om de normale levensduur te gebruiken."
+            "value" : "De patch is bedoeld voor gebruik gedurende slechts 3 dagen en 8 uur. Als je deze tijd overschrijdt, kan de patch onbetrouwbaar worden. Dit wordt NIET aanbevolen. Overweeg om de normale levensduur te gebruiken."
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Plaster jest przeznaczony do stosowania tylko przez 3 dni i 8 godzin. Przekroczenie tego czasu może spowodować, że plaster stanie się zawodny. NIE jest to zalecane. Należy rozważyć korzystanie z normalnego okresu użytkowania."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "O adesivo deve ser usado por apenas 3 dias e 8 horas. Exceder esse tempo pode fazer com que o adesivo deixe de ser confiável. Isso NÃO é recomendado. Considere usar o tempo de vida normal."
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Plasturele este destinat a fi utilizat timp de numai 3 zile și 8 ore. Depășirea acestei perioade poate face ca plasturele să nu mai fie fiabil. Acest lucru NU este recomandat. Luați în considerare utilizarea vieții normale."
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Пластырь предназначен для использования в течение 3 дней и 8 часов. Превышение этого срока может привести к ненадежности пластыря. Это НЕ рекомендуется. Пользуйтесь обычным сроком службы."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Náplasť je určená na používanie len na 3 dni a 8 hodín. Prekročenie tohto času môže spôsobiť, že náplasť bude nespoľahlivá. Toto sa NEODPORÚČA. Zvážte používanie bežnej doby životnosti."
+            "value" : "Náplasť sa má používať len 3 dni a 8 hodín. Prekročenie tohto času môže spôsobiť nespoľahlivosť náplasti. Toto sa NEODPORÚČA. Zvážte použitie normálnej životnosti."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obliž naj bi se uporabljal le 3 dni in 8 ur. Če ta čas prekoračite, lahko obliž postane nezanesljiv. To NI priporočljivo. Razmislite o uporabi običajne življenjske dobe."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pumpen är avsett att användas i endast 3 dagar och 8 timmar. Mer än denna tid rekommenderas INTE. Överväg att använda normal livstid."
+            "value" : "Plåstret är avsett att användas i endast 3 dagar och 8 timmar. Om denna tid överskrids kan det leda till att plåstret blir opålitligt. Detta är INTE rekommenderat. Överväg att använda normal livslängd."
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "Yama sadece 3 gün ve 8 saat süreyle kullanılmak üzere tasarlanmıştır. Bu sürenin aşılması yamanın güvenilmez hale gelmesine neden olabilir. Bu tavsiye edilmez. Normal ömür boyu kullanmayı düşünün."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Патч призначений для використання лише 3 дні та 8 годин. Перевищення цього часу може призвести до втрати його надійності. Це НЕ рекомендується. Розгляньте можливість використання звичайного терміну служби."
+            "value" : "Патч призначений для використання лише протягом 3 днів і 8 годин. Перевищення цього часу може призвести до ненадійної роботи латки. Це НЕ рекомендується. Розгляньте можливість використання звичайного терміну дії."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Miếng dán (patch) chỉ được thiết kế để sử dụng trong 3 ngày và 8 giờ. Vượt quá thời gian này có thể khiến miếng dán hoạt động không còn đáng tin cậy. Điều này KHÔNG được khuyến nghị. Hãy cân nhắc sử dụng trong thời gian hoạt động tiêu chuẩn."
+            "value" : "Miếng dán này được thiết kế để sử dụng trong vòng 3 ngày và 8 giờ. Việc sử dụng vượt quá thời gian này có thể khiến miếng dán trở nên không đáng tin cậy. Điều này KHÔNG được khuyến nghị. Nên sử dụng theo thời gian sử dụng thông thường."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "state" : "translated",
+            "value" : "药贴只能使用 3 天 8 小时。超过这个时间可能会导致贴片变得不可靠。不建议这样做。请考虑终身使用。"
           }
         }
       }
@@ -15759,20 +15903,26 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "استخدمه على مسؤوليتك الخاصة!"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Používejte na vlastní nebezpečí!"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Brug på egen risiko!"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Benutzung auf eigene Gefahr!"
           }
         },
         "en" : {
@@ -15783,44 +15933,38 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Utilícelo bajo su propia responsabilidad."
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Käytä omalla vastuullasi!"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "A utiliser à vos risques et périls !"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Utilizzare a proprio rischio e pericolo!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自己責任で使用すること！"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Bruk på eget ansvar!"
           }
         },
         "nl" : {
@@ -15831,38 +15975,38 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Używaj na własne ryzyko!"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Use por sua própria conta e risco!"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Utilizați pe propriul risc!"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Используйте на свой страх и риск!"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Použitie na vlastné riziko!"
+            "value" : "Používajte na vlastné riziko!"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uporabljajte na lastno odgovornost!"
           }
         },
         "sv" : {
@@ -15873,8 +16017,8 @@
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "Kendi sorumluluğunuzda kullanın!"
           }
         },
         "uk" : {
@@ -15886,13 +16030,13 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tự chịu rủi ro khi sử dụng!"
+            "value" : "Sử dụng theo trách nhiệm của bạn!"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use at your own risk!"
+            "state" : "translated",
+            "value" : "使用风险自负！"
           }
         }
       }

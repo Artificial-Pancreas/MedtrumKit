@@ -307,6 +307,12 @@ public extension MedtrumPumpManager {
             return
         }
 
+        guard state.bolusState == .noBolus else {
+            log.error("Pump is in bolus state...")
+            completion(.deviceState(MedtrumConnectError.isBolussing))
+            return
+        }
+
         let duration = estimatedDuration(toBolus: units)
         log.info("Enact bolus - \(units)U, \(duration)sec")
 
@@ -451,6 +457,12 @@ public extension MedtrumPumpManager {
         completion: @escaping (LoopKit.PumpManagerError?) -> Void
     ) {
         log.info("Setting temp basal at \(unitsPerHour)U/hr for \(duration) seconds...")
+
+        guard state.bolusState == .noBolus else {
+            log.error("Pump is in bolus state...")
+            completion(.deviceState(MedtrumConnectError.isBolussing))
+            return
+        }
 
         bluetooth.ensureConnected { error in
             if let error = error {

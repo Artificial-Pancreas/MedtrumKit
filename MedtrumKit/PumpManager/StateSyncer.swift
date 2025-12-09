@@ -74,6 +74,7 @@ enum StateSyncer {
 
         if let bolusProgress = syncResponse.bolus {
             pumpManager.updateBolusProgress(delivered: bolusProgress.delivered, completed: bolusProgress.completed)
+            pumpManager.state.bolusState = bolusProgress.completed ? .noBolus : .inProgress
         }
 
         pumpManager.notifyStateDidChange()

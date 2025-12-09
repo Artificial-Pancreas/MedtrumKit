@@ -5,6 +5,7 @@ public enum MedtrumConnectError: LocalizedError {
     case failedToCompleteAuthorizationFlow(localizedError: String)
     case failedToFindDevice
     case failedToConnectToDevice
+    case isBolussing
 
     public var errorDescription: String? {
         switch self {
@@ -20,6 +21,8 @@ public enum MedtrumConnectError: LocalizedError {
             return "Failed to connect to device -> Timeout reached..."
         case .failedToFindDevice:
             return "Failed to find device"
+        case .isBolussing:
+            return "Device is currently bolussing"
         }
     }
 }

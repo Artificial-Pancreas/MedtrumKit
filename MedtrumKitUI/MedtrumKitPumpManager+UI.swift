@@ -72,7 +72,16 @@ extension MedtrumPumpManager: PumpManagerUI {
     }
 
     public var pumpStatusHighlight: DeviceStatusHighlight? {
-        if state.reservoir < 1 {
+        if state.patchId.isEmpty {
+            return PumpStatusHighlight(
+                localizedMessage: LocalizedString(
+                    "No patch",
+                    comment: "Status highlight when no patch is active."
+                ),
+                imageName: "exclamationmark.circle.fill",
+                state: .critical
+            )
+        } else if state.reservoir < 1 {
             return PumpStatusHighlight(
                 localizedMessage: LocalizedString("No Insulin", comment: "Status highlight that a pump is out of insulin."),
                 imageName: "exclamationmark.circle.fill",
