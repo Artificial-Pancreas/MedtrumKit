@@ -28,6 +28,7 @@ class PatchSettingsViewModel: ObservableObject {
     @Published var isDirty: Bool = false
     @Published var is300u: Bool = false
     @Published var isUpdating = false
+    @Published var noActivePatch = false
     @Published var errorMessage: String = ""
 
     let updatePatch: Bool
@@ -79,7 +80,7 @@ class PatchSettingsViewModel: ObservableObject {
 
         NotificationManager.activatePatchExpiredNotification(after: .hours(notificationAfterActivation))
 
-        guard updatePatch else {
+        guard updatePatch, !noActivePatch else {
             nextStep?()
             return
         }
@@ -133,6 +134,7 @@ extension PatchSettingsViewModel: PumpManagerStatusObserver {
 
     func updateState(_ state: MedtrumPumpState) {
         DispatchQueue.main.async {
+            self.noActivePatch = state.patchId.isEmpty
             self.maxHourlyInsulin = state.maxHourlyInsulin
             self.maxDailyInsulin = state.maxDailyInsulin
             self.alarmSettings = Double(state.alarmSetting.rawValue)

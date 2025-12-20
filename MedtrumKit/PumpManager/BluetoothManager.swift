@@ -13,6 +13,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
 
     var scanCompletion: ((MedtrumScanResult) -> Void)?
     var connectCompletion: ((MedtrumConnectError?) -> Void)?
+    var connectionTimeout: Task<Void, Never>?
 
     public var isConnected: Bool {
         if let peripheral = peripheral, peripheral.state == .connected {
@@ -133,7 +134,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     }
 
     func startTimeout(seconds: TimeInterval) {
-        Task {
+        connectionTimeout = Task {
             do {
                 try await Task.sleep(nanoseconds: UInt64(seconds) * 1_000_000_000)
                 guard let connectionCallback = self.connectCompletion else {
@@ -240,12 +241,14 @@ extension BluetoothManager {
             return
         }
 
+        connectionTimeout?.cancel()
+
         self.peripheral = peripheral
         peripheralManager = PeripheralManager(peripheral, self, pumpManager, completion)
         peripheral.discoverServices([PeripheralManager.SERVICE_UUID])
     }
 
-    func centralManager(_: CBCentralManager, willRestoreState dict: [String: Any]) {
+    func centralManager(_ centralManager: CBCentralManager, willRestoreState dict: [String: Any]) {
         let peripherals = dict[CBCentralManagerRestoredStatePeripheralsKey] as? [CBPeripheral] ?? []
         guard let peripheral = peripherals.first else {
             logger.warning("No restored peripherals!")
@@ -254,11 +257,18 @@ extension BluetoothManager {
 
         guard let pumpManager = pumpManager else {
             logger.warning("Couldnt restore state, since no pumpManager is available...")
+            centralManager.cancelPeripheralConnection(peripheral)
             return
         }
 
-        self.peripheral = peripheral
-        peripheralManager = PeripheralManager(peripheral, self, pumpManager) { reconnectResult in
+        guard let service = peripheral.services?.first(where: { $0.uuid == PeripheralManager.SERVICE_UUID }) else {
+            logger.warning("Couldnt restore state, since no service is available...")
+            centralManager.cancelPeripheralConnection(peripheral)
+            return
+        }
+
+        logger.info("Restoring state to: \(peripheral.identifier.uuidString)")
+        let peripheralManager = PeripheralManager(peripheral, self, pumpManager) { reconnectResult in
             if let error = reconnectResult {
                 self.logger.warning("Couldnt reconnect to pump: \(error)")
                 return
@@ -267,7 +277,10 @@ extension BluetoothManager {
             self.logger.info("Reconnected to patch using restored state!")
         }
 
-        peripheral.discoverServices([PeripheralManager.SERVICE_UUID])
+        self.peripheral = peripheral
+        self.peripheralManager = peripheralManager
+
+        peripheralManager.peripheral(peripheral, didDiscoverCharacteristicsFor: service, error: nil)
     }
 
     func centralManager(_: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error _: Error?) {

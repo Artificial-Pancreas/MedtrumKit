@@ -119,6 +119,7 @@ extension PeripheralManager {
         switch authData {
         case let .failure(error):
             log.error("Failed to complete authorization flow: \(error.localizedDescription)")
+            bluetoothManager.disconnect()
             completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
 
         case let .success(data):
@@ -142,6 +143,7 @@ extension PeripheralManager {
         switch syncData {
         case let .failure(error):
             log.error("Failed to synchronize: \(error.localizedDescription)")
+            bluetoothManager.disconnect()
             completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
 
         case let .success(data):
@@ -163,6 +165,7 @@ extension PeripheralManager {
         switch subscribeData {
         case let .failure(error):
             log.error("Failed to subscribe: \(error.localizedDescription)")
+            bluetoothManager.disconnect()
             completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
 
         case .success:

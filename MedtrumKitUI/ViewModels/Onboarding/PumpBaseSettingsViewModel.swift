@@ -7,11 +7,12 @@ class PumpBaseSettingsViewModel: ObservableObject {
     private let logger = MedtrumLogger(category: "PumpBaseSettingsViewModel")
     private let pumpManager: MedtrumPumpManager?
     private let nextStep: () -> Void
-    public let pumpRemovalAction: () -> Void
-    init(_ pumpManager: MedtrumPumpManager?, _ nextStep: @escaping () -> Void, _ pumpRemovalAction: @escaping () -> Void) {
+    init(
+        _ pumpManager: MedtrumPumpManager?,
+        _ nextStep: @escaping () -> Void
+    ) {
         self.pumpManager = pumpManager
         self.nextStep = nextStep
-        self.pumpRemovalAction = pumpRemovalAction
 
         guard let pumpManager = pumpManager else {
             return

@@ -87,6 +87,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     let toSettings: () -> Void
     let toInsulinType: () -> Void
     let pumpActivationAction: (Bool) -> Void
+    let activatePatchAction: () -> Void
     private let log = MedtrumLogger(category: "settingsViewModel")
     private let pumpManager: MedtrumPumpManager?
     init(
@@ -95,7 +96,8 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
         _ pumpActivationAction: @escaping (Bool) -> Void,
         _ toSettings: @escaping () -> Void,
         _ toInsulinType: @escaping () -> Void,
-        _ pumpRemovalAction: @escaping () -> Void
+        _ pumpRemovalAction: @escaping () -> Void,
+        _ activatePatchAction: @escaping () -> Void
     ) {
         self.pumpManager = pumpManager
         self.deactivatePatchAction = deactivatePatchAction
@@ -103,6 +105,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
         self.pumpRemovalAction = pumpRemovalAction
         self.toInsulinType = toInsulinType
         self.toSettings = toSettings
+        self.activatePatchAction = activatePatchAction
 
         guard let pumpManager = pumpManager else {
             return

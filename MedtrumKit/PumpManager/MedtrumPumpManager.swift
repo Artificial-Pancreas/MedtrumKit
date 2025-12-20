@@ -76,6 +76,10 @@ public class MedtrumPumpManager: DeviceManager {
         supportedBolusVolumes.last(where: { $0 <= units }) ?? 0
     }
 
+    public func roundToSupportedBasalRate(unitsPerHour: Double) -> Double {
+        supportedBasalRates.last(where: { $0 <= unitsPerHour }) ?? 0
+    }
+
     public var supportedBasalRates: [Double] {
         guard !state.pumpSN.isEmpty else {
             return MedtrumPumpManager.onboardingSupportedBasalRates

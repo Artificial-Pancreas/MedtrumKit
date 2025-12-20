@@ -116,7 +116,7 @@ class NotificationManager {
 
         if let triggerAfter = triggerAfter {
             let notifTime = Date.now.addingTimeInterval(triggerAfter)
-            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: notifTime)
+            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: notifTime)
 
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         }

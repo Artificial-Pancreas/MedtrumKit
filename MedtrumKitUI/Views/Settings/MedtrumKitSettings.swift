@@ -38,12 +38,14 @@ struct MedtrumKitSettings: View {
                     patchLifecycle
                 }
 
-                HStack(alignment: .top) {
-                    deliveryStatus
-                    Spacer()
-                    reservoirStatus
+                if viewModel.patchLifecycleState == .active {
+                    HStack(alignment: .top) {
+                        deliveryStatus
+                        Spacer()
+                        reservoirStatus
+                    }
+                    .padding(.bottom, 5)
                 }
-                .padding(.bottom, 5)
 
                 if viewModel.showPumpTimeSyncWarning {
                     VStack(alignment: .leading, spacing: 4) {
@@ -59,115 +61,127 @@ struct MedtrumKitSettings: View {
             }
 
             Section {
-                Button(action: {
-                    viewModel.suspendResumeButtonPressed()
-                }) {
-                    HStack {
-                        if viewModel.basalType == .suspended {
-                            Text(LocalizedString("Resume delivery", comment: "Resume patch"))
-                        } else {
-                            Text(LocalizedString("Suspend delivery", comment: "Suspend patch"))
-                        }
-                        Spacer()
-                        if viewModel.isUpdatingSuspend {
-                            ActivityIndicator(isAnimating: .constant(true), style: .medium)
-                        }
-                    }
-                }
-                .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
-
-                if viewModel.basalType == .tempBasal {
+                if viewModel.patchLifecycleState != .noPatch {
                     Button(action: {
-                        viewModel.stopTempBasal()
+                        viewModel.suspendResumeButtonPressed()
                     }) {
                         HStack {
-                            Text(LocalizedString("Stop temp basal", comment: "Stop temp basal"))
+                            if viewModel.basalType == .suspended {
+                                Text(LocalizedString("Resume delivery", comment: "Resume patch"))
+                            } else {
+                                Text(LocalizedString("Suspend delivery", comment: "Suspend patch"))
+                            }
                             Spacer()
-                            if viewModel.isUpdatingTempBasal {
+                            if viewModel.isUpdatingSuspend {
                                 ActivityIndicator(isAnimating: .constant(true), style: .medium)
                             }
                         }
                     }
                     .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
-                }
 
-                Button(action: { viewModel.syncData() }) {
-                    HStack {
-                        Text(LocalizedString("Sync patch data", comment: "sync pump"))
-                        Spacer()
-                        if viewModel.isUpdatingPumpState {
-                            ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    if viewModel.basalType == .tempBasal {
+                        Button(action: {
+                            viewModel.stopTempBasal()
+                        }) {
+                            HStack {
+                                Text(LocalizedString("Stop temp basal", comment: "Stop temp basal"))
+                                Spacer()
+                                if viewModel.isUpdatingTempBasal {
+                                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                                }
+                            }
+                        }
+                        .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
+                    }
+
+                    Button(action: { viewModel.syncData() }) {
+                        HStack {
+                            Text(LocalizedString("Sync patch data", comment: "sync pump"))
+                            Spacer()
+                            if viewModel.isUpdatingPumpState {
+                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                            }
                         }
                     }
-                }
-                .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
+                    .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
 
-                if viewModel.patchState.rawValue < PatchState.active.rawValue && viewModel.patchState != .none {
-                    Button(action: { viewModel.toPumpActivation() }) {
+                    if viewModel.patchState.rawValue < PatchState.active.rawValue && viewModel.patchState != .none {
+                        Button(action: { viewModel.toPumpActivation() }) {
+                            HStack {
+                                Text(LocalizedString("Activate patch", comment: "label for activate patch"))
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: UIFont.systemFontSize, weight: .bold))
+                                    .opacity(0.35)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+
+                    Button(action: { viewModel.checkConnection() }) {
                         HStack {
-                            Text(LocalizedString("Activate patch", comment: "label for activate patch"))
+                            if viewModel.isConnected {
+                                Text(LocalizedString("Disconnect", comment: "disconnect from patch"))
+                            } else {
+                                Text(LocalizedString("Reconnect", comment: "reconnect to patch"))
+                            }
+                            Spacer()
+                            if viewModel.isReconnecting {
+                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                            }
+                        }
+                    }
+
+                    Button(action: { viewModel.deactivatePatchAction() }) {
+                        HStack {
+                            Text(LocalizedString("Deactivate Patch", comment: "deactivate patch"))
+                                .foregroundStyle(.red)
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .font(.system(size: UIFont.systemFontSize, weight: .bold))
-                                .opacity(0.35)
-                                .foregroundStyle(.secondary)
+                                .opacity(0.5)
+                                .foregroundColor(.red)
                         }
                     }
-                }
 
-                Button(action: { viewModel.checkConnection() }) {
                     HStack {
-                        if viewModel.isConnected {
-                            Text(LocalizedString("Disconnect", comment: "disconnect from patch"))
+                        Text(LocalizedString("Patch state", comment: "Text for patch state"))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                        Text(viewModel.patchStateString)
+                            .foregroundColor(.secondary)
+                    }
+
+                    HStack {
+                        Text(LocalizedString("Last sync", comment: "Text for last sync"))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                        if viewModel.patchLifecycleState != .noPatch {
+                            Text(viewModel.dateFormatter.string(from: viewModel.lastSync))
+                                .foregroundColor(.secondary)
                         } else {
-                            Text(LocalizedString("Reconnect", comment: "reconnect to patch"))
-                        }
-                        Spacer()
-                        if viewModel.isReconnecting {
-                            ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                            Text("-")
+                                .foregroundColor(.secondary)
                         }
                     }
-                }
 
-                Button(action: { viewModel.deactivatePatchAction() }) {
                     HStack {
-                        Text(LocalizedString("Deactivate Patch", comment: "deactivate patch"))
-                            .foregroundStyle(.red)
+                        Text(LocalizedString("Status", comment: "Text for status")).foregroundColor(Color.primary)
                         Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.system(size: UIFont.systemFontSize, weight: .bold))
-                            .opacity(0.5)
-                            .foregroundColor(.red)
+                        HStack(spacing: 10) {
+                            connectionStatusText
+                            connectionStatusIcon
+                        }
                     }
-                }
-
-                HStack {
-                    Text(LocalizedString("Patch state", comment: "Text for patch state"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Text(viewModel.patchStateString)
-                        .foregroundColor(.secondary)
-                }
-
-                HStack {
-                    Text(LocalizedString("Last sync", comment: "Text for last sync"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    if viewModel.patchLifecycleState != .noPatch {
-                        Text(viewModel.dateFormatter.string(from: viewModel.lastSync))
-                            .foregroundColor(.secondary)
-                    } else {
-                        Text("-")
-                            .foregroundColor(.secondary)
-                    }
-                }
-
-                HStack {
-                    Text(LocalizedString("Status", comment: "Text for status")).foregroundColor(Color.primary)
-                    Spacer()
-                    HStack(spacing: 10) {
-                        connectionStatusText
-                        connectionStatusIcon
+                } else {
+                    Button(action: { viewModel.activatePatchAction() }) {
+                        HStack {
+                            Text(LocalizedString("Activate new Patch", comment: "activate patch"))
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: UIFont.systemFontSize, weight: .bold))
+                                .opacity(0.5)
+                        }
                     }
                 }
             }
@@ -307,16 +321,14 @@ struct MedtrumKitSettings: View {
                 }) {
                     HStack {
                         Text(LocalizedString("Manually sync Pump time", comment: "Label for syncing the time on the pump"))
-                            .foregroundColor(.accentColor)
-
                         Spacer()
-
                         if viewModel.isUpdatingPumpState {
                             ActivityIndicator(isAnimating: .constant(true), style: .medium)
                         }
                     }
                 }
-                .disabled(viewModel.isUpdatingPumpState)
+                .disabled(viewModel.isUpdatingPumpState || viewModel.patchLifecycleState == .noPatch)
+                .foregroundColor(.accentColor)
                 .actionSheet(isPresented: $showingTimeSyncConfirmation) {
                     syncPumpTime
                 }
