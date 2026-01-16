@@ -4153,6 +4153,12 @@
             "value" : "giorno"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dag"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4295,6 +4301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "giorni"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dager"
           }
         },
         "nb-NO" : {
@@ -6601,6 +6613,12 @@
             "value" : "ora"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "time"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6743,6 +6761,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ore"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "timer"
           }
         },
         "nb-NO" : {
@@ -7463,6 +7487,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insulina Rimanente"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gjenværende insulin"
           }
         },
         "nb-NO" : {
@@ -8617,6 +8647,12 @@
             "value" : "caricamento"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "laster"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "new",
@@ -9337,6 +9373,12 @@
             "value" : "minuto"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minutt"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9479,6 +9521,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "minuti"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minutter"
           }
         },
         "nb-NO" : {
@@ -14451,8 +14499,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Share Medtrum patch logs"
+            "state" : "translated",
+            "value" : "分享移宇泵日志"
           }
         }
       }
@@ -16675,10 +16723,10 @@
             "value" : "Welcome"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Welcome"
+            "state" : "translated",
+            "value" : "Velkommen"
           }
         },
         "nb-NO" : {
