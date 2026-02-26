@@ -63,7 +63,7 @@ struct PatchActivationView: View {
 
             Button(action: { viewModel.activate() }) {
                 if viewModel.isActivating {
-                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    ActivityIndicator()
                 } else {
                     Text(LocalizedString("Activate patch", comment: "label for activate patch"))
                 }

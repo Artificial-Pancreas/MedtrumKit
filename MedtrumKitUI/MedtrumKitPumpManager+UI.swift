@@ -96,6 +96,20 @@ extension MedtrumPumpManager: PumpManagerUI {
                 imageName: "pause.circle.fill",
                 state: .warning
             )
+        } else if state.expirationTimer == 0, min(
+            // expirationTimer == 0 means user selected extended mode
+            // hard check if we are past 120 hrs
+            (Date.now.timeIntervalSince1970 - state.patchActivatedAt.timeIntervalSince1970) / TimeInterval(hours: 80),
+            1
+        ) == 1 {
+            return PumpStatusHighlight(
+                localizedMessage: LocalizedString(
+                    "Patch expired. Basal only.",
+                    comment: "Status highlight when extended patch has expired, i.e. lifetime past 120 hours."
+                ),
+                imageName: "exclamationmark.circle.fill",
+                state: .critical
+            )
         } else if Date.now.timeIntervalSince(state.lastSync) > .minutes(12) {
             return PumpStatusHighlight(
                 localizedMessage: LocalizedString(
@@ -123,18 +137,18 @@ extension MedtrumPumpManager: PumpManagerUI {
         guard let expiresAt = state.patchExpiresAt else {
             return nil
         }
-        
+
         if expiresAt <= Date.now {
             // Patch is expired
             return PumpLifecycleProgress(percentComplete: 100, progressState: .critical)
         }
-        
+
         if expiresAt.addingTimeInterval(.hours(-8)) <= Date.now {
             // Patch is in grace period
             let completed = expiresAt.timeIntervalSince(state.patchActivatedAt) / TimeInterval(hours: 80)
             return PumpLifecycleProgress(percentComplete: completed, progressState: .warning)
         }
-        
+
         return nil
     }
 

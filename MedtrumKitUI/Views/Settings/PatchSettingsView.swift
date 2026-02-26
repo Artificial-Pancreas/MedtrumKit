@@ -103,10 +103,7 @@ struct PatchSettingsView: View {
                         formatter: { value in
                             switch value {
                             case 0:
-                                return LocalizedString(
-                                    "Use extended lifetime (continue till battery empty)",
-                                    comment: "Label for extended lifetime"
-                                )
+                                return LocalizedString("Use extended lifetime", comment: "Label for extended lifetime")
                             default:
                                 return LocalizedString("Use normal lifetime (3d 8h)", comment: "Label for normal patch lifetime")
                             }
@@ -183,7 +180,7 @@ struct PatchSettingsView: View {
                                 .padding(.bottom, 10)
 
                             Text(LocalizedString(
-                                "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime.",
+                                "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours).",
                                 comment: "warning body"
                             ))
                         }
@@ -207,10 +204,10 @@ struct PatchSettingsView: View {
                         Text(LocalizedString("Continue", comment: "Continue"))
                     }
                 } else {
-                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    ActivityIndicator()
                 }
             }
-            .disabled(viewModel.isUpdating)
+            .disabled(viewModel.isUpdating || doDirtyCheck && !viewModel.isDirty)
             .buttonStyle(ActionButtonStyle())
             .padding([.bottom, .horizontal])
         }

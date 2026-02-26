@@ -134,7 +134,16 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 updatePatch: pumpManager?.isOnboarded ?? false,
                 nextStep: nextStep
             )
-            return hostingController(rootView: PatchSettingsView(viewModel: viewModel, doDirtyCheck: false))
+
+            var dirtyCheck = false
+            if let pumpManager = pumpManager {
+                dirtyCheck = !pumpManager.state.patchId.isEmpty
+            }
+
+            return hostingController(rootView: PatchSettingsView(
+                viewModel: viewModel,
+                doDirtyCheck: dirtyCheck
+            ))
 
         case .deactivatePatchScreen:
             let nextStep = { self.resetNavigationTo([.settingsScreen, .pumpBaseSettingsScreen]) }

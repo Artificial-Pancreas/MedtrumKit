@@ -90,9 +90,11 @@ extension PatchPrimingViewModel: PumpManagerStatusObserver {
                 if pumpManager.state.pumpState.rawValue > PatchState.priming.rawValue,
                    pumpManager.state.pumpState.rawValue < PatchState.active.rawValue
                 {
+                    pumpManager.removeStatusObserver(self)
                     self.nextStep()
                 } else if pumpManager.state.pumpState.rawValue >= PatchState.active.rawValue {
                     // Patch already activated, ready to jump to settings
+                    pumpManager.removeStatusObserver(self)
                     self.done()
                 }
             }

@@ -486,8 +486,6 @@ public extension MedtrumPumpManager {
                     return
                 }
 
-                self.state.basalState = .active
-                self.state.basalStateSince = Date.now
                 self.log.info("Cancelled temp basal!")
             }
 
@@ -511,6 +509,10 @@ public extension MedtrumPumpManager {
                 }
 
                 self.state.lastSync = Date.now
+                self.state.basalState = .active
+                self.state.basalStateSince = Date.now
+                self.state.tempBasalUnits = nil
+                self.state.tempBasalDuration = nil
                 self.notifyStateDidChange()
 
                 self.pumpDelegate.notify { delegate in
@@ -542,14 +544,21 @@ public extension MedtrumPumpManager {
             self.log.info("Set temp basal!")
 
             let startDate = Date.now
-            let dose = NewPumpEvent.tempBasal(
-                dose: DoseEntry.tempBasal(
-                    absoluteUnit: unitsPerHour,
-                    duration: duration,
-                    insulinType: self.state.insulinType
-                ),
-                date: startDate
-            )
+            var events = [
+                NewPumpEvent.tempBasal(
+                    dose: DoseEntry.tempBasal(
+                        absoluteUnit: unitsPerHour,
+                        duration: duration,
+                        insulinType: self.state.insulinType,
+                        startDate: startDate
+                    ),
+                    date: startDate
+                )
+            ]
+
+            if let tempBasalEvent = self.getTempBasalEvent(endDate: Date.now) {
+                events.append(tempBasalEvent)
+            }
 
             self.state.basalState = .tempBasal
             self.state.basalStateSince = startDate
@@ -561,7 +570,7 @@ public extension MedtrumPumpManager {
             self.pumpDelegate.notify { delegate in
                 delegate?.pumpManager(
                     self,
-                    hasNewPumpEvents: [dose],
+                    hasNewPumpEvents: events,
                     lastReconciliation: self.state.lastSync,
                     replacePendingEvents: true,
                 ) { error in
@@ -605,6 +614,8 @@ public extension MedtrumPumpManager {
 
             self.state.basalState = .suspended
             self.state.basalStateSince = Date.now
+            self.state.tempBasalUnits = nil
+            self.state.tempBasalDuration = nil
             self.state.lastSync = Date.now
             self.notifyStateDidChange()
 

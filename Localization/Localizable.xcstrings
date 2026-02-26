@@ -51,9 +51,9 @@
             "value" : "-"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "-"
           }
         },
@@ -187,9 +187,9 @@
             "value" : "%llu"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "%llu"
           }
         },
@@ -323,9 +323,9 @@
             "value" : "1."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "1."
           }
         },
@@ -459,9 +459,9 @@
             "value" : "2."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "2."
           }
         },
@@ -595,9 +595,9 @@
             "value" : "3."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "3."
           }
         },
@@ -731,9 +731,9 @@
             "value" : "4."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "4."
           }
         },
@@ -867,9 +867,9 @@
             "value" : "5."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "5."
           }
         },
@@ -1003,9 +1003,9 @@
             "value" : "6."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "6."
           }
         },
@@ -1139,9 +1139,9 @@
             "value" : "7."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "7."
           }
         },
@@ -1275,9 +1275,9 @@
             "value" : "8."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "8."
           }
         },
@@ -1411,9 +1411,9 @@
             "value" : "1234ABCD"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "1234ABCD"
           }
         },
@@ -1555,10 +1555,10 @@
             "value" : "Activate patch"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Activate patch"
+            "state" : "translated",
+            "value" : "Aktiver patch"
           }
         },
         "nb-NO" : {
@@ -1699,10 +1699,10 @@
             "value" : "Age:"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Age:"
+            "state" : "translated",
+            "value" : "Alder:"
           }
         },
         "nb-NO" : {
@@ -1843,10 +1843,10 @@
             "value" : "Alarm setting"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Alarm setting"
+            "state" : "translated",
+            "value" : "Innstillinger for alarm"
           }
         },
         "nb-NO" : {
@@ -1987,10 +1987,10 @@
             "value" : "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?"
+            "state" : "translated",
+            "value" : "Er du sikker på at du ønsker å slutte med Medtrum TouchCare Nano 200u/300u?"
           }
         },
         "nb-NO" : {
@@ -2137,6 +2137,12 @@
             "value" : "Sei sicuro?"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er du sikker?"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2275,10 +2281,10 @@
             "value" : "Attach the pump to the body."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Attach the pump to the body."
+            "state" : "translated",
+            "value" : "Fest pumpen til kroppen."
           }
         },
         "nb-NO" : {
@@ -2419,10 +2425,10 @@
             "value" : "Authenticate & deactivate patch"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Authenticate & deactivate patch"
+            "state" : "translated",
+            "value" : "Godkjenn & deaktiver patch"
           }
         },
         "nb-NO" : {
@@ -2569,6 +2575,12 @@
             "value" : "Batteria"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batteri"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2707,10 +2719,10 @@
             "value" : "Beep-only"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Beep-only"
+            "state" : "translated",
+            "value" : "Beholdbart"
           }
         },
         "nb-NO" : {
@@ -2857,6 +2869,12 @@
             "value" : "Cancella"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryt"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2999,6 +3017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Controllato presso"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sjekket på"
           }
         },
         "nb-NO" : {
@@ -3145,6 +3169,12 @@
             "value" : "Impostazioni"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfigurasjon"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3289,6 +3319,12 @@
             "value" : "Conferma"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bekreft"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3427,10 +3463,10 @@
             "value" : "Connect your pump base to the patch."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Connect your pump base to the patch."
+            "state" : "translated",
+            "value" : "Koble pumpebasen din til plasteret."
           }
         },
         "nb-NO" : {
@@ -3577,6 +3613,12 @@
             "value" : "Connesso"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilkoblet"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3721,6 +3763,12 @@
             "value" : "Continua"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortsett"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3859,10 +3907,10 @@
             "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "For tiden bruker du IKKE hjerteslag. Et hjerterytme er nødvendig for å holde %1$@ kjører i bakgrunnen. Det er anbefalt å holde aktivere denne funksjonen"
           }
         },
         "nb-NO" : {
@@ -4003,10 +4051,10 @@
             "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "For tiden bruker du en hjertefrekvensmodus. Dette er nødvendig for at %1$@ skal kunne kjøre i bakgrunnen. Dette kan være interessant hvis CGM allerede tilbyr en hjerterytme. Det anbefales å holde denne funksjonen aktivert"
           }
         },
         "nb-NO" : {
@@ -4447,10 +4495,10 @@
             "value" : "Deactivate patch"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate patch"
+            "state" : "translated",
+            "value" : "Deaktivere patch"
           }
         },
         "nb-NO" : {
@@ -4591,10 +4639,10 @@
             "value" : "Deactivate Patch"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate Patch"
+            "state" : "translated",
+            "value" : "Deaktiver programfiks"
           }
         },
         "nb-NO" : {
@@ -4735,10 +4783,10 @@
             "value" : "Deactivated at"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivated at"
+            "state" : "translated",
+            "value" : "Deaktivert den"
           }
         },
         "nb-NO" : {
@@ -4885,6 +4933,12 @@
             "value" : "Eliminare la pompa"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slett pumpe"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "new",
@@ -5027,6 +5081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancella Microinfusore"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slett pumpe"
           }
         },
         "nb-NO" : {
@@ -5173,6 +5233,12 @@
             "value" : "Disattivato"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivert"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5311,10 +5377,10 @@
             "value" : "Disconnect"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Disconnect"
+            "state" : "translated",
+            "value" : "Frakoblet"
           }
         },
         "nb-NO" : {
@@ -5461,6 +5527,12 @@
             "value" : "Disconnesso"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frakoblet"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5599,10 +5671,10 @@
             "value" : "Do not attach the patch to the body yet"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Do not attach the patch to the body yet"
+            "state" : "translated",
+            "value" : "Ikke fest plasteret til kroppen ennå"
           }
         },
         "nb-NO" : {
@@ -5749,6 +5821,12 @@
             "value" : "Fine"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferdig"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5829,6 +5907,156 @@
         }
       }
     },
+    "Extended Patch expired. Basal only." : {
+      "comment" : "Text shown when extended patch expired surpasses 120 hours",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انتهت صلاحية الرقعة الممتدة. القاعدية فقط."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platnost prodloužené záplaty vypršela. Pouze bazální."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Patch er udløbet. Kun basal."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Patch abgelaufen. Nur Basal."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parche extendido caducado. Sólo basal."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laajennettu laastari on vanhentunut. Vain basal."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le patch étendu a expiré. Basal uniquement."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch esteso scaduto. Solo basale."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "延長パッチは期限切れ。ベーサルのみ。"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forlenget plaster utgått. Bare basal."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Patch is verlopen. Alleen basaal."
+          }
+        },
+        "no" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utvidet programfiks har gått ut basal."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przedłużona łatka wygasła. Tylko podstawowa."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch estendido expirado. Somente basal."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch extins expirat. Numai bazal."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Срок действия расширенного пластыря истек. Только базальный."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platnosť rozšírenej náplasti vypršala. Len bazálna."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podaljšani popravek je potekel. Samo osnovna plast."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Patch har gått ut. Endast Basal."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genişletilmiş Yama'nın süresi doldu. Sadece bazal."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Термін дії розширеної латки закінчився. Тільки базовий."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bản vá mở rộng đã hết hạn. Chỉ còn bản vá cơ bản."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扩展补丁已过期。仅限基质。"
+          }
+        }
+      }
+    },
     "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation." : {
       "comment" : "Label for prime step 2.4",
       "extractionState" : "manual",
@@ -5887,10 +6115,10 @@
             "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
+            "state" : "translated",
+            "value" : "Fyll depotplasteret med insulin. MERK: Minst 70 E er nødvendig for aktivering."
           }
         },
         "nb-NO" : {
@@ -6031,10 +6259,10 @@
             "value" : "Fill the syringe with insulin"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the syringe with insulin"
+            "state" : "translated",
+            "value" : "Fyll sprøyten med insulin"
           }
         },
         "nb-NO" : {
@@ -6175,10 +6403,10 @@
             "value" : "Force remove"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Force remove"
+            "state" : "translated",
+            "value" : "Tving fjerning"
           }
         },
         "nb-NO" : {
@@ -6319,10 +6547,10 @@
             "value" : "Go back to priming"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Go back to priming"
+            "state" : "translated",
+            "value" : "Gå tilbake til klaring"
           }
         },
         "nb-NO" : {
@@ -6463,10 +6691,10 @@
             "value" : "Go back to pump base"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Go back to pump base"
+            "state" : "translated",
+            "value" : "Gå tilbake til pumpebasen"
           }
         },
         "nb-NO" : {
@@ -6907,10 +7135,10 @@
             "value" : "Information"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Information"
+            "state" : "translated",
+            "value" : "Informasjon"
           }
         },
         "nb-NO" : {
@@ -7057,6 +7285,12 @@
             "value" : "Insulina \nSospesa"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insulin\nSuspendert"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7201,6 +7435,12 @@
             "value" : "Insulina Somministrata"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilførsel av insulin"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7339,10 +7579,10 @@
             "value" : "Insulin has been suspended!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Insulin has been suspended!"
+            "state" : "translated",
+            "value" : "Insulin har blitt suspendert!"
           }
         },
         "nb-NO" : {
@@ -7492,7 +7732,7 @@
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gjenværende insulin"
+            "value" : "Insulin som gjenstår"
           }
         },
         "nb-NO" : {
@@ -7639,6 +7879,12 @@
             "value" : "Tipo di Insulina"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insulin Type"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7777,10 +8023,10 @@
             "value" : "It is recommended to deactivate first"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "It is recommended to deactivate first"
+            "state" : "translated",
+            "value" : "Det anbefales å deaktivere første gang."
           }
         },
         "nb-NO" : {
@@ -7927,6 +8173,12 @@
             "value" : "Ultima sincronizzazione"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sist synkronisert"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "new",
@@ -8065,10 +8317,10 @@
             "value" : "Light and beep"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and beep"
+            "state" : "translated",
+            "value" : "Lys og pust"
           }
         },
         "nb-NO" : {
@@ -8209,10 +8461,10 @@
             "value" : "Light and vibrate"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and vibrate"
+            "state" : "translated",
+            "value" : "Lys og vibrer"
           }
         },
         "nb-NO" : {
@@ -8353,10 +8605,10 @@
             "value" : "Light-only"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light-only"
+            "state" : "translated",
+            "value" : "Kun lette"
           }
         },
         "nb-NO" : {
@@ -8497,10 +8749,10 @@
             "value" : "Light, vibrate and, beep"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light, vibrate and, beep"
+            "state" : "translated",
+            "value" : "Lett, vibrering og grov"
           }
         },
         "nb-NO" : {
@@ -8791,10 +9043,10 @@
             "value" : "Make sure the Serial Number is correct before connecting it to the patch."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Make sure the Serial Number is correct before connecting it to the patch."
+            "state" : "translated",
+            "value" : "Kontroller at serienummeret er korrekt før du kobler det til depotplasteret."
           }
         },
         "nb-NO" : {
@@ -8941,6 +9193,12 @@
             "value" : "Sincronizzazione manuale dell'ora della pompa"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synkroniser pumpens tid manuelt"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "new",
@@ -9079,10 +9337,10 @@
             "value" : "Max daily insulin"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max daily insulin"
+            "state" : "translated",
+            "value" : "Max daglig insulin"
           }
         },
         "nb-NO" : {
@@ -9223,10 +9481,10 @@
             "value" : "Max hourly insulin"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max hourly insulin"
+            "state" : "translated",
+            "value" : "Maksimal timelegemiddel insulin"
           }
         },
         "nb-NO" : {
@@ -9667,10 +9925,10 @@
             "value" : "No active patch"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No active patch"
+            "state" : "translated",
+            "value" : "Ingen aktive depotplastre"
           }
         },
         "nb-NO" : {
@@ -9817,6 +10075,12 @@
             "value" : "パッチなし"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen Patch"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9959,6 +10223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No, conservare così com'è"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nei, behold som det er"
           }
         },
         "nb-NO" : {
@@ -10105,6 +10375,12 @@
             "value" : "No, Tieni microinfusore Come È"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nei, behold pumpen som er"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10243,10 +10519,10 @@
             "value" : "Notification for expirate patch"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Notification for expirate patch"
+            "state" : "translated",
+            "value" : "Varsel om utløpende plaster"
           }
         },
         "nb-NO" : {
@@ -10387,10 +10663,10 @@
             "value" : "Patch activated at"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
+            "state" : "translated",
+            "value" : "Patch aktivert på"
           }
         },
         "nb-NO" : {
@@ -10531,10 +10807,10 @@
             "value" : "Patch activation"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Aktivering av programfiks"
           }
         },
         "nb-NO" : {
@@ -10675,10 +10951,10 @@
             "value" : "Patch expired"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired"
+            "state" : "translated",
+            "value" : "Oppdatering utløpt"
           }
         },
         "nb-NO" : {
@@ -10761,6 +11037,156 @@
         }
       }
     },
+    "Patch expired. Basal only." : {
+      "comment" : "Status highlight when extended patch has expired, i.e. lifetime past 120 hours.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انتهت صلاحية التصحيح. القاعدية فقط."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platnost záplaty vypršela. Pouze bazální."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plasteret er udløbet. Kun basal."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Pflaster ist abgelaufen. Nur Basal."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch expired. Basal only."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parche caducado. Sólo basal."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laastari vanhentunut. Vain basaalinen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch périmé. Basal uniquement."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch scaduto. Solo basale."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッチは期限切れ。基礎のみ。"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lappen er utløpt. Bare basal."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch is verlopen. Alleen basaal."
+          }
+        },
+        "no" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdateringen har gått ut på basal."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch wygasł. Tylko podstawowa."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O adesivo expirou. Somente basal."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch expirat. Numai bazal."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Срок действия пластыря истек. Только базальный."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platnosť záplaty vypršala. Len bazálna."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obliž se je iztekel. Samo bazalna."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plåstret har gått ut. Endast basal."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yamanın süresi doldu. Sadece bazal."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Термін дії пластиру закінчився. Тільки для основи."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bản vá đã hết hạn. Chỉ áp dụng cho cơ bản."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补丁已过期。仅限基质。"
+          }
+        }
+      }
+    },
     "Patch expires at" : {
       "comment" : "Text for expiresAt",
       "extractionState" : "manual",
@@ -10819,10 +11245,10 @@
             "value" : "Patch expires at"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
+            "state" : "translated",
+            "value" : "Patch utløper på"
           }
         },
         "nb-NO" : {
@@ -10963,10 +11389,10 @@
             "value" : "Patch ID"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch ID"
+            "state" : "translated",
+            "value" : "Fiks ID"
           }
         },
         "nb-NO" : {
@@ -11107,10 +11533,10 @@
             "value" : "Patch lifetime"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch lifetime"
+            "state" : "translated",
+            "value" : "Korrigerens levetid"
           }
         },
         "nb-NO" : {
@@ -11251,10 +11677,10 @@
             "value" : "Patch priming"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch priming"
+            "state" : "translated",
+            "value" : "Lappet klargjøring"
           }
         },
         "nb-NO" : {
@@ -11395,10 +11821,10 @@
             "value" : "Patch settings"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch settings"
+            "state" : "translated",
+            "value" : "Oppdatere innstillinger"
           }
         },
         "nb-NO" : {
@@ -11539,10 +11965,10 @@
             "value" : "Patch state"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch state"
+            "state" : "translated",
+            "value" : "Oppdatert tilstand"
           }
         },
         "nb-NO" : {
@@ -11683,10 +12109,10 @@
             "value" : "Patch time"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch time"
+            "state" : "translated",
+            "value" : "Oppdaterings^dato"
           }
         },
         "nb-NO" : {
@@ -11827,10 +12253,10 @@
             "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
+            "state" : "translated",
+            "value" : "Sett sprøyten på plasteret og trekk ut 1 til 2 bindestreker med luft."
           }
         },
         "nb-NO" : {
@@ -11971,10 +12397,10 @@
             "value" : "Press the needle button and start the priming process."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Press the needle button and start the priming process."
+            "state" : "translated",
+            "value" : "Press på nålesnappen og begynn på sykkelprosessen."
           }
         },
         "nb-NO" : {
@@ -12115,10 +12541,10 @@
             "value" : "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process."
+            "state" : "translated",
+            "value" : "Trykk på kanylen for å sette inn kanylen. Klikk på \"Aktiver\" for å fullføre aktiveringsprosessen."
           }
         },
         "nb-NO" : {
@@ -12259,10 +12685,10 @@
             "value" : "Previous Patch Details"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Previous Patch Details"
+            "state" : "translated",
+            "value" : "Forrige programfiks detaljer"
           }
         },
         "nb-NO" : {
@@ -12403,10 +12829,10 @@
             "value" : "Pump base model"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base model"
+            "state" : "translated",
+            "value" : "Basismodell for pumpen"
           }
         },
         "nb-NO" : {
@@ -12547,10 +12973,10 @@
             "value" : "Pump base settings"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base settings"
+            "state" : "translated",
+            "value" : "Innstillinger for pumpe"
           }
         },
         "nb-NO" : {
@@ -12691,10 +13117,10 @@
             "value" : "Pump base SN"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base SN"
+            "state" : "translated",
+            "value" : "Pumpens base SN"
           }
         },
         "nb-NO" : {
@@ -12835,10 +13261,10 @@
             "value" : "Reconnect"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reconnect"
+            "state" : "translated",
+            "value" : "Gjenoppkoble"
           }
         },
         "nb-NO" : {
@@ -12985,6 +13411,12 @@
             "value" : "Riconnettersi..."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gjenopprettes..."
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "new",
@@ -13129,6 +13561,12 @@
             "value" : "Rimuovi microinfusore"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fjern pumpe"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13267,10 +13705,10 @@
             "value" : "Remove the safety cover from the patch."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove the safety cover from the patch."
+            "state" : "translated",
+            "value" : "Fjern sikkerhetsdekslet fra plasteret."
           }
         },
         "nb-NO" : {
@@ -13411,10 +13849,10 @@
             "value" : "Replace your patch now!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Replace your patch now!"
+            "state" : "translated",
+            "value" : "Erstatt depotplasteret ditt nå!"
           }
         },
         "nb-NO" : {
@@ -13555,10 +13993,10 @@
             "value" : "Reservoir low (%iU)"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoar lavt (%iU)"
           }
         },
         "nb-NO" : {
@@ -13705,6 +14143,12 @@
             "value" : "Salva e continua"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagre og fortsett"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13849,6 +14293,12 @@
             "value" : "Basale programmata"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Planlagt basal"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13987,10 +14437,10 @@
             "value" : "Select insulin type"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select insulin type"
+            "state" : "translated",
+            "value" : "Velg insulintype"
           }
         },
         "nb-NO" : {
@@ -14131,10 +14581,10 @@
             "value" : "Select the type of insulin that you will be using"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select the type of insulin that you will be using"
+            "state" : "translated",
+            "value" : "Velg hvilken type insulin du skal bruke"
           }
         },
         "nb-NO" : {
@@ -14275,10 +14725,10 @@
             "value" : "Serial number"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Serial number"
+            "state" : "translated",
+            "value" : "Serienummer"
           }
         },
         "nb-NO" : {
@@ -14419,10 +14869,10 @@
             "value" : "Share Medtrum patch logs"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Share Medtrum patch logs"
+            "state" : "translated",
+            "value" : "Del «Medtrum feilloggene»"
           }
         },
         "nb-NO" : {
@@ -14563,10 +15013,10 @@
             "value" : "Silence"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Silence"
+            "state" : "translated",
+            "value" : "Forstummet"
           }
         },
         "nb-NO" : {
@@ -14707,10 +15157,10 @@
             "value" : "Start priming"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Start priming"
+            "state" : "translated",
+            "value" : "Start klaring"
           }
         },
         "nb-NO" : {
@@ -14857,6 +15307,12 @@
             "value" : "Stato"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status:"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14995,10 +15451,10 @@
             "value" : "Sync patch data"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Synkroniser patchdata"
           }
         },
         "nb-NO" : {
@@ -15145,6 +15601,12 @@
             "value" : "Basale temporanea"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Midlertidig basal"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15225,14 +15687,14 @@
         }
       }
     },
-    "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime." : {
+    "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)." : {
       "comment" : "warning body",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "من المفترض استخدام اللصقة لمدة 3 أيام و8 ساعات فقط. قد يؤدي تجاوز هذه المدة إلى عدم الاعتماد على اللصقة. لا يوصى بذلك. ضع في اعتبارك استخدام مدى الحياة العادي."
+            "value" : "من المفترض استخدام اللصقة لمدة 3 أيام و8 ساعات فقط. قد يؤدي تجاوز هذه المدة إلى عدم الاعتماد على اللصقة. لا يوصى بذلك. ضع في اعتبارك استخدام العمر الافتراضي العادي. يُرجى الانتباه إلى أن البرامج الثابتة الجديدة في أحدث جيل من قواعد المضخة قد تمنع أوامر البلعة بعد 5 أيام (120 ساعة)."
           }
         },
         "cs" : {
@@ -15250,31 +15712,31 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das Pflaster soll nur 3 Tage und 8 Stunden lang verwendet werden. Eine Überschreitung dieser Zeit kann dazu führen, dass das Pflaster unzuverlässig wird. Dies wird NICHT empfohlen. Erwägen Sie die Verwendung der normalen Lebensdauer."
+            "value" : "Das Pflaster soll nur 3 Tage und 8 Stunden lang verwendet werden. Eine Überschreitung dieser Zeit kann dazu führen, dass das Pflaster unzuverlässig wird. Dies wird NICHT empfohlen. Erwägen Sie die Verwendung der normalen Lebensdauer. Bitte beachten Sie, dass die neue Firmware der neuesten Generation von Pumpenbasen Bolusbefehle nach 5 Tagen (120 Stunden) blockieren kann."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime."
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "El parche sólo debe utilizarse durante 3 días y 8 horas. Si se supera este tiempo, el parche puede dejar de ser fiable. NO se recomienda. Considere el uso normal de por vida."
+            "value" : "El parche sólo debe utilizarse durante 3 días y 8 horas. Si se excede este tiempo, el parche puede dejar de ser fiable. NO se recomienda. Considere la posibilidad de utilizar la vida útil normal. Tenga en cuenta que el nuevo firmware de la última generación de bases de bomba puede bloquear los comandos de bolo después de 5 días (120 horas)."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laastari on tarkoitettu käytettäväksi vain 3 päivän ja 8 tunnin ajan. Tämän ajan ylittäminen voi aiheuttaa laastarin epäluotettavuuden. Tätä EI suositella. Harkitse normaalin käyttöiän käyttämistä."
+            "value" : "Laastari on tarkoitettu käytettäväksi vain 3 päivän ja 8 tunnin ajan. Tämän ajan ylittäminen voi aiheuttaa laastarin epäluotettavuuden. Tätä EI suositella. Harkitse normaalin käyttöiän käyttämistä. Huomaa, että uusimman sukupolven pumppupohjien uusi laiteohjelmisto saattaa estää boluskomennot 5 päivän (120 tunnin) jälkeen."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le patch est destiné à être utilisé pendant 3 jours et 8 heures seulement. Si vous dépassez cette durée, le patch risque de ne plus être fiable. Ceci n'est PAS recommandé. Envisagez d'utiliser la durée de vie normale."
+            "value" : "Le patch est destiné à être utilisé pendant 3 jours et 8 heures seulement. Si vous dépassez cette durée, le patch risque de ne plus être fiable. Ceci n'est PAS recommandé. Envisagez d'utiliser la durée de vie normale. Veuillez noter que le nouveau micrologiciel de la dernière génération de bases de pompe peut bloquer les commandes de bolus après 5 jours (120 heures)."
           }
         },
         "it" : {
@@ -15286,85 +15748,91 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "パッチは3日と8時間のみ使用することを意図しています。この時間を超えると、パッチが信頼できなくなることがあります。これは推奨されません。通常の寿命の使用を検討してください。"
+            "value" : "パッチは3日と8時間のみ使用することを意図しています。この時間を超えると、パッチが信頼できなくなることがあります。これは推奨されません。通常の寿命の使用を検討してください。最新世代のポンプベースの新しいファームウェアは、5日（120時間）後にボーラスコマンドをブロックすることがありますのでご注意ください。"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plasteret skal kun brukes i 3 dager og 8 timer. Det kan føre til at plasteret ikke blir sikkert når det ikke overskrides. Vurder å bruke normal levetid. Vær oppmerksom på at ny fastvare ved nyeste generering av pumpeskjold kan blokkere boluskommandoer etter 5 dager (120 timer)."
           }
         },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plasteret er kun ment å brukes i 3 dager og 8 timer. Overskridelse av denne tiden kan føre til at plasteret blir upålitelig. Dette anbefales IKKE. Vurder å bruke normal levetid."
+            "value" : "Plasteret er kun ment å brukes i 3 dager og 8 timer. Overskridelse av denne tiden kan føre til at plasteret blir upålitelig. Dette anbefales IKKE. Vurder å bruke normal levetid. Vær oppmerksom på at ny fastvare i den nyeste generasjonen av pumpebaser kan blokkere boluskommandoer etter 5 dager (120 timer)."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De patch is bedoeld voor gebruik gedurende slechts 3 dagen en 8 uur. Als je deze tijd overschrijdt, kan de patch onbetrouwbaar worden. Dit wordt NIET aanbevolen. Overweeg om de normale levensduur te gebruiken."
+            "value" : "De patch is bedoeld voor gebruik gedurende slechts 3 dagen en 8 uur. Als je deze tijd overschrijdt, kan de patch onbetrouwbaar worden. Dit wordt NIET aanbevolen. Overweeg om de normale levensduur te gebruiken. Houd er rekening mee dat nieuwe firmware in de nieuwste generatie pomphouders boluscommando's na 5 dagen (120 uur) kan blokkeren."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plaster jest przeznaczony do stosowania tylko przez 3 dni i 8 godzin. Przekroczenie tego czasu może spowodować, że plaster stanie się zawodny. NIE jest to zalecane. Należy rozważyć korzystanie z normalnego okresu użytkowania."
+            "value" : "Plaster jest przeznaczony do stosowania tylko przez 3 dni i 8 godzin. Przekroczenie tego czasu może spowodować, że plaster stanie się zawodny. NIE jest to zalecane. Należy rozważyć użycie normalnego okresu użytkowania. Należy pamiętać, że nowe oprogramowanie sprzętowe w najnowszej generacji podstaw pomp może blokować polecenia bolusa po 5 dniach (120 godzinach)."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O adesivo deve ser usado por apenas 3 dias e 8 horas. Exceder esse tempo pode fazer com que o adesivo deixe de ser confiável. Isso NÃO é recomendado. Considere usar o tempo de vida normal."
+            "value" : "O adesivo deve ser usado por apenas 3 dias e 8 horas. Exceder esse tempo pode fazer com que o adesivo deixe de ser confiável. Isso NÃO é recomendado. Considere usar a vida útil normal. Esteja ciente de que o novo firmware da última geração de bases de bombas pode bloquear os comandos de bolus após 5 dias (120 horas). "
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plasturele este destinat a fi utilizat timp de numai 3 zile și 8 ore. Depășirea acestei perioade poate face ca plasturele să nu mai fie fiabil. Acest lucru NU este recomandat. Luați în considerare utilizarea vieții normale."
+            "value" : "Plasturele este destinat a fi utilizat timp de numai 3 zile și 8 ore. Depășirea acestei perioade poate face ca plasturele să nu mai fie fiabil. Acest lucru NU este recomandat. Luați în considerare utilizarea duratei de viață normale. Vă rugăm să rețineți că noul firmware din ultima generație de baze de pompe poate bloca comenzile bolus după 5 zile (120 de ore)."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пластырь предназначен для использования в течение 3 дней и 8 часов. Превышение этого срока может привести к ненадежности пластыря. Это НЕ рекомендуется. Пользуйтесь обычным сроком службы."
+            "value" : "Пластырь предназначен для использования только в течение 3 дней и 8 часов. Превышение этого срока может привести к ненадежности пластыря. Это НЕ рекомендуется. Подумайте об использовании обычного срока службы. Пожалуйста, имейте в виду, что новое встроенное программное обеспечение в базах насосов последнего поколения может блокировать команды болюса через 5 дней (120 часов)."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Náplasť sa má používať len 3 dni a 8 hodín. Prekročenie tohto času môže spôsobiť nespoľahlivosť náplasti. Toto sa NEODPORÚČA. Zvážte použitie normálnej životnosti."
+            "value" : "Náplasť sa má používať len 3 dni a 8 hodín. Prekročenie tohto času môže spôsobiť nespoľahlivosť náplasti. Toto sa NEODPORÚČA. Zvážte použitie normálnej životnosti. Upozorňujeme, že nový firmvér v základniach púmp najnovšej generácie môže po 5 dňoch (120 hodinách) zablokovať príkazy na podanie bolusu. "
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Obliž naj bi se uporabljal le 3 dni in 8 ur. Če ta čas prekoračite, lahko obliž postane nezanesljiv. To NI priporočljivo. Razmislite o uporabi običajne življenjske dobe."
+            "value" : "Obliž naj bi se uporabljal le 3 dni in 8 ur. Če ta čas prekoračite, lahko obliž postane nezanesljiv. To NI priporočljivo. Razmislite o uporabi običajne življenjske dobe. Upoštevajte, da lahko nova vdelana programska oprema v najnovejši generaciji baz črpalke blokira ukaze za bolus po 5 dneh (120 urah). "
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plåstret är avsett att användas i endast 3 dagar och 8 timmar. Om denna tid överskrids kan det leda till att plåstret blir opålitligt. Detta är INTE rekommenderat. Överväg att använda normal livslängd."
+            "value" : "Plåstret är avsett att användas i endast 3 dagar och 8 timmar. Om denna tid överskrids kan det leda till att plåstret blir opålitligt. Detta är INTE rekommenderat. Överväg att använda normal livslängd. Tänk på att ny firmware i den senaste generationen pumpbaser kan blockera boluskommandon efter 5 dagar (120 timmar). "
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yama sadece 3 gün ve 8 saat süreyle kullanılmak üzere tasarlanmıştır. Bu sürenin aşılması yamanın güvenilmez hale gelmesine neden olabilir. Bu tavsiye edilmez. Normal ömür boyu kullanmayı düşünün."
+            "value" : "Yama sadece 3 gün ve 8 saat süreyle kullanılmak üzere tasarlanmıştır. Bu sürenin aşılması yamanın güvenilmez hale gelmesine neden olabilir. Bu tavsiye edilmez. Normal kullanım ömrünü kullanmayı düşünün. En yeni nesil pompa tabanlarındaki yeni aygıt yazılımının 5 gün (120 saat) sonra bolus komutlarını engelleyebileceğini lütfen unutmayın. "
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Патч призначений для використання лише протягом 3 днів і 8 годин. Перевищення цього часу може призвести до ненадійної роботи латки. Це НЕ рекомендується. Розгляньте можливість використання звичайного терміну дії."
+            "value" : "Патч призначений для використання лише протягом 3 днів і 8 годин. Перевищення цього часу може призвести до ненадійної роботи латки. Це НЕ рекомендується. Розгляньте можливість використання звичайного терміну дії. Зверніть увагу, що нове програмне забезпечення в базах помп останнього покоління може блокувати команди болюсу через 5 днів (120 годин). "
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Miếng dán này được thiết kế để sử dụng trong vòng 3 ngày và 8 giờ. Việc sử dụng vượt quá thời gian này có thể khiến miếng dán trở nên không đáng tin cậy. Điều này KHÔNG được khuyến nghị. Nên sử dụng theo thời gian sử dụng thông thường."
+            "value" : "Miếng dán này được thiết kế để sử dụng trong vòng 3 ngày và 8 giờ. Việc sử dụng quá thời gian này có thể khiến miếng dán trở nên không đáng tin cậy. Điều này KHÔNG được khuyến nghị. Hãy xem xét việc sử dụng thời gian sử dụng thông thường. Xin lưu ý rằng firmware mới trong thế hệ mới nhất của bơm cơ sở có thể chặn các lệnh bolus sau 5 ngày (120 giờ). "
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "药贴只能使用 3 天 8 小时。超过这个时间可能会导致贴片变得不可靠。不建议这样做。请考虑终身使用。"
+            "value" : "药贴只能使用 3 天 8 小时。超过这个时间可能会导致贴片变得不可靠。不建议这样做。请考虑使用正常使用寿命。请注意，最新一代泵底座中的新固件可能会在 5 天（120 小时）后阻止栓塞命令。 "
           }
         }
       }
@@ -15431,6 +15899,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L'ora sul microinfusore è diversa dall'ora corrente. Vuoi aggiornare l'ora del microinfusore all'ora corrente?"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiden det tar på pumpen er forskjellig fra nåværende tidspunkt. Ønsker du å oppdatere tidspunktet på pumpen til nåværende tidspunkt?"
           }
         },
         "nb-NO" : {
@@ -15577,6 +16051,12 @@
             "value" : "L'orario impostato nel microinfusore è diverso dall'orario corrente. L'orario del microinfusore detta e controlla le impostazioni della terapia programmata e va corretto: Nella lista degli 'orari del microinfusore verificare la differenza di orario e configurare correttamente il microinfusore."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiden det tar på pumpen er forskjellig fra tiden pumpen din når du kontrollerer innstillingene i den planlagte behandlingen. Bla ned for å pumpe tidsraden for å se på tidsdifferansene og konfigurere pumpen."
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15721,6 +16201,12 @@
             "value" : "Rilevato Cambio Di Tempo"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidsendring oppdaget"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15859,10 +16345,10 @@
             "value" : "Toggle heartbeat mode"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Toggle heartbeat mode"
+            "state" : "translated",
+            "value" : "Veksle hjerteslag-modus"
           }
         },
         "nb-NO" : {
@@ -16009,6 +16495,12 @@
             "value" : "自己責任で使用すること！"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruk på egen risiko!"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16089,74 +16581,80 @@
         }
       }
     },
-    "Use extended lifetime (continue till battery empty)" : {
+    "Use extended lifetime" : {
       "comment" : "Label for extended lifetime",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "استخدام العمر الافتراضي الممتد (الاستمرار حتى نفاذ البطارية)"
+            "value" : "استخدام العمر الافتراضي الممتد"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Použití prodloužené životnosti"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug forlænget levetid"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Verlängerte Lebensdauer verwenden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "value" : "Use extended lifetime"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Uso prolongado de la vida útil"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Käytä pidennettyä käyttöikää"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Utiliser la durée de vie prolongée"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Utilizzare la durata di vita estesa"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "寿命延長の使用"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Bruk utvidet levetid"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Bruk forlenget levetid"
           }
         },
         "nl" : {
@@ -16167,8 +16665,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Wydłużony okres użytkowania"
           }
         },
         "pt" : {
@@ -16179,56 +16677,62 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Uso de vida útil prolongada "
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Utilizați o durată de viață extinsă"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Использовать продлённый срок службы (продолжать до полной разрядки батареи)"
+            "value" : "Используйте увеличенный срок службы"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Použiť predĺženú životnosť (pokračovať až do vybitia batérie)"
+            "value" : "Použiť predĺženú životnosť"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uporabite podaljšano življenjsko dobo  "
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Använd förlängd livslängd (fortsätt tills batteriet är urladdat)"
+            "value" : "Använd förlängd livstid "
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "Uzatılmış kullanım ömrü kullanın "
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Використовуйте збільшений термін служби (продовжуйте, поки батарея не розрядиться)"
+            "value" : "Використовуйте подовжений термін служби "
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sử dụng tối đa thời gian hoạt động (tiếp tục cho đến khi hết pin)"
+            "value" : "Sử dụng tuổi thọ kéo dài "
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "state" : "translated",
+            "value" : "使用延长生命周期"
           }
         }
       }
@@ -16291,10 +16795,10 @@
             "value" : "Use normal lifetime (3d 8h)"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use normal lifetime (3d 8h)"
+            "state" : "translated",
+            "value" : "Bruk normal levetid (3d 8 t)"
           }
         },
         "nb-NO" : {
@@ -16435,10 +16939,10 @@
             "value" : "Vibrate and beep"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate and beep"
+            "state" : "translated",
+            "value" : "Vibrer og pipende"
           }
         },
         "nb-NO" : {
@@ -16579,10 +17083,10 @@
             "value" : "Vibrate-only"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate-only"
+            "state" : "translated",
+            "value" : "Kun Vibrasjon"
           }
         },
         "nb-NO" : {
@@ -16867,10 +17371,10 @@
             "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
+            "state" : "translated",
+            "value" : "Når du klikker på knappen, vil du få en biometrisk ledetekst. Når depotplasteret er ferdig, vil det bli deaktivert og du vil bli bedt om å pare et nytt depotplaster"
           }
         },
         "nb-NO" : {
@@ -17011,10 +17515,10 @@
             "value" : "Yes, Disable heartbeat mode"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Disable heartbeat mode"
+            "state" : "translated",
+            "value" : "Ja, deaktiver hjerteslagmodus"
           }
         },
         "nb-NO" : {
@@ -17155,10 +17659,10 @@
             "value" : "Yes, Enable heartbeat mode"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Enable heartbeat mode"
+            "state" : "translated",
+            "value" : "Ja, Aktiver hjerteslag-modus"
           }
         },
         "nb-NO" : {
@@ -17305,6 +17809,12 @@
             "value" : "Sì, sincronizza con l'ora corrente"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ja, synkroniser til gjeldende tid"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17443,10 +17953,10 @@
             "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
+            "state" : "translated",
+            "value" : "Du starter med å sette opp insulin type & grunnleggende plasterinnstillinger før du aktiverer depotplasteret."
           }
         },
         "nb-NO" : {
@@ -17587,9 +18097,9 @@
             "value" : "Your patch has %i hours left"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Your patch has %i hours left"
           }
         },
@@ -17731,10 +18241,10 @@
             "value" : "Your patch has detected an occlussion!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has detected an occlussion!"
+            "state" : "translated",
+            "value" : "Patchen har oppdaget en okklusjon!"
           }
         },
         "nb-NO" : {
@@ -17875,10 +18385,10 @@
             "value" : "Your patch has reached its daily maximum!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its daily maximum!"
+            "state" : "translated",
+            "value" : "Plasteret ditt har nådd maksimum!"
           }
         },
         "nb-NO" : {
@@ -18019,10 +18529,10 @@
             "value" : "Your patch has reached its hourly maximum!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its hourly maximum!"
+            "state" : "translated",
+            "value" : "Depotplasteret ditt har nådd maksimum timeliss!"
           }
         },
         "nb-NO" : {
@@ -18163,10 +18673,10 @@
             "value" : "Your patch is in Fault state!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is in Fault state!"
+            "state" : "translated",
+            "value" : "Patchen er i gjeldende status!"
           }
         },
         "nb-NO" : {
@@ -18307,10 +18817,10 @@
             "value" : "Your patch is out of insulin!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is out of insulin!"
+            "state" : "translated",
+            "value" : "Plasteret ditt er tom for insulin!"
           }
         },
         "nb-NO" : {
@@ -18451,10 +18961,10 @@
             "value" : "Your patch is running out of insulin!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "Plasteret ditt renner ut av insulin!"
           }
         },
         "nb-NO" : {
@@ -18595,10 +19105,10 @@
             "value" : "Your patch will expire soon!"
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch will expire soon!"
+            "state" : "translated",
+            "value" : "Depotplasteret ditt vil utløpe snart!"
           }
         },
         "nb-NO" : {

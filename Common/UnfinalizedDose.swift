@@ -33,7 +33,7 @@ public class UnfinalizedDose {
             endDate: isMutable ? endDate : Date(),
             value: value.rounded(toPlaces: 2),
             unit: .units,
-            deliveredUnits: isMutable ? value : deliveredUnits.rounded(toPlaces: 2),
+            deliveredUnits: isMutable ? nil : deliveredUnits.rounded(toPlaces: 2),
             insulinType: insulinType,
             automatic: automatic,
             isMutable: isMutable
