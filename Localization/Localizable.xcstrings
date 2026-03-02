@@ -5913,6 +5913,150 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extended Patch expired. Basal only."
+          }
+        }
+      }
+    },
+    "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation." : {
+      "comment" : "Label for prime step 2.4",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
             "state" : "translated",
             "value" : "انتهت صلاحية الرقعة الممتدة. القاعدية فقط."
           }
@@ -10017,26 +10161,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "لا توجد رقعة"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Žádná náplast"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Intet plaster"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Patch"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "en" : {
@@ -10047,32 +10185,38 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sin parche"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ei korjausta"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pas de patch"
+            "state" : "new",
+            "value" : "No patch"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No patch"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nessuna patch"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "パッチなし"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "nb" : {
@@ -10083,8 +10227,8 @@
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ingen lapp"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "nl" : {
@@ -10095,26 +10239,32 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brak poprawki"
+            "state" : "new",
+            "value" : "No patch"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem patch"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nu există patch-uri"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нет патча"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "sk" : {
@@ -10123,40 +10273,34 @@
             "value" : "Žiadna náplasť"
           }
         },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brez popravkov"
-          }
-        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ingen patch"
+            "value" : "Ingen patch-pump"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yama yok"
+            "state" : "new",
+            "value" : "No patch"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Нема латки"
+            "value" : "Без Патча"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Không có bản vá"
+            "value" : "Không có patch"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "无补丁"
+            "state" : "new",
+            "value" : "No patch"
           }
         }
       }
@@ -14368,7 +14512,7 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Đã lên chương trình cho liều Basal"
+            "value" : "Đã lên chương trình cho liều nền"
           }
         },
         "zh-Hans" : {
@@ -15705,8 +15849,8 @@
         },
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plasteret er kun beregnet til at blive brugt i 3 dage og 8 timer. Overskridelse af denne tid kan medføre, at plasteret bliver upålideligt. Dette anbefales IKKE. Overvej at bruge normal levetid."
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)."
           }
         },
         "de" : {
@@ -15739,13 +15883,13 @@
             "value" : "Le patch est destiné à être utilisé pendant 3 jours et 8 heures seulement. Si vous dépassez cette durée, le patch risque de ne plus être fiable. Ceci n'est PAS recommandé. Envisagez d'utiliser la durée de vie normale. Veuillez noter que le nouveau micrologiciel de la dernière génération de bases de pompe peut bloquer les commandes de bolus après 5 jours (120 heures)."
           }
         },
-        "it" : {
+        "he" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Il cerotto deve essere utilizzato solo per 3 giorni e 8 ore. Il superamento di questo tempo può causare l'inaffidabilità del cerotto. Questo non è raccomandato. Considerare l'utilizzo della normale durata di vita."
+            "state" : "new",
+            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)."
           }
         },
-        "ja" : {
+        "hu" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "パッチは3日と8時間のみ使用することを意図しています。この時間を超えると、パッチが信頼できなくなることがあります。これは推奨されません。通常の寿命の使用を検討してください。最新世代のポンプベースの新しいファームウェアは、5日（120時間）後にボーラスコマンドをブロックすることがありますのでご注意ください。"
@@ -16437,26 +16581,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "استخدمه على مسؤوليتك الخاصة!"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Používejte na vlastní nebezpečí!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brug på egen risiko!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Benutzung auf eigene Gefahr!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "en" : {
@@ -16467,32 +16605,38 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utilícelo bajo su propia responsabilidad."
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Käytä omalla vastuullasi!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "A utiliser à vos risques et périls !"
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utilizzare a proprio rischio e pericolo!"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自己責任で使用すること！"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "nb" : {
@@ -16503,8 +16647,8 @@
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bruk på eget ansvar!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "nl" : {
@@ -16515,38 +16659,38 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Używaj na własne ryzyko!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use por sua própria conta e risco!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utilizați pe propriul risc!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Используйте на свой страх и риск!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Používajte na vlastné riziko!"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uporabljajte na lastno odgovornost!"
+            "value" : "Použitie na vlastné riziko!"
           }
         },
         "sv" : {
@@ -16557,8 +16701,8 @@
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kendi sorumluluğunuzda kullanın!"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         },
         "uk" : {
@@ -16570,13 +16714,13 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sử dụng theo trách nhiệm của bạn!"
+            "value" : "Tự chịu rủi ro khi sử dụng!"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用风险自负！"
+            "state" : "new",
+            "value" : "Use at your own risk!"
           }
         }
       }
@@ -16659,8 +16803,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebruik verlengde levensduur (doorgaan tot batterij leeg is)"
+            "state" : "new",
+            "value" : "Use extended lifetime"
           }
         },
         "pl" : {
@@ -16672,7 +16816,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Use extended lifetime (continue till battery empty)"
+            "value" : "Use extended lifetime"
           }
         },
         "pt-BR" : {
