@@ -88,7 +88,7 @@ struct PatchPrimingView: View {
 
             Button(action: { viewModel.startPrime() }) {
                 if viewModel.isPriming {
-                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    ActivityIndicator()
                 } else {
                     Text(LocalizedString("Start priming", comment: "label for prime start action"))
                 }

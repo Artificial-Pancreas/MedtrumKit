@@ -1,5 +1,4 @@
 import LoopKit
-import LoopKitUI
 import SwiftUI
 
 struct MedtrumKitSettings: View {
@@ -73,7 +72,7 @@ struct MedtrumKitSettings: View {
                             }
                             Spacer()
                             if viewModel.isUpdatingSuspend {
-                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                                ActivityIndicator()
                             }
                         }
                     }
@@ -87,7 +86,7 @@ struct MedtrumKitSettings: View {
                                 Text(LocalizedString("Stop temp basal", comment: "Stop temp basal"))
                                 Spacer()
                                 if viewModel.isUpdatingTempBasal {
-                                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                                    ActivityIndicator()
                                 }
                             }
                         }
@@ -99,7 +98,7 @@ struct MedtrumKitSettings: View {
                             Text(LocalizedString("Sync patch data", comment: "sync pump"))
                             Spacer()
                             if viewModel.isUpdatingPumpState {
-                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                                ActivityIndicator()
                             }
                         }
                     }
@@ -127,7 +126,7 @@ struct MedtrumKitSettings: View {
                             }
                             Spacer()
                             if viewModel.isReconnecting {
-                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                                ActivityIndicator()
                             }
                         }
                     }
@@ -186,7 +185,7 @@ struct MedtrumKitSettings: View {
                 }
             }
 
-            Section(header: SectionHeader(label: LocalizedString("Configuration", comment: "Configuration section"))) {
+            Section {
                 HStack {
                     Text(LocalizedString("Insulin Type", comment: "Text for selecting insulin type"))
                         .foregroundColor(Color.primary)
@@ -215,12 +214,11 @@ struct MedtrumKitSettings: View {
                 .onTapGesture {
                     viewModel.toSettings()
                 }
+            } header: {
+                Text(LocalizedString("Configuration", comment: "Configuration section"))
             }
 
-            Section(header: SectionHeader(label: LocalizedString(
-                "Information",
-                comment: "The title for patch/pump information"
-            ))) {
+            Section {
                 HStack {
                     Text(LocalizedString("Pump base SN", comment: "Text for pumpSN"))
                         .foregroundColor(Color.primary)
@@ -291,12 +289,14 @@ struct MedtrumKitSettings: View {
                             .foregroundColor(.secondary)
                     }
                 }
+            } header: {
+                Text(LocalizedString(
+                    "Information",
+                    comment: "The title for patch/pump information"
+                ))
             }
 
-            Section(header: SectionHeader(label: LocalizedString(
-                "Patch time",
-                comment: "The title for patch time"
-            ))) {
+            Section {
                 HStack {
                     Text(LocalizedString("Patch time", comment: "Text for pump time"))
                         .foregroundColor(Color.primary)
@@ -323,7 +323,7 @@ struct MedtrumKitSettings: View {
                         Text(LocalizedString("Manually sync Pump time", comment: "Label for syncing the time on the pump"))
                         Spacer()
                         if viewModel.isUpdatingPumpState {
-                            ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                            ActivityIndicator()
                         }
                     }
                 }
@@ -333,12 +333,15 @@ struct MedtrumKitSettings: View {
                     syncPumpTime
                 }
             }
+            header: {
+                Text(LocalizedString(
+                    "Patch time",
+                    comment: "The title for patch time"
+                ))
+            }
 
             if let previousPatch = viewModel.previousPatch {
-                Section(header: SectionHeader(label: LocalizedString(
-                    "Previous Patch Details",
-                    comment: "label for previous patch details"
-                ))) {
+                Section {
                     HStack {
                         Text(LocalizedString("Patch ID", comment: "Text for patchId"))
                             .foregroundColor(Color.primary)
@@ -387,6 +390,11 @@ struct MedtrumKitSettings: View {
                                 .foregroundColor(.secondary)
                         }
                     }
+                } header: {
+                    Text(LocalizedString(
+                        "Previous Patch Details",
+                        comment: "label for previous patch details"
+                    ))
                 }
             }
 
@@ -518,10 +526,20 @@ struct MedtrumKitSettings: View {
                         .foregroundStyle(.red)
                     Spacer()
                 }
+            case .expiredBasalOnly:
+                HStack {
+                    Text(LocalizedString(
+                        "Extended Patch expired. Basal only.",
+                        comment: "Text shown when extended patch expired surpasses 120 hours"
+                    ))
+                        .foregroundStyle(.red)
+                    Spacer()
+                }
             }
 
             if viewModel.patchLifecycleExpiration {
-                ProgressView(progress: viewModel.patchLifecycleProgress)
+                ProgressView(value: viewModel.patchLifecycleProgress)
+                    .tint(viewModel.patchLifecycleState == .expired ? .red : .accentColor)
                     .padding(.top, -5)
             }
         }

@@ -486,8 +486,6 @@ public extension MedtrumPumpManager {
                     return
                 }
 
-                self.state.basalState = .active
-                self.state.basalStateSince = Date.now
                 self.log.info("Cancelled temp basal!")
             }
 
@@ -511,6 +509,10 @@ public extension MedtrumPumpManager {
                 }
 
                 self.state.lastSync = Date.now
+                self.state.basalState = .active
+                self.state.basalStateSince = Date.now
+                self.state.tempBasalUnits = nil
+                self.state.tempBasalDuration = nil
                 self.notifyStateDidChange()
 
                 self.pumpDelegate.notify { delegate in
@@ -542,14 +544,21 @@ public extension MedtrumPumpManager {
             self.log.info("Set temp basal!")
 
             let startDate = Date.now
-            let dose = NewPumpEvent.tempBasal(
-                dose: DoseEntry.tempBasal(
-                    absoluteUnit: unitsPerHour,
-                    duration: duration,
-                    insulinType: self.state.insulinType
-                ),
-                date: startDate
-            )
+            var events = [
+                NewPumpEvent.tempBasal(
+                    dose: DoseEntry.tempBasal(
+                        absoluteUnit: unitsPerHour,
+                        duration: duration,
+                        insulinType: self.state.insulinType,
+                        startDate: startDate
+                    ),
+                    date: startDate
+                )
+            ]
+
+            if let tempBasalEvent = self.getTempBasalEvent(endDate: Date.now) {
+                events.append(tempBasalEvent)
+            }
 
             self.state.basalState = .tempBasal
             self.state.basalStateSince = startDate
@@ -561,7 +570,7 @@ public extension MedtrumPumpManager {
             self.pumpDelegate.notify { delegate in
                 delegate?.pumpManager(
                     self,
-                    hasNewPumpEvents: [dose],
+                    hasNewPumpEvents: events,
                     lastReconciliation: self.state.lastSync,
                     replacePendingEvents: true,
                 ) { error in
@@ -597,13 +606,16 @@ public extension MedtrumPumpManager {
 
             self.log.info("Delivery suspended for 120min!")
 
-            var events = [NewPumpEvent.suspend(dose: DoseEntry.suspend())]
-            if let tempBasalEvent = self.getTempBasalEvent(endDate: Date.now) {
+            let start = Date.now
+            var events = [NewPumpEvent.suspend(dose: DoseEntry.suspend(suspendDate: start))]
+            if let tempBasalEvent = self.getTempBasalEvent(endDate: start) {
                 events.append(tempBasalEvent)
             }
 
             self.state.basalState = .suspended
             self.state.basalStateSince = Date.now
+            self.state.tempBasalUnits = nil
+            self.state.tempBasalDuration = nil
             self.state.lastSync = Date.now
             self.notifyStateDidChange()
 
@@ -645,7 +657,21 @@ public extension MedtrumPumpManager {
 
             self.log.info("Resumed delivery!")
 
-            let events = [NewPumpEvent.resume(dose: DoseEntry.resume(insulinType: self.state.insulinType))]
+            let start = Date.now
+            let events = [
+                NewPumpEvent.resume(
+                    dose: DoseEntry.resume(insulinType: self.state.insulinType, resumeDate: start),
+                    date: start
+                ),
+                NewPumpEvent.basal(
+                    dose: DoseEntry.basal(
+                        rate: self.state.currentBaseBasalRate,
+                        insulinType: self.state.insulinType,
+                        startDate: start
+                    ),
+                    date: start
+                )
+            ]
 
             self.state.basalState = .active
             self.state.basalStateSince = Date.now
@@ -821,9 +847,21 @@ public extension MedtrumPumpManager {
                     NotificationManager.activatePatchExpiredNotification(after: self.state.notificationAfterActivation)
                 }
 
+                let start = Date.now
                 let events = [
-                    NewPumpEvent.replacedPump(),
-                    NewPumpEvent.resume(dose: DoseEntry.resume(insulinType: self.state.insulinType))
+                    NewPumpEvent.replacedPump(date: start),
+                    NewPumpEvent.resume(
+                        dose: DoseEntry.resume(insulinType: self.state.insulinType, resumeDate: start),
+                        date: start
+                    ),
+                    NewPumpEvent.basal(
+                        dose: DoseEntry.basal(
+                            rate: self.state.currentBaseBasalRate,
+                            insulinType: self.state.insulinType,
+                            startDate: start
+                        ),
+                        date: start
+                    )
                 ]
 
                 self.state.patchId = data.patchId

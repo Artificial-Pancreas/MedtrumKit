@@ -31,7 +31,7 @@ struct PatchDeactivationView: View {
 
             Button(action: { viewModel.deactivate() }) {
                 if viewModel.isDeactivating {
-                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    ActivityIndicator()
                 } else {
                     Text(LocalizedString("Authenticate & deactivate patch", comment: "Authenticate and deactivate label"))
                 }
