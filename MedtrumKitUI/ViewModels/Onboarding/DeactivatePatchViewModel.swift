@@ -19,28 +19,36 @@ class DeactivatePatchViewModel: ObservableObject {
     }
 
     func forceDeactivate() {
-        if let pumpManager = self.pumpManager {
-            pumpManager.state.previousPatch = PreviousPatch(
-                patchId: pumpManager.state.patchId,
-                lastStateRaw: pumpManager.state.pumpState.rawValue,
-                lastSyncAt: pumpManager.state.lastSync,
-                battery: pumpManager.state.battery,
-                activatedAt: pumpManager.state.patchActivatedAt,
-                deactivatedAt: Date.now,
-                initialReservoirLevel: pumpManager.state.initialReservoir,
-                reservoirLevel: pumpManager.state.reservoir
-            )
-
-            #if targetEnvironment(simulator)
+        authenticate { success in
+            guard success else {
+                DispatchQueue.main.async {
+                    self.deactivationError = LocalizedString("Authentication failure", comment: "auth failed")
+                }
+                return
+            }
+            if let pumpManager = self.pumpManager {
+                pumpManager.state.previousPatch = PreviousPatch(
+                    patchId: pumpManager.state.patchId,
+                    lastStateRaw: pumpManager.state.pumpState.rawValue,
+                    lastSyncAt: pumpManager.state.lastSync,
+                    battery: pumpManager.state.battery,
+                    activatedAt: pumpManager.state.patchActivatedAt,
+                    deactivatedAt: Date.now,
+                    initialReservoirLevel: pumpManager.state.initialReservoir,
+                    reservoirLevel: pumpManager.state.reservoir
+                )
+                
+#if targetEnvironment(simulator)
                 pumpManager.state.patchId = Data()
                 pumpManager.state.sessionToken = Data()
-            #endif
-
-            pumpManager.state.pumpState = .none
-            pumpManager.notifyStateDidChange()
+#endif
+                
+                pumpManager.state.pumpState = .none
+                pumpManager.notifyStateDidChange()
+            }
+            
+            self.nextStep()
         }
-
-        nextStep()
     }
 
     func deactivate() {
