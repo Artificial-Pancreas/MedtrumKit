@@ -5943,8 +5943,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Термін дії подовженого Патчу закінчився. Тільки базальна ін'єкція."
           }
         },
         "vi" : {
@@ -10983,8 +10983,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Термін дії Патчу закінчився. Тільки базальна ін'єкція."
           }
         },
         "vi" : {
@@ -15591,8 +15591,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)."
+            "state" : "translated",
+            "value" : "Патч призначений для використання лише 3 дні та 8 годин. Перевищення цього часу може призвести до ненадійної роботи . Це НЕ рекомендується. Розгляньте можливість використання звичайного терміну служби. Зверніть увагу, що нова прошивка в останньому поколінні баз помп може блокувати команди болюса після 5 днів (120 годин)."
           }
         },
         "vi" : {
@@ -16455,8 +16455,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime"
+            "state" : "translated",
+            "value" : "Використовуйте подовжений термін служби"
           }
         },
         "vi" : {
