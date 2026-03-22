@@ -13,6 +13,8 @@ enum MedtrumUIScreen {
     case patchPrimingScreen
     case patchActivationScreen
     case settingsScreen
+    case patchDetailsScreen
+    case patchPreviousDetailsScreen
 }
 
 class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, CompletionNotifying,
@@ -58,8 +60,9 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationBar.prefersLargeTitles = true
 
         if screenStack.isEmpty {
             screenStack = getInitialScreens()
@@ -203,6 +206,12 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
             let toSettings = {
                 self.navigateTo(.patchSettingsScreen)
             }
+            let toPatchDetails = {
+                self.navigateTo(.patchDetailsScreen)
+            }
+            let toPreviousPatchDetails = {
+                self.navigateTo(.patchPreviousDetailsScreen)
+            }
             let toInsulinType = {
                 self.navigateTo(.insulinTypeScreen)
             }
@@ -215,6 +224,8 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 toDeactivation,
                 toActivation,
                 toSettings,
+                toPatchDetails,
+                toPreviousPatchDetails,
                 toInsulinType,
                 pumpRemoval,
                 toActivatePatch
@@ -223,6 +234,12 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 viewModel: viewModel,
                 supportedInsulinTypes: allowedInsulinTypes
             ))
+        case .patchDetailsScreen:
+            let viewModel = PatchDetailsViewModel(pumpManager: pumpManager)
+            return hostingController(rootView: PatchDetailsView(viewModel: viewModel))
+        case .patchPreviousDetailsScreen:
+            let viewModel = PreviousPatchDetailsViewModel(pumpManager: pumpManager)
+            return hostingController(rootView: PreviousPatchDetailsView(viewModel: viewModel))
         }
     }
 

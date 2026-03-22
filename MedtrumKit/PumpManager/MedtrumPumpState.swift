@@ -34,6 +34,7 @@ public class MedtrumPumpState: RawRepresentable {
         sessionToken = rawValue["sessionToken"] as? Data ?? Data()
         patchId = rawValue["patchId"] as? Data ?? Data()
         patchActivatedAt = rawValue["patchActivatedAt"] as? Date ?? Date.distantPast
+        patchGracePeriodFrom = rawValue["patchGracePeriodFrom"] as? Date
         patchExpiresAt = rawValue["patchExpiresAt"] as? Date
         deviceType = rawValue["deviceType"] as? UInt8 ?? 0
         swVersion = rawValue["swVersion"] as? String ?? "0.0.0"
@@ -100,6 +101,7 @@ public class MedtrumPumpState: RawRepresentable {
         sessionToken = Data()
         patchId = Data()
         patchActivatedAt = Date.distantPast
+        patchGracePeriodFrom = nil
         patchExpiresAt = nil
         deviceType = 0
         swVersion = "0.0.0"
@@ -139,6 +141,7 @@ public class MedtrumPumpState: RawRepresentable {
         value["sessionToken"] = sessionToken
         value["patchId"] = patchId
         value["patchActivatedAt"] = patchActivatedAt
+        value["patchGracePeriodFrom"] = patchGracePeriodFrom
         value["patchExpiresAt"] = patchExpiresAt
         value["deviceType"] = deviceType
         value["swVersion"] = swVersion
@@ -179,6 +182,7 @@ public class MedtrumPumpState: RawRepresentable {
     public var sessionToken: Data
     public var patchId: Data
     public var patchActivatedAt: Date
+    public var patchGracePeriodFrom: Date?
     public var patchExpiresAt: Date?
 
     public var previousPatch: PreviousPatch?
@@ -267,11 +271,11 @@ public class MedtrumPumpState: RawRepresentable {
     public var pumpName: String {
         let model = self.model
         if model == "MD8301" {
-            return "TouchCare Nano 300U"
+            return "Medtrum Nano 300U"
         } else if model == "INVALID" {
-            return "TouchCare Nano UNKNOWN"
+            return "Medtrum Nano UNKNOWN"
         } else {
-            return "TouchCare Nano 200U"
+            return "Medtrum Nano 200U"
         }
     }
 

@@ -21,6 +21,12 @@
             "value" : "-"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "new",
@@ -138,77 +144,90 @@
       }
     },
     "%llu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%llu"
+            "value" : "%%llu"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "pt" : {
@@ -219,56 +238,62 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%llu"
+            "value" : "%%llu"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%llu"
+            "value" : "%%llu"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%llu"
+            "value" : "%%llu"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%llu"
+            "value" : "%%llu"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
+            "state" : "translated",
+            "value" : "%%llu"
           }
         }
       }
@@ -290,6 +315,12 @@
         "de" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "1."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "1."
           }
         },
@@ -429,6 +460,12 @@
             "value" : "2."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "new",
@@ -562,6 +599,12 @@
         "de" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "3."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "3."
           }
         },
@@ -701,6 +744,12 @@
             "value" : "4."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "new",
@@ -834,6 +883,12 @@
         "de" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "5."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "5."
           }
         },
@@ -973,6 +1028,12 @@
             "value" : "6."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "new",
@@ -1106,6 +1167,12 @@
         "de" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "7."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "7."
           }
         },
@@ -1245,6 +1312,12 @@
             "value" : "8."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "new",
@@ -1378,6 +1451,12 @@
         "de" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "1234ABCD"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "1234ABCD"
           }
         },
@@ -1637,6 +1716,156 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Activate patch"
+          }
+        }
+      }
+    },
+    "Activation" : {
+      "comment" : "Text for activatedAt",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم تفعيل التصحيح في"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch activated at"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch aktiveret på"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch aktiviert am"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parche activado en"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erä aktivoitu"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch activé à"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch attivato alle"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "でパッチが作動した。"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivering"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lappen aktiveres ved"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch geactiveerd op"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch aktywowany w"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch ativado em"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch activat la"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Патч активирован в"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náplasť aktivovaná o"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obliž se aktivira pri"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch aktiverad den"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yama şu adreste etkinleştirildi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Патч активується за адресою"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch activated at"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补丁激活于"
           }
         }
       }
@@ -2937,6 +3166,156 @@
         }
       }
     },
+    "Change your Patch now. Insulin delivery will stop in %1$@ or when no more insulin remains." : {
+      "comment" : "description for grace period notice",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قم بتغيير اللصقة الآن. سيتوقف توصيل الأنسولين خلال %%1$@ أو عندما لا يتبقى المزيد من الأنسولين."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změňte svou záplatu. Podávání inzulínu se zastaví za %%1$@ nebo až nezbude žádný další inzulín."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skift dit plaster nu. Insulintilførslen stopper om %%1$@, eller når der ikke er mere insulin tilbage."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pflaster jetzt austauschen. Die Insulinabgabe stoppt in %%1$@ oder wenn kein Insulin mehr vorhanden ist."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change your Patch now. Insulin delivery will stop in %%1$@ or when no more insulin remains."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambie su parche ahora. La administración de insulina se detendrá en %%1$@ o cuando no quede más insulina."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaihda Patch nyt. Insuliinin jakelu loppuu %%1$@:n kuluttua tai kun insuliinia ei ole enää jäljellä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacez le patch maintenant. La distribution d'insuline s'arrête dans %%1$@ ou lorsqu'il n'y a plus d'insuline."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambiare subito il cerotto. La somministrazione di insulina si interromperà tra %%1$@ o quando non ci sarà più insulina."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今すぐパッチを交換してください。インスリンの投与は、%%1$@ またはインスリンの残りがなくなると停止します。"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bytt plaster nå. Insulintilførselen vil stoppe om %%1$@ eller når det ikke er mer insulin igjen."
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bytt plaster nå. Insulintilførselen vil stoppe om %%1$@ eller når det ikke er mer insulin igjen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vervang Patch nu. De insulinetoediening stopt over %%1$@ of wanneer er geen insuline meer is."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień teraz plaster. Podawanie insuliny zakończy się za %%1$@ lub gdy insulina przestanie działać."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mude o seu Patch agora. A administração de insulina será interrompida em %%1$@ ou quando não houver mais insulina."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schimbați Patch-ul acum. Administrarea insulinei se va opri în %%1$@ sau când nu va mai rămâne insulină."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Смените пластырь немедленно. Выдача инсулина прекратится через %%1$@ или когда инсулина больше не останется."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmeňte svoju záplatu. Podávanie inzulínu sa zastaví za %%1$@ alebo keď už nezostane žiadny inzulín."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdaj spremenite svoj paket. Dostavljanje insulina se bo ustavilo v %%1$@ ali ko ne bo več insulina."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändra din patch nu. Insulintillförseln kommer att upphöra om %%1$@ eller när det inte finns mer insulin kvar."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch'inizi şimdi değiştirin. İnsülin verilmesi %%1$@ içinde veya daha fazla insülin kalmadığında duracaktır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замініть пластир зараз. Доставка інсуліну припиниться через %%1$@ або коли не залишиться більше інсуліну."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thay miếng dán ngay. Việc cung cấp insulin sẽ dừng lại sau %%1$@ hoặc khi hết insulin."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "现在就更换补丁。胰岛素输送将在 %%1$@ 或胰岛素耗尽时停止。"
+          }
+        }
+      }
+    },
     "Checked at" : {
       "comment" : "Text for pump time synced at",
       "extractionState" : "manual",
@@ -3808,79 +4187,85 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حالياً، أنت لا تستخدم وضع نبضات القلب (Heartbeat Mode). نبضة القلب ضرورية للحفاظ على تشغيل %1$@ في الخلفية. يوصى بالاستمرار في تمكين هذه الميزة"
+            "value" : "حالياً، أنت لا تستخدم وضع نبض القلب. هناك حاجة إلى نبض القلب لإبقاء %%1$@ قيد التشغيل في الخلفية. من المستحسن الحفاظ على تمكين هذه الميزة"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %%1$@ running in the background. It is recommended to keep enable this feature"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I øjeblikket bruger du IKKE et hjerteslagstilstand. Et hjerteslag er nødvendigt for at holde %%1$@ kørende i baggrunden. Det anbefales at fortsætte med at aktivere denne funktion"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Momentan verwenden Sie NICHT einen Herzschlag Modus. Ein Herzschlag wird benötigt, um %1$@ im Hintergrund laufen zu lassen. Es wird empfohlen, diese Funktion zu aktivieren."
+            "value" : "Momentan verwenden Sie NICHT einen Heartbeat Modus. Ein Heartbeat wird benötigt, um %%1$@ im Hintergrund laufen zu lassen. Es wird empfohlen, diese Funktion weiterhin zu aktivieren"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %%1$@ running in the background. It is recommended to keep enable this feature"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Actualmente, NO estás usando un modo latido del corazón. Se necesita un latido del corazón para mantener %%1$@ funcionando en segundo plano. Se recomienda mantener activa esta función"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Tällä hetkellä et käytä sydämen syke tilaa. Sydämen syke tarvitaan pitämään %%1$@ käynnissä taustalla. On suositeltavaa ottaa tämä ominaisuus käyttöön"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Actuellement, vous n'utilisez PAS le mode \"heartbeat\". Un battement de cœur est nécessaire pour que %%1$@ continue à fonctionner en arrière-plan. Il est recommandé de continuer à activer cette fonction"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Attualmente, NON stai usando una modalità battito cardiaco. È necessario un battito cardiaco per mantenere %%1$@ in esecuzione sullo sfondo. Si consiglia di mantenere attiva questa funzione"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "現在、あなたはハートビートモードを使用していません。ハートビートは、 %%1$@ をバックグラウンドで実行し続けるために必要です。この機能を有効にしておくことをお勧めします。"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "For tiden bruker du IKKE hjerteslag. Et hjerterytme er nødvendig for å holde %%1$@ kjører i bakgrunnen. Det er anbefalt å holde aktivere denne funksjonen"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "For øyeblikket bruker du IKKE hjerteslagmodus. Hjerteslag er nødvendig for å holde %%1$@ i gang i bakgrunnen. Det anbefales å fortsette å aktivere denne funksjonen"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Op dit moment gebruik je GEEN hartslag modus. Een hartslag modus is nodig om %1$@ actief te houden op de achtergrond. Het is aanbevolen om deze functie in te schakelen"
+            "value" : "Op dit moment gebruikt u GEEN hartslag modus. Een hartenslag is nodig om %%1$@ actief te houden op de achtergrond. Het is aanbevolen om deze functie in te schakelen"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Obecnie NIE używasz trybu bicia serca. Potrzebne jest bicie serca, aby %%1$@ działał w tle. Zalecane jest utrzymanie tej funkcji"
           }
         },
         "pt" : {
@@ -3891,56 +4276,62 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Atualmente, você NÃO está usando um modo pulso. Uma batida cardíaca é necessária para manter %%1$@ a rodar em segundo plano. Recomenda-se manter ativado esse recurso"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "În prezent, NU folosiți un mod de bătăi ale inimii. O bătăi ale inimii este necesară pentru a menține %%1$@ în fundal. Este recomandat să continuați activarea acestei funcții"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вы НЕ используете режим heartbeat. Heartbeat необходим для работы %1$@ в фоновом режиме. Рекомендуется включить эту функцию"
+            "value" : "В данный момент вы НЕ используете режим heartbeat. Для продолжения работы %%1$@ в фоновом режиме, необходимо использовать heartbeat. Рекомендуется включить эту функцию"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "V súčasnosti NEPOUŽÍVATE režim heartbeat. Heartbeat je potrebný na to, aby %1$@ bežal na pozadí. Odporúča sa ponechať túto funkciu zapnutú"
+            "value" : "V súčasnosti NEPOUŽÍVATE režim heartbeat. Heartbeat je potrebný na to, aby %%1$@ bežal na pozadí. Odporúča sa ponechať túto funkciu zapnutú"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trenutno NE uporabljate načina srčnega utripa. Srčni utrip je potreben, da %%1$@ deluje v ozadju. Priporočljivo je, da še naprej omogočate to funkcijo"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "För närvarande använder du INTE ett hjärtslagsläge. Ett hjärtslag behövs för att hålla %1$@ igång i bakgrunden. Det rekommenderas att behålla den här funktionen"
+            "value" : "För närvarande använder du INTE ett hjärtslagsläge. Ett hjärtslag behövs för att hålla %%1$@ igång i bakgrunden. Det rekommenderas att behålla den här funktionen"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "Şu anda bir kalp atışı modu KULLANMIYORSUNUZ. %%1$@ 'un arka planda çalışmaya devam etmesi için bir kalp atışı gereklidir. Bu özelliği etkinleştirmeye devam etmeniz önerilir"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Наразі ви НЕ використовуєте режим серцевого ритму. Серцевий ритм потрібен для того, щоб %1$@ працював у фоновому режимі. Рекомендується залишити цю функцію ввімкненою."
+            "value" : "Наразі ви НЕ використовуєте режим серцебиття. Серцебиття потрібне для того, щоб %%1$@ працював у фоновому режимі. Рекомендується залишити цю функцію увімкненою"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hiện tại, bạn không sử dụng chế độ nhịp tim (heartbeat). Chế độ nhịp tim là cần thiết để giữ cho %1$@ tiếp tục chạy trong nền. Khuyến nghị bạn nên bật tính năng này"
+            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %%1$@ running in the background. It is recommended to keep enable this feature"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are NOT using a heartbeat mode. A heartbeat is needed to keep %1$@ running in the background. It is recommended to keep enable this feature"
+            "state" : "translated",
+            "value" : "目前，您没有使用心动模式。需要心动才能保持 %%1$@ 在后台运行。 建议保持启用此功能"
           }
         }
       }
@@ -3952,79 +4343,85 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حالياً، أنت تستخدم وضع نبضات القلب (Heartbeat Mode). هذا ضروري للحفاظ على تشغيل %1$@ في الخلفية. قد يكون هذا مثيراً للاهتمام إذا كان جهاز مراقبة الغلوكوز المستمر (CGM) الخاص بك يوفر بالفعل نبضة قلب. يوصى بالإبقاء على هذه الميزة مُمكَّنة"
+            "value" : "حاليا، أنت تستخدم وضع نبض القلب. هذا مطلوب لإبقاء %%1$@ قيد التشغيل في الخلفية. قد يكون هذا مثيراً للاهتمام إذا كان CGM الخاص بك يوفر مسبقاً نبض القلب. من المستحسن إبقاء هذه الميزة ممكنة"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %%1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I øjeblikket bruger du et hjerteslagstilstand. Dette er nødvendigt for at holde %%1$@ kørende i baggrunden. Dette kan være interessant, hvis din CGM allerede giver et hjerteslag. Det anbefales at holde denne funktion aktiveret"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zurzeit verwenden Sie einen Herzschlag-Modus. Dieser wird benötigt, um %1$@ im Hintergrund laufen zu lassen. Dies könnte interessant sein, wenn Ihr CGM bereits einen Herzschlag liefert. Es wird empfohlen, diese Funktion aktiviert zu lassen"
+            "value" : "Zurzeit verwenden Sie einen Heartbeat-Modus. Dieser wird benötigt, um %%1$@ im Hintergrund laufen zu lassen. Dies könnte interessant sein, wenn Ihr CGM bereits einen Herzschlag liefert. Es wird empfohlen, diese Funktion aktiviert zu lassen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %%1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Actualmente estás usando un modo latido del corazón. Esto es necesario para mantener %%1$@ funcionando en segundo plano. Esto podría ser interesante si su CGM ya proporciona un latido de corazón. Se recomienda mantener esta función habilitada"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Tällä hetkellä käytät syke tilaa. Tämä on tarpeen pitää %%1$@ käynnissä taustalla. Tämä saattaa olla mielenkiintoista, jos CGM jo tarjoaa sykkeen. On suositeltavaa pitää tämä ominaisuus käytössä"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Actuellement, vous utilisez un mode de pulsation cardiaque. Ceci est nécessaire pour garder %%1$@ en cours d'exécution en arrière-plan. Cela pourrait être intéressant si votre MGC fournit déjà un coup de cœur. Il est recommandé de garder cette fonctionnalité activée"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Attualmente, stai usando una modalità battito cardiaco. Questo è necessario per mantenere %%1$@ in esecuzione in background. Questo potrebbe essere interessante se il vostro CGM fornisce già un battito cardiaco. Si consiglia di mantenere questa funzione abilitata"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "現在、あなたはハートビートモードを使用しています。これは、 %%1$@ をバックグラウンドで実行し続けるために必要です。お使いの CGM がすでにハートビートを提供している場合、これは興味深いかもしれません。この機能は有効にしておくことをお勧めします。"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "For tiden bruker du en hjertefrekvensmodus. Dette er nødvendig for at %%1$@ skal kunne kjøre i bakgrunnen. Dette kan være interessant hvis CGM allerede tilbyr en hjerterytme. Det anbefales å holde denne funksjonen aktivert"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "For øyeblikket bruker du en heartbeat-modus. Dette er nødvendig for å holde %%1$@ i gang i bakgrunnen. Dette kan være interessant hvis CGM-en din allerede gir hjerteslag. Det anbefales å beholde denne funksjonen aktivert"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Op dit moment gebruik je een hartbeet modus. Dit is nodig om %1$@ actief te houden op de achtergrond. Dit kan interessant zijn als jouw CGM al een hartenslag biedt. Het wordt aangeraden om deze functie ingeschakeld te houden"
+            "value" : "Op dit moment gebruikt u een hartbeet modus. Dit is nodig om %%1$@ actief te houden op de achtergrond. Dit kan interessant zijn als uw CGM al een hartenslag biedt. Het wordt aangeraden om deze functie ingeschakeld te houden"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Obecnie używasz trybu bicia serca. Jest to konieczne, aby %%1$@ działał w tle. To może być interesujące, jeśli Twój CGM już zapewnia bicie serca. Zaleca się, aby ta funkcja była włączona"
           }
         },
         "pt" : {
@@ -4035,56 +4432,62 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Atualmente, você está usando um modo de pulso. Isto é necessário para manter %%1$@ em execução em segundo plano. Isso pode ser interessante se seu CGM já fornecer um batimento cardíaco. É recomendado manter este recurso ativado"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "În prezent, folosiți un mod de bătăi ale inimii. Acest lucru este necesar pentru a menține %%1$@ să ruleze în fundal. Acest lucru poate fi interesant dacă CGM vă oferă deja o bătăi de inimă. Este recomandat să păstrați această caracteristică activată"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вы используете режим heartbeat, необходимый для работы %1$@ в фоновом режиме. Это может быть полезно, если ваш CGM уже предоставляет heartbeat. Рекомендуется оставить эту функцию включённой"
+            "value" : "В данный момент вы используете режим heartbeat. Необходимо держать %%1$@ в фоновом режиме. Это может быть интересно если ваш CGM уже предоставляет сердечный процесс. Рекомендуется сохранить эту функцию"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "V súčasnosti používate režim heartbeat. Je to potrebné na to, aby %1$@ bežal na pozadí. To môže byť zaujímavé, ak Váš CGM už poskytuje heartbeat. Odporúča sa nechať túto funkciu zapnutú"
+            "value" : "V súčasnosti používate režim heartbeat. Je to potrebné na to, aby %%1$@ bežal na pozadí. To môže byť zaujímavé, ak Váš CGM už poskytuje heartbeat. Odporúča sa nechať túto funkciu zapnutú"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trenutno uporabljate način srčnega utripa. Ta način je potreben, da %%1$@ deluje v ozadju. To je lahko zanimivo, če vaš CGM že zagotavlja srčni utrip. Priporočljivo je, da ta funkcija ostane omogočena"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "För närvarande använder du ett hjärtslagsläge. Detta behövs för att hålla %1$@ igång i bakgrunden. Detta kan vara lämpligt om din CGM redan ger ett hjärtslag. Det rekommenderas att hålla denna funktion aktiverad"
+            "value" : "För närvarande använder du ett hjärtslagsläge. Detta behövs för att hålla %%1$@ igång i bakgrunden. Detta kan vara intressant om din CGM redan ger ett hjärtslag. Det rekommenderas att hålla denna funktion aktiverad"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "Şu anda bir kalp atışı modu kullanıyorsunuz. Bu, %%1$@ adresini arka planda çalışır durumda tutmak için gereklidir. CGM'niz zaten bir kalp atışı sağlıyorsa bu ilginç olabilir. Bu özelliğin etkin tutulması tavsiye edilir"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Наразі ви використовуєте режим серцебиття. Це необхідно для того, щоб %1$@ працював у фоновому режимі. Це може бути цікаво, якщо ваш CGM вже забезпечує серцебиття. Рекомендується залишити цю функцію ввімкненою."
+            "value" : "Наразі ви використовуєте режим серцебиття. Це потрібно для того, щоб %%1$@ працював у фоновому режимі. Це може бути корисно, якщо ваш CGM вже надає сигнал серцебиття. Рекомендується залишити цю функцію увімкненою"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hiện tại, bạn đang sử dụng chế độ nhịp tim (heartbeat mode). Chế độ này cần thiết để giữ cho %1$@ tiếp tục chạy trong nền. Điều này có thể hữu ích nếu CGM của bạn đã cung cấp nhịp tim. Khuyến nghị bạn nên giữ tính năng này được bật"
+            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %%1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Currently, you are using a heartbeat mode. This is needed to keep %1$@ running in the background. This might be interesting if your CGM already provides a heartbeat. It is recommended to keep this feature enabled"
+            "state" : "translated",
+            "value" : "目前，您正在使用心跳模式。这需要保持 %%1$@ 在后台运行。 如果您的 CGM 已经提供了一个心声，这可能是有趣的。建议保持启用此功能"
           }
         }
       }
@@ -4805,6 +5208,150 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Deactivated at"
+          }
+        }
+      }
+    },
+    "Deactivation" : {
+      "comment" : "text for deactivation",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التعطيل"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivace"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivering"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivierung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deactivation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivación"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivointi"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivation"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disattivazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "活動停止"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivering"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivering"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deactivatie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dezaktywacja"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desativação"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dezactivare"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деактивация"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivácia"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivacija"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaktivering"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devre dışı bırakma"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деактивація"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停用"
           }
         }
       }
@@ -5817,6 +6364,156 @@
         }
       }
     },
+    "Expiration" : {
+      "comment" : "Text for expiresAt",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انتهت صلاحية التصحيح في"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch expires at"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch udløber den"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch läuft ab um"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expiration"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El parche expira en"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paikan voimassaolo päättyy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le patch expire le"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La patch scade alle"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッチの有効期限"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utløp"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdateringen utløper kl."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch verloopt op"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizacja wygasa o"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualização expira em"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch expiră la"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Патч истекает в"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náplasť exspiruje o"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obliž poteče pri"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patchen löper ut den"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yama şu tarihte sona eriyor"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Термін дії патчу закінчується"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch expires at"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补丁过期于"
+          }
+        }
+      }
+    },
     "Extended Patch expired. Basal only." : {
       "comment" : "Text shown when extended patch expired surpasses 120 hours",
       "extractionState" : "manual",
@@ -5875,7 +6572,7 @@
             "value" : "Extended Patch expired. Basal only."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Extended Patch expired. Basal only."
@@ -5883,20 +6580,14 @@
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Forlenget plaster utgått. Bare basal."
           }
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Extended Patch is verlopen. Alleen basaal."
           }
         },
         "pt" : {
@@ -9849,6 +10540,156 @@
         }
       }
     },
+    "No Delivery" : {
+      "comment" : "label no delivery",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يوجد توصيل"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádná dodávka"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen levering"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Verwaltung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Delivery"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin entrega"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei toimitusta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune administration"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna consegna"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配達なし"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen levering"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen levering"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen toediening"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak dostawy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem entrega"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fără livrare"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет доставки"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne doručenie"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brez dostave"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen leverans"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teslimat Yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без доставки"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có chính quyền"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不送货"
+          }
+        }
+      }
+    },
     "No patch" : {
       "comment" : "Status highlight when no patch is active.",
       "extractionState" : "manual",
@@ -10425,150 +11266,6 @@
         }
       }
     },
-    "Patch activated at" : {
-      "comment" : "Text for activatedAt",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تاريخ تفعيل اللصقة (Patch activated at)"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch aktiviert um"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch activated at"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "nb-NO" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch geactiveerd op"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Патч активирован в"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Náplasť aktivovaná o"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch-pump aktiverad"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Патч активовано о"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Đã kích hoạt Patch lúc"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activated at"
-          }
-        }
-      }
-    },
     "Patch activation" : {
       "comment" : "Patch activation header",
       "extractionState" : "manual",
@@ -10576,19 +11273,25 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تفعيل اللصقة"
+            "value" : "تنشيط التصحيح"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Patch activation"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch aktivering"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Patch-Aktivierung"
           }
         },
         "en" : {
@@ -10599,44 +11302,44 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Activación del parche"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Paikan aktivointi"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Activation du correctif"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Attivazione patch"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "パッチの活性化"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Aktivering av programfiks"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Aktivering av lapp"
           }
         },
         "nl" : {
@@ -10647,8 +11350,164 @@
         },
         "pl" : {
           "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktywacja aktualizacji"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
             "state" : "new",
+            "value" : "Patch activated at"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativação de Atualização"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch de activare"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Активация исправлений"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivácia náplasti"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivacija obliža"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch aktivering"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yama aktivasyonu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Активація патчу"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Patch activation"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补丁激活"
+          }
+        }
+      }
+    },
+    "Patch Details" : {
+      "comment" : "header patch details",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تفاصيل التصحيح"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podrobnosti o záplatě"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detaljer om patch"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch-Details"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch Details"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles del parche"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laastarin tiedot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails du patch"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dettagli della patch"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッチの詳細"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdater detaljer"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdater detaljer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch Details"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szczegóły patcha"
           }
         },
         "pt" : {
@@ -10659,56 +11518,56 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Detalhes do patch"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Detalii despre patch-uri"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Активация патча"
+            "value" : "Детали патча"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktivácia náplasti"
+            "value" : "Podrobnosti o záplate"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podrobnosti popravka"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch-pumps-aktivering"
+            "value" : "Patch Detaljer"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "Yama Detayları"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Активація Патча"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kích hoạt Patch"
+            "value" : "Детальна інформація про патч"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch activation"
+            "state" : "translated",
+            "value" : "补丁详情"
           }
         }
       }
@@ -10915,7 +11774,7 @@
             "value" : "Patch expired. Basal only."
           }
         },
-        "it" : {
+        "nb" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch expired. Basal only."
@@ -10923,20 +11782,14 @@
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Lappen er utløpt. Bare basal."
           }
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Patch is verlopen. Alleen basaal."
           }
         },
         "pt" : {
@@ -10997,150 +11850,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch expired. Basal only."
-          }
-        }
-      }
-    },
-    "Patch expires at" : {
-      "comment" : "Text for expiresAt",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انتهاء صلاحية اللصقة"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch läuft ab um"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch expires at"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "nb-NO" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch verloopt op"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Патч истекает в"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Náplasť exspiruje o"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch-pumpen går ut"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Патч закінчується о "
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patch hết hạn lúc"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expires at"
           }
         }
       }
@@ -13743,80 +14452,86 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reservoir low (%iU)"
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoar lavt (%%iU)"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reservoir laag (%iU)"
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "pt" : {
@@ -13827,56 +14542,62 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nízky stav zásobníka (%iU)"
+            "value" : "Reservoir low (%%iU)"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reservoar låg (%iU)"
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Низький рівень у резервуарі (%iU)"
+            "value" : "Водосховище низьке (%%iU)"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Insulin sắp hết (%iU)"
+            "value" : "Reservoir low (%%iU)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reservoir low (%iU)"
+            "state" : "translated",
+            "value" : "Reservoir low (%%iU)"
           }
         }
       }
@@ -17776,79 +18497,85 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تبقى على لصقتك **%i ساعة**"
+            "value" : "يتبقى لديك %%i ساعة"
           }
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Your patch has %%i hours left"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Din patch har %%i timer tilbage"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Ihr Patch hat noch %%i Stunden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your patch has %i hours left"
+            "value" : "Your patch has %%i hours left"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "A su parche le quedan %%i horas"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Laastariasi on jäljellä %%i tuntia"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Votre patch a %%i heures restantes"
           }
         },
         "he" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "La vostra patch ha %%i ore rimanenti"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "パッチの残り時間は %%i 時間です。"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Your patch has %%i hours left"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Your patch has %%i hours left"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Je patch heeft nog %i uur over"
+            "value" : "Je patch heeft nog %%i uur over"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Do końca aktualizacji pozostało %%i godzin"
           }
         },
         "pt" : {
@@ -17859,56 +18586,62 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Seu patch tem %%i horas restantes"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Patch-ul dvs. are %%i ore rămase"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "У патча осталось %i часов"
+            "value" : "У вашего патча осталось %%i часов."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tvoja náplasť má zostávajúcich %i hodín"
+            "value" : "Tvoja náplasť má zostávajúcich %%i hodín"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaš popravek ima še %%i ur."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch-pumpen har %i timmar kvar"
+            "value" : "Din patch har %%i timmar kvar"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "Yamanızın %%i saati kaldı"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Термін дії вашо Патчу закінчеться через %i годин"
+            "value" : "На вашому патчі залишилося %%i годин"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch của bạn còn lại %i giờ sử dụng"
+            "value" : "Your patch has %%i hours left"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has %i hours left"
+            "state" : "translated",
+            "value" : "您的补丁还剩 %%i 小时"
           }
         }
       }

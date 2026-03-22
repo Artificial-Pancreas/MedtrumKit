@@ -37,7 +37,7 @@ struct MedtrumKitSettings: View {
                     patchLifecycle
                 }
 
-                if viewModel.patchLifecycleState == .active {
+                if viewModel.patchLifecycleState != .noPatch && viewModel.patchLifecycleState != .expired {
                     HStack(alignment: .top) {
                         deliveryStatus
                         Spacer()
@@ -54,6 +54,16 @@ struct MedtrumKitSettings: View {
                             "The time on your pump is different from the current time. Your pump’s time controls your scheduled therapy settings. Scroll down to Pump Time row to review the time difference and configure your pump.",
                             comment: "description for time change detected notice"
                         ))
+                            .font(Font.footnote.weight(.semibold))
+                    }.padding(.vertical, 8)
+                }
+
+                if viewModel.patchLifecycleState == .gracePeriod {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(String(format: LocalizedString(
+                            "Change your Patch now. Insulin delivery will stop in %1$@ or when no more insulin remains.",
+                            comment: "description for grace period notice"
+                        ), viewModel.patchGraceTimeout))
                             .font(Font.footnote.weight(.semibold))
                     }.padding(.vertical, 8)
                 }
@@ -220,35 +230,7 @@ struct MedtrumKitSettings: View {
 
             Section {
                 HStack {
-                    Text(LocalizedString("Pump base SN", comment: "Text for pumpSN"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Text(viewModel.pumpBaseSN)
-                        .foregroundColor(.secondary)
-                }
-                HStack {
-                    Text(LocalizedString("Pump base model", comment: "Text for model"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Text(viewModel.model)
-                        .foregroundColor(.secondary)
-                }
-                HStack {
-                    Text(LocalizedString("Pump base firmware", comment: "Text for firmware"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Text(viewModel.swVersion)
-                        .foregroundColor(.secondary)
-                }
-                HStack {
-                    Text(LocalizedString("Patch ID", comment: "Text for activatedAt"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Text("\(viewModel.patchId)")
-                        .foregroundColor(.secondary)
-                }
-                HStack {
-                    Text(LocalizedString("Patch activated at", comment: "Text for activatedAt"))
+                    Text(LocalizedString("Activation", comment: "Text for activatedAt"))
                         .foregroundColor(Color.primary)
                     Spacer()
                     if viewModel.patchLifecycleState != .noPatch {
@@ -261,7 +243,20 @@ struct MedtrumKitSettings: View {
                     }
                 }
                 HStack {
-                    Text(LocalizedString("Patch expires at", comment: "Text for expiresAt"))
+                    Text(LocalizedString("Expiration", comment: "Text for expiresAt"))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                    if viewModel.patchLifecycleState != .noPatch {
+                        Text(viewModel.dateTimeFormatter.string(from: viewModel.patchGracePeriodFrom))
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.trailing)
+                    } else {
+                        Text("-")
+                            .foregroundColor(.secondary)
+                    }
+                }
+                HStack {
+                    Text(LocalizedString("No Delivery", comment: "Text for expiresAt"))
                         .foregroundColor(Color.primary)
                     Spacer()
                     if viewModel.patchLifecycleState != .noPatch {
@@ -274,21 +269,37 @@ struct MedtrumKitSettings: View {
                     }
                 }
                 HStack {
-                    Text(LocalizedString("Battery", comment: "Text for battery voltageB"))
+                    Text(LocalizedString("Patch Details", comment: "header patch details"))
                         .foregroundColor(Color.primary)
                     Spacer()
-                    Text(viewModel.batteryText(for: viewModel.battery))
-                        .foregroundColor(.secondary)
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: UIFont.systemFontSize, weight: .medium))
+                        .opacity(0.3)
                 }
-                if let initialReservoirLevel = viewModel.initialReservoirLevel {
-                    HStack {
-                        Text(LocalizedString("Insulin used", comment: "Text for Insulin used"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text(viewModel.reservoirText(for: initialReservoirLevel - viewModel.reservoirLevel))
-                            .foregroundColor(.secondary)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    viewModel.toPatchDetails()
+                }
+                HStack {
+                    Text(LocalizedString("Previous Patch Details", comment: "header patch details"))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                    if viewModel.hasPreviousPatch {
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: UIFont.systemFontSize, weight: .medium))
+                            .opacity(0.3)
+                    } else {
+                        Text("-")
+                            .foregroundStyle(.secondary)
                     }
                 }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    if viewModel.hasPreviousPatch {
+                        viewModel.toPreviousPatchDetails()
+                    }
+                }
+
             } header: {
                 Text(LocalizedString(
                     "Information",
@@ -338,64 +349,6 @@ struct MedtrumKitSettings: View {
                     "Patch time",
                     comment: "The title for patch time"
                 ))
-            }
-
-            if let previousPatch = viewModel.previousPatch {
-                Section {
-                    HStack {
-                        Text(LocalizedString("Patch ID", comment: "Text for patchId"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text("\(previousPatch.patchId.toUInt64())")
-                            .foregroundColor(.secondary)
-                    }
-                    HStack {
-                        Text(LocalizedString("Patch state", comment: "Text for state"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text((PatchState(rawValue: previousPatch.lastStateRaw) ?? .none).description)
-                            .foregroundColor(.secondary)
-                    }
-                    HStack {
-                        Text(LocalizedString("Activated at", comment: "Text for activatedAt"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text(viewModel.dateTimeFormatter.string(from: previousPatch.activatedAt))
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.trailing)
-                    }
-                    HStack {
-                        Text(LocalizedString("Deactivated at", comment: "Text for deactivatedAt"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text(viewModel.dateTimeFormatter.string(from: previousPatch.deactivatedAt))
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.trailing)
-                    }
-                    HStack {
-                        Text(LocalizedString("Battery", comment: "Text for battery voltageB"))
-                            .foregroundColor(Color.primary)
-                        Spacer()
-                        Text(viewModel.batteryText(for: previousPatch.battery))
-                            .foregroundColor(.secondary)
-                    }
-                    if let reservoirLevel = previousPatch.reservoirLevel,
-                       let initialReservoirLevel = previousPatch.initialReservoirLevel
-                    {
-                        HStack {
-                            Text(LocalizedString("Insulin used", comment: "Text for Insulin used"))
-                                .foregroundColor(Color.primary)
-                            Spacer()
-                            Text(viewModel.reservoirText(for: initialReservoirLevel - reservoirLevel))
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                } header: {
-                    Text(LocalizedString(
-                        "Previous Patch Details",
-                        comment: "label for previous patch details"
-                    ))
-                }
             }
 
             Section {
@@ -487,15 +440,10 @@ struct MedtrumKitSettings: View {
                 }
             case .active:
                 HStack {
-                    if viewModel.patchLifecycleExpiration {
-                        Text(LocalizedString("Expires in:", comment: "Text shown while patch is active"))
-                            .foregroundStyle(.secondary)
-                    } else {
-                        Text(LocalizedString("Age:", comment: "Text shown while patch is active"))
-                            .foregroundStyle(.secondary)
-                    }
+                    Text(LocalizedString("Expires in:", comment: "Text shown while patch is active"))
+                        .foregroundStyle(.secondary)
                     Spacer()
-                    viewModel.patchLifecycleDays.map { days in
+                    if let days = viewModel.patchLifecycleDays {
                         timeComponent(
                             value: days,
                             units: days == 1 ?
@@ -503,7 +451,8 @@ struct MedtrumKitSettings: View {
                                 LocalizedString("days", comment: "Unit for plural days")
                         )
                     }
-                    viewModel.patchLifecycleHours.map { hours in
+
+                    if let hours = viewModel.patchLifecycleHours {
                         timeComponent(
                             value: hours,
                             units: hours == 1 ?
@@ -511,7 +460,8 @@ struct MedtrumKitSettings: View {
                                 LocalizedString("hours", comment: "Unit for plural hours")
                         )
                     }
-                    viewModel.patchLifecycleMinutes.map { minutes in
+
+                    if let minutes = viewModel.patchLifecycleMinutes, (viewModel.patchLifecycleDays ?? -1) == 0 {
                         timeComponent(
                             value: minutes,
                             units: minutes == 1 ?
@@ -520,7 +470,8 @@ struct MedtrumKitSettings: View {
                         )
                     }
                 }
-            case .expired:
+            case .expired,
+                 .gracePeriod:
                 HStack {
                     Text(LocalizedString("Patch expired", comment: "Text shown when patch expired"))
                         .foregroundStyle(.red)
@@ -537,11 +488,9 @@ struct MedtrumKitSettings: View {
                 }
             }
 
-            if viewModel.patchLifecycleExpiration {
-                ProgressView(value: viewModel.patchLifecycleProgress)
-                    .tint(viewModel.patchLifecycleState == .expired ? .red : .accentColor)
-                    .padding(.top, -5)
-            }
+            ProgressView(value: viewModel.patchLifecycleProgress)
+                .tint(viewModel.patchLifecycleState == .active ? .accentColor : .red)
+                .padding(.top, -5)
         }
     }
 

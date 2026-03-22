@@ -182,7 +182,27 @@ extension BluetoothManager {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         logger.info("\(String(describing: central.state.rawValue))")
 
-        if central.state == .poweredOn, !isConnected, pumpManager?.state.pumpState == .active {
+        guard central.state == .poweredOn else {
+            return
+        }
+
+        if let peripheral = self.peripheral {
+            logger.info("Reconnecting to restored state...")
+            connectCompletion = { (error: MedtrumConnectError?) -> Void in
+                if let error = error {
+                    self.logger.error("Failed to restore state: \(error)")
+                } else {
+                    self.logger.info("Restored state!")
+                }
+
+                self.connectCompletion = nil
+            }
+
+            connect(peripheral: peripheral)
+            return
+        }
+
+        if !isConnected, pumpManager?.state.pumpState == .active {
             ensureConnected { error in
                 if let error = error {
                     self.logger.error("Failed to auto reconnect on boot: \(error)")
@@ -268,20 +288,7 @@ extension BluetoothManager {
             return
         }
 
-        logger.info("Restoring state to: \(peripheral.identifier.uuidString)")
-        let peripheralManager = PeripheralManager(peripheral, self, pumpManager) { reconnectResult in
-            if let error = reconnectResult {
-                self.logger.warning("Couldnt reconnect to pump: \(error)")
-                return
-            }
-
-            self.logger.info("Reconnected to patch using restored state!")
-        }
-
         self.peripheral = peripheral
-        self.peripheralManager = peripheralManager
-
-        peripheralManager.peripheral(peripheral, didDiscoverCharacteristicsFor: service, error: nil)
     }
 
     func centralManager(_: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
