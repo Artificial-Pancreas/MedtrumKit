@@ -59,7 +59,9 @@ class PatchPrimingViewModel: ObservableObject {
                 }
 
                 if pumpManager.state.pumpState.rawValue >= PatchState.primed.rawValue {
-                    self.nextStep()
+                    DispatchQueue.main.async {
+                        self.nextStep()
+                    }
                     return
                 }
 
