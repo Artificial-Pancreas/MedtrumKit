@@ -1,35 +1,30 @@
 import Foundation
 import LoopKit
 
-class MedtrumDoseProgressReporter: DoseProgressReporter {
-    var progress: DoseProgress {
-        DoseProgress(deliveredUnits: deliveredUnits, percentComplete: deliveredUnits / total)
+class MedtrumDoseProgressReporter: DoseProgressTimerEstimator {
+    override var progress: DoseProgress {
+        let elapsed = -dose.startDate.timeIntervalSinceNow
+        let duration = dose.estimatedEndDate.timeIntervalSince(dose.startDate)
+        let percentComplete = min(elapsed / duration, 1)
+        let delivered = pumpManager.roundToSupportedBolusVolume(units: percentComplete * dose.value)
+        return DoseProgress(deliveredUnits: delivered, percentComplete: percentComplete)
     }
 
-    private var observers = WeakSet<DoseProgressObserver>()
+    private let dose: UnfinalizedDose
+    private let pumpManager: MedtrumPumpManager
 
-    private let total: Double
-    private var deliveredUnits: Double = 0
+    public init(pumpManager: MedtrumPumpManager, dose: UnfinalizedDose, reportingQueue: DispatchQueue) {
+        self.pumpManager = pumpManager
+        self.dose = dose
 
-    public init(total: Double) {
-        self.total = total
+        super.init(reportingQueue: reportingQueue)
     }
 
-    public func addObserver(_ observer: DoseProgressObserver) {
-        observers.insert(observer)
-    }
+    override func timerParameters() -> (delay: TimeInterval, repeating: TimeInterval) {
+        let timeSinceStart = dose.startDate.timeIntervalSinceNow
+        let timeBetweenPulses = TimeInterval.seconds(2)
+        let delayUntilNextPulse = timeBetweenPulses - timeSinceStart.remainder(dividingBy: timeBetweenPulses)
 
-    public func removeObserver(_ observer: DoseProgressObserver) {
-        observers.remove(observer)
-    }
-
-    public func notify(deliveredUnits: Double) {
-        self.deliveredUnits = deliveredUnits
-
-        DispatchQueue.main.async {
-            for observer in self.observers {
-                observer.doseProgressReporterDidUpdate(self)
-            }
-        }
+        return (delay: delayUntilNextPulse, repeating: timeBetweenPulses)
     }
 }

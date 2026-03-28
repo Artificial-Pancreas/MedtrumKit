@@ -4,7 +4,8 @@ enum StateSyncer {
     static func sync(
         syncResponse: SynchronizePacketResponse,
         state: MedtrumPumpState,
-        pumpManager: MedtrumPumpManager
+        pumpManager: MedtrumPumpManager,
+        duringReconnect: Bool
     ) {
         StateSyncer.updatePumpState(syncResponse: syncResponse, state: state)
 
@@ -74,8 +75,14 @@ enum StateSyncer {
         }
 
         if let bolusProgress = syncResponse.bolus {
-            pumpManager.updateBolusProgress(delivered: bolusProgress.delivered, completed: bolusProgress.completed)
+            pumpManager.updateBolusProgress(
+                delivered: bolusProgress.delivered,
+                completed: bolusProgress.completed,
+                useEstimatedEndDate: duringReconnect
+            )
             pumpManager.state.bolusState = bolusProgress.completed ? .noBolus : .inProgress
+        } else if duringReconnect {
+            pumpManager.checkBolusDone()
         }
 
         pumpManager.notifyStateDidChange()

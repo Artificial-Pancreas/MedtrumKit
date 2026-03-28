@@ -154,7 +154,7 @@ extension PeripheralManager {
                 return
             }
 
-            parseStateUpdate(syncResponse)
+            parseStateUpdate(syncResponse, duringReconnect: true)
             await subscribe()
         }
     }
@@ -178,7 +178,7 @@ extension PeripheralManager {
         }
     }
 
-    private func parseStateUpdate(_ syncResponse: SynchronizePacketResponse) {
+    private func parseStateUpdate(_ syncResponse: SynchronizePacketResponse, duringReconnect: Bool) {
         // TEMP
         do {
             log.info("State update: \(String(data: try JSONEncoder().encode(syncResponse), encoding: .utf8) ?? "")")
@@ -189,7 +189,8 @@ extension PeripheralManager {
         StateSyncer.sync(
             syncResponse: syncResponse,
             state: pumpManager.state,
-            pumpManager: pumpManager
+            pumpManager: pumpManager,
+            duringReconnect: duringReconnect
         )
     }
 }
@@ -277,7 +278,7 @@ extension PeripheralManager: CBPeripheralDelegate {
                 var packet = NotificationPacket()
                 packet.decode(data)
 
-                self.parseStateUpdate(packet.parseResponse())
+                self.parseStateUpdate(packet.parseResponse(), duringReconnect: false)
                 return
             }
 

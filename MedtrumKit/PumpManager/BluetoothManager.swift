@@ -276,13 +276,7 @@ extension BluetoothManager {
             return
         }
 
-        guard let pumpManager = pumpManager else {
-            logger.warning("Couldnt restore state, since no pumpManager is available...")
-            centralManager.cancelPeripheralConnection(peripheral)
-            return
-        }
-
-        guard let service = peripheral.services?.first(where: { $0.uuid == PeripheralManager.SERVICE_UUID }) else {
+        if peripheral.services?.first(where: { $0.uuid == PeripheralManager.SERVICE_UUID }) == nil {
             logger.warning("Couldnt restore state, since no service is available...")
             centralManager.cancelPeripheralConnection(peripheral)
             return
@@ -299,7 +293,6 @@ extension BluetoothManager {
 
         if let pumpManager = self.pumpManager {
             pumpManager.state.isConnected = false
-            pumpManager.checkBolusDone()
             pumpManager.notifyStateDidChange()
         }
 
@@ -308,8 +301,19 @@ extension BluetoothManager {
             self.peripheralManager = nil
         }
 
-        connectCompletion?(.failedToConnectToDevice)
-        connectCompletion = nil
+        if let connectCompletion = connectCompletion {
+            connectCompletion(.failedToConnectToDevice)
+            self.connectCompletion = nil
+
+        } else {
+            // Prevent reconnect spam
+            // Only try to reconnect if Authorization was successful
+            ensureConnected { error in
+                if let error = error {
+                    self.logger.warning("Failed to auto-reconnect: \(error)")
+                }
+            }
+        }
     }
 
     func centralManager(_: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {

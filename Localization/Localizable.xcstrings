@@ -2398,8 +2398,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Are you sure?"
+            "state" : "translated",
+            "value" : "Sunteți sigur/ă?"
           }
         },
         "ru" : {
@@ -2542,8 +2542,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Attach the pump to the body."
+            "state" : "translated",
+            "value" : "Atașați pompa pe corp."
           }
         },
         "ru" : {
@@ -2686,8 +2686,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Authenticate & deactivate patch"
+            "state" : "translated",
+            "value" : "Autentificare și dezactivare plasture"
           }
         },
         "ru" : {
@@ -2974,8 +2974,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Beep-only"
+            "state" : "translated",
+            "value" : "Doar semnal sonor"
           }
         },
         "ru" : {
@@ -3844,8 +3844,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Connect your pump base to the patch."
+            "state" : "translated",
+            "value" : "Conectați baza pompei la plasture transdermic."
           }
         },
         "ru" : {
@@ -4132,8 +4132,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Continue"
+            "state" : "translated",
+            "value" : "Continuați"
           }
         },
         "ru" : {
@@ -4876,8 +4876,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate patch"
+            "state" : "translated",
+            "value" : "Dezactivați plasturele"
           }
         },
         "ru" : {
@@ -5020,8 +5020,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate Patch"
+            "state" : "translated",
+            "value" : "Dezactivați Plasturele"
           }
         },
         "ru" : {
@@ -5596,8 +5596,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Delete Pump"
+            "state" : "translated",
+            "value" : "Ștergeți pompa"
           }
         },
         "ru" : {
@@ -5740,8 +5740,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Disabled"
+            "state" : "translated",
+            "value" : "Dezactivat"
           }
         },
         "ru" : {
@@ -6172,8 +6172,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Do not attach the patch to the body yet"
+            "state" : "translated",
+            "value" : "Nu atașați încă plasturele pe corp"
           }
         },
         "ru" : {
@@ -6316,8 +6316,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Done"
+            "state" : "translated",
+            "value" : "Gata"
           }
         },
         "ru" : {
@@ -6574,8 +6574,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Utvidet programfiks har gått ut basal."
           }
         },
         "nb-NO" : {
@@ -6604,8 +6604,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Plasturele, în perioada de grație, a expirat. Doar bazală."
           }
         },
         "ru" : {
@@ -6748,8 +6748,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
+            "state" : "translated",
+            "value" : "Umpleți plasturele cu insulină. NOTĂ: Pentru activare este necesară o cantitate minimă de 70U."
           }
         },
         "ru" : {
@@ -6892,8 +6892,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the syringe with insulin"
+            "state" : "translated",
+            "value" : "Umpleți seringa cu insulină"
           }
         },
         "ru" : {
@@ -7900,8 +7900,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Insulin\nSuspended"
+            "state" : "translated",
+            "value" : "Insulină\nSuspendată"
           }
         },
         "ru" : {
@@ -8908,8 +8908,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and beep"
+            "state" : "translated",
+            "value" : "Lumină și semnal sonor"
           }
         },
         "ru" : {
@@ -9196,8 +9196,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light-only"
+            "state" : "translated",
+            "value" : "Doar lumină"
           }
         },
         "ru" : {
@@ -9340,8 +9340,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light, vibrate and, beep"
+            "state" : "translated",
+            "value" : "Lumină, vibrație și semnal sonor"
           }
         },
         "ru" : {
@@ -9628,8 +9628,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Make sure the Serial Number is correct before connecting it to the patch."
+            "state" : "translated",
+            "value" : "Asigurați-vă că numărul de serie este corect înainte de a-l conecta la plasturele transdermic."
           }
         },
         "ru" : {
@@ -9772,8 +9772,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Manually sync Pump time"
+            "state" : "translated",
+            "value" : "Sincronizare manuală a orei pompei"
           }
         },
         "ru" : {
@@ -10060,8 +10060,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max hourly insulin"
+            "state" : "translated",
+            "value" : "Insulină orară maximă"
           }
         },
         "ru" : {
@@ -10786,8 +10786,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No patch"
+            "state" : "translated",
+            "value" : "Niciun plasture"
           }
         },
         "ru" : {
@@ -11074,8 +11074,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No, Keep Pump As Is"
+            "state" : "translated",
+            "value" : "Nu, păstrați pompa așa cum este"
           }
         },
         "ru" : {
@@ -11218,8 +11218,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Notification for expirate patch"
+            "state" : "translated",
+            "value" : "Notificare plasture expirat"
           }
         },
         "ru" : {
@@ -11369,7 +11369,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch de activare"
+            "value" : "Activarea plasturelui"
           }
         },
         "ru" : {
@@ -11668,8 +11668,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired"
+            "state" : "translated",
+            "value" : "Plasture expirat"
           }
         },
         "ru" : {
@@ -11776,8 +11776,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Oppdateringen har gått ut på basal."
           }
         },
         "nb-NO" : {
@@ -11806,8 +11806,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "Plasture expirat. Doar bazală."
           }
         },
         "ru" : {
@@ -11950,8 +11950,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch ID"
+            "state" : "translated",
+            "value" : "ID Plasture"
           }
         },
         "ru" : {
@@ -12094,8 +12094,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch lifetime"
+            "state" : "translated",
+            "value" : "Durata de utilizare a plasturelui"
           }
         },
         "ru" : {
@@ -12238,8 +12238,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch priming"
+            "state" : "translated",
+            "value" : "Pregătirea plasturelui"
           }
         },
         "ru" : {
@@ -12670,8 +12670,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch time"
+            "state" : "translated",
+            "value" : "Oră plasture"
           }
         },
         "ru" : {
@@ -12814,8 +12814,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
+            "state" : "translated",
+            "value" : "Introduceți seringa în plasture și scoateți 1-2 pufuri de aer."
           }
         },
         "ru" : {
@@ -12958,8 +12958,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Press the needle button and start the priming process."
+            "state" : "translated",
+            "value" : "Apăsați butonul acului și începeți procesul de amorsare."
           }
         },
         "ru" : {
@@ -13102,8 +13102,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process."
+            "state" : "translated",
+            "value" : "Apăsați butonul acului pentru a introduce acul. Atingeți butonul \"Activare\" pentru a finaliza procesul de activare."
           }
         },
         "ru" : {
@@ -13246,8 +13246,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Previous Patch Details"
+            "state" : "translated",
+            "value" : "Detalii Plasture Anterior"
           }
         },
         "ru" : {
@@ -14254,8 +14254,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove the safety cover from the patch."
+            "state" : "translated",
+            "value" : "Îndepărtați capacul de siguranță al plasturelui."
           }
         },
         "ru" : {
@@ -14986,8 +14986,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select insulin type"
+            "state" : "translated",
+            "value" : "Selectați tipul de insulină"
           }
         },
         "ru" : {
@@ -15130,8 +15130,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select the type of insulin that you will be using"
+            "state" : "translated",
+            "value" : "Selectați tipul de insulină pe care o veți utiliza"
           }
         },
         "ru" : {
@@ -15994,8 +15994,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Sincronizare date plasture"
           }
         },
         "ru" : {
@@ -16858,8 +16858,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Toggle heartbeat mode"
+            "state" : "translated",
+            "value" : "Comută modul puls"
           }
         },
         "ru" : {
@@ -17290,8 +17290,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use normal lifetime (3d 8h)"
+            "state" : "translated",
+            "value" : "Utilizați durata normală de viață (3d 8h)"
           }
         },
         "ru" : {
@@ -17434,8 +17434,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate and beep"
+            "state" : "translated",
+            "value" : "Vibrare și semnal sonor"
           }
         },
         "ru" : {
@@ -17578,8 +17578,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate-only"
+            "state" : "translated",
+            "value" : "Doar vibrare"
           }
         },
         "ru" : {
@@ -17722,8 +17722,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Welcome"
+            "state" : "translated",
+            "value" : "Bine ați venit"
           }
         },
         "ru" : {
@@ -17866,8 +17866,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
+            "state" : "translated",
+            "value" : "Când atingeți butonul, veți primi o solicitare biometrică. Odată finalizat, plasturele va fi dezactivat și vi se va solicita să asociați un nou plasture transdermic."
           }
         },
         "ru" : {
@@ -18010,8 +18010,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Disable heartbeat mode"
+            "state" : "translated",
+            "value" : "Da, dezactivează modul puls"
           }
         },
         "ru" : {
@@ -18154,8 +18154,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Enable heartbeat mode"
+            "state" : "translated",
+            "value" : "Da, activează modul puls"
           }
         },
         "ru" : {
@@ -18442,8 +18442,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
+            "state" : "translated",
+            "value" : "Veți începe prin a alege tipul de insulină & setările de bază ale plasturelui înainte de a activarea acestuia."
           }
         },
         "ru" : {
@@ -18742,8 +18742,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has detected an occlussion!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră a detectat o ocluzie!"
           }
         },
         "ru" : {
@@ -18886,8 +18886,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its daily maximum!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră a atins maximul zilnic!"
           }
         },
         "ru" : {
@@ -19030,8 +19030,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its hourly maximum!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră a atins maximul orar!"
           }
         },
         "ru" : {
@@ -19174,8 +19174,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is in Fault state!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră este într-o stare de defecțiune!"
           }
         },
         "ru" : {
@@ -19318,8 +19318,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is out of insulin!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră nu mai are insulină!"
           }
         },
         "ru" : {
@@ -19462,8 +19462,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră va rămâne fără insulină!"
           }
         },
         "ru" : {
@@ -19606,8 +19606,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch will expire soon!"
+            "state" : "translated",
+            "value" : "Plasturele dumneavoastră va expira în curând!"
           }
         },
         "ru" : {

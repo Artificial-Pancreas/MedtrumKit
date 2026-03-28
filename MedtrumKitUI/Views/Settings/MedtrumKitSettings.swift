@@ -443,7 +443,7 @@ struct MedtrumKitSettings: View {
                     Text(LocalizedString("Expires in:", comment: "Text shown while patch is active"))
                         .foregroundStyle(.secondary)
                     Spacer()
-                    if let days = viewModel.patchLifecycleDays {
+                    if let days = viewModel.patchLifecycleDays, days > 0 {
                         timeComponent(
                             value: days,
                             units: days == 1 ?
