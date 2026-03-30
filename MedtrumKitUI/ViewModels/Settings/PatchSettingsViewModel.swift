@@ -31,6 +31,9 @@ class PatchSettingsViewModel: ObservableObject {
     @Published var noActivePatch = false
     @Published var errorMessage: String = ""
 
+    var allowedOptionsDaily: [Double] = []
+    var allowedOptionsHourly: [Double] = []
+
     let updatePatch: Bool
     let nextStep: (() -> Void)?
 
@@ -64,47 +67,36 @@ class PatchSettingsViewModel: ObservableObject {
             return
         }
 
-        pumpManager.state.maxHourlyInsulin = maxHourlyInsulin
-        pumpManager.state.maxDailyInsulin = maxDailyInsulin
-        pumpManager.state.alarmSetting = AlarmSettings(rawValue: UInt8(alarmSettings)) ?? .None
-        pumpManager.state.expirationTimer = UInt8(expirationTimer)
-        pumpManager.state.notificationAfterActivation = .hours(notificationAfterActivation)
-
-        if lowReservoirNotification == 0 {
-            pumpManager.state.lowReservoirWarning = nil
-        } else {
-            pumpManager.state.lowReservoirWarning = lowReservoirNotification
-        }
-
-        let patchActivatedAt = pumpManager.state.patchActivatedAt
-        if expirationTimer == 1 {
-            pumpManager.state.patchGracePeriodFrom = patchActivatedAt.addingTimeInterval(.hours(72))
-            pumpManager.state.patchExpiresAt = patchActivatedAt.addingTimeInterval(.hours(80))
-        } else {
-            pumpManager.state.patchGracePeriodFrom = patchActivatedAt.addingTimeInterval(.hours(112))
-            pumpManager.state.patchExpiresAt = patchActivatedAt.addingTimeInterval(.hours(120))
-        }
-
-        pumpManager.notifyStateDidChange()
-
-        NotificationManager.activatePatchExpiredNotification(after: .hours(notificationAfterActivation))
-
-        guard updatePatch, !noActivePatch else {
+        if !updatePatch || noActivePatch {
+            updateState(pumpManager: pumpManager)
             nextStep?()
             return
         }
 
-        isUpdating = true
-        pumpManager.updatePatchSettings { result in
+        AuthorizeBiometrics.authenticate { success in
+            guard success else {
+                DispatchQueue.main.async {
+                    self.errorMessage = LocalizedString("Authentication failure", comment: "auth failed")
+                }
+                return
+            }
+
             DispatchQueue.main.async {
-                self.isUpdating = false
-                switch result {
-                case let .failure(error):
-                    self.errorMessage = error.localizedDescription
-                    return
-                case .success:
-                    self.nextStep?()
-                    return
+                self.updateState(pumpManager: pumpManager)
+                self.isUpdating = true
+            }
+
+            pumpManager.updatePatchSettings { result in
+                DispatchQueue.main.async {
+                    self.isUpdating = false
+                    switch result {
+                    case let .failure(error):
+                        self.errorMessage = error.localizedDescription
+                        return
+                    case .success:
+                        self.nextStep?()
+                        return
+                    }
                 }
             }
         }
@@ -120,11 +112,29 @@ class PatchSettingsViewModel: ObservableObject {
                 pumpManager.state.maxDailyInsulin != self.maxDailyInsulin ||
                     pumpManager.state.maxHourlyInsulin != self.maxHourlyInsulin ||
                     pumpManager.state.alarmSetting.rawValue != UInt8(self.alarmSettings) ||
-                    pumpManager.state.expirationTimer != UInt8(self.expirationTimer) ||
+                    Double(pumpManager.state.expiryMode.timer) != self.expirationTimer ||
                     pumpManager.state.notificationAfterActivation.hours != self.notificationAfterActivation ||
                     (pumpManager.state.lowReservoirWarning ?? 0) != self.lowReservoirNotification
             )
         }
+    }
+
+    private func updateState(pumpManager: MedtrumPumpManager) {
+        pumpManager.state.maxHourlyInsulin = maxHourlyInsulin
+        pumpManager.state.maxDailyInsulin = maxDailyInsulin
+        pumpManager.state.alarmSetting = AlarmSettings(rawValue: UInt8(alarmSettings)) ?? .None
+        pumpManager.state.expiryMode = expirationTimer == 1 ? .default : .extended
+        pumpManager.state.notificationAfterActivation = .hours(notificationAfterActivation)
+
+        if lowReservoirNotification == 0 {
+            pumpManager.state.lowReservoirWarning = nil
+        } else {
+            pumpManager.state.lowReservoirWarning = lowReservoirNotification
+        }
+
+        pumpManager.notifyStateDidChange()
+
+        NotificationManager.activatePatchExpiredNotification(after: .hours(notificationAfterActivation))
     }
 }
 
@@ -147,15 +157,27 @@ extension PatchSettingsViewModel: PumpManagerStatusObserver {
             self.maxHourlyInsulin = state.maxHourlyInsulin
             self.maxDailyInsulin = state.maxDailyInsulin
             self.alarmSettings = Double(state.alarmSetting.rawValue)
-            self.expirationTimer = Double(state.expirationTimer)
+            self.expirationTimer = Double(state.expiryMode.timer)
             self.notificationAfterActivation = state.notificationAfterActivation.hours
             self.lowReservoirNotification = state.lowReservoirWarning ?? 0
 
             if state.pumpSN.isEmpty {
                 // If no serial number is available, we should show the options that are supported by both 200u & 300u
                 self.is300u = false
+                self.allowedOptionsDaily = Array(1 ... 36).map({ Double($0) * 5 })
+                self.allowedOptionsHourly = [1, 2, 5, 10, 15, 20, 25, 30, 35, 40]
+
             } else {
                 self.is300u = state.pumpName.contains("300U")
+
+                if self.is300u {
+                    self.allowedOptionsDaily = Array(1 ... 54).map({ Double($0) * 5 })
+                    self.allowedOptionsHourly = [1, 2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
+
+                } else {
+                    self.allowedOptionsDaily = Array(1 ... 36).map({ Double($0) * 5 })
+                    self.allowedOptionsHourly = [1, 2, 5, 10, 15, 20, 25, 30, 35, 40]
+                }
             }
         }
     }

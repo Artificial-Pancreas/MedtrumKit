@@ -143,161 +143,6 @@
         }
       }
     },
-    "%llu" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "nb-NO" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%llu"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%%llu"
-          }
-        }
-      }
-    },
     "1." : {
       "localizations" : {
         "ar" : {
@@ -2158,6 +2003,306 @@
         }
       }
     },
+    "Alert: Daily max insulin" : {
+      "comment" : "title dailyMaxSuspended",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنبيه: الحد الأقصى اليومي للأنسولين"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornění: Maximální denní dávka inzulínu"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advarsel: Daglig max insulin"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert: Tägliches Höchstinsulin"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert: Daily max insulin"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerta: insulina máxima diaria"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hälytys: Päivittäinen enimmäisinsuliini"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerte : Insuline maximale quotidienne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allarme: insulina massima giornaliera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告：1日の最大インスリン量"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsel: Daglig maks insulin"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsel: Daglig maks insulin"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarschuwing: Dagelijkse max. insuline"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert: Maksymalna dzienna dawka insuliny"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerta: Insulina máxima diária"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alertă: insulină maximă zilnică"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оповещение: Ежедневный максимальный инсулин"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornenie: Denný maximálny inzulín"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opozorilo: Dnevni maksimalni inzulin"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varning: Dagligt maxinsulin"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uyarı: Günlük maksimum insülin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тривога: Добовий максимум інсуліну"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cảnh báo: Liều insulin tối đa hàng ngày"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒：每日最大胰岛素剂量"
+          }
+        }
+      }
+    },
+    "Alert: Hourly max insulin" : {
+      "comment" : "title hourlyMaxSuspended",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنبيه: الحد الأقصى للأنسولين في الساعة"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornění: Hodinový maximální inzulín"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advarsel: Maksimalt insulin pr. time"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert: Stündliches Höchstinsulin"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert: Hourly max insulin"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerta: insulina máxima por hora"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hälytys: Tuntikohtainen maksimi-insuliini"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerte : Insuline maximale horaire"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allarme: insulina massima oraria"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アラート：1時間ごとの最大インスリン量"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsling: Maks insulin per time"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsling: Maks insulin per time"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarschuwing: Uurlijkse max insuline"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert: Godzinowa maksymalna dawka insuliny"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerta: insulina máxima por hora"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alertă: insulină maximă orară"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оповещение: Часовой максимальный инсулин"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornenie: Hodinový maximálny inzulín"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opozorilo: urni maksimalni inzulin"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varning: Insulin max per timme"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uyarı: Saatlik maksimum insülin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тривога: Годинний максимум інсуліну"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cảnh báo: Liều insulin tối đa mỗi giờ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒：每小时最大胰岛素用量"
+          }
+        }
+      }
+    },
     "Are you sure you want to stop using Medtrum TouchCare Nano 200u/300u?" : {
       "comment" : "Message for PumpManager deletion action sheet",
       "extractionState" : "manual",
@@ -3166,152 +3311,152 @@
         }
       }
     },
-    "Change your Patch now. Insulin delivery will stop in %1$@ or when no more insulin remains." : {
+    "Change your Patch now. Insulin delivery will stop in {0} or when no more insulin remains." : {
       "comment" : "description for grace period notice",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "قم بتغيير اللصقة الآن. سيتوقف توصيل الأنسولين خلال %%1$@ أو عندما لا يتبقى المزيد من الأنسولين."
+            "value" : "قم بتغيير اللصقة الآن. سيتوقف توصيل الأنسولين خلال %@ أو عندما لا يتبقى المزيد من الأنسولين."
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Změňte svou záplatu. Podávání inzulínu se zastaví za %%1$@ nebo až nezbude žádný další inzulín."
+            "value" : "Změňte svou záplatu. Podávání inzulínu se zastaví za %@ nebo až nezbude žádný další inzulín."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Skift dit plaster nu. Insulintilførslen stopper om %%1$@, eller når der ikke er mere insulin tilbage."
+            "value" : "Skift dit plaster nu. Insulintilførslen stopper om %@, eller når der ikke er mere insulin tilbage."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pflaster jetzt austauschen. Die Insulinabgabe stoppt in %%1$@ oder wenn kein Insulin mehr vorhanden ist."
+            "value" : "Pflaster jetzt austauschen. Die Insulinabgabe stoppt in %@ oder wenn kein Insulin mehr vorhanden ist."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Change your Patch now. Insulin delivery will stop in %%1$@ or when no more insulin remains."
+            "value" : "Change your Patch now. Insulin delivery will stop in %@ or when no more insulin remains."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cambie su parche ahora. La administración de insulina se detendrá en %%1$@ o cuando no quede más insulina."
+            "value" : "Cambie su parche ahora. La administración de insulina se detendrá en %@ o cuando no quede más insulina."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vaihda Patch nyt. Insuliinin jakelu loppuu %%1$@:n kuluttua tai kun insuliinia ei ole enää jäljellä."
+            "value" : "Vaihda Patch nyt. Insuliinin jakelu loppuu %@:n kuluttua tai kun insuliinia ei ole enää jäljellä."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remplacez le patch maintenant. La distribution d'insuline s'arrête dans %%1$@ ou lorsqu'il n'y a plus d'insuline."
+            "value" : "Remplacez le patch maintenant. La distribution d'insuline s'arrête dans %@ ou lorsqu'il n'y a plus d'insuline."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cambiare subito il cerotto. La somministrazione di insulina si interromperà tra %%1$@ o quando non ci sarà più insulina."
+            "value" : "Cambiare subito il cerotto. La somministrazione di insulina si interromperà tra %@ o quando non ci sarà più insulina."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "今すぐパッチを交換してください。インスリンの投与は、%%1$@ またはインスリンの残りがなくなると停止します。"
+            "value" : "今すぐパッチを交換してください。インスリンの投与は、%@ またはインスリンの残りがなくなると停止します。"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bytt plaster nå. Insulintilførselen vil stoppe om %%1$@ eller når det ikke er mer insulin igjen."
+            "value" : "Bytt plaster nå. Insulintilførselen vil stoppe om %@ eller når det ikke er mer insulin igjen."
           }
         },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bytt plaster nå. Insulintilførselen vil stoppe om %%1$@ eller når det ikke er mer insulin igjen."
+            "value" : "Bytt plaster nå. Insulintilførselen vil stoppe om %@ eller når det ikke er mer insulin igjen."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vervang Patch nu. De insulinetoediening stopt over %%1$@ of wanneer er geen insuline meer is."
+            "value" : "Vervang Patch nu. De insulinetoediening stopt over %@ of wanneer er geen insuline meer is."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zmień teraz plaster. Podawanie insuliny zakończy się za %%1$@ lub gdy insulina przestanie działać."
+            "value" : "Zmień teraz plaster. Podawanie insuliny zakończy się za %@ lub gdy insulina przestanie działać."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mude o seu Patch agora. A administração de insulina será interrompida em %%1$@ ou quando não houver mais insulina."
+            "value" : "Mude o seu Patch agora. A administração de insulina será interrompida em %@ ou quando não houver mais insulina."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schimbați Patch-ul acum. Administrarea insulinei se va opri în %%1$@ sau când nu va mai rămâne insulină."
+            "value" : "Schimbați Patch-ul acum. Administrarea insulinei se va opri în %@ sau când nu va mai rămâne insulină."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Смените пластырь немедленно. Выдача инсулина прекратится через %%1$@ или когда инсулина больше не останется."
+            "value" : "Смените пластырь немедленно. Выдача инсулина прекратится через %@ или когда инсулина больше не останется."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zmeňte svoju záplatu. Podávanie inzulínu sa zastaví za %%1$@ alebo keď už nezostane žiadny inzulín."
+            "value" : "Zmeňte svoju záplatu. Podávanie inzulínu sa zastaví za %@ alebo keď už nezostane žiadny inzulín."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zdaj spremenite svoj paket. Dostavljanje insulina se bo ustavilo v %%1$@ ali ko ne bo več insulina."
+            "value" : "Zdaj spremenite svoj paket. Dostavljanje insulina se bo ustavilo v %@ ali ko ne bo več insulina."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ändra din patch nu. Insulintillförseln kommer att upphöra om %%1$@ eller när det inte finns mer insulin kvar."
+            "value" : "Ändra din patch nu. Insulintillförseln kommer att upphöra om %@ eller när det inte finns mer insulin kvar."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch'inizi şimdi değiştirin. İnsülin verilmesi %%1$@ içinde veya daha fazla insülin kalmadığında duracaktır."
+            "value" : "Patch'inizi şimdi değiştirin. İnsülin verilmesi %@ içinde veya daha fazla insülin kalmadığında duracaktır."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Замініть пластир зараз. Доставка інсуліну припиниться через %%1$@ або коли не залишиться більше інсуліну."
+            "value" : "Замініть пластир зараз. Доставка інсуліну припиниться через %@ або коли не залишиться більше інсуліну."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thay miếng dán ngay. Việc cung cấp insulin sẽ dừng lại sau %%1$@ hoặc khi hết insulin."
+            "value" : "Thay miếng dán ngay. Việc cung cấp insulin sẽ dừng lại sau %@ hoặc khi hết insulin."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "现在就更换补丁。胰岛素输送将在 %%1$@ 或胰岛素耗尽时停止。"
+            "value" : "现在就更换补丁。胰岛素输送将在 %@ 或胰岛素耗尽时停止。"
           }
         }
       }
@@ -5346,6 +5491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Деактивація"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vô hiệu hóa"
           }
         },
         "zh-Hans" : {
@@ -11564,6 +11715,12 @@
             "value" : "Детальна інформація про патч"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chi tiết bản vá"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11994,6 +12151,156 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Patch ID"
+          }
+        }
+      }
+    },
+    "Patch is suspended. Limit of %lld U exceeded. If you increase the limit, you can clear the alert now. If you wait, patch will resume when enough time passes." : {
+      "comment" : "description hourlyMaxSuspended or dailyMaxSuspended",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم تعليق التصحيح. حد %lld تم تجاوز U. إذا قمت بزيادة الحد، يمكنك مسح التنبيه الآن. إذا انتظرت، سيتم استئناف التصحيح عندما يمر وقت كافٍ."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záplata je pozastavena. Limit %lld U překročen. Pokud limit zvýšíte, můžete nyní výstrahu vymazat. Pokud počkáte, oprava se obnoví, až uplyne dostatečně dlouhá doba."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch er suspenderet. Grænsen for %lld U overskredet. Hvis du øger grænsen, kan du fjerne advarslen nu. Hvis du venter, vil patchen blive genoptaget, når der er gået tilstrækkelig tid."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch wird ausgesetzt. Grenze von %lld U überschritten. Wenn Sie den Grenzwert erhöhen, können Sie die Meldung jetzt löschen. Wenn Sie warten, wird der Patch wieder aufgenommen, wenn genügend Zeit verstrichen ist."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch is suspended. Limit of %lld U exceeded. If you increase the limit, you can clear the alert now. If you wait, patch will resume when enough time passes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parche suspendido. Límite de %lld U excedido. Si aumenta el límite, puede borrar la alerta ahora. Si espera, el parche se reanudará cuando pase el tiempo suficiente."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laastari on keskeytetty. Raja %lld U ylitetty. Jos nostat rajaa, voit poistaa hälytyksen nyt. Jos odotat, paikkaus jatkuu, kun tarpeeksi aikaa kuluu."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le patch est suspendu. Limite de %lld U dépassée. Si vous augmentez la limite, vous pouvez supprimer l'alerte maintenant. Si vous attendez, le patch reprendra lorsque le temps sera écoulé."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La patch è sospesa. Limite di %lld U superato. Se aumentate il limite, potete cancellare subito l'avviso. Se si attende, la patch riprenderà quando sarà trascorso un tempo sufficiente."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッチが中断されました。xxx0xx}の上限を超えた。U を超えました。リミットを増やせば、今すぐアラートを解除できる。待っていれば、十分な時間が経過した時点でパッチが再開される。"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdateringen er suspendert. Grensen på %lld U overskredet. Hvis du øker grensen, kan du fjerne varselet nå. Hvis du venter, vil patchen gjenopptas når det har gått nok tid."
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdateringen er suspendert. Grensen på %lld U overskredet. Hvis du øker grensen, kan du fjerne varselet nå. Hvis du venter, vil patchen gjenopptas når det har gått nok tid."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch is opgeschort. Limiet van %lld U overschreden. Als u de limiet verhoogt, kunt u de waarschuwing nu wissen. Als je wacht, wordt de patch hervat als er genoeg tijd verstreken is."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch jest zawieszony. Przekroczono limit %lld U został przekroczony. Jeśli zwiększysz limit, możesz teraz usunąć alert. Jeśli zaczekasz, patch zostanie wznowiony, gdy upłynie wystarczająco dużo czasu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O patch está suspenso. Limite de %lld U excedido. Se aumentar o limite, pode apagar o alerta agora. Se esperar, o patch será retomado quando passar tempo suficiente."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patch-ul este suspendat. Limita de %lld U depășită. Dacă măriți limita, puteți șterge alerta acum. Dacă așteptați, patch-ul va fi reluat când va trece suficient timp."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Патч приостановлен. Предел %lld U превышен. Если вы увеличите лимит, вы можете снять предупреждение сейчас. Если вы подождете, патч возобновит работу, когда пройдет достаточно времени."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záplata je pozastavená. Limit %lld U prekročený. Ak limit zvýšite, môžete teraz upozornenie vymazať. Ak počkáte, oprava sa obnoví, keď uplynie dostatočný čas."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popravek je začasno prekinjen. Omejitev %lld U je presežena. Če omejitev povečate, lahko opozorilo zdaj izbrišete. Če počakate, se bo popravek nadaljeval, ko bo preteklo dovolj časa."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patchen är upphävd. Gränsen för %lld U överskreds. Om du höjer gränsen kan du ta bort varningen nu. Om du väntar kommer patchen att återupptas när tillräckligt med tid har gått."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yama askıya alındı. xx0xx} limiti U aşıldı. Sınırı artırırsanız, uyarıyı şimdi temizleyebilirsiniz. Beklerseniz, yeterli zaman geçtiğinde yama devam edecektir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Патч призупинено. Ліміт %lld U перевищено. Якщо ви збільшите ліміт, ви можете очистити попередження зараз. Якщо ви зачекаєте, патч буде відновлено, коли мине достатньо часу."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quá trình cập nhật bị tạm dừng. Đã vượt quá giới hạn %lld U. Nếu bạn tăng giới hạn, bạn có thể xóa cảnh báo ngay bây giờ. Nếu bạn chờ, quá trình cập nhật sẽ tiếp tục khi đủ thời gian trôi qua."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补丁程序已暂停。已超出 %lld 个 U 的限制。如果您提高限制，即可立即清除此警告。如果您稍等片刻，补丁程序将在足够长的时间后恢复运行。"
           }
         }
       }
@@ -13290,6 +13597,156 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Previous Patch Details"
+          }
+        }
+      }
+    },
+    "Pump base Firmware" : {
+      "comment" : "Text for firmware version",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "البرنامج الثابت لقاعدة المضخة"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware základny čerpadla"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware til pumpebase"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pumpenbasis Firmware"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pump base Firmware"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware de la base de bomba"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pumpun pohja Firmware"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware de la base de la pompe"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware della base della pompa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ポンプベースファームウェア"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fastvare for pumpebase"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fastvare for pumpebase"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomp basis Firmware"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oprogramowanie sprzętowe podstawy pompy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware da base da bomba"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware bază pompă"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Встроенное программное обеспечение базы насоса"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmvér základne čerpadla"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vdelana programska oprema baze črpalke"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware för pumpbas"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pompa tabanı Ürün Yazılımı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прошивка основи насоса"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phần mềm điều khiển máy bơm"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "泵底座固件"
           }
         }
       }
@@ -16902,6 +17359,156 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Toggle heartbeat mode"
+          }
+        }
+      }
+    },
+    "U" : {
+      "comment" : "Insulin unit",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
           }
         }
       }

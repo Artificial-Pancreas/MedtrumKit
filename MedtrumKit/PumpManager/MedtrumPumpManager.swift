@@ -186,8 +186,9 @@ public extension MedtrumPumpManager {
     }
 
     func ensureCurrentPumpData(completion: ((Date?) -> Void)?) {
-        guard Date.now.timeIntervalSince(state.lastSync) > .minutes(4) ||
-            Date.now.timeIntervalSince(state.patchActivatedAt) < .minutes(4)
+        guard let activatedAt = state.patchActivatedAt,
+              Date.now.timeIntervalSince(state.lastSync) > .minutes(4) ||
+              Date.now.timeIntervalSince(activatedAt) < .minutes(4)
         else {
             log.warning("Skipping status update -> data is fresh: \(Date.now.timeIntervalSince(state.lastSync)) sec")
             completion?(nil)
@@ -813,7 +814,7 @@ public extension MedtrumPumpManager {
             await StateSyncer.syncTime(pumpManager: self)
 
             let packet = ActivatePacket(
-                expirationTimer: self.state.expirationTimer,
+                expirationTimer: self.state.expiryMode.timer,
                 alarmSetting: self.state.alarmSetting,
                 hourlyMaxInsulin: self.state.maxHourlyInsulin,
                 dailyMaxInsulin: self.state.maxDailyInsulin,
@@ -834,7 +835,7 @@ public extension MedtrumPumpManager {
                     return
                 }
 
-                if self.state.expirationTimer == 1 {
+                if self.state.expiryMode == .default {
                     NotificationManager.activatePatchExpiredNotification(after: self.state.notificationAfterActivation)
                 }
 
@@ -855,16 +856,9 @@ public extension MedtrumPumpManager {
                     )
                 ]
 
-                let patchState = Date.now
-                let gracePeriodFrom = self.state.expirationTimer == 0 ?
-                    patchState.addingTimeInterval(.hours(112)) :
-                    patchState.addingTimeInterval(.hours(72))
-
                 self.state.initialReservoir = nil
                 self.state.patchId = data.patchId
-                self.state.patchActivatedAt = patchState
-                self.state.patchGracePeriodFrom = gracePeriodFrom
-                self.state.patchExpiresAt = gracePeriodFrom.addingTimeInterval(.hours(8))
+                self.state.patchActivatedAt = Date.now
                 self.state.lastSync = Date.now
                 self.notifyStateDidChange()
 
@@ -912,7 +906,7 @@ public extension MedtrumPumpManager {
                 lastStateRaw: self.state.pumpState.rawValue,
                 lastSyncAt: self.state.lastSync,
                 battery: self.state.battery,
-                activatedAt: self.state.patchActivatedAt,
+                activatedAt: self.state.patchActivatedAt ?? Date.distantPast,
                 deactivatedAt: Date.now,
                 initialReservoirLevel: self.state.initialReservoir,
                 reservoirLevel: self.state.reservoir
@@ -962,7 +956,7 @@ public extension MedtrumPumpManager {
             lastStateRaw: state.pumpState.rawValue,
             lastSyncAt: state.lastSync,
             battery: state.battery,
-            activatedAt: state.patchActivatedAt,
+            activatedAt: state.patchActivatedAt ?? Date.distantPast,
             deactivatedAt: Date.now,
             initialReservoirLevel: state.initialReservoir,
             reservoirLevel: state.reservoir
@@ -992,6 +986,39 @@ public extension MedtrumPumpManager {
         }
     }
 
+    func clearAlert(alertType: AlertType, completion: @escaping (Bool) -> Void) {
+        log.info("Clearing alert - alertType: \(alertType.rawValue)")
+
+        bluetooth.ensureConnected { error in
+            if let error = error {
+                self.log.error("Failed to connect to pump: \(error)")
+                completion(false)
+                return
+            }
+
+            let clearAlertPackage = ClearAlertPacket(alertType: alertType)
+            let clearAlertResult = await self.bluetooth.write(clearAlertPackage)
+            if case let .failure(error) = clearAlertResult {
+                self.log.error("Failed to clear alert: \(error)")
+                completion(false)
+                return
+            }
+
+            let resumePackage = ResumePumpPacket()
+            let resumeResult = await self.bluetooth.write(resumePackage)
+            if case let .failure(error) = resumeResult {
+                self.log.error("Failed to resume patch: \(error)")
+                completion(false)
+                return
+            }
+
+            self.syncPumpData { _ in
+                self.log.info("Alert cleared!")
+                completion(true)
+            }
+        }
+    }
+
     func updatePatchSettings(completion: @escaping (MedtrumUpdatePatchResult) -> Void) {
         log.info("Update patch settings...")
 
@@ -1006,7 +1033,7 @@ public extension MedtrumPumpManager {
                 alarmSettings: self.state.alarmSetting,
                 hourlyMaxInsulin: self.state.maxHourlyInsulin,
                 dailyMaxInsulin: self.state.maxDailyInsulin,
-                expirationTimer: self.state.expirationTimer
+                expirationTimer: self.state.expiryMode.timer
             )
             let result = await self.bluetooth.write(package)
             if case let .failure(error) = result {

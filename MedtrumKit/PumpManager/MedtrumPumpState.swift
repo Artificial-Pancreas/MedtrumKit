@@ -12,6 +12,28 @@ public enum BolusState: Int {
     case canceling = 2
 }
 
+public enum ExpiryMode: Int {
+    case `default` = 1
+    case extended = 2
+
+    var lifespan: TimeInterval {
+        switch self {
+        case .default:
+            return .hours(72)
+        case .extended:
+            return .hours(112)
+        }
+    }
+
+    var gracePeriod: TimeInterval {
+        .hours(8)
+    }
+
+    var timer: UInt8 {
+        self == .default ? 1 : 0
+    }
+}
+
 public struct PreviousPatch: Codable {
     public var patchId: Data
     public var lastStateRaw: UInt8
@@ -33,9 +55,7 @@ public class MedtrumPumpState: RawRepresentable {
         lowReservoirWarning = rawValue["lowReservoirWarning"] as? Double
         sessionToken = rawValue["sessionToken"] as? Data ?? Data()
         patchId = rawValue["patchId"] as? Data ?? Data()
-        patchActivatedAt = rawValue["patchActivatedAt"] as? Date ?? Date.distantPast
-        patchGracePeriodFrom = rawValue["patchGracePeriodFrom"] as? Date
-        patchExpiresAt = rawValue["patchExpiresAt"] as? Date
+        patchActivatedAt = rawValue["patchActivatedAt"] as? Date ?? nil
         deviceType = rawValue["deviceType"] as? UInt8 ?? 0
         swVersion = rawValue["swVersion"] as? String ?? "0.0.0"
         pumpTime = rawValue["pumpTime"] as? Date ?? Date()
@@ -48,8 +68,15 @@ public class MedtrumPumpState: RawRepresentable {
         basalStateSince = rawValue["basalStateSince"] as? Date ?? Date.distantPast
         tempBasalUnits = rawValue["tempBasalUnits"] as? Double
         tempBasalDuration = rawValue["tempBasalDuration"] as? Double
-        expirationTimer = rawValue["expirationTimer"] as? UInt8 ?? 1
         notificationAfterActivation = rawValue["notificationAfterActivation"] as? TimeInterval ?? .hours(72)
+
+        if let expiryModeRaw = rawValue["expiryMode"] as? ExpiryMode.RawValue {
+            expiryMode = ExpiryMode(rawValue: expiryModeRaw) ?? .default
+        } else if let expirationTimer = rawValue["expirationTimer"] as? UInt8 {
+            expiryMode = expirationTimer == 1 ? .default : .extended
+        } else {
+            expiryMode = .default
+        }
 
         if let previousPatchRaw = rawValue["previousPatch"] as? Data {
             do {
@@ -107,9 +134,7 @@ public class MedtrumPumpState: RawRepresentable {
         doseEntry = nil
         sessionToken = Data()
         patchId = Data()
-        patchActivatedAt = Date.distantPast
-        patchGracePeriodFrom = nil
-        patchExpiresAt = nil
+        patchActivatedAt = nil
         deviceType = 0
         swVersion = "0.0.0"
         pumpTime = Date()
@@ -126,7 +151,7 @@ public class MedtrumPumpState: RawRepresentable {
         tempBasalDuration = nil
         bolusState = .noBolus
         alarmSetting = .BeepOnly
-        expirationTimer = 1
+        expiryMode = .default
         notificationAfterActivation = .hours(72)
         previousPatch = nil
 
@@ -168,7 +193,7 @@ public class MedtrumPumpState: RawRepresentable {
         value["tempBasalUnits"] = tempBasalUnits
         value["tempBasalDuration"] = tempBasalDuration
         value["alarmSetting"] = alarmSetting.rawValue
-        value["expirationTimer"] = expirationTimer
+        value["expiryMode"] = expiryMode.rawValue
         value["notificationAfterActivation"] = notificationAfterActivation
 
         if let previousPatch = previousPatch {
@@ -189,9 +214,22 @@ public class MedtrumPumpState: RawRepresentable {
     // Patch specific data
     public var sessionToken: Data
     public var patchId: Data
-    public var patchActivatedAt: Date
-    public var patchGracePeriodFrom: Date?
-    public var patchExpiresAt: Date?
+    public var patchActivatedAt: Date?
+    public var patchGracePeriodFrom: Date? {
+        guard let activatedAt = patchActivatedAt else {
+            return nil
+        }
+
+        return activatedAt.addingTimeInterval(expiryMode.lifespan)
+    }
+
+    public var patchExpiresAt: Date? {
+        guard let activatedAt = patchActivatedAt else {
+            return nil
+        }
+
+        return activatedAt.addingTimeInterval(expiryMode.lifespan + expiryMode.gracePeriod)
+    }
 
     public var previousPatch: PreviousPatch?
 
@@ -211,7 +249,7 @@ public class MedtrumPumpState: RawRepresentable {
     public var maxHourlyInsulin: Double
     public var maxDailyInsulin: Double
     public var alarmSetting: AlarmSettings
-    public var expirationTimer: UInt8
+    public var expiryMode: ExpiryMode
     public var notificationAfterActivation: TimeInterval
 
     // **** THESE VALUES SHOULD NOT BE PERSISTED ****

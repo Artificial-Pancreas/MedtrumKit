@@ -1,10 +1,12 @@
 import HealthKit
 import LoopKit
+import LoopKitUI
 import SwiftUI
 
 enum PatchLifecycleState {
     case noPatch
     case active
+    case activeLast24h
     case gracePeriod
     case expired
     case expiredBasalOnly
@@ -26,11 +28,13 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var basalRate: Double = 0
     @Published var insulinType: InsulinType = .novolog
     @Published var lastSync = Date.distantPast
+    @Published var hourlyLimit = 0
+    @Published var dailyLimit = 0
     @Published var patchLifecycleProgress: Double = 0
     @Published var patchLifecycleState: PatchLifecycleState = .noPatch
-    @Published var patchActivatedAt = Date.distantPast
-    @Published var patchExpiresAt = Date.distantFuture
-    @Published var patchGracePeriodFrom = Date.distantFuture
+    @Published var patchActivatedAt: Date? = nil
+    @Published var patchExpiresAt: Date? = nil
+    @Published var patchGracePeriodFrom: Date? = nil
     @Published var patchGraceTimeout = ""
     @Published var isConnected: Bool = false
     @Published var isReconnecting: Bool = false
@@ -40,15 +44,16 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var showingHeartbeatWarning = false
     @Published var showingDeleteConfirmation = false
     @Published var hasPreviousPatch = false
+    @Published var isClearingAlert = false
 
     public var pumpName: String {
         pumpManager?.state.pumpName ?? "Medtrum Nano"
     }
 
-    let reservoirVolumeFormatter: QuantityFormatter = {
-        let formatter = QuantityFormatter(for: .internationalUnit())
-        formatter.numberFormatter.minimumFractionDigits = 0
-        formatter.numberFormatter.maximumFractionDigits = 0
+    let reservoirVolumeFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 0
         return formatter
     }()
 
@@ -126,12 +131,11 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     }
 
     func reservoirText(for units: Double) -> String {
-        let quantity = HKQuantity(unit: .internationalUnit(), doubleValue: units)
-        return reservoirVolumeFormatter.string(from: quantity) ?? ""
+        reservoirVolumeFormatter.string(from: units as NSNumber) ?? ""
     }
 
     var patchLifecycleDays: Int? {
-        guard patchLifecycleState == .active else {
+        guard patchLifecycleState == .active || patchLifecycleState == .activeLast24h, let patchGracePeriodFrom else {
             return nil
         }
 
@@ -139,7 +143,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     }
 
     var patchLifecycleHours: Int? {
-        guard patchLifecycleState == .active else {
+        guard patchLifecycleState == .active || patchLifecycleState == .activeLast24h, let patchGracePeriodFrom else {
             return nil
         }
 
@@ -150,7 +154,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     }
 
     var patchLifecycleMinutes: Int? {
-        guard patchLifecycleState == .active else {
+        guard patchLifecycleState == .active || patchLifecycleState == .activeLast24h, let patchGracePeriodFrom else {
             return nil
         }
 
@@ -169,6 +173,19 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
         pumpManager.syncPumpData { _ in
             DispatchQueue.main.async {
                 self.isUpdatingPumpState = false
+            }
+        }
+    }
+
+    func clearAlert(_ alertType: AlertType) {
+        guard let pumpManager else {
+            return
+        }
+
+        isClearingAlert = true
+        pumpManager.clearAlert(alertType: alertType) { _ in
+            DispatchQueue.main.async {
+                self.isClearingAlert = false
             }
         }
     }
@@ -335,23 +352,25 @@ extension MedtrumKitSettingsViewModel {
         patchStateString = state.pumpState.description
         pumpTime = state.pumpTime
         pumpTimeSyncedAt = state.pumpTimeSyncedAt
-        reservoirLevel = state.reservoir
+        reservoirLevel = patchState != .reservoirEmpty ? state.reservoir : 0
         basalType = state.basalState
         basalRate = basalType == .tempBasal ? (state.tempBasalUnits ?? state.currentBaseBasalRate) : state.currentBaseBasalRate
         lastSync = state.lastSync
         patchActivatedAt = state.patchActivatedAt
-        patchGracePeriodFrom = state.patchGracePeriodFrom ?? state.patchActivatedAt.addingTimeInterval(.hours(72))
-        patchExpiresAt = state.patchExpiresAt ?? state.patchActivatedAt.addingTimeInterval(.hours(80))
+        patchGracePeriodFrom = state.patchGracePeriodFrom
+        patchExpiresAt = state.patchExpiresAt
         hasPreviousPatch = state.previousPatch != nil
+        hourlyLimit = Int(state.maxHourlyInsulin)
+        dailyLimit = Int(state.maxDailyInsulin)
 
-        if !state.patchId.isEmpty {
+        if !state.patchId.isEmpty, let patchActivatedAt, let patchGracePeriodFrom {
             let totalLifetime = patchGracePeriodFrom.timeIntervalSince(patchActivatedAt)
-            let progress = Date.now.timeIntervalSince1970 - state.patchActivatedAt.timeIntervalSince1970
+            let progress = Date.now.timeIntervalSince1970 - patchActivatedAt.timeIntervalSince1970
 
             patchLifecycleProgress = min(progress / totalLifetime, 1)
             patchLifecycleState = getLifecycleState(state: state)
 
-            if patchLifecycleState == .gracePeriod {
+            if patchLifecycleState == .gracePeriod, let patchExpiresAt {
                 let timeRemaining = patchExpiresAt.timeIntervalSinceNow
                 patchGraceTimeout = timeRemainingFormatter.string(from: timeRemaining) ?? ""
             }
@@ -366,11 +385,17 @@ extension MedtrumKitSettingsViewModel {
 
     private func getLifecycleState(state: MedtrumPumpState) -> PatchLifecycleState {
         if patchLifecycleProgress < 1 {
-            return .active
+            if let patchGracePeriodFrom = state.patchGracePeriodFrom,
+               patchGracePeriodFrom.addingTimeInterval(.days(-1)) <= Date.now
+            {
+                return .activeLast24h
+            } else {
+                return .active
+            }
         }
 
-        if Date.now > patchExpiresAt {
-            return state.expirationTimer == 0 ? .expiredBasalOnly : .expired
+        if let patchExpiresAt, Date.now > patchExpiresAt {
+            return state.expiryMode == .extended ? .expiredBasalOnly : .expired
         }
 
         return .gracePeriod

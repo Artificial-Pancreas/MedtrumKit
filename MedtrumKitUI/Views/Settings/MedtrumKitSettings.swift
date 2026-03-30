@@ -67,6 +67,63 @@ struct MedtrumKitSettings: View {
                             .font(Font.footnote.weight(.semibold))
                     }.padding(.vertical, 8)
                 }
+
+                if viewModel.patchState == .hourlyMaxSuspended {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(LocalizedString("Alert: Hourly max insulin", comment: "title hourlyMaxSuspended"))
+                            .font(Font.footnote.weight(.semibold))
+                        Text(
+                            String(
+                                format: LocalizedString(
+                                    "Patch is suspended. Limit of %lld U exceeded. If you increase the limit, you can clear the alert now. If you wait, patch will resume when enough time passes.",
+                                    comment: "description dailyMaxSuspended"
+                                ),
+                                viewModel.hourlyLimit
+                            )
+                        )
+                        .font(.footnote)
+                        .padding(.bottom, 4)
+
+                        Button {
+                            viewModel.clearAlert(AlertType.hourly)
+                        } label: {
+                            Text(LocalizedString("Clear alert", comment: ""))
+                                .font(.title3)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.bordered)
+                        .disabled(viewModel.isClearingAlert)
+
+                    }.padding(.vertical, 8)
+                }
+
+                if viewModel.patchState == .dailyMaxSuspended {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(LocalizedString("Alert: Daily max insulin", comment: "title dailyMaxSuspended"))
+                            .font(Font.footnote.weight(.semibold))
+                        Text(
+                            String(
+                                format: LocalizedString(
+                                    "Patch is suspended. Limit of %lld U exceeded. If you increase the limit, you can clear the alert now. If you wait, patch will resume when enough time passes.",
+                                    comment: "description dailyMaxSuspended"
+                                ),
+                                viewModel.dailyLimit
+                            )
+                        )
+                        .font(.footnote)
+                        .padding(.bottom, 4)
+
+                        Button {
+                            viewModel.clearAlert(AlertType.daily)
+                        } label: {
+                            Text(LocalizedString("Clear alert", comment: ""))
+                                .font(.title3)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.bordered)
+                        .disabled(viewModel.isClearingAlert)
+                    }.padding(.vertical, 8)
+                }
             }
 
             Section {
@@ -86,7 +143,10 @@ struct MedtrumKitSettings: View {
                             }
                         }
                     }
-                    .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
+                    .disabled(
+                        viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel
+                            .isUpdatingSuspend || viewModel.isClearingAlert
+                    )
 
                     if viewModel.basalType == .tempBasal {
                         Button(action: {
@@ -100,7 +160,10 @@ struct MedtrumKitSettings: View {
                                 }
                             }
                         }
-                        .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
+                        .disabled(
+                            viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel
+                                .isUpdatingSuspend || viewModel.isClearingAlert
+                        )
                     }
 
                     Button(action: { viewModel.syncData() }) {
@@ -112,7 +175,10 @@ struct MedtrumKitSettings: View {
                             }
                         }
                     }
-                    .disabled(viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel.isUpdatingSuspend)
+                    .disabled(
+                        viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel
+                            .isUpdatingSuspend || viewModel.isClearingAlert
+                    )
 
                     if viewModel.patchState.rawValue < PatchState.active.rawValue && viewModel.patchState != .none {
                         Button(action: { viewModel.toPumpActivation() }) {
@@ -229,43 +295,49 @@ struct MedtrumKitSettings: View {
             }
 
             Section {
-                HStack {
-                    Text(LocalizedString("Activation", comment: "Text for activatedAt"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    if viewModel.patchLifecycleState != .noPatch {
-                        Text(viewModel.dateTimeFormatter.string(from: viewModel.patchActivatedAt))
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.trailing)
-                    } else {
-                        Text("-")
-                            .foregroundColor(.secondary)
+                if let activatedAt = viewModel.patchActivatedAt {
+                    HStack {
+                        Text(LocalizedString("Activation", comment: "Text for activatedAt"))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                        if viewModel.patchLifecycleState != .noPatch {
+                            Text(viewModel.dateTimeFormatter.string(from: activatedAt))
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.trailing)
+                        } else {
+                            Text("-")
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
-                HStack {
-                    Text(LocalizedString("Expiration", comment: "Text for expiresAt"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    if viewModel.patchLifecycleState != .noPatch {
-                        Text(viewModel.dateTimeFormatter.string(from: viewModel.patchGracePeriodFrom))
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.trailing)
-                    } else {
-                        Text("-")
-                            .foregroundColor(.secondary)
+                if let gracePeriodFrom = viewModel.patchGracePeriodFrom {
+                    HStack {
+                        Text(LocalizedString("Expiration", comment: "Text for expiresAt"))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                        if viewModel.patchLifecycleState != .noPatch {
+                            Text(viewModel.dateTimeFormatter.string(from: gracePeriodFrom))
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.trailing)
+                        } else {
+                            Text("-")
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
-                HStack {
-                    Text(LocalizedString("No Delivery", comment: "Text for expiresAt"))
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    if viewModel.patchLifecycleState != .noPatch {
-                        Text(viewModel.dateTimeFormatter.string(from: viewModel.patchExpiresAt))
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.trailing)
-                    } else {
-                        Text("-")
-                            .foregroundColor(.secondary)
+                if let expiresAt = viewModel.patchExpiresAt {
+                    HStack {
+                        Text(LocalizedString("No Delivery", comment: "Text for expiresAt"))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                        if viewModel.patchLifecycleState != .noPatch {
+                            Text(viewModel.dateTimeFormatter.string(from: expiresAt))
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.trailing)
+                        } else {
+                            Text("-")
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 HStack {
@@ -376,20 +448,26 @@ struct MedtrumKitSettings: View {
     }
 
     var reservoirStatus: some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .trailing, spacing: 5) {
             Text(LocalizedString("Insulin Remaining", comment: "Header for insulin remaining on pod settings screen"))
                 .foregroundColor(Color(UIColor.secondaryLabel))
-            HStack {
+            HStack(alignment: .center, spacing: 10) {
                 ReservoirView(
                     reservoirLevel: viewModel.reservoirLevel,
                     fillColor: reservoirColor,
                     maxReservoirLevel: viewModel.maxReservoirLevel
                 )
                 .frame(width: 23, height: 32)
-                Text(viewModel.reservoirText(for: viewModel.reservoirLevel))
-                    .font(.system(size: 28))
-                    .fontWeight(.heavy)
-                    .fixedSize()
+
+                HStack(alignment: .firstTextBaseline, spacing: 3) {
+                    Text(viewModel.reservoirText(for: viewModel.reservoirLevel))
+                        .font(.system(size: 28))
+                        .fontWeight(.heavy)
+                        .fixedSize()
+
+                    Text(LocalizedString("U", comment: "Insulin unit"))
+                        .foregroundStyle(.secondary)
+                }
             }
         }
     }
@@ -438,7 +516,8 @@ struct MedtrumKitSettings: View {
                         .foregroundStyle(.secondary)
                     Spacer()
                 }
-            case .active:
+            case .active,
+                 .activeLast24h:
                 HStack {
                     Text(LocalizedString("Expires in:", comment: "Text shown while patch is active"))
                         .foregroundStyle(.secondary)
@@ -489,7 +568,7 @@ struct MedtrumKitSettings: View {
             }
 
             ProgressView(value: viewModel.patchLifecycleProgress)
-                .tint(viewModel.patchLifecycleState == .active ? .accentColor : .red)
+                .tint(progressColor)
                 .padding(.top, -5)
         }
     }
@@ -522,6 +601,20 @@ struct MedtrumKitSettings: View {
         }
 
         return guidanceColors.critical
+    }
+
+    public var progressColor: Color {
+        switch viewModel.patchLifecycleState {
+        case .active:
+            return .accentColor
+        case .activeLast24h:
+            return guidanceColors.warning
+        case .expired,
+             .expiredBasalOnly,
+             .gracePeriod,
+             .noPatch:
+            return guidanceColors.critical
+        }
     }
 
     var connectionStatusText: some View {
