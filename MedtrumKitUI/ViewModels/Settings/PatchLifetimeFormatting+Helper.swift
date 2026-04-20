@@ -13,45 +13,24 @@ extension PatchLifetimeFormatting {
         if days > 0 {
             if hours == 0 {
                 return [
-                    "\(days) \(days == 1 ? String(localized: "day", comment: "Unit for singular day") : String(
-                        localized: "days",
-                        comment: "Unit for plural days"
-                    ))",
-                    "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(
-                        localized: "minutes",
-                        comment: "Unit for plural minutes"
-                    ))"
+                    "\(days) \(days == 1 ? String(localized: "day", comment: "Unit for singular day") : String(localized: "days", comment: "Unit for plural days"))",
+                    "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(localized: "minutes", comment: "Unit for plural minutes"))"
                 ].joined(separator: " ")
             }
 
             return [
-                "\(days) \(days == 1 ? String(localized: "day", comment: "Unit for singular day") : String(
-                    localized: "days",
-                    comment: "Unit for plural days"
-                ))",
-                "\(hours) \(hours == 1 ? String(localized: "hour", comment: "Unit for singular hour") : String(
-                    localized: "hours",
-                    comment: "Unit for plural hours"
-                ))"
+                "\(days) \(days == 1 ? String(localized: "day", comment: "Unit for singular day") : String(localized: "days", comment: "Unit for plural days"))",
+                "\(hours) \(hours == 1 ? String(localized: "hour", comment: "Unit for singular hour") : String(localized: "hours", comment: "Unit for plural hours"))"
             ].joined(separator: " ")
         }
 
         if hours == 0 {
-            return "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(
-                localized: "minutes",
-                comment: "Unit for plural minutes"
-            ))"
+            return "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(localized: "minutes", comment: "Unit for plural minutes"))"
         }
 
         return [
-            "\(hours) \(hours == 1 ? String(localized: "hour", comment: "Unit for singular hour") : String(
-                localized: "hours",
-                comment: "Unit for plural hours"
-            ))",
-            "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(
-                localized: "minutes",
-                comment: "Unit for plural minutes"
-            ))"
+            "\(hours) \(hours == 1 ? String(localized: "hour", comment: "Unit for singular hour") : String(localized: "hours", comment: "Unit for plural hours"))",
+            "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(localized: "minutes", comment: "Unit for plural minutes"))"
         ].joined(separator: " ")
     }
 }
