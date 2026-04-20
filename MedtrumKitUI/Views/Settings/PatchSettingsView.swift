@@ -12,15 +12,15 @@ struct PatchSettingsView: View {
 
     var doDirtyCheck = true
 
-    let unitText = LocalizedString("U", comment: "Insulin unit")
-    let hourText = LocalizedString("h", comment: "Hour unit")
+    let unitText = String(localized: "U", comment: "Insulin unit")
+    let hourText = String(localized: "h", comment: "Hour unit")
 
     var body: some View {
         VStack {
             List {
                 Section {
                     sectionItem(
-                        title: LocalizedString("Max hourly insulin", comment: "Label for maximum hourly insulin delivery"),
+                        title: String(localized: "Max hourly insulin", comment: "Label for maximum hourly insulin delivery"),
                         isEditing: isEditingMaxHourly,
                         value: $viewModel.maxHourlyInsulin,
                         valueRange: viewModel.allowedOptionsHourly,
@@ -38,7 +38,7 @@ struct PatchSettingsView: View {
                     }
 
                     sectionItem(
-                        title: LocalizedString("Max daily insulin", comment: "Label for maximum daily insulin delivery"),
+                        title: String(localized: "Max daily insulin", comment: "Label for maximum daily insulin delivery"),
                         isEditing: isEditingMaxDaily,
                         value: $viewModel.maxDailyInsulin,
                         valueRange: viewModel.allowedOptionsDaily,
@@ -56,31 +56,35 @@ struct PatchSettingsView: View {
                     }
 
                     sectionItem(
-                        title: LocalizedString("Alarm setting", comment: "Label for alarm settings"),
+                        title: String(localized: "Alarm Setting", comment: "Label for alarm settings"),
                         isEditing: isEditingAlarmSetting,
                         value: $viewModel.alarmSettings,
                         valueRange: viewModel.alarmOptions,
                         formatter: { value in
                             switch value {
                             case 0:
-                                return LocalizedString(
+                                return String(
+                                    localized:
                                     "Light, vibrate and, beep",
                                     comment: "Label for alarm options: light, vibrate and beep"
                                 )
                             case 1:
-                                return LocalizedString("Light and vibrate", comment: "Label for alarm options: light and vibrate")
+                                return String(
+                                    localized: "Light and vibrate",
+                                    comment: "Label for alarm options: light and vibrate"
+                                )
                             case 2:
-                                return LocalizedString("Light and beep", comment: "Label for alarm options: light and beep")
+                                return String(localized: "Light and beep", comment: "Label for alarm options: light and beep")
                             case 3:
-                                return LocalizedString("Light-only", comment: "Label for alarm options: light")
+                                return String(localized: "Light-only", comment: "Label for alarm options: light")
                             case 4:
-                                return LocalizedString("Vibrate and beep", comment: "Label for alarm options: vibrate and beep")
+                                return String(localized: "Vibrate and beep", comment: "Label for alarm options: vibrate and beep")
                             case 5:
-                                return LocalizedString("Vibrate-only", comment: "Label for alarm options: vibrate")
+                                return String(localized: "Vibrate-only", comment: "Label for alarm options: vibrate")
                             case 6:
-                                return LocalizedString("Beep-only", comment: "Label for alarm options: beep")
+                                return String(localized: "Beep-only", comment: "Label for alarm options: beep")
                             default:
-                                return LocalizedString("Silence", comment: "Label for alarm options: none")
+                                return String(localized: "Silence", comment: "Label for alarm options: none")
                             }
                         }
                     )
@@ -96,16 +100,19 @@ struct PatchSettingsView: View {
                     }
 
                     sectionItem(
-                        title: LocalizedString("Patch lifetime", comment: "Label for expiration alarm"),
+                        title: String(localized: "Patch Lifetime", comment: "Label for expiration alarm"),
                         isEditing: isEditingExpirationTimer,
                         value: $viewModel.expirationTimer,
                         valueRange: Array(0 ... 1).map({ Double($0) }),
                         formatter: { value in
                             switch value {
                             case 0:
-                                return LocalizedString("Use extended lifetime", comment: "Label for extended lifetime")
+                                return String(localized: "Use extended lifetime", comment: "Label for extended lifetime")
                             default:
-                                return LocalizedString("Use normal lifetime (3d 8h)", comment: "Label for normal patch lifetime")
+                                return String(
+                                    localized: "Use normal lifetime (3d 8h)",
+                                    comment: "Label for normal patch lifetime"
+                                )
                             }
                         }
                     )
@@ -122,7 +129,8 @@ struct PatchSettingsView: View {
 
                     if viewModel.expirationTimer == 1 {
                         sectionItem(
-                            title: LocalizedString(
+                            title: String(
+                                localized:
                                 "Notification for expirate patch",
                                 comment: "Label for expired patch notification"
                             ),
@@ -144,8 +152,8 @@ struct PatchSettingsView: View {
                     }
 
                     sectionItem(
-                        title: LocalizedString(
-                            "Notification for low reservoir",
+                        title: String(
+                            localized: "Notification for low reservoir",
                             comment: "Label for low reservoir notification"
                         ),
                         isEditing: isEditingLowReservoir,
@@ -153,7 +161,7 @@ struct PatchSettingsView: View {
                         valueRange: Array(0 ... 10).map({ Double($0 * 5) }),
                         formatter: { value in
                             if value == 0 {
-                                return LocalizedString("Disabled", comment: "label for disabled")
+                                return String(localized: "Disabled", comment: "label for disabled")
                             }
 
                             return "\(String(format: "%.0f", value))\(unitText)"
@@ -174,15 +182,15 @@ struct PatchSettingsView: View {
                 if viewModel.expirationTimer == 0 {
                     Section {
                         VStack {
-                            Text(LocalizedString("Use at your own risk!", comment: "warning title"))
+                            Text("Use at your own risk!", comment: "warning title")
                                 .font(.headline)
                                 .bold()
                                 .padding(.bottom, 10)
 
-                            Text(LocalizedString(
+                            Text(
                                 "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours).",
                                 comment: "warning body"
-                            ))
+                            )
                         }
                     }
                     .listRowBackground(Color.orange)
@@ -199,9 +207,9 @@ struct PatchSettingsView: View {
             }) {
                 if !viewModel.isUpdating {
                     if viewModel.updatePatch {
-                        Text(LocalizedString("Save", comment: "save"))
+                        Text("Save", comment: "save")
                     } else {
-                        Text(LocalizedString("Continue", comment: "Continue"))
+                        Text("Continue", comment: "Continue")
                     }
                 } else {
                     ActivityIndicator()
@@ -212,7 +220,7 @@ struct PatchSettingsView: View {
             .padding([.bottom, .horizontal])
         }
         .edgesIgnoringSafeArea(.bottom)
-        .navigationBarTitle(LocalizedString("Patch settings", comment: "Text for patch settings view"))
+        .navigationBarTitle(String(localized: "Patch Settings", comment: "Text for patch settings view"))
     }
 
     @ViewBuilder func sectionItem(

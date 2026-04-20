@@ -12,7 +12,7 @@ enum PatchLifecycleState {
     case expiredBasalOnly
 }
 
-class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
+class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver, PatchLifetimeFormatting {
     private let processQueue = DispatchQueue(label: "com.nightscout.medtrumkit.settingsViewModel")
 
     @Published var model: String = ""
@@ -32,6 +32,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var dailyLimit = 0
     @Published var patchLifecycleProgress: Double = 0
     @Published var patchLifecycleState: PatchLifecycleState = .noPatch
+    @Published var patchLifetime: String = ""
     @Published var patchActivatedAt: Date? = nil
     @Published var patchExpiresAt: Date? = nil
     @Published var patchGracePeriodFrom: Date? = nil
@@ -43,6 +44,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
     @Published var isUpdatingTempBasal = false
     @Published var showingHeartbeatWarning = false
     @Published var showingDeleteConfirmation = false
+    @Published var showingSuspendPicker = false
     @Published var hasPreviousPatch = false
     @Published var isClearingAlert = false
 
@@ -52,6 +54,7 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
 
     let reservoirVolumeFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
+        formatter.roundingMode = .floor
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 0
         return formatter
@@ -230,32 +233,40 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver {
         pumpActivationAction(alreadyPrimed)
     }
 
+    func suspendDelivery(duration: TimeInterval) {
+        guard let pumpManager else {
+            return
+        }
+
+        pumpManager.suspendPatch(duration: duration) { error in
+            DispatchQueue.main.async {
+                self.isUpdatingSuspend = false
+            }
+
+            if let error = error {
+                self.log.error("Failed to suspend delivery: \(error)")
+            }
+        }
+    }
+
     func suspendResumeButtonPressed() {
+        if basalType != .suspended {
+            showingSuspendPicker = true
+            return
+        }
+
         guard let pumpManager = self.pumpManager else {
             return
         }
 
         isUpdatingSuspend = true
-        if basalType == .suspended {
-            pumpManager.resumeDelivery { error in
-                DispatchQueue.main.async {
-                    self.isUpdatingSuspend = false
-                }
-
-                if let error = error {
-                    self.log.error("Failed to resume delivery: \(error)")
-                }
+        pumpManager.resumeDelivery { error in
+            DispatchQueue.main.async {
+                self.isUpdatingSuspend = false
             }
 
-        } else {
-            pumpManager.suspendDelivery { error in
-                DispatchQueue.main.async {
-                    self.isUpdatingSuspend = false
-                }
-
-                if let error = error {
-                    self.log.error("Failed to suspend delivery: \(error)")
-                }
+            if let error = error {
+                self.log.error("Failed to resume delivery: \(error)")
             }
         }
     }
@@ -359,6 +370,9 @@ extension MedtrumKitSettingsViewModel {
         patchActivatedAt = state.patchActivatedAt
         patchGracePeriodFrom = state.patchGracePeriodFrom
         patchExpiresAt = state.patchExpiresAt
+        if let patchActivatedAt = state.patchActivatedAt {
+            patchLifetime = processPatchLifetime(patchActivatedAt, Date())
+        }
         hasPreviousPatch = state.previousPatch != nil
         hourlyLimit = Int(state.maxHourlyInsulin)
         dailyLimit = Int(state.maxDailyInsulin)

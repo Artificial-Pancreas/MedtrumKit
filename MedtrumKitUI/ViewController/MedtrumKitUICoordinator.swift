@@ -230,10 +230,7 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 pumpRemoval,
                 toActivatePatch
             )
-            return hostingController(rootView: MedtrumKitSettings(
-                viewModel: viewModel,
-                supportedInsulinTypes: allowedInsulinTypes
-            ))
+            return hostingController(rootView: MedtrumKitSettings(viewModel: viewModel))
         case .patchDetailsScreen:
             let viewModel = PatchDetailsViewModel(pumpManager: pumpManager)
             return hostingController(rootView: PatchDetailsView(viewModel: viewModel))

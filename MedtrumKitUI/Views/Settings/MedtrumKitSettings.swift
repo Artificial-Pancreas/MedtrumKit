@@ -11,20 +11,43 @@ struct MedtrumKitSettings: View {
     @Environment(\.guidanceColors) private var guidanceColors
     @Environment(\.appName) private var appName
 
-    var supportedInsulinTypes: [InsulinType]
-
     var syncPumpTime: ActionSheet {
         ActionSheet(
-            title: Text(LocalizedString("Time Change Detected", comment: "Title for pod sync time action sheet.")),
-            message: Text(LocalizedString(
+            title: Text("Time Change Detected", comment: "Title for pod sync time action sheet."),
+            message: Text(
                 "The time on your pump is different from the current time. Do you want to update the time on your pump to the current time?",
                 comment: "Message for pod sync time action sheet"
-            )),
+            ),
             buttons: [
-                .default(Text(LocalizedString("Yes, Sync to Current Time", comment: "Button text to confirm pump time sync"))) {
+                .default(Text("Yes, Sync to Current Time", comment: "Button text to confirm pump time sync")) {
                     self.viewModel.syncPumpTime()
                 },
-                .cancel(Text(LocalizedString("No, Keep Pump As Is", comment: "Button text to cancel pump time sync")))
+                .cancel(Text("No, Keep Pump As Is", comment: "Button text to cancel pump time sync"))
+            ]
+        )
+    }
+
+    var suspendSheet: ActionSheet {
+        ActionSheet(
+            title: Text("Suspend Insulin Delivery", comment: "Title for suspend action"),
+            message: Text(
+                "How long you wish to suspend your patch maximum? It will resume automaticly after this time.",
+                comment: "Message for suspend action"
+            ),
+            buttons: [
+                .default(Text("30 minutes", comment: "suspend for 30 min")) {
+                    self.viewModel.suspendDelivery(duration: .minutes(30))
+                },
+                .default(Text("1 hour", comment: "suspend for 1h")) {
+                    self.viewModel.suspendDelivery(duration: .minutes(60))
+                },
+                .default(Text("1.5 hours", comment: "suspend for 1.5h")) {
+                    self.viewModel.suspendDelivery(duration: .minutes(90))
+                },
+                .default(Text("2 hours", comment: "suspend for 2h")) {
+                    self.viewModel.suspendDelivery(duration: .minutes(120))
+                },
+                .cancel(Text("Cancel", comment: "button cancel"))
             ]
         )
     }
@@ -48,20 +71,20 @@ struct MedtrumKitSettings: View {
 
                 if viewModel.showPumpTimeSyncWarning {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(LocalizedString("Time Change Detected", comment: "title for time change detected notice"))
+                        Text("Time Change Detected", comment: "title for time change detected notice")
                             .font(Font.subheadline.weight(.bold))
-                        Text(LocalizedString(
+                        Text(
                             "The time on your pump is different from the current time. Your pump’s time controls your scheduled therapy settings. Scroll down to Pump Time row to review the time difference and configure your pump.",
                             comment: "description for time change detected notice"
-                        ))
-                            .font(Font.footnote.weight(.semibold))
+                        )
+                        .font(Font.footnote.weight(.semibold))
                     }.padding(.vertical, 8)
                 }
 
                 if viewModel.patchLifecycleState == .gracePeriod {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(String(format: LocalizedString(
-                            "Change your Patch now. Insulin delivery will stop in %1$@ or when no more insulin remains.",
+                        Text(String(format: String(
+                            localized: "Change your Patch now. Insulin delivery will stop in %@ or when no more insulin remains.",
                             comment: "description for grace period notice"
                         ), viewModel.patchGraceTimeout))
                             .font(Font.footnote.weight(.semibold))
@@ -70,11 +93,12 @@ struct MedtrumKitSettings: View {
 
                 if viewModel.patchState == .hourlyMaxSuspended {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(LocalizedString("Alert: Hourly max insulin", comment: "title hourlyMaxSuspended"))
+                        Text("Alert: Hourly max insulin", comment: "title hourlyMaxSuspended")
                             .font(Font.footnote.weight(.semibold))
                         Text(
                             String(
-                                format: LocalizedString(
+                                format: String(
+                                    localized:
                                     "Patch is suspended. Limit of %lld U exceeded. If you increase the limit, you can clear the alert now. If you wait, patch will resume when enough time passes.",
                                     comment: "description dailyMaxSuspended"
                                 ),
@@ -87,7 +111,7 @@ struct MedtrumKitSettings: View {
                         Button {
                             viewModel.clearAlert(AlertType.hourly)
                         } label: {
-                            Text(LocalizedString("Clear alert", comment: ""))
+                            Text("Clear alert", comment: "")
                                 .font(.title3)
                                 .frame(maxWidth: .infinity)
                         }
@@ -99,11 +123,12 @@ struct MedtrumKitSettings: View {
 
                 if viewModel.patchState == .dailyMaxSuspended {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(LocalizedString("Alert: Daily max insulin", comment: "title dailyMaxSuspended"))
+                        Text("Alert: Daily max insulin", comment: "title dailyMaxSuspended")
                             .font(Font.footnote.weight(.semibold))
                         Text(
                             String(
-                                format: LocalizedString(
+                                format: String(
+                                    localized:
                                     "Patch is suspended. Limit of %lld U exceeded. If you increase the limit, you can clear the alert now. If you wait, patch will resume when enough time passes.",
                                     comment: "description dailyMaxSuspended"
                                 ),
@@ -116,7 +141,7 @@ struct MedtrumKitSettings: View {
                         Button {
                             viewModel.clearAlert(AlertType.daily)
                         } label: {
-                            Text(LocalizedString("Clear alert", comment: ""))
+                            Text("Clear alert", comment: "")
                                 .font(.title3)
                                 .frame(maxWidth: .infinity)
                         }
@@ -133,9 +158,9 @@ struct MedtrumKitSettings: View {
                     }) {
                         HStack {
                             if viewModel.basalType == .suspended {
-                                Text(LocalizedString("Resume delivery", comment: "Resume patch"))
+                                Text("Resume Insulin Delivery", comment: "Resume patch")
                             } else {
-                                Text(LocalizedString("Suspend delivery", comment: "Suspend patch"))
+                                Text("Suspend Insulin Delivery", comment: "Suspend patch")
                             }
                             Spacer()
                             if viewModel.isUpdatingSuspend {
@@ -147,13 +172,16 @@ struct MedtrumKitSettings: View {
                         viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel
                             .isUpdatingSuspend || viewModel.isClearingAlert
                     )
+                    .actionSheet(isPresented: $viewModel.showingSuspendPicker) {
+                        suspendSheet
+                    }
 
                     if viewModel.basalType == .tempBasal {
                         Button(action: {
                             viewModel.stopTempBasal()
                         }) {
                             HStack {
-                                Text(LocalizedString("Stop temp basal", comment: "Stop temp basal"))
+                                Text("Stop temp basal", comment: "Stop temp basal")
                                 Spacer()
                                 if viewModel.isUpdatingTempBasal {
                                     ActivityIndicator()
@@ -168,7 +196,7 @@ struct MedtrumKitSettings: View {
 
                     Button(action: { viewModel.syncData() }) {
                         HStack {
-                            Text(LocalizedString("Sync patch data", comment: "sync pump"))
+                            Text("Sync patch data", comment: "sync pump")
                             Spacer()
                             if viewModel.isUpdatingPumpState {
                                 ActivityIndicator()
@@ -183,7 +211,7 @@ struct MedtrumKitSettings: View {
                     if viewModel.patchState.rawValue < PatchState.active.rawValue && viewModel.patchState != .none {
                         Button(action: { viewModel.toPumpActivation() }) {
                             HStack {
-                                Text(LocalizedString("Activate patch", comment: "label for activate patch"))
+                                Text("Activate Patch", comment: "label for activate patch")
                                 Spacer()
                                 Image(systemName: "chevron.right")
                                     .font(.system(size: UIFont.systemFontSize, weight: .bold))
@@ -196,9 +224,9 @@ struct MedtrumKitSettings: View {
                     Button(action: { viewModel.checkConnection() }) {
                         HStack {
                             if viewModel.isConnected {
-                                Text(LocalizedString("Disconnect", comment: "disconnect from patch"))
+                                Text("Disconnect", comment: "disconnect from patch")
                             } else {
-                                Text(LocalizedString("Reconnect", comment: "reconnect to patch"))
+                                Text("Reconnect", comment: "reconnect to patch")
                             }
                             Spacer()
                             if viewModel.isReconnecting {
@@ -209,7 +237,7 @@ struct MedtrumKitSettings: View {
 
                     Button(action: { viewModel.deactivatePatchAction() }) {
                         HStack {
-                            Text(LocalizedString("Deactivate Patch", comment: "deactivate patch"))
+                            Text("Deactivate Patch", comment: "deactivate patch")
                                 .foregroundStyle(.red)
                             Spacer()
                             Image(systemName: "chevron.right")
@@ -220,7 +248,7 @@ struct MedtrumKitSettings: View {
                     }
 
                     HStack {
-                        Text(LocalizedString("Patch state", comment: "Text for patch state"))
+                        Text("Patch State", comment: "Text for patch state")
                             .foregroundColor(Color.primary)
                         Spacer()
                         Text(viewModel.patchStateString)
@@ -228,7 +256,7 @@ struct MedtrumKitSettings: View {
                     }
 
                     HStack {
-                        Text(LocalizedString("Last sync", comment: "Text for last sync"))
+                        Text("Last Sync", comment: "Text for last sync")
                             .foregroundColor(Color.primary)
                         Spacer()
                         if viewModel.patchLifecycleState != .noPatch {
@@ -241,7 +269,8 @@ struct MedtrumKitSettings: View {
                     }
 
                     HStack {
-                        Text(LocalizedString("Status", comment: "Text for status")).foregroundColor(Color.primary)
+                        Text("Status", comment: "Text for status")
+                            .foregroundColor(Color.primary)
                         Spacer()
                         HStack(spacing: 10) {
                             connectionStatusText
@@ -251,7 +280,7 @@ struct MedtrumKitSettings: View {
                 } else {
                     Button(action: { viewModel.activatePatchAction() }) {
                         HStack {
-                            Text(LocalizedString("Activate new Patch", comment: "activate patch"))
+                            Text("Activate Patch", comment: "activate patch")
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .font(.system(size: UIFont.systemFontSize, weight: .bold))
@@ -263,7 +292,7 @@ struct MedtrumKitSettings: View {
 
             Section {
                 HStack {
-                    Text(LocalizedString("Insulin Type", comment: "Text for selecting insulin type"))
+                    Text("Insulin Type", comment: "Text for selecting insulin type")
                         .foregroundColor(Color.primary)
                     Spacer()
                     Text(viewModel.insulinType.brandName)
@@ -279,7 +308,7 @@ struct MedtrumKitSettings: View {
                 }
 
                 HStack {
-                    Text(LocalizedString("Patch settings", comment: "Text for patch settings view"))
+                    Text("Patch Settings", comment: "Text for patch settings view")
                         .foregroundColor(Color.primary)
                     Spacer()
                     Image(systemName: "chevron.right")
@@ -291,13 +320,26 @@ struct MedtrumKitSettings: View {
                     viewModel.toSettings()
                 }
             } header: {
-                Text(LocalizedString("Configuration", comment: "Configuration section"))
+                Text("Configuration", comment: "Configuration section")
             }
 
             Section {
+                HStack {
+                    Text("Cannula Age", comment: "Text for cannula age (CAGE)")
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                    if viewModel.patchLifecycleState != .noPatch {
+                        Text(viewModel.patchLifetime)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.trailing)
+                    } else {
+                        Text("-")
+                            .foregroundColor(.secondary)
+                    }
+                }
                 if let activatedAt = viewModel.patchActivatedAt {
                     HStack {
-                        Text(LocalizedString("Activation", comment: "Text for activatedAt"))
+                        Text("Activation", comment: "Text for activatedAt")
                             .foregroundColor(Color.primary)
                         Spacer()
                         if viewModel.patchLifecycleState != .noPatch {
@@ -312,7 +354,7 @@ struct MedtrumKitSettings: View {
                 }
                 if let gracePeriodFrom = viewModel.patchGracePeriodFrom {
                     HStack {
-                        Text(LocalizedString("Expiration", comment: "Text for expiresAt"))
+                        Text("Expiration", comment: "Text for expiresAt")
                             .foregroundColor(Color.primary)
                         Spacer()
                         if viewModel.patchLifecycleState != .noPatch {
@@ -327,7 +369,7 @@ struct MedtrumKitSettings: View {
                 }
                 if let expiresAt = viewModel.patchExpiresAt {
                     HStack {
-                        Text(LocalizedString("No Delivery", comment: "Text for expiresAt"))
+                        Text("No Delivery", comment: "Text for expiresAt")
                             .foregroundColor(Color.primary)
                         Spacer()
                         if viewModel.patchLifecycleState != .noPatch {
@@ -341,7 +383,7 @@ struct MedtrumKitSettings: View {
                     }
                 }
                 HStack {
-                    Text(LocalizedString("Patch Details", comment: "header patch details"))
+                    Text("Patch Details", comment: "header patch details")
                         .foregroundColor(Color.primary)
                     Spacer()
                     Image(systemName: "chevron.right")
@@ -353,7 +395,7 @@ struct MedtrumKitSettings: View {
                     viewModel.toPatchDetails()
                 }
                 HStack {
-                    Text(LocalizedString("Previous Patch Details", comment: "header patch details"))
+                    Text("Previous Patch Details", comment: "header patch details")
                         .foregroundColor(Color.primary)
                     Spacer()
                     if viewModel.hasPreviousPatch {
@@ -373,15 +415,12 @@ struct MedtrumKitSettings: View {
                 }
 
             } header: {
-                Text(LocalizedString(
-                    "Information",
-                    comment: "The title for patch/pump information"
-                ))
+                Text("Information", comment: "The title for patch/pump information")
             }
 
             Section {
                 HStack {
-                    Text(LocalizedString("Patch time", comment: "Text for pump time"))
+                    Text("Patch Time", comment: "Text for pump time")
                         .foregroundColor(Color.primary)
                     Spacer()
                     if viewModel.showPumpTimeSyncWarning {
@@ -392,7 +431,7 @@ struct MedtrumKitSettings: View {
                         .foregroundColor(viewModel.showPumpTimeSyncWarning ? guidanceColors.warning : .secondary)
                 }
                 HStack {
-                    Text(LocalizedString("Checked at", comment: "Text for pump time synced at"))
+                    Text("Checked at", comment: "Text for pump time synced at")
                         .foregroundColor(Color.primary)
                     Spacer()
                     Text(String(viewModel.dateFormatter.string(from: viewModel.pumpTimeSyncedAt)))
@@ -403,7 +442,7 @@ struct MedtrumKitSettings: View {
                     showingTimeSyncConfirmation = true
                 }) {
                     HStack {
-                        Text(LocalizedString("Manually sync Pump time", comment: "Label for syncing the time on the pump"))
+                        Text("Manually sync Pump time", comment: "Label for syncing the time on the pump")
                         Spacer()
                         if viewModel.isUpdatingPumpState {
                             ActivityIndicator()
@@ -417,15 +456,12 @@ struct MedtrumKitSettings: View {
                 }
             }
             header: {
-                Text(LocalizedString(
-                    "Patch time",
-                    comment: "The title for patch time"
-                ))
+                Text("Patch Time", comment: "The title for patch time")
             }
 
             Section {
-                Button(LocalizedString("Share Medtrum patch logs", comment: "Share logs")) {
-                    self.isSharePresented = true
+                Button(action: { self.isSharePresented = true }) {
+                    Text("Share Medtrum patch logs", comment: "Share logs")
                 }
                 .sheet(isPresented: $isSharePresented, onDismiss: {}, content: {
                     ActivityViewController(activityItems: viewModel.getLogs())
@@ -434,7 +470,7 @@ struct MedtrumKitSettings: View {
                 Button(action: {
                     viewModel.showingDeleteConfirmation = true
                 }) {
-                    Text(LocalizedString("Delete Pump", comment: "Label for PumpManager deletion button"))
+                    Text("Delete Pump", comment: "Label for PumpManager deletion button")
                         .foregroundColor(guidanceColors.critical)
                 }
                 .actionSheet(isPresented: $viewModel.showingDeleteConfirmation) {
@@ -449,7 +485,7 @@ struct MedtrumKitSettings: View {
 
     var reservoirStatus: some View {
         VStack(alignment: .trailing, spacing: 5) {
-            Text(LocalizedString("Insulin Remaining", comment: "Header for insulin remaining on pod settings screen"))
+            Text("Insulin Remaining", comment: "Header for insulin remaining on pod settings screen")
                 .foregroundColor(Color(UIColor.secondaryLabel))
             HStack(alignment: .center, spacing: 10) {
                 ReservoirView(
@@ -465,7 +501,7 @@ struct MedtrumKitSettings: View {
                         .fontWeight(.heavy)
                         .fixedSize()
 
-                    Text(LocalizedString("U", comment: "Insulin unit"))
+                    Text("U", comment: "Insulin unit")
                         .foregroundStyle(.secondary)
                 }
             }
@@ -486,7 +522,7 @@ struct MedtrumKitSettings: View {
                             .font(.system(size: 28))
                             .fontWeight(.heavy)
                             .fixedSize()
-                        Text(LocalizedString("U/hr", comment: "Units for showing temp basal rate"))
+                        Text("U/hr", comment: "Units for showing temp basal rate")
                             .foregroundColor(.secondary)
                     }
                 }
@@ -496,12 +532,12 @@ struct MedtrumKitSettings: View {
                         .font(.system(size: 34))
                         .fixedSize()
                         .foregroundColor(guidanceColors.warning)
-                    Text(LocalizedString(
+                    Text(
                         "Insulin\nSuspended",
                         comment: "Text shown in insulin delivery space when insulin suspended"
-                    ))
-                        .fontWeight(.bold)
-                        .fixedSize()
+                    )
+                    .fontWeight(.bold)
+                    .fixedSize()
                 }
             }
         }
@@ -512,22 +548,22 @@ struct MedtrumKitSettings: View {
             switch viewModel.patchLifecycleState {
             case .noPatch:
                 HStack {
-                    Text(LocalizedString("No active patch", comment: "Text shown when no patch active"))
+                    Text("No active patch", comment: "Text shown when no patch active")
                         .foregroundStyle(.secondary)
                     Spacer()
                 }
             case .active,
                  .activeLast24h:
                 HStack {
-                    Text(LocalizedString("Expires in:", comment: "Text shown while patch is active"))
+                    Text("Expires in:", comment: "Text shown while patch is active")
                         .foregroundStyle(.secondary)
                     Spacer()
                     if let days = viewModel.patchLifecycleDays, days > 0 {
                         timeComponent(
                             value: days,
                             units: days == 1 ?
-                                LocalizedString("day", comment: "Unit for singular day") :
-                                LocalizedString("days", comment: "Unit for plural days")
+                                String(localized: "day", comment: "Unit for singular day") :
+                                String(localized: "days", comment: "Unit for plural days")
                         )
                     }
 
@@ -535,8 +571,8 @@ struct MedtrumKitSettings: View {
                         timeComponent(
                             value: hours,
                             units: hours == 1 ?
-                                LocalizedString("hour", comment: "Unit for singular hour") :
-                                LocalizedString("hours", comment: "Unit for plural hours")
+                                String(localized: "hour", comment: "Unit for singular hour") :
+                                String(localized: "hours", comment: "Unit for plural hours")
                         )
                     }
 
@@ -544,25 +580,25 @@ struct MedtrumKitSettings: View {
                         timeComponent(
                             value: minutes,
                             units: minutes == 1 ?
-                                LocalizedString("minute", comment: "Unit for singular minute") :
-                                LocalizedString("minutes", comment: "Unit for plural minutes")
+                                String(localized: "minute", comment: "Unit for singular minute") :
+                                String(localized: "minutes", comment: "Unit for plural minutes")
                         )
                     }
                 }
             case .expired,
                  .gracePeriod:
                 HStack {
-                    Text(LocalizedString("Patch expired", comment: "Text shown when patch expired"))
+                    Text("Patch expired", comment: "Text shown when patch expired")
                         .foregroundStyle(.red)
                     Spacer()
                 }
             case .expiredBasalOnly:
                 HStack {
-                    Text(LocalizedString(
+                    Text(
                         "Extended Patch expired. Basal only.",
                         comment: "Text shown when extended patch expired surpasses 120 hours"
-                    ))
-                        .foregroundStyle(.red)
+                    )
+                    .foregroundStyle(.red)
                     Spacer()
                 }
             }
@@ -585,7 +621,7 @@ struct MedtrumKitSettings: View {
     }
 
     private var doneButton: some View {
-        Button(LocalizedString("Done", comment: "Button for closing settings"), action: {
+        Button(String(localized: "Done", comment: "Button for closing settings"), action: {
             dismiss()
         })
     }
@@ -619,14 +655,14 @@ struct MedtrumKitSettings: View {
 
     var connectionStatusText: some View {
         if viewModel.isConnected {
-            return Text(LocalizedString("Connected", comment: "label for connected"))
+            return Text("Connected", comment: "label for connected")
         }
 
         if viewModel.isReconnecting {
-            return Text(LocalizedString("Reconnecting...", comment: "label for reconnecting"))
+            return Text("Reconnecting...", comment: "label for reconnecting")
         }
 
-        return Text(LocalizedString("Disconnected", comment: "label for disconnected"))
+        return Text("Disconnected", comment: "label for disconnected")
     }
 
     var connectionStatusIcon: some View {
@@ -640,11 +676,11 @@ struct MedtrumKitSettings: View {
     var deliverySectionTitle: String {
         switch viewModel.basalType {
         case .active:
-            return LocalizedString("Scheduled Basal", comment: "Title of insulin delivery section")
+            return String(localized: "Scheduled Basal", comment: "Title of insulin delivery section")
         case .tempBasal:
-            return LocalizedString("Temp Basal", comment: "Pump Event title for UnfinalizedDose with doseType of .tempBasal")
+            return String(localized: "Temp Basal", comment: "Pump Event title for UnfinalizedDose with doseType of .tempBasal")
         case .suspended:
-            return LocalizedString("Insulin Delivery", comment: "Title of insulin delivery section")
+            return String(localized: "Insulin Delivery", comment: "Title of insulin delivery section")
         }
     }
 }

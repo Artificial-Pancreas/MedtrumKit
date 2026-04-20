@@ -34,10 +34,10 @@ struct InsulinTypeSelector: View {
         VStack(alignment: .leading) {
             List {
                 Section {
-                    Text(LocalizedString(
+                    Text(
                         "Select the type of insulin that you will be using",
                         comment: "Title text for insulin type confirmation page"
-                    ))
+                    )
 
                     ScrollView {
                         InsulinTypeChooser(insulinType: $insulinType, supportedInsulinTypes: supportedInsulinTypes)
@@ -50,9 +50,9 @@ struct InsulinTypeSelector: View {
 
             Button(action: { self.continueWithType(insulinType) }) {
                 if showSave {
-                    Text(LocalizedString("Save", comment: "save"))
+                    Text("Save", comment: "save")
                 } else {
-                    Text(LocalizedString("Continue", comment: "Continue"))
+                    Text("Continue", comment: "Continue")
                 }
             }
             .buttonStyle(ActionButtonStyle())
@@ -60,6 +60,6 @@ struct InsulinTypeSelector: View {
         }
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarHidden(false)
-        .navigationTitle(LocalizedString("Select insulin type", comment: "Title for insulin type"))
+        .navigationTitle(String(localized: "Select insulin type", comment: "Title for insulin type"))
     }
 }

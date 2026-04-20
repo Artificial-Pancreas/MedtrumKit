@@ -223,11 +223,20 @@ extension BluetoothManager {
 
         let manufacturerData = advertisementData[CBAdvertisementDataManufacturerDataKey]
         guard let manufacturerData = manufacturerData as? Data, manufacturerData.count >= 7 else {
-            // Simulator bypass
+            // Simulator bypass -> 200u
             scanCompletion?(
                 .success(
                     peripheral: peripheral,
                     pumpSN: Data([0x28, 0xD8, 0x12, 0x4A]),
+                    deviceType: 1,
+                    version: 1
+                )
+            )
+            // Simulator bypass -> 300u
+            scanCompletion?(
+                .success(
+                    peripheral: peripheral,
+                    pumpSN: Data([0x14, 0x16, 0xDF, 0x52]),
                     deviceType: 1,
                     version: 1
                 )

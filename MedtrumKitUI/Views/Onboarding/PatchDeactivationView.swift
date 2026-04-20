@@ -11,10 +11,10 @@ struct PatchDeactivationView: View {
             List {
                 Section {
                     PumpImage(is300u: viewModel.is300u)
-                    Text(LocalizedString(
+                    Text(
                         "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch.",
                         comment: "Instructions for deactivate patch"
-                    ))
+                    )
                 }
             }
             Spacer()
@@ -23,7 +23,7 @@ struct PatchDeactivationView: View {
                 .foregroundStyle(.red)
 
             Button(action: { showingConfirmationPrompt = true }) {
-                Text(LocalizedString("Force remove", comment: "Force remove"))
+                Text("Force remove", comment: "Force remove")
             }
             .buttonStyle(ActionButtonStyle(.secondary))
             .disabled(viewModel.isDeactivating)
@@ -33,21 +33,22 @@ struct PatchDeactivationView: View {
                 if viewModel.isDeactivating {
                     ActivityIndicator()
                 } else {
-                    Text(LocalizedString("Authenticate & deactivate patch", comment: "Authenticate and deactivate label"))
+                    Text("Authenticate & deactivate patch", comment: "Authenticate and deactivate label")
                 }
             }
             .buttonStyle(ActionButtonStyle(.destructive))
             .disabled(viewModel.isDeactivating)
             .padding([.bottom, .horizontal])
         }
-        .alert(LocalizedString("Are you sure?", comment: "title force remove"), isPresented: $showingConfirmationPrompt) {
-            Button(LocalizedString("Confirm", comment: "confirm force remove"), role: .destructive) { viewModel.forceDeactivate()
+        .alert(String(localized: "Are you sure?", comment: "title force remove"), isPresented: $showingConfirmationPrompt) {
+            Button(String(localized: "Confirm", comment: "confirm force remove"), role: .destructive) {
+                viewModel.forceDeactivate()
             }
         } message: {
-            Text(LocalizedString("It is recommended to deactivate first", comment: "body force remove"))
+            Text("It is recommended to deactivate first", comment: "body force remove")
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(LocalizedString("Deactivate patch", comment: "deactive patch"))
+        .navigationTitle(String(localized: "Deactivate Patch", comment: "deactive patch"))
     }
 }

@@ -20,7 +20,7 @@ class DeactivatePatchViewModel: ObservableObject {
         AuthorizeBiometrics.authenticate { success in
             guard success else {
                 DispatchQueue.main.async {
-                    self.deactivationError = LocalizedString("Authentication failure", comment: "auth failed")
+                    self.deactivationError = String(localized: "Authentication failure", comment: "auth failed")
                 }
                 return
             }
@@ -37,7 +37,7 @@ class DeactivatePatchViewModel: ObservableObject {
             AuthorizeBiometrics.authenticate { success in
                 DispatchQueue.main.async {
                     guard success else {
-                        self.deactivationError = LocalizedString("Authentication failure", comment: "auth failed")
+                        self.deactivationError = String(localized: "Authentication failure", comment: "auth failed")
                         return
                     }
 
@@ -74,7 +74,7 @@ class DeactivatePatchViewModel: ObservableObject {
             AuthorizeBiometrics.authenticate { success in
                 guard success else {
                     DispatchQueue.main.async {
-                        self.deactivationError = LocalizedString("Authentication failure", comment: "auth failed")
+                        self.deactivationError = String(localized: "Authentication failure", comment: "auth failed")
                     }
                     return
                 }

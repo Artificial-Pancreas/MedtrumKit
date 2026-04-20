@@ -7,23 +7,27 @@ struct PreviousPatchDetailsView: View {
         List {
             Section {
                 sectionItem(
-                    title: LocalizedString("Patch ID", comment: "Text for pumpSN"),
+                    title: Text("Patch ID", comment: "Text for pumpSN"),
                     value: viewModel.patchId
                 )
                 sectionItem(
-                    title: LocalizedString("Patch state", comment: "Text for patch state"),
+                    title: Text("Patch State", comment: "Text for patch state"),
                     value: viewModel.patchStateString
                 )
                 sectionItem(
-                    title: LocalizedString("Activation", comment: "Text for activatedAt"),
+                    title: Text("Activation", comment: "Text for activatedAt"),
                     value: viewModel.activatedAt
                 )
                 sectionItem(
-                    title: LocalizedString("Deactivation", comment: "Text for deactivation"),
+                    title: Text("Deactivation", comment: "Text for deactivation"),
                     value: viewModel.deactivatedAt
                 )
                 sectionItem(
-                    title: LocalizedString("Battery", comment: "Text for battery voltageB"),
+                    title: Text("Cannula Age", comment: "Text for cannula age (CAGE)"),
+                    value: viewModel.patchLifetime
+                )
+                sectionItem(
+                    title: Text("Battery", comment: "Text for battery voltageB"),
                     value: viewModel.batteryText(for: viewModel.battery)
                 )
 
@@ -31,24 +35,24 @@ struct PreviousPatchDetailsView: View {
                    let initialReservoirLevel = viewModel.initialReservoirLevel
                 {
                     sectionItem(
-                        title: LocalizedString("Insulin used", comment: "Text for Insulin used"),
+                        title: Text("Insulin Used", comment: "Text for Insulin used"),
                         value: viewModel.reservoirText(for: initialReservoirLevel - reservoirLevel)
                     )
                 } else {
                     sectionItem(
-                        title: LocalizedString("Insulin used", comment: "Text for Insulin used"),
+                        title: Text("Insulin Used", comment: "Text for Insulin used"),
                         value: "0 U"
                     )
                 }
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarTitle(LocalizedString("Previous Patch Details", comment: "header patch details"))
+        .navigationBarTitle(String(localized: "Previous Patch Details", comment: "header patch details"))
     }
 
-    @ViewBuilder func sectionItem(title: String, value: String) -> some View {
+    @ViewBuilder func sectionItem(title: Text, value: String) -> some View {
         HStack {
-            Text(title)
+            title
                 .foregroundColor(Color.primary)
             Spacer()
             Text(value)

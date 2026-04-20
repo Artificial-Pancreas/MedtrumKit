@@ -11,26 +11,26 @@ struct OnboardingWelcomeView: View {
             List {
                 Section {
                     PumpImage(is300u: false)
-                    Text(LocalizedString(
+                    Text(
                         "You will start by setting up your insulin type & basic patch settings before activating your patch.",
                         comment: "Welcome text for MedtrumKit"
-                    ))
+                    )
                 }
             }
             Spacer()
 
             Button(action: { nextStep() }) {
-                Text(LocalizedString("Continue", comment: "Continue"))
+                Text("Continue", comment: "Continue")
             }
             .buttonStyle(ActionButtonStyle())
             .padding([.bottom, .horizontal])
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(LocalizedString("Welcome", comment: "welcome header"))
+        .navigationTitle(String(localized: "Welcome", comment: "welcome header"))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(LocalizedString("Cancel", comment: "Cancel button title"), action: {
+                Button(String(localized: "Cancel", comment: "Cancel button title"), action: {
                     self.dismiss()
                 })
             }

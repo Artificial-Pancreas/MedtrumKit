@@ -13,12 +13,12 @@ struct PatchActivationView: View {
                     HStack(alignment: .top) {
                         Text("6.")
                             .foregroundStyle(.primary)
-                        Text(LocalizedString(
+                        Text(
                             "Remove the safety cover from the patch.",
                             comment: "Label for inserting needle step 1"
-                        ))
-                            .foregroundStyle(.primary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        )
+                        .foregroundStyle(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
 
@@ -27,7 +27,7 @@ struct PatchActivationView: View {
                     HStack(alignment: .top) {
                         Text("7.")
                             .foregroundStyle(.primary)
-                        Text(LocalizedString("Attach the pump to the body.", comment: "Label for inserting needle step 2"))
+                        Text("Attach the pump to the body.", comment: "Label for inserting needle step 2")
                             .foregroundStyle(.primary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
@@ -38,12 +38,12 @@ struct PatchActivationView: View {
                     HStack(alignment: .top) {
                         Text("8.")
                             .foregroundStyle(.primary)
-                        Text(LocalizedString(
+                        Text(
                             "Press the needle button to insert the needle. Click on \"Activate\" to complete the activation process.",
                             comment: "Label for inserting needle step 3"
-                        ))
-                            .foregroundStyle(.primary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        )
+                        .foregroundStyle(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
             }
@@ -55,7 +55,7 @@ struct PatchActivationView: View {
             }
 
             Button(action: { viewModel.previousStep() }) {
-                Text(LocalizedString("Go back to priming", comment: "label for go to prime patch"))
+                Text("Go back to priming", comment: "label for go to prime patch")
             }
             .buttonStyle(ActionButtonStyle(.secondary))
             .disabled(viewModel.isActivating)
@@ -65,7 +65,7 @@ struct PatchActivationView: View {
                 if viewModel.isActivating {
                     ActivityIndicator()
                 } else {
-                    Text(LocalizedString("Activate patch", comment: "label for activate patch"))
+                    Text("Activate Patch", comment: "label for activate patch")
                 }
             }
             .disabled(viewModel.isActivating)
@@ -74,10 +74,10 @@ struct PatchActivationView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(LocalizedString("Patch activation", comment: "Patch activation header"))
+        .navigationTitle(String(localized: "Patch Activation", comment: "Patch activation header"))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(LocalizedString("Cancel", comment: "Cancel button title"), action: {
+                Button(String(localized: "Cancel", comment: "Cancel button title"), action: {
                     self.dismiss()
                 })
             }

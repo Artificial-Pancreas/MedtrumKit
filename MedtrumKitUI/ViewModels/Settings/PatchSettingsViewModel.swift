@@ -76,7 +76,7 @@ class PatchSettingsViewModel: ObservableObject {
         AuthorizeBiometrics.authenticate { success in
             guard success else {
                 DispatchQueue.main.async {
-                    self.errorMessage = LocalizedString("Authentication failure", comment: "auth failed")
+                    self.errorMessage = String(localized: "Authentication failure", comment: "auth failed")
                 }
                 return
             }

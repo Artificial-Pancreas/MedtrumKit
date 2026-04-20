@@ -14,18 +14,18 @@ struct PumpBaseSettingsView: View {
                     PumpImage(is300u: viewModel.is300u)
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(LocalizedString("Serial number", comment: "Label for serial number"))
+                            Text("Serial number", comment: "Label for serial number")
                                 .foregroundStyle(.primary)
                             Spacer()
                             TextField("1234ABCD", text: $viewModel.serialNumber.max(8))
                                 .multilineTextAlignment(.trailing)
                         }
-                        Text(LocalizedString(
+                        Text(
                             "Make sure the Serial Number is correct before connecting it to the patch.",
                             comment: "Label for checking SN"
-                        ))
-                            .padding(.top, 10)
-                            .foregroundStyle(.primary)
+                        )
+                        .padding(.top, 10)
+                        .foregroundStyle(.primary)
                     }
                 }
             }
@@ -36,7 +36,7 @@ struct PumpBaseSettingsView: View {
             }
 
             Button(action: { viewModel.saveAndContinue() }) {
-                Text(LocalizedString("Save and continue", comment: "save and continue"))
+                Text("Save and continue", comment: "save and continue")
             }
             .disabled(viewModel.serialNumber.count != 8)
             .buttonStyle(ActionButtonStyle())
@@ -44,6 +44,6 @@ struct PumpBaseSettingsView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(LocalizedString("Pump base settings", comment: "Pump base settings header"))
+        .navigationTitle(String(localized: "Pump base settings", comment: "Pump base settings header"))
     }
 }

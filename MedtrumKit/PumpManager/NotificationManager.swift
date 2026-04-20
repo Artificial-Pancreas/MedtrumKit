@@ -15,9 +15,9 @@ class NotificationManager {
     public static func activatePatchExpiredNotification(after: TimeInterval) {
         ensureCanSendNotification {
             let content = UNMutableNotificationContent()
-            content.title = LocalizedString("Your patch will expire soon!", comment: "Title expire reminder notification")
+            content.title = String(localized: "Your patch will expire soon!", comment: "Title expire reminder notification")
             content.body = String(
-                format: LocalizedString("Your patch has %i hours left", comment: "Body expire reminder notification"),
+                format: String(localized: "Your patch has %i hours left", comment: "Body expire reminder notification"),
                 Int(80 - after.hours)
             )
 
@@ -38,8 +38,8 @@ class NotificationManager {
     public static func patchDailyMaxNotification() {
         ensureCanSendNotification {
             let content = UNMutableNotificationContent()
-            content.title = LocalizedString("Insulin has been suspended!", comment: "Title insulin suspended notification")
-            content.body = LocalizedString("Your patch has reached its daily maximum!", comment: "Body daily max notification")
+            content.title = String(localized: "Insulin has been suspended!", comment: "Title insulin suspended notification")
+            content.body = String(localized: "Your patch has reached its daily maximum!", comment: "Body daily max notification")
 
             addRequest(identifier: .patchDailyMaxNotification, content: content, triggerAfter: nil, deleteOld: true)
         }
@@ -48,8 +48,11 @@ class NotificationManager {
     public static func patchHourlyMaxNotification() {
         ensureCanSendNotification {
             let content = UNMutableNotificationContent()
-            content.title = LocalizedString("Insulin has been suspended!", comment: "Title insulin suspended notification")
-            content.body = LocalizedString("Your patch has reached its hourly maximum!", comment: "Body hourly max notification")
+            content.title = String(localized: "Insulin has been suspended!", comment: "Title insulin suspended notification")
+            content.body = String(
+                localized: "Your patch has reached its hourly maximum!",
+                comment: "Body hourly max notification"
+            )
 
             addRequest(identifier: .patchHourlyMaxNotification, content: content, triggerAfter: nil, deleteOld: true)
         }
@@ -58,8 +61,8 @@ class NotificationManager {
     public static func occlusionNotification() {
         ensureCanSendNotification {
             let content = UNMutableNotificationContent()
-            content.title = LocalizedString("Replace your patch now!", comment: "Title replace patch notification")
-            content.body = LocalizedString("Your patch has detected an occlussion!", comment: "Body occlussion notification")
+            content.title = String(localized: "Replace your patch now!", comment: "Title replace patch notification")
+            content.body = String(localized: "Your patch has detected an occlussion!", comment: "Body occlussion notification")
 
             addRequest(identifier: .occlusionNotification, content: content, triggerAfter: nil, deleteOld: true)
         }
@@ -68,8 +71,8 @@ class NotificationManager {
     public static func patchFaultNotification() {
         ensureCanSendNotification {
             let content = UNMutableNotificationContent()
-            content.title = LocalizedString("Replace your patch now!", comment: "Title replace patch notification")
-            content.body = LocalizedString("Your patch is in Fault state!", comment: "Body fault notification")
+            content.title = String(localized: "Replace your patch now!", comment: "Title replace patch notification")
+            content.body = String(localized: "Your patch is in Fault state!", comment: "Body fault notification")
 
             addRequest(identifier: .patchFaultNotification, content: content, triggerAfter: nil, deleteOld: true)
         }
@@ -78,8 +81,8 @@ class NotificationManager {
     public static func reservoirEmptyNotification() {
         ensureCanSendNotification {
             let content = UNMutableNotificationContent()
-            content.title = LocalizedString("Replace your patch now!", comment: "Title replace patch notification")
-            content.body = LocalizedString("Your patch is out of insulin!", comment: "Body reservoir empty notification")
+            content.title = String(localized: "Replace your patch now!", comment: "Title replace patch notification")
+            content.body = String(localized: "Your patch is out of insulin!", comment: "Body reservoir empty notification")
 
             addRequest(identifier: .reservoirEmptyNotification, content: content, triggerAfter: nil, deleteOld: true)
         }
@@ -90,10 +93,10 @@ class NotificationManager {
             let content = UNMutableNotificationContent()
             content.title = String(
                 format:
-                LocalizedString("Reservoir low (%iU)", comment: "Title low reservoir notification"),
+                String(localized: "Reservoir low (%lld U)", comment: "Title low reservoir notification"),
                 Int(reservoir)
             )
-            content.body = LocalizedString("Your patch is running out of insulin!", comment: "Body low reservoir notification")
+            content.body = String(localized: "Your patch is running out of insulin!", comment: "Body low reservoir notification")
 
             addRequest(identifier: .reservoirEmptyNotification, content: content, triggerAfter: nil, deleteOld: true)
         }

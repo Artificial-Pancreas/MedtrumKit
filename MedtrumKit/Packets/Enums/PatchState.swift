@@ -28,51 +28,51 @@ public enum PatchState: UInt8, Codable {
     var description: String {
         switch self {
         case .none:
-            return LocalizedString("None", comment: "Patch state for none")
+            return String(localized: "None", comment: "Patch state for none")
         case .idle:
-            return LocalizedString("Idle", comment: "Patch state for idle")
+            return String(localized: "Idle", comment: "Patch state for idle")
         case .filled:
-            return LocalizedString("Filled", comment: "Patch state for filled")
+            return String(localized: "Filled", comment: "Patch state for filled")
         case .priming:
-            return LocalizedString("Priming", comment: "Patch state for priming")
+            return String(localized: "Priming", comment: "Patch state for priming")
         case .primed:
-            return LocalizedString("Primed", comment: "Patch state for primed")
+            return String(localized: "Primed", comment: "Patch state for primed")
         case .ejecting:
-            return LocalizedString("Ejecting", comment: "Patch state for ejecting")
+            return String(localized: "Ejecting", comment: "Patch state for ejecting")
         case .ejected:
-            return LocalizedString("Ejected", comment: "Patch state for ejected")
+            return String(localized: "Ejected", comment: "Patch state for ejected")
         case .active,
              .active_alt:
-            return LocalizedString("Active", comment: "Patch state for active, active_alt")
+            return String(localized: "Active", comment: "Patch state for active, active_alt")
         case .lowBgSuspended,
              .lowBgSuspended2:
-            return LocalizedString("Suspended - Low BG", comment: "Patch state for lowBgSuspended, lowBgSuspended2")
+            return String(localized: "Suspended - Low BG", comment: "Patch state for lowBgSuspended, lowBgSuspended2")
         case .autoSuspended:
-            return LocalizedString("Suspended - Auto", comment: "Patch state for autoSuspended")
+            return String(localized: "Suspended - Auto", comment: "Patch state for autoSuspended")
         case .hourlyMaxSuspended:
-            return LocalizedString("Suspended - Hourly max", comment: "Patch state for hourlyMaxSuspended")
+            return String(localized: "Suspended - Hourly Max", comment: "Patch state for hourlyMaxSuspended")
         case .dailyMaxSuspended:
-            return LocalizedString("Suspended - Daily max", comment: "Patch state for dailyMaxSuspended")
+            return String(localized: "Suspended - Daily Max", comment: "Patch state for dailyMaxSuspended")
         case .suspended:
-            return LocalizedString("Suspended", comment: "Patch state for suspended")
+            return String(localized: "Suspended", comment: "Patch state for suspended")
         case .paused:
-            return LocalizedString("Paused", comment: "Patch state for paused")
+            return String(localized: "Paused", comment: "Patch state for paused")
         case .occlusion:
-            return LocalizedString("Occlusion", comment: "Patch state for occlusion")
+            return String(localized: "Occlusion", comment: "Patch state for occlusion")
         case .expired:
-            return LocalizedString("Expired", comment: "Patch state for expired")
+            return String(localized: "Expired", comment: "Patch state for expired")
         case .reservoirEmpty:
-            return LocalizedString("Reservoir empty", comment: "Patch state for reservoirEmpty")
+            return String(localized: "Reservoir Empty", comment: "Patch state for reservoirEmpty")
         case .baseFault,
              .patchFault,
              .patchFaultd2:
-            return LocalizedString("Fault", comment: "Patch state for patchFault, patchFaultd2, baseFault")
+            return String(localized: "Fault", comment: "Patch state for patchFault, patchFaultd2, baseFault")
         case .batteryOut:
-            return LocalizedString("Battery empty", comment: "Patch state for batteryOut")
+            return String(localized: "Battery Empty", comment: "Patch state for batteryOut")
         case .noCalibration:
-            return LocalizedString("No calibration", comment: "Patch state for noCalibration")
+            return String(localized: "No Calibration", comment: "Patch state for noCalibration")
         case .stopped:
-            return LocalizedString("Stopped", comment: "Patch state for stopped")
+            return String(localized: "Stopped", comment: "Patch state for stopped")
         }
     }
 }

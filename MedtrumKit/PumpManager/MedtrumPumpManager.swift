@@ -4,9 +4,7 @@ import LoopKit
 
 public class MedtrumPumpManager: DeviceManager {
     public static let pluginIdentifier = "Medtrum"
-    public var localizedTitle: String {
-        LocalizedString("Medtrum TouchCare Nano", comment: "Generic title of the Medtrum pump manager")
-    }
+    public let localizedTitle: String = "Medtrum Nano"
 
     public let managerIdentifier: String = "Medtrum"
 
@@ -577,6 +575,10 @@ public extension MedtrumPumpManager {
     }
 
     func suspendDelivery(completion: @escaping ((any Error)?) -> Void) {
+        suspendPatch(duration: .minutes(120), completion: completion)
+    }
+
+    func suspendPatch(duration: TimeInterval, completion: @escaping ((any Error)?) -> Void) {
         log.info("Suspending delivery...")
 
         bluetooth.ensureConnected { error in
@@ -586,8 +588,7 @@ public extension MedtrumPumpManager {
                 return
             }
 
-            // TODO: suspend needs to have configurable duration
-            let packet = SuspendPumpPacket(duration: .minutes(120))
+            let packet = SuspendPumpPacket(duration: duration)
             let result = await self.bluetooth.write(packet)
 
             if case let .failure(error) = result {
