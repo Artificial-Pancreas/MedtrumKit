@@ -2,7 +2,7 @@ import HealthKit
 import LoopKit
 import SwiftUI
 
-class PatchDetailsViewModel: ObservableObject, PatchLifetimeFormatting {
+class PatchDetailsViewModel: PatchLifetimeFormatting, ObservableObject {
     private let processQueue = DispatchQueue(label: "com.nightscout.medtrumkit.patchDetailsViewModel")
 
     @Published var patchStateString: String = PatchState.none.description
@@ -46,6 +46,7 @@ class PatchDetailsViewModel: ObservableObject, PatchLifetimeFormatting {
     private let pumpManager: MedtrumPumpManager?
     init(pumpManager: MedtrumPumpManager?) {
         self.pumpManager = pumpManager
+        super.init()
 
         guard let pumpManager = pumpManager else {
             return

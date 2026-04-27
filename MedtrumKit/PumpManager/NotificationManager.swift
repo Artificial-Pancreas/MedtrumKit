@@ -17,7 +17,7 @@ class NotificationManager {
             let content = UNMutableNotificationContent()
             content.title = String(localized: "Your patch will expire soon!", comment: "Title expire reminder notification")
             content.body = String(
-                format: String(localized: "Your patch has %i hours left", comment: "Body expire reminder notification"),
+                format: String(localized: "Your patch has %lld hours left", comment: "Body expire reminder notification"),
                 Int(80 - after.hours)
             )
 

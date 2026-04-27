@@ -1,6 +1,15 @@
 import SwiftUI
 
-protocol PatchLifetimeFormatting {}
+class PatchLifetimeFormatting {
+    let DAY = String(localized: "day", comment: "Unit for singular day")
+    let DAYS = String(localized: "days", comment: "Unit for plural days")
+
+    let HOUR = String(localized: "hour", comment: "Unit for singular hour")
+    let HOURS = String(localized: "hours", comment: "Unit for plural hours")
+
+    let MINUTE = String(localized: "minute", comment: "Unit for singular minute")
+    let MINUTES = String(localized: "minutes", comment: "Unit for plural minutes")
+}
 
 extension PatchLifetimeFormatting {
     func processPatchLifetime(_ startDate: Date, _ endDate: Date) -> String {
@@ -13,24 +22,24 @@ extension PatchLifetimeFormatting {
         if days > 0 {
             if hours == 0 {
                 return [
-                    "\(days) \(days == 1 ? String(localized: "day", comment: "Unit for singular day") : String(localized: "days", comment: "Unit for plural days"))",
-                    "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(localized: "minutes", comment: "Unit for plural minutes"))"
+                    "\(days) \(days == 1 ? DAY : DAYS)",
+                    "\(minutes) \(minutes == 1 ? MINUTE : MINUTES)"
                 ].joined(separator: " ")
             }
 
             return [
-                "\(days) \(days == 1 ? String(localized: "day", comment: "Unit for singular day") : String(localized: "days", comment: "Unit for plural days"))",
-                "\(hours) \(hours == 1 ? String(localized: "hour", comment: "Unit for singular hour") : String(localized: "hours", comment: "Unit for plural hours"))"
+                "\(days) \(days == 1 ? DAY : DAYS)",
+                "\(hours) \(hours == 1 ? HOUR : HOURS)"
             ].joined(separator: " ")
         }
 
         if hours == 0 {
-            return "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(localized: "minutes", comment: "Unit for plural minutes"))"
+            return "\(minutes) \(minutes == 1 ? MINUTE : MINUTES)"
         }
 
         return [
-            "\(hours) \(hours == 1 ? String(localized: "hour", comment: "Unit for singular hour") : String(localized: "hours", comment: "Unit for plural hours"))",
-            "\(minutes) \(minutes == 1 ? String(localized: "minute", comment: "Unit for singular minute") : String(localized: "minutes", comment: "Unit for plural minutes"))"
+            "\(hours) \(hours == 1 ? HOUR : HOURS)",
+            "\(minutes) \(minutes == 1 ? MINUTE : MINUTES)"
         ].joined(separator: " ")
     }
 }

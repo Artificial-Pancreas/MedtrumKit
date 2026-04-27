@@ -12,7 +12,7 @@ enum PatchLifecycleState {
     case expiredBasalOnly
 }
 
-class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver, PatchLifetimeFormatting {
+class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, PumpManagerStatusObserver {
     private let processQueue = DispatchQueue(label: "com.nightscout.medtrumkit.settingsViewModel")
 
     @Published var model: String = ""
@@ -119,6 +119,8 @@ class MedtrumKitSettingsViewModel: ObservableObject, PumpManagerStatusObserver, 
         self.toPreviousPatchDetails = toPreviousPatchDetails
         self.toSettings = toSettings
         self.activatePatchAction = activatePatchAction
+
+        super.init()
 
         guard let pumpManager = pumpManager else {
             return

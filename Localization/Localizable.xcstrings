@@ -5565,10 +5565,142 @@
       "comment" : "Text for cannula age (CAGE)",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عمر القنية"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stáří kanyly"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanylens alder"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanüle Alter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cannula Age"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edad de la cánula"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanyylin ikä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Âge de la canule"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Età della cannula"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カニューレ年齢"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanylens alder"
+          }
+        },
+        "nb-NO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanylens alder"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leeftijd canule"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiek kaniuli"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idade da cânula"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vârsta canulei"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Возраст канюли"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vek kanyly"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starost kanile"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ålder på kanyl"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanül Yaşı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Епоха канюль"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuổi thọ ống thông"
           }
         }
       }
@@ -28857,92 +28989,92 @@
         }
       }
     },
-    "Your patch has %i hours left" : {
+    "Your patch has %lld hours left" : {
       "comment" : "Body expire reminder notification",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتبقى لديك %%i ساعة"
+            "value" : "يتبقى لديك %lld ساعة"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your patch has %%i hours left"
+            "value" : "Your patch has %lld hours left"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Din patch har %%i timer tilbage"
+            "value" : "Din patch har %lld timer tilbage"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ihr Patch hat noch %%i Stunden"
+            "value" : "Ihr Patch hat noch %lld Stunden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your patch has %%i hours left"
+            "value" : "Your patch has %lld hours left"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A su parche le quedan %%i horas"
+            "value" : "A su parche le quedan %lld horas"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laastariasi on jäljellä %%i tuntia"
+            "value" : "Laastariasi on jäljellä %lld tuntia"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Votre patch a %%i heures restantes"
+            "value" : "Votre patch a %lld heures restantes"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La vostra patch ha %%i ore rimanenti"
+            "value" : "La vostra patch ha %lld ore rimanenti"
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "パッチの残り時間は %%i 時間です。"
+            "value" : "パッチの残り時間は %lld 時間です。"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your patch has %%i hours left"
+            "value" : "Your patch has %lld hours left"
           }
         },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your patch has %%i hours left"
+            "value" : "Your patch has %lld hours left"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Je patch heeft nog %%i uur over"
+            "value" : "Je patch heeft nog %lld uur over"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do końca aktualizacji pozostało %%i godzin"
+            "value" : "Do końca aktualizacji pozostało %lld godzin"
           }
         },
         "pt" : {
@@ -28954,61 +29086,61 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seu patch tem %%i horas restantes"
+            "value" : "Seu patch tem %lld horas restantes"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch-ul dvs. are %%i ore rămase"
+            "value" : "Patch-ul dvs. are %lld ore rămase"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "У вашего патча осталось %%i часов."
+            "value" : "У вашего патча осталось %lld часов."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tvoja náplasť má zostávajúcich %%i hodín"
+            "value" : "Tvoja náplasť má zostávajúcich %lld hodín"
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vaš popravek ima še %%i ur."
+            "value" : "Vaš popravek ima še %lld ur."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Din patch har %%i timmar kvar"
+            "value" : "Din patch har %lld timmar kvar"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yamanızın %%i saati kaldı"
+            "value" : "Yamanızın %lld saati kaldı"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "На вашому патчі залишилося %%i годин"
+            "value" : "На вашому патчі залишилося %lld годин"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your patch has %%i hours left"
+            "value" : "Bản vá của bạn còn %lld giờ nữa."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您的补丁还剩 %%i 小时"
+            "value" : "您的补丁还剩 %lld 小时"
           }
         }
       }
