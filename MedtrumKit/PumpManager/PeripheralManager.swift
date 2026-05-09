@@ -9,10 +9,7 @@ class PeripheralManager: NSObject {
     private let pumpManager: MedtrumPumpManager
     private var completion: ((MedtrumConnectError?) -> Void)?
 
-    public static let SERVICE_UUID = CBUUID(string: "669A9001-0008-968F-E311-6050405558B3")
-    private static let READ_UUID = CBUUID(string: "669a9120-0008-968f-e311-6050405558b3")
     private var readCharacteristic: CBCharacteristic?
-    private static let WRITE_UUID = CBUUID(string: "669a9101-0008-968f-e311-6050405558b3")
     private var writeCharacteristic: CBCharacteristic?
 
     private var writeSequence: UInt8 = 0
@@ -154,7 +151,7 @@ extension PeripheralManager {
                 return
             }
 
-            parseStateUpdate(syncResponse, duringReconnect: true)
+            parseStateUpdate(syncResponse, duringReconnect: true, fullSync: true)
             await subscribe()
         }
     }
@@ -178,7 +175,7 @@ extension PeripheralManager {
         }
     }
 
-    private func parseStateUpdate(_ syncResponse: SynchronizePacketResponse, duringReconnect: Bool) {
+    private func parseStateUpdate(_ syncResponse: SynchronizePacketResponse, duringReconnect: Bool, fullSync: Bool) {
         // TEMP
         do {
             log.info("State update: \(String(data: try JSONEncoder().encode(syncResponse), encoding: .utf8) ?? "")")
@@ -190,7 +187,8 @@ extension PeripheralManager {
             syncResponse: syncResponse,
             state: pumpManager.state,
             pumpManager: pumpManager,
-            duringReconnect: duringReconnect
+            duringReconnect: duringReconnect,
+            fullSync: fullSync
         )
     }
 }
@@ -203,7 +201,7 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
-        let service = peripheral.services?.first(where: { $0.uuid == PeripheralManager.SERVICE_UUID })
+        let service = peripheral.services?.first(where: { $0.uuid == CBUUID.SERVICE_UUID })
         guard let service = service else {
             let localizedError = "No Medtrum service found - " +
                 (peripheral.services?.map(\.uuid.uuidString).joined(separator: ", ") ?? "No services discovered")
@@ -212,7 +210,7 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
-        peripheral.discoverCharacteristics([PeripheralManager.READ_UUID, PeripheralManager.WRITE_UUID], for: service)
+        peripheral.discoverCharacteristics([CBUUID.READ_UUID, CBUUID.WRITE_UUID], for: service)
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
@@ -222,9 +220,8 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
-        let service = peripheral.services!.first(where: { $0.uuid == PeripheralManager.SERVICE_UUID })!
-        readCharacteristic = service.characteristics?.first(where: { $0.uuid == PeripheralManager.READ_UUID })
-        writeCharacteristic = service.characteristics?.first(where: { $0.uuid == PeripheralManager.WRITE_UUID })
+        readCharacteristic = service.characteristics?.first(where: { $0.uuid == CBUUID.READ_UUID })
+        writeCharacteristic = service.characteristics?.first(where: { $0.uuid == CBUUID.WRITE_UUID })
 
         guard readCharacteristic != nil, writeCharacteristic != nil else {
             let localizedError = "Failed to discover read, write or config characteristic - " +
@@ -260,25 +257,19 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
-        guard var data = characteristic.value else {
+        guard let data = characteristic.value else {
             log.warning("No data in didUpdateValueFor - characteristic: \(characteristic.uuid.uuidString)")
             return
         }
 
         queue.async {
-            if characteristic.uuid.uuidString.lowercased() == PeripheralManager.READ_UUID.uuidString.lowercased() {
+            if characteristic.uuid.uuidString.lowercased() == CBUUID.READ_UUID.uuidString.lowercased() {
                 guard data[1] != 0x00 else {
                     // Ignore all ping messages from patch pomp
                     return
                 }
 
-                self.log.debug("READ -> Got data: \(data.hexEncodedString())")
-                data.append(0x00) // Little CRC hack. The notification lacks the CRC value, thus add an empty value there
-
-                var packet = NotificationPacket()
-                packet.decode(data)
-
-                self.parseStateUpdate(packet.parseResponse(), duringReconnect: false)
+                self.handleHeartbeat(data: data)
                 return
             }
 
@@ -336,6 +327,48 @@ extension PeripheralManager: CBPeripheralDelegate {
             writeCallback.finish()
             self.writeQueue = nil
             self.currentPacket = nil
+        }
+    }
+
+    private func handleHeartbeat(data: Data) {
+        var data = data
+
+        log.debug("READ -> Got data: \(data.hexEncodedString())")
+        data.append(0x00) // Little CRC hack. The notification lacks the CRC value, thus add an empty value there
+
+        var packet = NotificationPacket()
+        packet.decode(data)
+
+        guard Date.now.timeIntervalSince(pumpManager.state.lastSync) > .minutes(2.5) else {
+            parseStateUpdate(packet.parseResponse(), duringReconnect: false, fullSync: false)
+            log.debug("State too fresh, skipping full sync...")
+            return
+        }
+
+        guard pumpManager.state.bolusState == .noBolus else {
+            parseStateUpdate(packet.parseResponse(), duringReconnect: false, fullSync: false)
+            log.warning("Skipping sync, pump is currently bolusing")
+            return
+        }
+
+        // Do full sync (only every 3min)
+        Task {
+            let response = await self.writePacket(SynchronizePacket())
+            await StateSyncer.fetchPatchTime(pumpManager: self.pumpManager)
+
+            switch response {
+            case let .failure(error):
+                self.log.error("Failed to get synchronize: \(error.localizedDescription)")
+                return
+
+            case let .success(data):
+                guard let syncResponse = data as? SynchronizePacketResponse else {
+                    self.log.error("Failed to Synchronize packet: invalid response")
+                    return
+                }
+
+                self.parseStateUpdate(syncResponse, duringReconnect: false, fullSync: true)
+            }
         }
     }
 }

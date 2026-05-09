@@ -65,9 +65,6 @@ public class MedtrumPumpState: RawRepresentable {
         initialReservoir = rawValue["initialReservoir"] as? Double
         reservoir = rawValue["reservoir"] as? Double ?? 0
         battery = rawValue["battery"] as? Double ?? 0
-        basalStateSince = rawValue["basalStateSince"] as? Date ?? Date.distantPast
-        tempBasalUnits = rawValue["tempBasalUnits"] as? Double
-        tempBasalDuration = rawValue["tempBasalDuration"] as? Double
         notificationAfterActivation = rawValue["notificationAfterActivation"] as? TimeInterval ?? .hours(72)
 
         if let expiryModeRaw = rawValue["expiryMode"] as? ExpiryMode.RawValue {
@@ -86,12 +83,6 @@ public class MedtrumPumpState: RawRepresentable {
 
         if let rawInsulinType = rawValue["insulinType"] as? InsulinType.RawValue {
             insulinType = InsulinType(rawValue: rawInsulinType)
-        }
-
-        if let rawDoseEntry = rawValue["doseEntry"] as? UnfinalizedDose.RawValue {
-            doseEntry = UnfinalizedDose(rawValue: rawDoseEntry)
-        } else {
-            doseEntry = nil
         }
 
         if let pumpStateRaw = rawValue["pumpState"] as? PatchState.RawValue {
@@ -124,6 +115,19 @@ public class MedtrumPumpState: RawRepresentable {
         } else {
             alarmSetting = .BeepOnly
         }
+
+        if let rawDoseEntry = rawValue["bolusDose"] as? UnfinalizedDose.RawValue {
+            bolusDose = UnfinalizedDose(rawValue: rawDoseEntry)
+        } else {
+            bolusDose = nil
+        }
+
+        if let rawDoseEntry = rawValue["basalDose"] as? UnfinalizedDose.RawValue {
+            basalDose = UnfinalizedDose(rawValue: rawDoseEntry) ?? UnfinalizedDose
+                .defaultBasalDose(basalSchedule: basalSchedule, insulineType: insulinType)
+        } else {
+            basalDose = UnfinalizedDose.defaultBasalDose(basalSchedule: basalSchedule, insulineType: insulinType)
+        }
     }
 
     public init(_ basal: BasalRateSchedule?) {
@@ -131,7 +135,7 @@ public class MedtrumPumpState: RawRepresentable {
         lastSync = Date.distantPast
         pumpSN = Data()
         lowReservoirWarning = nil
-        doseEntry = nil
+        bolusDose = nil
         sessionToken = Data()
         patchId = Data()
         patchActivatedAt = nil
@@ -146,9 +150,6 @@ public class MedtrumPumpState: RawRepresentable {
         reservoir = 0
         battery = 0
         basalState = .active
-        basalStateSince = Date.distantPast
-        tempBasalUnits = nil
-        tempBasalDuration = nil
         bolusState = .noBolus
         alarmSetting = .BeepOnly
         expiryMode = .default
@@ -160,6 +161,8 @@ public class MedtrumPumpState: RawRepresentable {
         } else {
             basalSchedule = BasalSchedule(entries: [LoopKit.RepeatingScheduleValue(startTime: 0, value: 0)])
         }
+
+        basalDose = UnfinalizedDose.defaultBasalDose(basalSchedule: basalSchedule, insulineType: insulinType)
     }
 
     public var rawValue: RawValue {
@@ -185,13 +188,11 @@ public class MedtrumPumpState: RawRepresentable {
         value["basalSchedule"] = basalSchedule.rawValue
         value["bolusState"] = bolusState.rawValue
         value["initialReservoir"] = initialReservoir
-        value["doseEntry"] = doseEntry?.rawValue
+        value["bolusDose"] = bolusDose?.rawValue
+        value["basalDose"] = basalDose.rawValue
         value["reservoir"] = reservoir
         value["battery"] = battery
         value["basalState"] = basalState.rawValue
-        value["basalStateSince"] = basalStateSince
-        value["tempBasalUnits"] = tempBasalUnits
-        value["tempBasalDuration"] = tempBasalDuration
         value["alarmSetting"] = alarmSetting.rawValue
         value["expiryMode"] = expiryMode.rawValue
         value["notificationAfterActivation"] = notificationAfterActivation
@@ -240,7 +241,6 @@ public class MedtrumPumpState: RawRepresentable {
     public var pumpTimeSyncedAt: Date
 
     public var pumpState: PatchState
-    public var doseEntry: UnfinalizedDose?
     public var initialReservoir: Double?
     public var reservoir: Double
     public var battery: Double
@@ -258,35 +258,42 @@ public class MedtrumPumpState: RawRepresentable {
     // **** END ****
 
     public var bolusState: BolusState
+    public var bolusDose: UnfinalizedDose?
 
+    // basalState is the basalState from the patch itself
+    // Preventing acting on an out-dated basalDose
     public var basalState: BasalState
-    public var basalStateSince: Date
+    public var basalDose: UnfinalizedDose
     public var basalSchedule: BasalSchedule
-    public var tempBasalUnits: Double?
-    public var tempBasalDuration: Double?
-    public var tempBasalEndsAt: Date {
-        basalStateSince + (tempBasalDuration ?? 0)
-    }
 
     public var basalDeliveryState: PumpManagerStatus.BasalDeliveryState {
-        switch basalState {
-        case .active:
-            return .active(basalStateSince)
-        case .suspended:
-            return .suspended(basalStateSince)
+        switch basalDose.type {
+        case .basal,
+             .bolus,
+             .resume:
+            return .active(basalDose.startDate)
+        case .suspend:
+            return .suspended(basalDose.startDate)
         case .tempBasal:
-            return .tempBasal(
-                DoseEntry.tempBasal(
-                    absoluteUnit: tempBasalUnits ?? 0,
-                    duration: tempBasalDuration ?? 0,
-                    insulinType: insulinType!,
-                    startDate: basalStateSince
-                )
-            )
+            return .tempBasal(basalDose.toDoseEntry(isMutable: true))
         }
     }
 
-    private let basalIntervals: [TimeInterval] = Array(0 ..< 24).map({ TimeInterval(60 * 60 * $0) })
+    var bolusDeliveryState: PumpManagerStatus.BolusState {
+        switch bolusState {
+        case .noBolus:
+            return .noBolus
+        case .canceling:
+            return .canceling
+        case .inProgress:
+            if let dose = bolusDose?.toDoseEntry(isMutable: true) {
+                return .inProgress(dose)
+            }
+
+            return .noBolus
+        }
+    }
+
     public var currentBaseBasalRate: Double {
         let now = Date()
         let startOfDay = Calendar.current.startOfDay(for: now)

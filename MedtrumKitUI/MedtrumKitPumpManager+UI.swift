@@ -87,7 +87,7 @@ extension MedtrumPumpManager: PumpManagerUI {
                 imageName: "exclamationmark.circle.fill",
                 state: .critical
             )
-        } else if state.basalState == .suspended {
+        } else if state.basalDose.type == .suspend {
             return PumpStatusHighlight(
                 localizedMessage: String(
                     localized: "Insulin Suspended",
