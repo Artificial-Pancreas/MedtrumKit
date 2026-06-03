@@ -2622,7 +2622,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activați un nou patch"
+            "value" : "Activați un nou plasture"
           }
         },
         "ru" : {
@@ -3102,7 +3102,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch activat la"
+            "value" : "Activare"
           }
         },
         "ru" : {
@@ -4380,7 +4380,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sunteți sigur/ă?"
+            "value" : "Sunteți sigur?"
           }
         },
         "ru" : {
@@ -4848,7 +4848,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eșecul autentificării"
+            "value" : "Eșec autentificare"
           }
         },
         "ru" : {
@@ -5010,7 +5010,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bazal"
+            "value" : "Bazală"
           }
         },
         "ru" : {
@@ -5490,7 +5490,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Baterie goală"
+            "value" : "Baterie descărcată"
           }
         },
         "ru" : {
@@ -6293,8 +6293,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Cancel"
+            "state" : "translated",
+            "value" : "Anulați"
           }
         },
         "ru" : {
@@ -6450,7 +6450,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vârsta canulei"
+            "value" : "Vechimea canulei"
           }
         },
         "ru" : {
@@ -6612,7 +6612,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schimbați Patch-ul acum. Administrarea insulinei se va opri în %@ sau când nu va mai rămâne insulină."
+            "value" : "Schimbați plasturele acum. Administrarea insulinei se va opri în %@ sau când nu va mai rămâne insulină."
           }
         },
         "ru" : {
@@ -6774,7 +6774,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schimbați Patch-ul acum. Administrarea insulinei se va opri în %@ sau când nu va mai rămâne insulină."
+            "value" : "Schimbați plasturele acum. Administrarea insulinei se va opri în %@ sau când nu va mai rămâne insulină."
           }
         },
         "ru" : {
@@ -7090,7 +7090,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alertă clară"
+            "value" : "Ștergeți alerta"
           }
         },
         "ru" : {
@@ -7564,7 +7564,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Conectați baza pompei la plasture transdermic."
+            "value" : "Conectați baza pompei la plasture."
           }
         },
         "ru" : {
@@ -8038,7 +8038,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "În prezent, NU folosiți un mod de bătăi ale inimii. O bătăi ale inimii este necesară pentru a menține %%1$@ în fundal. Este recomandat să continuați activarea acestei funcții"
+            "value" : "În prezent, NU folosiți un mod puls de sincronizare. Un puls de sincronizare este necesar pentru a menține %%1$@ în fundal. Este recomandat să păstrați activată această funcție"
           }
         },
         "ru" : {
@@ -8206,7 +8206,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "În prezent, folosiți un mod de bătăi ale inimii. Acest lucru este necesar pentru a menține %%1$@ să ruleze în fundal. Acest lucru poate fi interesant dacă CGM vă oferă deja o bătăi de inimă. Este recomandat să păstrați această caracteristică activată"
+            "value" : "În prezent, folosiți un mod puls de sincronizare. Acest lucru este necesar pentru a menține %%1$@ să ruleze în fundal. Acest lucru poate fi interesant dacă CGM vă oferă un puls de sincronizare. Este recomandat să păstrați această funcție activată"
           }
         },
         "ru" : {
@@ -8991,8 +8991,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivated at"
+            "state" : "translated",
+            "value" : "Dezactivat la"
           }
         },
         "ru" : {
@@ -9777,8 +9777,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Disconnect"
+            "state" : "translated",
+            "value" : "Deconectați"
           }
         },
         "ru" : {
@@ -10564,7 +10564,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ejectarea"
+            "value" : "Ejectare"
           }
         },
         "ru" : {
@@ -10726,7 +10726,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch expiră la"
+            "value" : "Plasturele expiră la"
           }
         },
         "ru" : {
@@ -11686,7 +11686,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Defect"
+            "value" : "Defecțiune"
           }
         },
         "ru" : {
@@ -12477,8 +12477,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Go back to priming"
+            "state" : "translated",
+            "value" : "Înapoi la amorsare"
           }
         },
         "ru" : {
@@ -12633,8 +12633,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Go back to pump base"
+            "state" : "translated",
+            "value" : "Înapoi la baza pompei"
           }
         },
         "ru" : {
@@ -13264,7 +13264,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cât timp doriți să vă suspendați patch-ul maxim? Acesta va fi reluat automat după acest timp."
+            "value" : "Care este durata maximă de suspendare a plasturelui? Acesta își va relua automat activitatea după acest timp."
           }
         },
         "ru" : {
@@ -13899,8 +13899,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Insulin Delivery"
+            "state" : "translated",
+            "value" : "Administrare insulină"
           }
         },
         "ru" : {
@@ -14368,7 +14368,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Insulină suspendată"
+            "value" : "Insulina suspendată"
           }
         },
         "ru" : {
@@ -16264,7 +16264,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Asigurați-vă că numărul de serie este corect înainte de a-l conecta la plasturele transdermic."
+            "value" : "Asigurați-vă că numărul de serie este corect înainte de a-l conecta la plasture."
           }
         },
         "ru" : {
@@ -17680,7 +17680,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fără livrare"
+            "value" : "Fără administrare"
           }
         },
         "ru" : {
@@ -19120,7 +19120,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activarea plasturelui"
+            "value" : "Activare plasture"
           }
         },
         "ru" : {
@@ -19282,7 +19282,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activarea plasturelui"
+            "value" : "Activare plasture"
           }
         },
         "ru" : {
@@ -19450,7 +19450,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Detalii despre patch-uri"
+            "value" : "Detalii plasture"
           }
         },
         "ru" : {
@@ -19612,7 +19612,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eroare de patch"
+            "value" : "Eroare plasture"
           }
         },
         "ru" : {
@@ -19774,7 +19774,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plasture expirat"
+            "value" : "Plasturele a expirat"
           }
         },
         "ru" : {
@@ -19924,7 +19924,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plasture expirat. Doar bazală."
+            "value" : "Plasturele a expirat. Doar bazală."
           }
         },
         "ru" : {
@@ -20236,7 +20236,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch-ul este suspendat. Limita de %lld U depășită. Dacă măriți limita, puteți șterge alerta acum. Dacă așteptați, patch-ul va fi reluat când va trece suficient timp."
+            "value" : "Plasturele este suspendat. Limita de %lld U depășită. Dacă măriți limita, puteți șterge alerta acum. Dacă așteptați, acesta își va relua activitatea când va trece suficient timp."
           }
         },
         "ru" : {
@@ -20398,7 +20398,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Durata de utilizare a plasturelui"
+            "value" : "Durată de viață plasture"
           }
         },
         "ru" : {
@@ -20716,7 +20716,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pregătirea plasturelui"
+            "value" : "Amorsare plasture"
           }
         },
         "ru" : {
@@ -20872,7 +20872,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pregătirea plasturelui"
+            "value" : "Amorsarea plasturelui"
           }
         },
         "ru" : {
@@ -21034,7 +21034,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch înlocuiți"
+            "value" : "Înlocuiți plasturele"
           }
         },
         "ru" : {
@@ -21195,8 +21195,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch settings"
+            "state" : "translated",
+            "value" : "Setări plasture"
           }
         },
         "ru" : {
@@ -21352,7 +21352,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Setări ceas"
+            "value" : "Setări plasture"
           }
         },
         "ru" : {
@@ -21513,8 +21513,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch state"
+            "state" : "translated",
+            "value" : "Stare plasture"
           }
         },
         "ru" : {
@@ -21670,7 +21670,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Starea plasturelui"
+            "value" : "Stare plasture"
           }
         },
         "ru" : {
@@ -21832,7 +21832,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Oră plasture"
+            "value" : "Timp plasture"
           }
         },
         "ru" : {
@@ -22624,7 +22624,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apăsați butonul acului pentru a introduce acul. Atingeți butonul \"Activare\" pentru a finaliza procesul de activare."
+            "value" : "Apăsați butonul acului pentru a introduce acul. Atingeți butonul \"Activați\" pentru a finaliza procesul de activare."
           }
         },
         "ru" : {
@@ -22936,7 +22936,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Primat"
+            "value" : "Amorsat"
           }
         },
         "ru" : {
@@ -23421,8 +23421,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base model"
+            "state" : "translated",
+            "value" : "Model bază pompă"
           }
         },
         "ru" : {
@@ -23733,8 +23733,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base SN"
+            "state" : "translated",
+            "value" : "SN bază pompă"
           }
         },
         "ru" : {
@@ -23889,8 +23889,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Reconnect"
+            "state" : "translated",
+            "value" : "Reconectați"
           }
         },
         "ru" : {
@@ -24201,8 +24201,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove Pump"
+            "state" : "translated",
+            "value" : "Eliminați pompa"
           }
         },
         "ru" : {
@@ -24513,8 +24513,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Replace your patch now!"
+            "state" : "translated",
+            "value" : "Înlocuiți-vă plasturele acum!"
           }
         },
         "ru" : {
@@ -25162,7 +25162,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CV"
+            "value" : "Reluați"
           }
         },
         "ru" : {
@@ -25324,7 +25324,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Livrarea CV-ului"
+            "value" : "Reluați administrarea"
           }
         },
         "ru" : {
@@ -25486,7 +25486,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Livrarea CV-ului"
+            "value" : "Reluați administrarea insulinei"
           }
         },
         "ru" : {
@@ -25809,8 +25809,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Save and continue"
+            "state" : "translated",
+            "value" : "Salvați și continuați"
           }
         },
         "ru" : {
@@ -26122,7 +26122,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selectați tipul de insulină"
+            "value" : "Selectați tipul insulină"
           }
         },
         "ru" : {
@@ -26589,8 +26589,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Share Medtrum patch logs"
+            "state" : "translated",
+            "value" : "Distribuiți jurnalele plasturelui Medtrum"
           }
         },
         "ru" : {
@@ -27063,8 +27063,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Start priming"
+            "state" : "translated",
+            "value" : "Începeți amorsarea"
           }
         },
         "ru" : {
@@ -27376,7 +27376,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opriți temp bazal"
+            "value" : "Opriți bazala temporară"
           }
         },
         "ru" : {
@@ -27700,7 +27700,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suspendarea livrării"
+            "value" : "Suspendați administrarea"
           }
         },
         "ru" : {
@@ -27862,7 +27862,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suspendarea administrării insulinei"
+            "value" : "Suspendați administrarea insulinei"
           }
         },
         "ru" : {
@@ -28024,7 +28024,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suspendați patch-ul"
+            "value" : "Suspendați plasturele"
           }
         },
         "ru" : {
@@ -28510,7 +28510,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suspendat - Daily Max"
+            "value" : "Suspendat - Maxim zilnic"
           }
         },
         "ru" : {
@@ -28672,7 +28672,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suspendat - Max orar"
+            "value" : "Suspendat - Maxim orar"
           }
         },
         "ru" : {
@@ -28834,7 +28834,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suspendat - BG scăzut"
+            "value" : "Suspendat - Glicemie scăzută"
           }
         },
         "ru" : {
@@ -29151,8 +29151,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Temp Basal"
+            "state" : "translated",
+            "value" : "Bazală temporală"
           }
         },
         "ru" : {
@@ -29307,8 +29307,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)."
+            "state" : "translated",
+            "value" : "Plasturele este destinat a fi utilizat timp de numai 3 zile și 8 ore. Depășirea acestei perioade poate face ca plasturele să fie nefiabil. Acest lucru NU este recomandat. Luați în considerare utilizarea duratei de viață normale. Vă rugăm să rețineți că noul firmware din ultima generație de baze de pompe poate bloca comenzile bolus după 5 zile (120 de ore)."
           }
         },
         "ru" : {
@@ -29463,8 +29463,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The time on your pump is different from the current time. Do you want to update the time on your pump to the current time?"
+            "state" : "translated",
+            "value" : "Timpul din pompa dumneavoastră este diferit de timpul curent. Doriți să actualizați timpul din pompă la timpul actual?"
           }
         },
         "ru" : {
@@ -29619,8 +29619,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The time on your pump is different from the current time. Your pump’s time controls your scheduled therapy settings. Scroll down to Pump Time row to review the time difference and configure your pump."
+            "state" : "translated",
+            "value" : "Timpul din pompa dumneavoastră este diferit de timpul actual. Timpul pompei dumneavoastră controlează setările de terapie programate. Derulați în jos la rândul Timp pompă pentru a revizui diferența de timp și pentru a vă configura pompa."
           }
         },
         "ru" : {
@@ -29775,8 +29775,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Time Change Detected"
+            "state" : "translated",
+            "value" : "Schimbare de timp detectată"
           }
         },
         "ru" : {
@@ -29932,7 +29932,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comută modul puls"
+            "value" : "Comutați modul puls"
           }
         },
         "ru" : {
@@ -30567,8 +30567,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use extended lifetime"
+            "state" : "translated",
+            "value" : "Utilizați durata de viață extinsă"
           }
         },
         "ru" : {
@@ -31348,7 +31348,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Când atingeți butonul, veți primi o solicitare biometrică. Odată finalizat, plasturele va fi dezactivat și vi se va solicita să asociați un nou plasture transdermic."
+            "value" : "Când atingeți butonul, veți primi o solicitare biometrică. Odată finalizat, plasturele va fi dezactivat și vi se va solicita să asociați un nou plasture."
           }
         },
         "ru" : {
@@ -31504,7 +31504,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Da, dezactivează modul puls"
+            "value" : "Da, dezactivați modul puls"
           }
         },
         "ru" : {
@@ -31660,7 +31660,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Da, activează modul puls"
+            "value" : "Da, activați modul puls"
           }
         },
         "ru" : {
@@ -31972,7 +31972,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Veți începe prin a alege tipul de insulină & setările de bază ale plasturelui înainte de a activarea acestuia."
+            "value" : "Veți începe prin a alege tipul de insulină & setările de bază ale plasturelui înainte de activarea acestuia."
           }
         },
         "ru" : {
@@ -32134,7 +32134,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch-ul dvs. are %lld ore rămase"
+            "value" : "Plasturele dumneavoastră are %lld ore rămase"
           }
         },
         "ru" : {
