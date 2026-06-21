@@ -100,7 +100,6 @@ struct PatchPrimingView: View {
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(viewModel.isPriming)
-        .navigationTitle(String(localized: "Patch Priming", comment: "Priming header"))
     }
 
     @ViewBuilder func supportImage(_ imageName: String) -> some View {

@@ -48,7 +48,6 @@ struct PatchDetailsView: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarTitle(String(localized: "Patch Details", comment: "header patch details"))
     }
 
     @ViewBuilder func sectionItem(title: Text, value: String) -> some View {

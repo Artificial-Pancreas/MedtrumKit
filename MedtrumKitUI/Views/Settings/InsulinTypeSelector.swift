@@ -60,6 +60,5 @@ struct InsulinTypeSelector: View {
         }
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarHidden(false)
-        .navigationTitle(String(localized: "Select insulin type", comment: "Title for insulin type"))
     }
 }

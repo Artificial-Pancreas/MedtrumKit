@@ -19,14 +19,19 @@ struct PatchDeactivationView: View {
             }
             Spacer()
 
-            Text(viewModel.deactivationError)
-                .foregroundStyle(.red)
+            if !viewModel.deactivationError.isEmpty {
+                Text(viewModel.deactivationError)
+                    .foregroundStyle(.red)
+            } else if viewModel.disableButtons {
+                Text("Cannot deactivate while a bolus is in progress", comment: "Wait for bolus to complete")
+                    .foregroundStyle(.red)
+            }
 
             Button(action: { showingConfirmationPrompt = true }) {
                 Text("Force remove", comment: "Force remove")
             }
             .buttonStyle(ActionButtonStyle(.secondary))
-            .disabled(viewModel.isDeactivating)
+            .disabled(viewModel.isDeactivating || viewModel.disableButtons)
             .padding([.bottom, .horizontal])
 
             Button(action: { viewModel.deactivate() }) {
@@ -37,7 +42,7 @@ struct PatchDeactivationView: View {
                 }
             }
             .buttonStyle(ActionButtonStyle(.destructive))
-            .disabled(viewModel.isDeactivating)
+            .disabled(viewModel.isDeactivating || viewModel.disableButtons)
             .padding([.bottom, .horizontal])
         }
         .alert(String(localized: "Are you sure?", comment: "title force remove"), isPresented: $showingConfirmationPrompt) {
@@ -49,6 +54,5 @@ struct PatchDeactivationView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(String(localized: "Deactivate Patch", comment: "deactive patch"))
     }
 }

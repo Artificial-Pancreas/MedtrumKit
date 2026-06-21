@@ -1,6 +1,9 @@
+import LoopKit
+
 class DeactivatePatchViewModel: ObservableObject {
     @Published var isDeactivating = false
     @Published var deactivationError = ""
+    @Published var disableButtons = false
     @Published var is300u = false
 
     private let nextStep: () -> Void
@@ -14,6 +17,9 @@ class DeactivatePatchViewModel: ObservableObject {
         }
 
         is300u = pumpManager.state.pumpName.contains("300U")
+        disableButtons = pumpManager.state.bolusDose != nil
+
+        pumpManager.addStatusObserver(self, queue: DispatchQueue.main)
     }
 
     func forceDeactivate() {
@@ -93,5 +99,17 @@ class DeactivatePatchViewModel: ObservableObject {
                 }
             }
         #endif
+    }
+}
+
+extension DeactivatePatchViewModel: PumpManagerStatusObserver {
+    func pumpManager(_: any LoopKit.PumpManager, didUpdate _: LoopKit.PumpManagerStatus, oldStatus _: LoopKit.PumpManagerStatus) {
+        guard let pumpManager else {
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.disableButtons = pumpManager.state.bolusDose != nil
+        }
     }
 }

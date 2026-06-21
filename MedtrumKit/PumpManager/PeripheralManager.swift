@@ -4,7 +4,7 @@ class PeripheralManager: NSObject {
     private let log = MedtrumLogger(category: "PeripheralManager")
     private let queue = DispatchQueue(label: "org.nightscout.MedtrumKit.message-queue")
 
-    private let connectedDevice: CBPeripheral
+    private let peripheral: CBPeripheral
     private let bluetoothManager: BluetoothManager
     private let pumpManager: MedtrumPumpManager
     private var completion: ((MedtrumConnectError?) -> Void)?
@@ -15,8 +15,9 @@ class PeripheralManager: NSObject {
     private var writeSequence: UInt8 = 0
     private var currentPacket: (any MedtrumBasePacketProtocol)?
 
-    private var writeQueue: AsyncStream<MedtrumWriteResult<Any>>.Continuation?
-    private var writeTimeoutTask: Task<Void, Never>?
+    private var writeQueue: MedtrumKitDispatchGroup?
+    private var writeResponse: MedtrumWriteResult<Any>?
+    private let semaphore = DispatchSemaphore(value: 1)
 
     public init(
         _ peripheral: CBPeripheral,
@@ -24,7 +25,7 @@ class PeripheralManager: NSObject {
         _ pumpManager: MedtrumPumpManager,
         _ completion: @escaping (MedtrumConnectError?) -> Void
     ) {
-        connectedDevice = peripheral
+        self.peripheral = peripheral
         self.bluetoothManager = bluetoothManager
         self.pumpManager = pumpManager
         self.completion = completion
@@ -36,42 +37,25 @@ class PeripheralManager: NSObject {
 
     func cleanup() {
         if let queue = writeQueue {
-            queue.yield(.failure(error: .noData))
-            queue.finish()
+            queue.leave()
             writeQueue = nil
-        }
-
-        if let timeout = writeTimeoutTask {
-            timeout.cancel()
-            writeTimeoutTask = nil
         }
     }
 
-    func writePacket(_ packet: any MedtrumBasePacketProtocol) async -> MedtrumWriteResult<Any> {
-        guard writeQueue == nil else {
-            log.error("A command is already running")
-            return .failure(error: .alreadyRunning)
-        }
-
-        guard let writeCharacteristic = self.writeCharacteristic else {
+    func writePacket(_ packet: any MedtrumBasePacketProtocol) -> MedtrumWriteResult<Any> {
+        guard let characteristic = writeCharacteristic else {
             log.error("No write characteristic found... Device might be disconnected...")
             return .failure(error: .noWriteCharacteristic)
         }
 
-        let stream = AsyncStream<MedtrumWriteResult<Any>> { continuation in
-            self.writeQueue = continuation
-            self.write(packet, for: writeCharacteristic)
+        semaphore.wait()
+        defer {
+            semaphore.signal()
         }
 
-        // Now we wait for a response or we return timeout
-        for await value in stream {
-            return value
-        }
-
-        return .failure(error: .noData)
-    }
-
-    private func write(_ packet: any MedtrumBasePacketProtocol, for characteristic: CBCharacteristic) {
+        let writeQ = MedtrumKitDispatchGroup()
+        writeQ.enter()
+        writeQueue = writeQ
         currentPacket = packet
 
         let packages = packet.encode(sequenceNumber: writeSequence)
@@ -82,35 +66,27 @@ class PeripheralManager: NSObject {
 
         for package in packages {
             log.debug("Writing data: \(package.hexEncodedString())")
-            connectedDevice.writeValue(package, for: characteristic, type: .withResponse)
+            peripheral.writeValue(package, for: characteristic, type: .withResponse)
         }
 
-        writeTimeoutTask = Task {
-            do {
-                try await Task.sleep(nanoseconds: UInt64(.seconds(30)) * 1_000_000_000)
-                guard let stream = self.writeQueue else {
-                    // We did what we must!
-                    return
-                }
+        // Wait for response or timeout timer...
+        _ = writeQ.wait(timeout: .now() + .seconds(30))
+        writeQueue = nil
 
-                // By not sending a yield, we trigger a timeout error in writePacket
-                log.warning("Timeout has been reached...")
-
-                stream.yield(.failure(error: .timeout))
-                stream.finish()
-                self.writeQueue = nil
-                self.writeTimeoutTask = nil
-            } catch {
-                // Task was cancelled because message has been received
-            }
+        guard let response = writeResponse else {
+            log.warning("Timeout has been reached...")
+            return .failure(error: .timeout)
         }
+
+        writeResponse = nil
+        return response
     }
 }
 
 extension PeripheralManager {
     // Connect step 1
-    private func doAuthorize() async {
-        let authData = await writePacket(
+    private func doAuthorize() {
+        let authData = writePacket(
             AuthorizePacket(pumpSN: pumpManager.state.pumpSN, sessionToken: pumpManager.state.sessionToken)
         )
 
@@ -130,13 +106,13 @@ extension PeripheralManager {
             pumpManager.state.deviceType = authResponse.deviceType
             pumpManager.state.swVersion = authResponse.swVersion
 
-            await synchronize()
+            synchronize()
         }
     }
 
     // Connect step 2
-    private func synchronize() async {
-        let syncData = await writePacket(SynchronizePacket())
+    private func synchronize() {
+        let syncData = writePacket(SynchronizePacket())
 
         switch syncData {
         case let .failure(error):
@@ -152,13 +128,13 @@ extension PeripheralManager {
             }
 
             parseStateUpdate(syncResponse, duringReconnect: true, fullSync: true)
-            await subscribe()
+            subscribe()
         }
     }
 
     // Connect step 4 (last)
-    private func subscribe() async {
-        let subscribeData = await writePacket(SubscribePacket())
+    private func subscribe() {
+        let subscribeData = writePacket(SubscribePacket())
 
         switch subscribeData {
         case let .failure(error):
@@ -242,9 +218,13 @@ extension PeripheralManager: CBPeripheralDelegate {
             peripheral.setNotifyValue(true, for: characteristic)
         }
 
-        Task {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self else {
+                return
+            }
+
             self.log.debug("Notify enabled and ready to start auth flow!")
-            await doAuthorize()
+            doAuthorize()
         }
     }
 
@@ -262,72 +242,67 @@ extension PeripheralManager: CBPeripheralDelegate {
             return
         }
 
-        queue.async {
-            if characteristic.uuid.uuidString.lowercased() == CBUUID.READ_UUID.uuidString.lowercased() {
-                guard data[1] != 0x00 else {
-                    // Ignore all ping messages from patch pomp
-                    return
-                }
-
-                self.handleHeartbeat(data: data)
+        if characteristic.uuid == CBUUID.READ_UUID {
+            guard data[1] != 0x00 else {
+                // Ignore all ping messages from patch pomp
                 return
             }
 
-            // Processing data
-            self.log.debug("Got data: \(data.hexEncodedString())")
-            guard var packet = self.currentPacket else {
-                self.log.warning("No packet available...")
-                return
-            }
-
-            packet.decode(data)
-            self.currentPacket = packet
-
-            guard packet.isComplete else {
-                self.log.debug("Waiting for more data...")
-                return
-            }
-
-            guard let writeCallback = self.writeQueue else {
-                // Timeout is hit...
-                self.currentPacket = nil
-                return
-            }
-
-            if packet.responseCode == 16384 {
-                // Need to skip to packet
-                self.log.debug("Skipping this message - data: \(packet.totalData.hexEncodedString())")
-                return
-            }
-
-            self.writeTimeoutTask?.cancel()
-            self.writeTimeoutTask = nil
-
-            if packet.responseCode != 0 {
-                // Examples for invalid codes:
-                // 7 -> Invalid authorization: propably wrong session token used
-                // 8 -> Invalid state: The patch is not in state 32 (active), which is required for that command
-                self.log.error("Invalid responseCode: \(packet.responseCode)")
-                writeCallback.yield(.failure(error: .invalidResponse(code: packet.responseCode)))
-            } else if packet.failed {
-                self.log.error("Failed to parse message, either wrong command type or CRC check failed...")
-                writeCallback.yield(.failure(error: .invalidData))
-            } else {
-                if !packet.hasEnoughData {
-                    let message =
-                        "Packet has too little data - expected: \(packet.mimimumDataSize), data: \(packet.totalData.hexEncodedString())"
-                    self.log.error(message)
-
-                    writeCallback.yield(.failure(error: .invalidData))
-                } else {
-                    writeCallback.yield(.success(data: packet.parseResponse()))
-                }
-            }
-
-            writeCallback.finish()
-            self.writeQueue = nil
-            self.currentPacket = nil
+            handleHeartbeat(data: data)
+            return
         }
+
+        // Processing data
+        log.debug("Got data: \(data.hexEncodedString())")
+        guard var packet = currentPacket else {
+            log.warning("No packet available...")
+            return
+        }
+
+        packet.decode(data)
+        currentPacket = packet
+
+        guard packet.isComplete else {
+            log.debug("Waiting for more data...")
+            return
+        }
+
+        guard let writeCallback = writeQueue else {
+            // Timeout is hit...
+            currentPacket = nil
+            return
+        }
+
+        if packet.responseCode == 16384 {
+            // Need to skip to packet
+            log.debug("Skipping this message - data: \(packet.totalData.hexEncodedString())")
+            return
+        }
+
+        if packet.responseCode != 0 {
+            // Examples for invalid codes:
+            // 7 -> Invalid authorization: propably wrong session token used
+            // 8 -> Invalid state: The patch is not in state 32 (active), which is required for that command
+            log.error("Invalid responseCode: \(packet.responseCode)")
+            writeResponse = .failure(error: .invalidResponse(code: packet.responseCode))
+        } else if packet.failed {
+            log.error("Failed to parse message, either wrong command type or CRC check failed...")
+            writeResponse = .failure(error: .invalidData)
+        } else {
+            if !packet.hasEnoughData {
+                let message =
+                    "Packet has too little data - expected: \(packet.mimimumDataSize), data: \(packet.totalData.hexEncodedString())"
+                log.error(message)
+
+                writeResponse = .failure(error: .invalidData)
+            } else {
+                writeResponse = .success(data: packet.parseResponse())
+            }
+        }
+
+        writeCallback.leave()
+        writeQueue = nil
+        currentPacket = nil
     }
 
     private func handleHeartbeat(data: Data) {
@@ -341,7 +316,6 @@ extension PeripheralManager: CBPeripheralDelegate {
 
         guard Date.now.timeIntervalSince(pumpManager.state.lastSync) > .minutes(2.5) else {
             parseStateUpdate(packet.parseResponse(), duringReconnect: false, fullSync: false)
-            log.debug("State too fresh, skipping full sync...")
             return
         }
 
@@ -352,9 +326,13 @@ extension PeripheralManager: CBPeripheralDelegate {
         }
 
         // Do full sync (only every 3min)
-        Task {
-            let response = await self.writePacket(SynchronizePacket())
-            await StateSyncer.fetchPatchTime(pumpManager: self.pumpManager)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self else {
+                return
+            }
+
+            let response = self.writePacket(SynchronizePacket())
+            StateSyncer.fetchPatchTime(pumpManager: self.pumpManager)
 
             switch response {
             case let .failure(error):

@@ -480,7 +480,6 @@ struct MedtrumKitSettings: View {
         }
         .listStyle(InsetGroupedListStyle())
         .navigationBarItems(trailing: doneButton)
-        .navigationBarTitle(viewModel.pumpName)
     }
 
     var reservoirStatus: some View {

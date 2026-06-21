@@ -318,14 +318,14 @@ class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, Pu
         isUpdatingPumpState = true
         pumpManager.bluetooth.ensureConnected { error in
             if error != nil {
-                await MainActor.run {
+                DispatchQueue.main.async {
                     self.isUpdatingPumpState = false
                 }
                 return
             }
 
-            await StateSyncer.syncTime(pumpManager: pumpManager)
-            await MainActor.run {
+            StateSyncer.syncTime(pumpManager: pumpManager)
+            DispatchQueue.main.async {
                 self.isUpdatingPumpState = false
             }
         }

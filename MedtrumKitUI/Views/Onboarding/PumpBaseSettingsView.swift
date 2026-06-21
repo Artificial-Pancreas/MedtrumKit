@@ -44,6 +44,5 @@ struct PumpBaseSettingsView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(String(localized: "Pump base settings", comment: "Pump base settings header"))
     }
 }

@@ -220,7 +220,6 @@ struct PatchSettingsView: View {
             .padding([.bottom, .horizontal])
         }
         .edgesIgnoringSafeArea(.bottom)
-        .navigationBarTitle(String(localized: "Patch Settings", comment: "Text for patch settings view"))
     }
 
     @ViewBuilder func sectionItem(

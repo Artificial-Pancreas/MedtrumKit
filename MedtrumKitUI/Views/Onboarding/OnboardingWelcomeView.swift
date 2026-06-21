@@ -27,7 +27,6 @@ struct OnboardingWelcomeView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(String(localized: "Welcome", comment: "welcome header"))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(String(localized: "Cancel", comment: "Cancel button title"), action: {

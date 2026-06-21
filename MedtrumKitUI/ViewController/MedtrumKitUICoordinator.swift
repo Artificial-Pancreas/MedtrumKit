@@ -104,7 +104,10 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
     private func viewControllerForScreen(_ screen: MedtrumUIScreen) -> UIViewController {
         switch screen {
         case .welcomeScreen:
-            return hostingController(rootView: OnboardingWelcomeView(nextStep: { self.navigateTo(.insulinTypeScreen) }))
+            return hostingController(
+                rootView: OnboardingWelcomeView(nextStep: { self.navigateTo(.insulinTypeScreen) }),
+                title: String(localized: "Welcome", comment: "welcome header")
+            )
 
         case .insulinTypeScreen:
             let nextStep: (InsulinType) -> Void = { insulinType in
@@ -117,12 +120,15 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
 
                 self.navigateTo(.patchSettingsScreen)
             }
-            return hostingController(rootView: InsulinTypeSelector(
-                initialValue: pumpManager?.state.insulinType ?? allowedInsulinTypes[0],
-                supportedInsulinTypes: allowedInsulinTypes,
-                showSave: pumpManager?.isOnboarded ?? false,
-                didConfirm: nextStep
-            ))
+            return hostingController(
+                rootView: InsulinTypeSelector(
+                    initialValue: pumpManager?.state.insulinType ?? allowedInsulinTypes[0],
+                    supportedInsulinTypes: allowedInsulinTypes,
+                    showSave: pumpManager?.isOnboarded ?? false,
+                    didConfirm: nextStep
+                ),
+                title: String(localized: "Select insulin type", comment: "Title for insulin type")
+            )
 
         case .patchSettingsScreen:
             let nextStep = {
@@ -143,15 +149,21 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 dirtyCheck = !pumpManager.state.patchId.isEmpty
             }
 
-            return hostingController(rootView: PatchSettingsView(
-                viewModel: viewModel,
-                doDirtyCheck: dirtyCheck
-            ))
+            return hostingController(
+                rootView: PatchSettingsView(
+                    viewModel: viewModel,
+                    doDirtyCheck: dirtyCheck
+                ),
+                title: String(localized: "Patch Settings", comment: "Text for patch settings view")
+            )
 
         case .deactivatePatchScreen:
             let nextStep = { self.resetNavigationTo([.settingsScreen, .pumpBaseSettingsScreen]) }
             let viewModel = DeactivatePatchViewModel(pumpManager, nextStep)
-            return hostingController(rootView: PatchDeactivationView(viewModel: viewModel))
+            return hostingController(
+                rootView: PatchDeactivationView(viewModel: viewModel),
+                title: String(localized: "Deactivate Patch", comment: "deactive patch")
+            )
 
         case .pumpBaseSettingsScreen:
             let nextStep = {
@@ -171,7 +183,10 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
 
             let viewModel = PumpBaseSettingsViewModel(pumpManager, nextStep)
 
-            return hostingController(rootView: PumpBaseSettingsView(viewModel: viewModel))
+            return hostingController(
+                rootView: PumpBaseSettingsView(viewModel: viewModel),
+                title: String(localized: "Pump base settings", comment: "Pump base settings header")
+            )
 
         case .patchPrimingScreen:
             let viewModel = PatchPrimingViewModel(
@@ -182,7 +197,8 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
             )
             return hostingController(
                 rootView: PatchPrimingView(viewModel: viewModel)
-                    .onAppear { UIApplication.shared.isIdleTimerDisabled = true }
+                    .onAppear { UIApplication.shared.isIdleTimerDisabled = true },
+                title: String(localized: "Patch Priming", comment: "Priming header")
             )
 
         case .patchActivationScreen:
@@ -193,7 +209,8 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
             )
             return hostingController(
                 rootView: PatchActivationView(viewModel: viewModel)
-                    .onAppear { UIApplication.shared.isIdleTimerDisabled = true }
+                    .onAppear { UIApplication.shared.isIdleTimerDisabled = true },
+                title: String(localized: "Patch Activation", comment: "Patch activation header")
             )
 
         case .settingsScreen:
@@ -230,20 +247,36 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 pumpRemoval,
                 toActivatePatch
             )
-            return hostingController(rootView: MedtrumKitSettings(viewModel: viewModel))
+            return hostingController(
+                rootView: MedtrumKitSettings(viewModel: viewModel),
+                title: pumpManager?.state.pumpName ?? "Medtrum Nano"
+            )
         case .patchDetailsScreen:
             let viewModel = PatchDetailsViewModel(pumpManager: pumpManager)
-            return hostingController(rootView: PatchDetailsView(viewModel: viewModel))
+            return hostingController(
+                rootView: PatchDetailsView(viewModel: viewModel),
+                title: String(localized: "Patch Details", comment: "header patch details")
+            )
         case .patchPreviousDetailsScreen:
             let viewModel = PreviousPatchDetailsViewModel(pumpManager: pumpManager)
-            return hostingController(rootView: PreviousPatchDetailsView(viewModel: viewModel))
+            return hostingController(
+                rootView: PreviousPatchDetailsView(viewModel: viewModel),
+                title: String(localized: "Previous Patch Details", comment: "header patch details")
+            )
         }
     }
 
-    private func hostingController<Content: View>(rootView: Content) -> DismissibleHostingController<some View> {
+    private func hostingController<Content: View>(
+        rootView: Content,
+        title: String? = nil,
+        largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode = .automatic
+    ) -> DismissibleHostingController<some View> {
         let rootView = rootView
             .environment(\.appName, Bundle.main.bundleDisplayName)
-        return DismissibleHostingController(content: rootView, colorPalette: colorPalette)
+        let hostedView = DismissibleHostingController(content: rootView, colorPalette: colorPalette)
+        hostedView.navigationItem.title = title
+        hostedView.navigationItem.largeTitleDisplayMode = largeTitleDisplayMode
+        return hostedView
     }
 
     override func viewDidDisappear(_: Bool) {
@@ -251,7 +284,10 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
     }
 
     private func pumpRemoval() {
-        NotificationManager.clearPendingNotifications()
+        pumpManager?.pumpDelegate.notify { delegate in
+            delegate?.retractAlert(identifier: MedtrumAlert.patchExpiredNotification(after: .hours(1)).alert.identifier)
+        }
+
         guard let completionDelegate = self.completionDelegate, let pumpManager = self.pumpManager else {
             return
         }

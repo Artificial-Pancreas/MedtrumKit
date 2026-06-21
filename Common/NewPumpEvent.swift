@@ -69,4 +69,19 @@ public extension NewPumpEvent {
             alarmType: nil
         )
     }
+
+    internal static func alert(type: MedtrumAlert) -> NewPumpEvent? {
+        guard let alertTitle = type.title, let alertType = type.type else {
+            return nil
+        }
+
+        return NewPumpEvent(
+            date: Date.now,
+            dose: nil,
+            raw: alertTitle.data(using: .utf8) ?? Data([]),
+            title: alertTitle,
+            type: .alarm,
+            alarmType: alertType
+        )
+    }
 }

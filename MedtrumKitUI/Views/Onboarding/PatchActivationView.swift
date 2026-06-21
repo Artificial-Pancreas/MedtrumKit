@@ -74,7 +74,6 @@ struct PatchActivationView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle(String(localized: "Patch Activation", comment: "Patch activation header"))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(String(localized: "Cancel", comment: "Cancel button title"), action: {

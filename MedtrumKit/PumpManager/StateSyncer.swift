@@ -1,6 +1,8 @@
 import LoopKit
 
 enum StateSyncer {
+    private static let logger = MedtrumLogger(category: "StateSyncer")
+
     static func sync(
         syncResponse: SynchronizePacketResponse,
         state: MedtrumPumpState,
@@ -12,7 +14,7 @@ enum StateSyncer {
             pumpManager.state.lastSync = Date.now
         }
 
-        StateSyncer.updatePumpState(syncResponse: syncResponse, state: state)
+        StateSyncer.updatePumpState(syncResponse: syncResponse, pumpManager: pumpManager)
 
         if let reservoir = syncResponse.reservoir {
             if let lowReservoirWarning = state.lowReservoirWarning,
@@ -20,7 +22,7 @@ enum StateSyncer {
                reservoir < lowReservoirWarning
             {
                 // Send low reservoir warning notification to user
-                NotificationManager.reservoirLowNotification(reservoir)
+                pumpManager.emitAlert(alertType: .lowReservoir(level: reservoir))
             }
 
             state.reservoir = reservoir
@@ -141,9 +143,8 @@ enum StateSyncer {
         pumpManager.notifyStateDidChange()
     }
 
-    public static func fetchPatchTime(pumpManager: MedtrumPumpManager) async {
-        let logger = MedtrumLogger(category: "TimeSync")
-        let timeData = await pumpManager.bluetooth.write(GetTimePacket())
+    public static func fetchPatchTime(pumpManager: MedtrumPumpManager) {
+        let timeData = pumpManager.bluetooth.write(GetTimePacket())
 
         switch timeData {
         case let .failure(error: error):
@@ -161,10 +162,8 @@ enum StateSyncer {
         }
     }
 
-    public static func syncTime(pumpManager: MedtrumPumpManager) async {
-        let logger = MedtrumLogger(category: "TimeSync")
-
-        let timeData = await pumpManager.bluetooth.write(SetTimePacket(date: Date.now))
+    public static func syncTime(pumpManager: MedtrumPumpManager) {
+        let timeData = pumpManager.bluetooth.write(SetTimePacket(date: Date.now))
         switch timeData {
         case let .failure(error: error):
             logger.error("Failed to sync time: \(error.errorDescription)")
@@ -173,7 +172,7 @@ enum StateSyncer {
             break
         }
 
-        let timeZoneData = await pumpManager.bluetooth.write(
+        let timeZoneData = pumpManager.bluetooth.write(
             SetTimeZonePacket(date: Date.now, timeZone: TimeZone.current)
         )
         switch timeZoneData {
@@ -181,28 +180,28 @@ enum StateSyncer {
             logger.error("Failed to sync timezone: \(error.errorDescription)")
             return
         default:
-            await StateSyncer.fetchPatchTime(pumpManager: pumpManager)
+            StateSyncer.fetchPatchTime(pumpManager: pumpManager)
         }
     }
 
-    private static func updatePumpState(syncResponse: SynchronizePacketResponse, state: MedtrumPumpState) {
-        state.pumpState = syncResponse.state
+    private static func updatePumpState(syncResponse: SynchronizePacketResponse, pumpManager: MedtrumPumpManager) {
+        pumpManager.state.pumpState = syncResponse.state
 
         // Send notification for specific states
         // If this has already been done, iOS will remove the old one
         switch syncResponse.state {
         case .dailyMaxSuspended:
-            NotificationManager.patchDailyMaxNotification()
+            pumpManager.emitAlert(alertType: .patchDailyMaxNotification)
         case .hourlyMaxSuspended:
-            NotificationManager.patchHourlyMaxNotification()
+            pumpManager.emitAlert(alertType: .patchHourlyMaxNotification)
         case .occlusion:
-            NotificationManager.occlusionNotification()
+            pumpManager.emitAlert(alertType: .occlusionNotification)
         case .baseFault,
              .patchFault,
              .patchFaultd2:
-            NotificationManager.patchFaultNotification()
+            pumpManager.emitAlert(alertType: .patchFaultNotification)
         case .reservoirEmpty:
-            NotificationManager.reservoirEmptyNotification()
+            pumpManager.emitAlert(alertType: .reservoirEmptyNotification)
         default:
             break
         }

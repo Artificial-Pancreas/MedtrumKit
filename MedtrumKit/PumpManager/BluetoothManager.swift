@@ -69,22 +69,18 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         manager.connect(peripheral)
     }
 
-    func ensureConnected(_ completionAsync: @escaping (MedtrumConnectError?) async -> Void) {
+    func ensureConnected(_ completion: @escaping (MedtrumConnectError?) -> Void) {
         guard connectCompletion == nil else {
             logger.error("EnsureConnected is already running...")
-            Task {
-                await completionAsync(.failedToConnectToDevice)
-            }
+            completion(.failedToConnectToDevice)
             return
         }
 
         connectCompletion = { (_ result: MedtrumConnectError?) -> Void in
-            Task {
-                self.connectCompletion = nil
-                self.connectionTimeout?.cancel()
-                self.connectionTimeout = nil
-                await completionAsync(result)
-            }
+            self.connectCompletion = nil
+            self.connectionTimeout?.cancel()
+            self.connectionTimeout = nil
+            completion(result)
         }
 
         if let peripheral = peripheral, peripheral.state == .connected {
@@ -165,12 +161,12 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         }
     }
 
-    func write(_ packet: any MedtrumBasePacketProtocol) async -> MedtrumWriteResult<Any> {
+    func write(_ packet: any MedtrumBasePacketProtocol) -> MedtrumWriteResult<Any> {
         guard let peripheralManager else {
             return .failure(error: .noManager)
         }
 
-        return await peripheralManager.writePacket(packet)
+        return peripheralManager.writePacket(packet)
     }
 
     func disconnect(force: Bool = false) {
