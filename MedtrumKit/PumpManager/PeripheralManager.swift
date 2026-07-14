@@ -85,13 +85,20 @@ class PeripheralManager: NSObject {
 
 extension PeripheralManager {
     // Connect step 1
-    private func doAuthorize() {
+    private func doAuthorize(useBackupToken: Bool = false) {
+        let token = !useBackupToken ? pumpManager.state.sessionToken : pumpManager.state.backupSessionToken
         let authData = writePacket(
-            AuthorizePacket(pumpSN: pumpManager.state.pumpSN, sessionToken: pumpManager.state.sessionToken)
+            AuthorizePacket(pumpSN: pumpManager.state.pumpSN, sessionToken: token)
         )
 
         switch authData {
         case let .failure(error):
+            if !useBackupToken {
+                log.warning("Failed to complete authorization flow, falling back to backup token")
+                doAuthorize(useBackupToken: true)
+                return
+            }
+
             log.error("Failed to complete authorization flow: \(error.localizedDescription)")
             bluetoothManager.disconnect()
             completion?(.failedToCompleteAuthorizationFlow(localizedError: error.localizedDescription))
@@ -332,8 +339,6 @@ extension PeripheralManager: CBPeripheralDelegate {
             }
 
             let response = self.writePacket(SynchronizePacket())
-            StateSyncer.fetchPatchTime(pumpManager: self.pumpManager)
-
             switch response {
             case let .failure(error):
                 self.log.error("Failed to get synchronize: \(error.localizedDescription)")
@@ -346,6 +351,7 @@ extension PeripheralManager: CBPeripheralDelegate {
                 }
 
                 self.parseStateUpdate(syncResponse, duringReconnect: false, fullSync: true)
+                StateSyncer.fetchPatchTime(pumpManager: self.pumpManager)
             }
         }
     }

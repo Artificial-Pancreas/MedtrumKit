@@ -760,6 +760,7 @@ public extension MedtrumPumpManager {
 
             self.state.patchId = Data()
             self.state.pumpState = .none
+            self.state.backupSessionToken = self.state.sessionToken
             self.state.sessionToken = Data()
             self.state.lastSync = Date.now
             self.state.basalDose = suspendDose
@@ -793,6 +794,7 @@ public extension MedtrumPumpManager {
 
         state.patchId = Data()
         state.pumpState = .none
+        state.backupSessionToken = state.sessionToken
         state.sessionToken = Data()
         state.lastSync = Date.now
         state.basalDose = suspendDose
@@ -914,7 +916,6 @@ public extension MedtrumPumpManager {
         doseEntry.deliveredUnits = delivered
 
         if !completed {
-            notifyStateDidChange()
             return
         }
 
@@ -1062,7 +1063,7 @@ public extension MedtrumPumpManager {
             delegate?.pumpManager(
                 self,
                 didReadReservoirValue: self.state.reservoir.rounded(toPlaces: 1),
-                at: self.state.lastSync
+                at: Date.now
             ) { result in
                 switch result {
                 case let .failure(error):

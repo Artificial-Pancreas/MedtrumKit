@@ -25,14 +25,16 @@ enum StateSyncer {
                 pumpManager.emitAlert(alertType: .lowReservoir(level: reservoir))
             }
 
-            state.reservoir = reservoir
-            if state.initialReservoir == nil {
-                state.initialReservoir = state.reservoir
-            }
+            if state.reservoir != reservoir {
+                state.reservoir = reservoir
+                if state.initialReservoir == nil {
+                    state.initialReservoir = state.reservoir
+                }
 
-            if fullSync {
-                // to prevent spaming the OSAID app with reservoir updates
-                pumpManager.emitReservoirLevel()
+                if fullSync {
+                    // to prevent spaming the OSAID app with reservoir updates
+                    pumpManager.emitReservoirLevel()
+                }
             }
         }
 

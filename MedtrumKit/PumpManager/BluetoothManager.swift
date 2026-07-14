@@ -76,7 +76,13 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             return
         }
 
+        var finished = false
         connectCompletion = { (_ result: MedtrumConnectError?) -> Void in
+            guard !finished else {
+                return
+            }
+
+            finished = true
             self.connectCompletion = nil
             self.connectionTimeout?.cancel()
             self.connectionTimeout = nil
