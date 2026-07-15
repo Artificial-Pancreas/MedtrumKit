@@ -31,7 +31,7 @@ struct PatchDeactivationView: View {
                 Text("Force remove", comment: "Force remove")
             }
             .buttonStyle(ActionButtonStyle(.secondary))
-            .disabled(viewModel.isDeactivating || viewModel.disableButtons)
+            .disabled(viewModel.isDeactivating)
             .padding([.bottom, .horizontal])
 
             Button(action: { viewModel.deactivate() }) {

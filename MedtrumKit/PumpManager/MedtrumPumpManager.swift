@@ -394,6 +394,15 @@ public extension MedtrumPumpManager {
         for duration: TimeInterval,
         completion: @escaping (LoopKit.PumpManagerError?) -> Void
     ) {
+        enactTempBasal(unitsPerHour: unitsPerHour, duration: duration, automatic: true, completion: completion)
+    }
+
+    func enactTempBasal(
+        unitsPerHour: Double,
+        duration: TimeInterval,
+        automatic: Bool,
+        completion: @escaping (LoopKit.PumpManagerError?) -> Void
+    ) {
         log.info("Setting temp basal at \(unitsPerHour)U/hr for \(duration)s")
 
         guard state.bolusState == .noBolus else {
@@ -469,7 +478,8 @@ public extension MedtrumPumpManager {
             let tempBasalDose = UnfinalizedDose(
                 tempRate: unitsPerHour,
                 duration: duration,
-                insulinType: self.state.insulinType
+                insulinType: self.state.insulinType,
+                automatic: automatic
             )
             var events = self.getActivePumpEvents(endDate: Date.now)
             events.append(

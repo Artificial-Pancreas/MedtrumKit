@@ -181,7 +181,7 @@ struct MedtrumKitSettings: View {
                             viewModel.stopTempBasal()
                         }) {
                             HStack {
-                                Text("Stop temp basal", comment: "Stop temp basal")
+                                Text("Stop Temp Basal", comment: "Stop temp basal")
                                 Spacer()
                                 if viewModel.isUpdatingTempBasal {
                                     ActivityIndicator()
@@ -196,7 +196,7 @@ struct MedtrumKitSettings: View {
 
                     Button(action: { viewModel.syncData() }) {
                         HStack {
-                            Text("Sync patch data", comment: "sync pump")
+                            Text("Sync Patch Data", comment: "sync pump")
                             Spacer()
                             if viewModel.isUpdatingPumpState {
                                 ActivityIndicator()
@@ -207,6 +207,18 @@ struct MedtrumKitSettings: View {
                         viewModel.isUpdatingPumpState || viewModel.isUpdatingTempBasal || viewModel
                             .isUpdatingSuspend || viewModel.isClearingAlert
                     )
+
+                    if !viewModel.tempBasalManual {
+                        Button(action: { viewModel.toTempBasal() }) {
+                            HStack {
+                                Text("Manual Temp Basal", comment: "sync pump")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: UIFont.systemFontSize, weight: .bold))
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
 
                     if viewModel.patchState.rawValue < PatchState.active.rawValue && viewModel.patchState != .none {
                         Button(action: { viewModel.toPumpActivation() }) {
@@ -512,22 +524,7 @@ struct MedtrumKitSettings: View {
             Text(deliverySectionTitle)
                 .foregroundColor(Color(UIColor.secondaryLabel))
 
-            switch viewModel.basalType {
-            case .basal,
-                 .bolus,
-                 .resume,
-                 .tempBasal:
-                HStack(alignment: .center) {
-                    HStack(alignment: .lastTextBaseline, spacing: 3) {
-                        Text(viewModel.basalRateFormatter.string(from: viewModel.basalRate as NSNumber) ?? "")
-                            .font(.system(size: 28))
-                            .fontWeight(.heavy)
-                            .fixedSize()
-                        Text("U/hr", comment: "Units for showing temp basal rate")
-                            .foregroundColor(.secondary)
-                    }
-                }
-            case .suspend:
+            if viewModel.basalType == .suspend {
                 HStack(alignment: .center) {
                     Image(systemName: "pause.circle.fill")
                         .font(.system(size: 34))
@@ -539,6 +536,22 @@ struct MedtrumKitSettings: View {
                     )
                     .fontWeight(.bold)
                     .fixedSize()
+                }
+            } else {
+                HStack(alignment: .center, spacing: 10) {
+                    HStack(alignment: .lastTextBaseline, spacing: 3) {
+                        Text(viewModel.basalRate)
+                            .font(.system(size: 28))
+                            .fontWeight(.heavy)
+                            .fixedSize()
+                        Text("U/hr", comment: "Units for showing temp basal rate")
+                            .foregroundColor(.secondary)
+
+                        if let tempRemaining = viewModel.tempBasalRemaining {
+                            Text(tempRemaining)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
             }
         }
@@ -675,6 +688,13 @@ struct MedtrumKitSettings: View {
     }
 
     var deliverySectionTitle: String {
+        if viewModel.tempBasalManual {
+            return String(
+                localized: "Manual Temp Basal",
+                comment: "Pump Event title for UnfinalizedDose with doseType of .tempBasal"
+            )
+        }
+
         switch viewModel.basalType {
         case .basal,
              .bolus,

@@ -67,7 +67,7 @@ enum StateSyncer {
                     state.basalDose = UnfinalizedDose(suspendStartTime: eventTime)
                     let basalDose = state.basalDose.toDoseEntry()
 
-                    var events: [NewPumpEvent] = [NewPumpEvent.basal(dose: basalDose, date: basalDose.startDate)]
+                    var events: [NewPumpEvent] = [NewPumpEvent.suspend(dose: basalDose, date: basalDose.startDate)]
                     if dose.type == .tempBasal {
                         // Record finalized temp basal, resume/basal is already finalized
                         events.append(NewPumpEvent.tempBasal(dose: dose, date: dose.startDate))

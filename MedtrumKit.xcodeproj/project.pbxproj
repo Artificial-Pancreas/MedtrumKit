@@ -41,6 +41,8 @@
 		3E4566632D8371EC00FE1E0C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4566622D8371EB00FE1E0C /* ActivityViewController.swift */; };
 		3E4566652D837A4900FE1E0C /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4566642D837A4800FE1E0C /* Bundle.swift */; };
 		3E489BDE2FABC23F003C0B39 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E489BDD2FABC23F003C0B39 /* String.swift */; };
+		3E4961252FEC587C006EF07F /* ManualTempBasalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4961242FEC5878006EF07F /* ManualTempBasalView.swift */; };
+		3E4961272FEC5A4B006EF07F /* ManualTempBasalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4961262FEC5A46006EF07F /* ManualTempBasalViewModel.swift */; };
 		3E5060142D70E5CB00376609 /* Crc8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5060132D70E5C900376609 /* Crc8.swift */; };
 		3E5060182D70EAF800376609 /* MedtrumWriteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5060172D70EAF400376609 /* MedtrumWriteResult.swift */; };
 		3E50601C2D70F69900376609 /* GetTimePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50601B2D70F69800376609 /* GetTimePacket.swift */; };
@@ -192,6 +194,8 @@
 		3E4566622D8371EB00FE1E0C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		3E4566642D837A4800FE1E0C /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		3E489BDD2FABC23F003C0B39 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3E4961242FEC5878006EF07F /* ManualTempBasalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTempBasalView.swift; sourceTree = "<group>"; };
+		3E4961262FEC5A46006EF07F /* ManualTempBasalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTempBasalViewModel.swift; sourceTree = "<group>"; };
 		3E5060132D70E5C900376609 /* Crc8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crc8.swift; sourceTree = "<group>"; };
 		3E5060172D70EAF400376609 /* MedtrumWriteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedtrumWriteResult.swift; sourceTree = "<group>"; };
 		3E50601B2D70F69800376609 /* GetTimePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimePacket.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 		3E24AEC52DA1733300C7733C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3E4961262FEC5A46006EF07F /* ManualTempBasalViewModel.swift */,
 				DD334CAB2F941CC90082A5B5 /* PatchLifetimeFormatting+Helper.swift */,
 				3E3E78B62F6B2C5C00DC4DF4 /* PatchDetailsViewModel.swift */,
 				3E3E7BE32F6B365100DC4DF4 /* PreviousPatchDetailsViewModel.swift */,
@@ -378,6 +383,7 @@
 		3E26BE092D90698A00E595B0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3E4961242FEC5878006EF07F /* ManualTempBasalView.swift */,
 				3E26BE0A2D9069A600E595B0 /* MedtrumKitSettings.swift */,
 				3EA69F042D95E605002EEF9F /* InsulinTypeSelector.swift */,
 				3EA69F062D95ECDE002EEF9F /* PatchSettingsView.swift */,
@@ -819,6 +825,7 @@
 				3E5060222D70FDA100376609 /* SetTimeZonePacket.swift in Sources */,
 				3E1532442D6F94E30020F015 /* AuthorizePacket.swift in Sources */,
 				3E3E78B52F6B2BA700DC4DF4 /* PatchDetailsView.swift in Sources */,
+				3E4961252FEC587C006EF07F /* ManualTempBasalView.swift in Sources */,
 				3E77FEC22D74B39800A15134 /* AlarmSettings.swift in Sources */,
 				3E767D522D67BC2E004B1971 /* MedtrumKitPumpManager+UI.swift in Sources */,
 				3E3E7BE42F6B365100DC4DF4 /* PreviousPatchDetailsViewModel.swift in Sources */,
@@ -836,6 +843,7 @@
 				3E0489052D74B82000E0B75A /* BasalType.swift in Sources */,
 				3E15324C2D6FA4280020F015 /* Int64.swift in Sources */,
 				3E1532462D6F95AC0020F015 /* CommandType.swift in Sources */,
+				3E4961272FEC5A4B006EF07F /* ManualTempBasalViewModel.swift in Sources */,
 				3E767D032D67B319004B1971 /* OSLog.swift in Sources */,
 				3E1390122D6E59B500A146C1 /* MedtrumPumpState.swift in Sources */,
 				3E3E7BE22F6B35A500DC4DF4 /* PreviousPatchDetailsView.swift in Sources */,
@@ -1229,13 +1237,15 @@
 		B7D3A8E82C148CC4002EE003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A754VLF58M;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.MedtrumKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1249,13 +1259,15 @@
 		B7D3A8E92C148CC4002EE003 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A754VLF58M;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.MedtrumKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -13,6 +13,7 @@ enum MedtrumUIScreen {
     case patchPrimingScreen
     case patchActivationScreen
     case settingsScreen
+    case manualTempBasalScreen
     case patchDetailsScreen
     case patchPreviousDetailsScreen
 }
@@ -223,6 +224,9 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
             let toSettings = {
                 self.navigateTo(.patchSettingsScreen)
             }
+            let toTempBasal = {
+                self.navigateTo(.manualTempBasalScreen)
+            }
             let toPatchDetails = {
                 self.navigateTo(.patchDetailsScreen)
             }
@@ -241,6 +245,7 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 toDeactivation,
                 toActivation,
                 toSettings,
+                toTempBasal,
                 toPatchDetails,
                 toPreviousPatchDetails,
                 toInsulinType,
@@ -251,6 +256,21 @@ class MedtrumKitUICoordinator: UINavigationController, PumpManagerOnboarding, Co
                 rootView: MedtrumKitSettings(viewModel: viewModel),
                 title: pumpManager?.state.pumpName ?? "Medtrum Nano"
             )
+
+        case .manualTempBasalScreen:
+            let viewModel = ManualTempBasalViewModel(
+                pumpManager: pumpManager,
+                goBack: { [weak self] in
+                    guard let self else { return }
+                    self.screenStack.removeLast()
+                    self.popViewController(animated: true)
+                }
+            )
+            return hostingController(
+                rootView: ManualTempBasalView(viewModel: viewModel),
+                title: String(localized: "Manual Temp Basal", comment: "header manual temp basal")
+            )
+
         case .patchDetailsScreen:
             let viewModel = PatchDetailsViewModel(pumpManager: pumpManager)
             return hostingController(

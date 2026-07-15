@@ -25,7 +25,8 @@ class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, Pu
     @Published var patchState: PatchState = .none
     @Published var patchStateString: String = PatchState.none.description
     @Published var basalType: DoseType = .basal
-    @Published var basalRate: Double = 0
+    @Published var basalRate: String = ""
+    @Published var tempBasalManual = false
     @Published var insulinType: InsulinType = .novolog
     @Published var lastSync = Date.distantPast
     @Published var hourlyLimit = 0
@@ -92,6 +93,7 @@ class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, Pu
     let deactivatePatchAction: () -> Void
     let pumpRemovalAction: () -> Void
     let toSettings: () -> Void
+    let toTempBasal: () -> Void
     let toPatchDetails: () -> Void
     let toPreviousPatchDetails: () -> Void
     let toInsulinType: () -> Void
@@ -104,6 +106,7 @@ class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, Pu
         _ deactivatePatchAction: @escaping () -> Void,
         _ pumpActivationAction: @escaping (Bool) -> Void,
         _ toSettings: @escaping () -> Void,
+        _ toTempBasal: @escaping () -> Void,
         _ toPatchDetails: @escaping () -> Void,
         _ toPreviousPatchDetails: @escaping () -> Void,
         _ toInsulinType: @escaping () -> Void,
@@ -118,6 +121,7 @@ class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, Pu
         self.toPatchDetails = toPatchDetails
         self.toPreviousPatchDetails = toPreviousPatchDetails
         self.toSettings = toSettings
+        self.toTempBasal = toTempBasal
         self.activatePatchAction = activatePatchAction
         super.init()
 
@@ -136,6 +140,29 @@ class MedtrumKitSettingsViewModel: PatchLifetimeFormatting, ObservableObject, Pu
 
     func reservoirText(for units: Double) -> String {
         reservoirVolumeFormatter.string(from: units as NSNumber) ?? ""
+    }
+
+    var tempBasalRemaining: String? {
+        guard basalType == .tempBasal, let pumpManager else {
+            return nil
+        }
+
+        let remaining = pumpManager.state.basalDose.estimatedEndDate.timeIntervalSinceNow
+        let hours = Int(floor(remaining.hours))
+        let minutes = Int(floor(remaining.minutes))
+
+        if hours > 0 {
+            return String(
+                format: String(localized: "(%lld hr %lld min)", comment: "temp basal remaining hours+minutes"),
+                hours,
+                minutes - hours * 60
+            )
+        }
+
+        return String(
+            format: String(localized: "(%lld min)", comment: "temp basal remaining minutes"),
+            minutes
+        )
     }
 
     var patchLifecycleDays: Int? {
@@ -366,7 +393,9 @@ extension MedtrumKitSettingsViewModel {
         pumpTimeSyncedAt = state.pumpTimeSyncedAt
         reservoirLevel = patchState != .reservoirEmpty ? state.reservoir : 0
         basalType = state.basalDose.type
-        basalRate = basalType == .tempBasal ? state.basalDose.value : state.currentBaseBasalRate
+        basalRate = basalRateFormatter
+            .string(from: (basalType == .tempBasal ? state.basalDose.value : state.currentBaseBasalRate) as NSNumber) ?? ""
+        tempBasalManual = state.basalDose.type == .tempBasal && !state.basalDose.automatic
         lastSync = state.lastSync
         patchActivatedAt = state.patchActivatedAt
         patchGracePeriodFrom = state.patchGracePeriodFrom

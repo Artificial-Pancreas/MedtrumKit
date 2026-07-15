@@ -155,6 +155,490 @@
         }
       }
     },
+    "(%lld hr %lld min)" : {
+      "comment" : "temp basal remaining hours+minutes",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld ساعة %lld دقيقة)"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld hod %lld min)"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld t %lld min)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld Std. %lld Min.)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld hr %lld min)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld h %lld min)"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld h %lld min)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld h %lld min)"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld שעות %lld דקות)"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld óra %lld perc)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld ore %lld minuti)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld 時間 %lld 分)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld 시간 %lld 분)"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld t %lld min)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld u %lld min)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld godz. %lld min.)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld h %lld min)"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld ore %lld minute)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld ч %lld мин)"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld hod. %lld min.)"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld ur %lld min)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld t %lld min)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld saat %lld dakika)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld год %lld хв)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld giờ %lld phút)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld 小时 %lld 分钟)"
+          }
+        }
+      }
+    },
+    "(%lld min)" : {
+      "comment" : "temp basal remaining minutes",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld دقيقة)"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld Min.)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld דקות)"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld perc)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld 分)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld 분)"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld мин)"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld min)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld dakika)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld хв)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld phút)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld 分钟)"
+          }
+        }
+      }
+    },
+    "%@ for %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ بدلاً من %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ místo %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ i stedet for %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ für %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ for %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ por %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ sijaan %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ au lieu de %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ עבור %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ helyett %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ al posto di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ の代わりに %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 대신 %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ for %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ voor %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ zamiast %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ em vez de %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ în locul lui %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ вместо %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ namiesto %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ za %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ för %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ yerine %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ замість %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ cho %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 代替 %@"
+          }
+        }
+      }
+    },
     "%@ units remaining at %@" : {
       "comment" : "Accessibility format string for (1: localized volume)(2: time)",
       "extractionState" : "manual",
@@ -317,6 +801,166 @@
         }
       }
     },
+    "%@ will not automatically adjust your insulin delivery until the temporary basal rate finishes or is canceled." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لن يقوم %@ بضبط كمية الأنسولين المُقدَّمة تلقائيًّا حتى تنتهي فترة المعدل الأساسي المؤقت أو يتم إلغاؤه."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ automaticky neupraví dávkování inzulínu, dokud dočasná bazální dávka neskončí nebo nebude zrušena."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vil ikke automatisk justere din insulintilførsel, før den midlertidige basale dosis er afsluttet eller annulleret."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ passt Ihre Insulinabgabe erst dann automatisch an, wenn die temporäre Basalrate abgelaufen ist oder abgebrochen wurde."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ will not automatically adjust your insulin delivery until the temporary basal rate finishes or is canceled."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ no ajustará automáticamente la administración de insulina hasta que finalice o se cancele la tasa basal temporal."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ei säädä insuliinin annostelua automaattisesti, ennen kuin väliaikainen perusannos päättyy tai se peruutetaan."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ n'ajustera pas automatiquement votre débit d'insuline tant que le débit basal temporaire n'aura pas pris fin ou n'aura pas été annulé."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ לא יתאים אוטומטית את אספקת האינסולין שלך עד ששיעור הבסיס הזמני יסתיים או יבוטל."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A %@ nem állítja be automatikusan az inzulinadagolást mindaddig, amíg az ideiglenes bazális adagolás le nem jár, vagy meg nem szüntetik."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ non regolerà automaticamente il rilascio di insulina finché il tasso basale temporaneo non sarà terminato o non verrà annullato."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@は、一時的な基礎インスリン投与が終了するか、キャンセルされるまで、インスリンの投与量を自動的に調整することはありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@는 일시적 기저 인슐린 투여가 종료되거나 취소될 때까지 인슐린 투여량을 자동으로 조정하지 않습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vil ikke automatisk justere insulintilførselen før den midlertidige basale hastigheten er fullført eller avbrutt."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ past de insulineafgifte niet automatisch aan totdat de tijdelijke basale dosis is afgelopen of is geannuleerd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ nie dostosuje automatycznie dawki insuliny, dopóki tymczasowa dawka podstawowa nie dobiegnie końca lub nie zostanie anulowana."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O %@ não ajustará automaticamente a administração de insulina até que a taxa basal temporária termine ou seja cancelada."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ nu va regla automat administrarea de insulină până când rata bazală temporară nu se încheie sau nu este anulată."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ не будет автоматически регулировать подачу инсулина до тех пор, пока временная базальная скорость не закончится или не будет отменена."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ automaticky neupraví podávanie inzulínu, kým sa dočasná bazálna rýchlosť neskončí alebo nebude zrušená."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ne bo samodejno prilagodil dovajanja insulina, dokler se začasna bazalna hitrost ne zaključi ali se prekliče."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kommer inte att justera din insulintillförsel automatiskt förrän den tillfälliga basaldosen har avslutats eller avbrutits."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, geçici bazal hız sona erene veya iptal edilene kadar insülin verimini otomatik olarak ayarlamayacaktır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ не буде автоматично коригувати подачу інсуліну, доки тимчасовий базовий рівень не закінчиться або не буде скасований."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ sẽ không tự động điều chỉnh việc cung cấp insulin của bạn cho đến khi tỷ lệ cơ bản tạm thời kết thúc hoặc bị hủy bỏ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在临时基础率结束或被取消之前，%@ 不会自动调整您的胰岛素输注量。"
+          }
+        }
+      }
+    },
     "%@U" : {
       "comment" : "Format string for reservoir volume. (1: The localized volume)",
       "extractionState" : "manual",
@@ -475,6 +1119,330 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@U"
+          }
+        }
+      }
+    },
+    "%lld hr %lld min" : {
+      "comment" : "temp basal remaining hours+minutes",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ساعة %lld دقيقة"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld hod %lld min"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld time %lld minut"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Std. %lld Min."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld hr %lld min"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld h %lld min"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld tuntia %lld minuuttia"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld h %lld min"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld שעה %lld דקות"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld óra %lld perc"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ore %lld minuti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 時間 %lld 分"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 시간 %lld 분"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld time %lld minutt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld uur %lld minuten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld godz. %lld min."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld hora %lld minuto"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ore %lld minute"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld час %lld минут"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld hodín %lld minút"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ur %lld min"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld tim %lld min"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld saat %lld dakika"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld год %lld хв"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld giờ %lld phút"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 小时 %lld 分钟"
+          }
+        }
+      }
+    },
+    "%lld min" : {
+      "comment" : "temp basal remaining minutes",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld دقيقة"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld דקות"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld perc"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 分"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 분"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld мин"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dakika"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld хв"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld phút"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 分钟"
           }
         }
       }
@@ -6670,6 +7638,9 @@
           }
         }
       }
+    },
+    "Bolus in progress..." : {
+
     },
     "Bolus issue. Patch is already bolussing" : {
       "comment" : "MedtrumError patch bolussing",
@@ -17283,6 +18254,166 @@
         }
       }
     },
+    "Manual Temp Basal" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المعدل الأساسي اليدوي"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruční nastavení bazální dávky"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuel basalindstilling"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuelle Basalrate"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manual Temp Basal"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura basal manual"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuaalinen perusannos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglage manuel de la température basale"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "טמפ בסיסי ידני"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kézi beállítás – Bazális hőmérséklet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura manuale Basale"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手動・温度・基礎インスリン"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수동, 체온, 기저율"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuell basalinnstilling"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Handmatige basale temperatuurinstelling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ręczne ustawianie tempy bazowej"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura basal manual"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatură bazală setată manual"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ручная настройка базальной дозы"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ručné nastavenie bazálnej dávky"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ročno nastavitev bazalne temperature"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuell basaldos"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuel Bazal Sıcaklık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ручне регулювання базової температури"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhiệt độ cơ bản bằng tay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手动基础率"
+          }
+        }
+      }
+    },
     "Manually sync Pump time" : {
       "comment" : "Label for syncing the time on the pump",
       "extractionState" : "manual",
@@ -24915,6 +26046,166 @@
         }
       }
     },
+    "Rate" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التقييم"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sazba"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurs"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zinssatz"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarifa"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korko"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taux"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "תעריף"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Értékelés"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tasso"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レート"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "요율"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vurdering"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarief"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocena"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxa"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rată"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оценить"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurz"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocena"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Betyg"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oran"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцінка"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tỷ lệ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "评分"
+          }
+        }
+      }
+    },
     "Reconnect" : {
       "comment" : "reconnect to patch",
       "extractionState" : "manual",
@@ -27615,6 +28906,168 @@
         }
       }
     },
+    "Set Manual Temp Basal" : {
+      "comment" : "Button text for setting manual temporary basal rate",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ضبط معدل الأنسولين الأساسي المؤقت يدويًا"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavit ruční dočasnou bazální dávku"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indstil manuel midlertidig basalrate"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuelle temporäre Basalrate einstellen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Manual Temp Basal"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establecer tasa basal temporal manual"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aseta manuaalinen väliaikainen perusannos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir le débit basal temporaire manuel"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הגדרת טמפרטורה בסיסית ידנית"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kézi ideiglenes bazális beállítása"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta tasso basale temporaneo manuale"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手動一時ベースレートを設定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수동 임시 기저율 설정"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angi manuell midlertidig basalrate"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Handmatige tijdelijke basale dosering instellen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw ręczną tymczasową dawkę bazową"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir taxa basal temporária manual"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setare rată bazală temporară manuală"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установить ручную временную базовую дозу"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastaviť manuálnu dočasnú bazálnu dávku"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavi ročno začasno bazalno stopnjo"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ställ in manuell tillfällig basaldos"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuel Geçici Bazal Hızı Ayarla"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштувати ручну тимчасову базову дозу"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đặt nhiệt độ cơ bản bằng tay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置手动临时基础率"
+          }
+        }
+      }
+    },
     "Share Medtrum patch logs" : {
       "comment" : "Share logs",
       "extractionState" : "manual",
@@ -28401,164 +29854,164 @@
         }
       }
     },
-    "Stop temp basal" : {
+    "Stop Temp Basal" : {
       "comment" : "Stop temp basal",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "وقف درجة الحرارة القاعدية"
+            "value" : "إيقاف الجرعة الأساسية المؤقتة"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastavení bazální teploty"
+            "value" : "Zastavit dočasnou bazální dávku"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stop temp basal"
+            "value" : "Stop temp-basal"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Temp. basal anhalten"
+            "value" : "Temporäres Basal anhalten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stop temp basal"
+            "value" : "Stop Temp Basal"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Parada temp basal"
+            "value" : "Detener la dosis basal temporal"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pysäytä temp basal"
+            "value" : "Pysäytä väliaikainen perusannos"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arrêt de la température basale"
+            "value" : "Arrêter le débit basal temporaire"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "עצור את הטמפרטורה הבסיסית"
+            "value" : "עצור את טמפ בזל"
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stop temp basal"
+            "value" : "Ideiglenes bazális adag leállítása"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Interruzione della temperatura basale"
+            "value" : "Interrompi il basale temporaneo"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "基礎体温停止"
+            "value" : "一時的な基礎インスリンを停止する"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "임시 기본값 중지"
+            "value" : "임시 기저율 중지"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stopp temp basal"
+            "value" : "Stopp midlertidig basal"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stop temp basaal"
+            "value" : "Basale temp. stoppen"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zatrzymanie temperatury podstawowej"
+            "value" : "Zatrzymaj tymczasową dawkę podstawową"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Parar a temperatura basal"
+            "value" : "Interromper a taxa basal temporária"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opriți bazala temporară"
+            "value" : "Oprire bazal temporar"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Прекратите базальную температуру"
+            "value" : "Остановить временную базовую дозу"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastavenie bazálnej teploty"
+            "value" : "Zastaviť dočasnú bazálnu dávku"
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ustavite temp bazalno"
+            "value" : "Zaustavi začasno bazalno dozo"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stoppa temp basal"
+            "value" : "Stoppa tillfällig basal"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bazal sıcaklığı durdur"
+            "value" : "Geçici Bazal Akışı Durdur"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Зупинка базальної температури"
+            "value" : "Припинити тимчасовий базовий рівень"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ngừng nhiệt độ cơ bản"
+            "value" : "Dừng nhiệt độ cơ bản"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "停止基础温度"
+            "value" : "停止临时基础胰岛素"
           }
         }
       }
@@ -30021,7 +31474,7 @@
         }
       }
     },
-    "Sync patch data" : {
+    "Sync Patch Data" : {
       "comment" : "sync pump",
       "extractionState" : "manual",
       "localizations" : {
@@ -30033,38 +31486,44 @@
         },
         "da" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Synchronizovat data záplaty"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synkroniser patch-data"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Patch-Daten synchronisieren"
+            "value" : "Synchronisieren von Patch-Daten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sync patch data"
+            "value" : "Sync Patch Data"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Sincronizar datos de parches"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Synkronoi korjauspäivitystiedot"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Synchroniser les données de patch"
           }
         },
         "he" : {
@@ -30076,13 +31535,13 @@
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Szinkronizálás patch adatok"
+            "value" : "Szinkronizálja a javítás adatait"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Sincronizza i dati delle patch"
           }
         },
         "hu" : {
@@ -30099,20 +31558,20 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Synkroniser patch-data"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pompgegevens synchroniseren"
+            "value" : "Synchronisatie data"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Synchronizacja danych poprawek"
           }
         },
         "pt" : {
@@ -30123,26 +31582,26 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Sincronizar dados de patch"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sincronizare date plasture"
+            "value" : "Sincronizare date patch"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Синхронизировать данные патча"
+            "value" : "Синхронизация данных патчей"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Synchronizovať dáta z náplasti"
+            "value" : "Synchronizácia údajov o záplatách"
           }
         },
         "sv" : {
@@ -30153,20 +31612,20 @@
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "Senkronizasyon Yama Verileri"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Синхронізація даних Патчів"
+            "value" : "Синхронізувати дані патчів"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Đồng bộ dữ liệu Patch"
+            "value" : "Đồng bộ hóa dữ liệu bản vá"
           }
         },
         "zh-Hans" : {
