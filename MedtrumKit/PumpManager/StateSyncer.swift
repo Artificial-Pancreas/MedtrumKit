@@ -135,11 +135,8 @@ enum StateSyncer {
                 completed: bolusProgress.completed,
                 useEstimatedEndDate: duringReconnect
             )
-            pumpManager.state.bolusState = bolusProgress.completed ? .noBolus : .inProgress
         } else if duringReconnect {
             pumpManager.checkBolusDone()
-        } else {
-            pumpManager.state.bolusState = .noBolus
         }
 
         pumpManager.notifyStateDidChange()

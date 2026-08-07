@@ -3638,7 +3638,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "激活新补丁"
+            "value" : "激活新储药器"
           }
         }
       }
@@ -3793,8 +3793,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Activate patch"
+            "state" : "translated",
+            "value" : "激活储药器"
           }
         }
       }
@@ -3956,7 +3956,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "激活补丁"
+            "value" : "激活储药器"
           }
         }
       }
@@ -4118,7 +4118,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁激活于"
+            "value" : "储药器激活于"
           }
         }
       }
@@ -5726,7 +5726,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "警报：补丁故障"
+            "value" : "警报：储药器故障"
           }
         }
       }
@@ -6511,8 +6511,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Authenticate & deactivate patch"
+            "state" : "translated",
+            "value" : "验证并停用储药器"
           }
         }
       }
@@ -7634,13 +7634,10 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "玻流体"
+            "value" : "大剂量"
           }
         }
       }
-    },
-    "Bolus in progress..." : {
-
     },
     "Bolus issue. Patch is already bolussing" : {
       "comment" : "MedtrumError patch bolussing",
@@ -7799,7 +7796,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "栓剂问题。补丁已经在栓塞"
+            "value" : "推注问题。储药器已经在推注"
           }
         }
       }
@@ -7961,7 +7958,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "栓剂问题。补丁暂停。恢复配送"
+            "value" : "栓剂问题。储药器暂停。恢复配送"
           }
         }
       }
@@ -8603,7 +8600,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "现在就更换补丁。胰岛素输送将在 %@ 或胰岛素耗尽时停止。"
+            "value" : "现在就更换储药器。胰岛素输送将在 %@ 或胰岛素耗尽时停止。"
           }
         }
       }
@@ -8765,7 +8762,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "现在就更换补丁。胰岛素输送将在 %@ 或胰岛素耗尽时停止。"
+            "value" : "现在就更换储药器。胰岛素输送将在 %@ 或胰岛素耗尽时停止。"
           }
         }
       }
@@ -9548,8 +9545,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Connect your pump base to the patch."
+            "state" : "translated",
+            "value" : "将您的泵库连接到储药器。"
           }
         }
       }
@@ -10664,8 +10661,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate patch"
+            "state" : "translated",
+            "value" : "停用储药器"
           }
         }
       }
@@ -10820,8 +10817,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Deactivate Patch"
+            "state" : "translated",
+            "value" : "停用储药器"
           }
         }
       }
@@ -12074,8 +12071,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Do not attach the patch to the body yet"
+            "state" : "translated",
+            "value" : "不要把储药器直接贴在身体上"
           }
         }
       }
@@ -12560,6 +12557,168 @@
         }
       }
     },
+    "Enable Silent tones" : {
+      "comment" : "silent tones label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تمكين النغمات الصامتة"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapnout tiché tóny"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivér lydløse toner"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stille Töne aktivieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Silent tones"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar tonos silenciosos"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ota hiljaiset äänet käyttöön"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer les sonneries silencieuses"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הפעל צלילים שקטים"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Csendes hangjelzések engedélyezése"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abilita i toni silenziosi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイレントトーンを有効にする"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "무음 알림음 활성화"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiver stille toner"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stille tonen inschakelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz ciche sygnały"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativar toques silenciosos"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activează tonurile silențioase"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включить бесшумные сигналы"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapnúť tiché tóny"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omogoči tihe tone"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivera tysta signaler"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sessiz tonları etkinleştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкнути беззвучні сигнали"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kích hoạt âm thanh im lặng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启用静音铃声"
+          }
+        }
+      }
+    },
     "Expiration" : {
       "comment" : "Text for expiresAt",
       "extractionState" : "manual",
@@ -12717,7 +12876,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁过期于"
+            "value" : "储药器过期于"
           }
         }
       }
@@ -13190,8 +13349,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Extended Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "扩展储药器已过期。仅限使用基础率功能。"
           }
         }
       }
@@ -13353,7 +13512,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "连接补丁失败"
+            "value" : "连接储药器失败"
           }
         }
       }
@@ -13515,7 +13674,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "连接补丁失败 -> 已超时"
+            "value" : "连接储药器失败 -> 已超时"
           }
         }
       }
@@ -13832,8 +13991,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the patch with insulin. NOTE: A minimum of 70U is required for activation."
+            "state" : "translated",
+            "value" : "用绝缘填充储药器。注意：激活至少需要70U。"
           }
         }
       }
@@ -13988,8 +14147,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fill the syringe with insulin"
+            "state" : "translated",
+            "value" : "用注射器注入胰岛素"
           }
         }
       }
@@ -15255,7 +15414,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您希望最大暂停补丁多长时间？之后将自动恢复。"
+            "value" : "您希望最大暂停储药器多长时间？之后将自动恢复。"
           }
         }
       }
@@ -15729,7 +15888,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胰岛素\n暂停使用"
+            "value" : "胰岛素\n暂停"
           }
         }
       }
@@ -16197,7 +16356,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胰岛素余量"
+            "value" : "剩余胰岛素"
           }
         }
       }
@@ -17468,8 +17627,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and beep"
+            "state" : "translated",
+            "value" : "灯光和响铃"
           }
         }
       }
@@ -17624,8 +17783,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Light and vibrate"
+            "state" : "translated",
+            "value" : "灯光和振动"
           }
         }
       }
@@ -18248,8 +18407,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Make sure the Serial Number is correct before connecting it to the patch."
+            "state" : "translated",
+            "value" : "在连接到储药器前，请确保序列号正确。"
           }
         }
       }
@@ -18720,8 +18879,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max daily insulin"
+            "state" : "translated",
+            "value" : "每日最大胰岛素量"
           }
         }
       }
@@ -18876,8 +19035,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Max hourly insulin"
+            "state" : "translated",
+            "value" : "每小时最大胰岛素量"
           }
         }
       }
@@ -19344,8 +19503,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No active patch"
+            "state" : "translated",
+            "value" : "没有激活的储药器"
           }
         }
       }
@@ -19831,7 +19990,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "不送货"
+            "value" : "没有输注"
           }
         }
       }
@@ -20148,8 +20307,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No patch"
+            "state" : "translated",
+            "value" : "无储药器"
           }
         }
       }
@@ -20778,8 +20937,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Notification for expirate patch"
+            "state" : "translated",
+            "value" : "过期储药器通知"
           }
         }
       }
@@ -20941,7 +21100,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "水库水位低时的通知"
+            "value" : "蓄药池低位通知"
           }
         }
       }
@@ -21433,7 +21592,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁激活"
+            "value" : "储药器激活"
           }
         }
       }
@@ -21595,7 +21754,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁激活"
+            "value" : "储药器激活"
           }
         }
       }
@@ -21763,7 +21922,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁详情"
+            "value" : "储药器详情"
           }
         }
       }
@@ -21925,7 +22084,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁错误"
+            "value" : "储药器错误"
           }
         }
       }
@@ -22080,8 +22239,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired"
+            "state" : "translated",
+            "value" : "储药器已过期"
           }
         }
       }
@@ -22230,8 +22389,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch expired. Basal only."
+            "state" : "translated",
+            "value" : "储药器已过期。仅限使用基础率功能。"
           }
         }
       }
@@ -22386,8 +22545,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch ID"
+            "state" : "translated",
+            "value" : "储药器ID"
           }
         }
       }
@@ -22549,7 +22708,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁程序已暂停。已超出 %lld 个 U 的限制。如果您提高限制，即可立即清除此警告。如果您稍等片刻，补丁程序将在足够长的时间后恢复运行。"
+            "value" : "储药器程序已暂停。已超出 %lld 个 U 的限制。如果您提高限制，即可立即清除此警告。如果您稍等片刻，储药器程序将在足够长的时间后恢复运行。"
           }
         }
       }
@@ -22704,8 +22863,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch lifetime"
+            "state" : "translated",
+            "value" : "储药器有效期"
           }
         }
       }
@@ -22867,7 +23026,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁生存期"
+            "value" : "储药器有效期"
           }
         }
       }
@@ -23022,8 +23181,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch priming"
+            "state" : "translated",
+            "value" : "储药器设置"
           }
         }
       }
@@ -23185,7 +23344,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁设置"
+            "value" : "储药器设置"
           }
         }
       }
@@ -23347,7 +23506,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁替换"
+            "value" : "储药器替换"
           }
         }
       }
@@ -23502,8 +23661,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch settings"
+            "state" : "translated",
+            "value" : "储药器设置"
           }
         }
       }
@@ -23665,7 +23824,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁设置"
+            "value" : "储药器设置"
           }
         }
       }
@@ -23820,8 +23979,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch state"
+            "state" : "translated",
+            "value" : "储药器状态"
           }
         }
       }
@@ -23983,7 +24142,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁状态"
+            "value" : "储药器状态"
           }
         }
       }
@@ -24138,8 +24297,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Patch time"
+            "state" : "translated",
+            "value" : "储药器时间"
           }
         }
       }
@@ -24301,7 +24460,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "补丁时间"
+            "value" : "储药器时间"
           }
         }
       }
@@ -24618,8 +24777,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Place the syringe in the patch and pull out 1 to 2 dashes of air."
+            "state" : "translated",
+            "value" : "将注射器放在储药器中，然后排出1到2个残留气泡。"
           }
         }
       }
@@ -25086,8 +25245,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Previous Patch Details"
+            "state" : "translated",
+            "value" : "之前的储药器详情"
           }
         }
       }
@@ -25249,7 +25408,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "引线"
+            "value" : "启动的"
           }
         }
       }
@@ -25411,7 +25570,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "打底"
+            "value" : "启动"
           }
         }
       }
@@ -25884,8 +26043,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pump base settings"
+            "state" : "translated",
+            "value" : "泵基础设置"
           }
         }
       }
@@ -26668,8 +26827,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove Pump"
+            "state" : "translated",
+            "value" : "移除泵"
           }
         }
       }
@@ -26824,8 +26983,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove the safety cover from the patch."
+            "state" : "translated",
+            "value" : "从储药器中移除安全盖。"
           }
         }
       }
@@ -26980,8 +27139,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Replace your patch now!"
+            "state" : "translated",
+            "value" : "现在就更换储药器！"
           }
         }
       }
@@ -27143,7 +27302,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "蓄水池空"
+            "value" : "蓄药池空"
           }
         }
       }
@@ -27473,7 +27632,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "水库低位（%lld U）"
+            "value" : "蓄药池低位（%lld U）"
           }
         }
       }
@@ -27635,7 +27794,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "简历"
+            "value" : "恢复"
           }
         }
       }
@@ -27797,7 +27956,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "简历交付"
+            "value" : "恢复输注"
           }
         }
       }
@@ -27959,7 +28118,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "简历交付"
+            "value" : "恢复输注"
           }
         }
       }
@@ -28121,7 +28280,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "节省"
+            "value" : "保存"
           }
         }
       }
@@ -28433,7 +28592,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "预设基础率"
+            "value" : "预设的基础率"
           }
         }
       }
@@ -28588,8 +28747,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select insulin type"
+            "state" : "translated",
+            "value" : "选择胰岛素类型"
           }
         }
       }
@@ -28744,8 +28903,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Select the type of insulin that you will be using"
+            "state" : "translated",
+            "value" : "选择您将使用的胰岛素类型"
           }
         }
       }
@@ -30011,7 +30170,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "停止临时基础胰岛素"
+            "value" : "停止临时基础率"
           }
         }
       }
@@ -30335,7 +30494,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "暂停交付"
+            "value" : "暂停输注"
           }
         }
       }
@@ -30659,7 +30818,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "暂停补丁"
+            "value" : "暂停储药器"
           }
         }
       }
@@ -31469,7 +31628,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "暂停 - 低 BG"
+            "value" : "暂停 - 低血糖"
           }
         }
       }
@@ -31630,8 +31789,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync patch data"
+            "state" : "translated",
+            "value" : "同步储药器数据"
           }
         }
       }
@@ -31942,8 +32101,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The patch is intended to be used for only 3 days and 8 hours. Exceeding this time may cause the patch to become unreliable. This is NOT recommended. Consider using normal lifetime. Please be aware that new firmware in the latest generation of pump bases may block bolus commands after 5 days (120 hours)."
+            "state" : "translated",
+            "value" : "药贴只能使用 3 天 8 小时。超过这个时间可能会导致贴片变得不可靠。不建议这样做。请考虑使用正常有效期。请注意，最新一代泵体中的新固件可能会在 5 天（120 小时）后阻止大剂量输注命令。"
           }
         }
       }
@@ -32566,8 +32725,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Toggle heartbeat mode"
+            "state" : "translated",
+            "value" : "切换心跳模式（后台刷新）"
           }
         }
       }
@@ -33358,8 +33517,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Use normal lifetime (3d 8h)"
+            "state" : "translated",
+            "value" : "使用正常有效期(3天8小时)"
           }
         }
       }
@@ -33514,8 +33673,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Vibrate and beep"
+            "state" : "translated",
+            "value" : "震动并响铃"
           }
         }
       }
@@ -33982,8 +34141,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "When clicking on the button, you will get a Biometrics prompt. Once completed, the patch will be deactivated and you will be prompted to pair a new patch."
+            "state" : "translated",
+            "value" : "点击按钮后，您将看到一个生物识别提示。完成操作后，储药器将被停用，并提示您配对新的储药器。"
           }
         }
       }
@@ -34138,8 +34297,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Disable heartbeat mode"
+            "state" : "translated",
+            "value" : "是，禁用心跳模式（后台刷新）"
           }
         }
       }
@@ -34294,8 +34453,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Yes, Enable heartbeat mode"
+            "state" : "translated",
+            "value" : "是，启用心跳模式（后台刷新）"
           }
         }
       }
@@ -34606,8 +34765,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "You will start by setting up your insulin type & basic patch settings before activating your patch."
+            "state" : "translated",
+            "value" : "在激活储药器之前，您将先设置您的胰岛素类型和储药器基础设置。"
           }
         }
       }
@@ -34775,7 +34934,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您的补丁还剩 %lld 小时"
+            "value" : "您的储药器还剩 %lld 小时"
           }
         }
       }
@@ -34930,8 +35089,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has detected an occlussion!"
+            "state" : "translated",
+            "value" : "您的储药器检测到了异常！"
           }
         }
       }
@@ -35086,8 +35245,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its daily maximum!"
+            "state" : "translated",
+            "value" : "您的储药器已达到每日使用上限最大值！"
           }
         }
       }
@@ -35242,8 +35401,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch has reached its hourly maximum!"
+            "state" : "translated",
+            "value" : "您的储药器已达到每小时使用上限最大值！"
           }
         }
       }
@@ -35398,8 +35557,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is in Fault state!"
+            "state" : "translated",
+            "value" : "您的储药器处于故障状态！"
           }
         }
       }
@@ -35554,8 +35713,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is out of insulin!"
+            "state" : "translated",
+            "value" : "你的胰岛素储药器用完了"
           }
         }
       }
@@ -35710,8 +35869,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch is running out of insulin!"
+            "state" : "translated",
+            "value" : "您的储药器胰岛素正在耗尽！"
           }
         }
       }
@@ -35866,8 +36025,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your patch will expire soon!"
+            "state" : "translated",
+            "value" : "您的储药器即将过期！"
           }
         }
       }
