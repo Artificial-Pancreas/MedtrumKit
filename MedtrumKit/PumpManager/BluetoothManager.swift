@@ -12,12 +12,21 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     private var peripheralManager: PeripheralManager?
     private var forcedDisconnect: Bool = false
 
-    var scanCompletion: ((MedtrumScanResult) -> Void)?
+    private var scanCompletion: ((MedtrumScanResult) -> Void)?
 
     private var attempt: ConnectAttempt?
 
+    private var reconnectAttempts = 0
+    private var reconnectTask: Task<Void, Never>?
+
+    // MUST NOT be called from within managerQueue - deadlock
     public var isConnected: Bool {
-        if let peripheral = peripheral, peripheral.state == .connected {
+        managerQueue.sync { isConnectedOnQueue }
+    }
+
+    /// a live link alone is not yet a usable session
+    private var isConnectedOnQueue: Bool {
+        if let peripheral = peripheral, peripheral.state == .connected, peripheralManager?.isReady == true {
             return true
         }
 
@@ -36,7 +45,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         }
     }
 
-    func startScan(_ completion: @escaping (_ result: MedtrumScanResult) -> Void) {
+    private func startScan(_ completion: @escaping (_ result: MedtrumScanResult) -> Void) {
         if let pumpManager = self.pumpManager, pumpManager.state.pumpSN.isEmpty {
             completion(.failure(error: .noSerialNumberAvailable))
             return
@@ -63,13 +72,49 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             scanCompletion = nil
         }
 
-        logger.info("Connecting to \(peripheral)")
+        // cancelling a pending connect does not always produce a didDisconnect
+        forcedDisconnect = false
 
         self.peripheral = peripheral
+
+        // a connect from an earlier attempt can still be pending
+        guard peripheral.state != .connecting else {
+            logger.info("Connect already pending, waiting on it")
+            return
+        }
+
+        logger.info("Connecting to \(peripheral)")
         manager.connect(peripheral)
     }
 
-    /// Reports `attempt`, if nobody has yet. Safe to call from anywhere, as often as you like.
+    /// anything that mutates connection state must check this.
+    private func isCurrent(_ candidate: CBPeripheral) -> Bool {
+        candidate.identifier == peripheral?.identifier
+    }
+
+    /// Disconnects only if `manager` is still the one driving the link
+    func disconnect(ifCurrent candidate: PeripheralManager) {
+        managerQueue.async {
+            guard self.peripheralManager === candidate else {
+                return
+            }
+
+            self.disconnectOnQueue(force: false)
+        }
+    }
+
+    /// Hands a result to a caller. Never on the current thread: completions issue blocking BLE
+    /// writes: from the main thread that freezes the UI for up to 30s per packet (syncPumpTime
+    /// sends three), and from managerQueue - which every caller of this is now on - it would
+    /// deadlock outright, since that is the queue the response has to be delivered on.
+    private func report(_ error: MedtrumConnectError?, to completion: @escaping (MedtrumConnectError?) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            completion(error)
+        }
+    }
+
+    /// Reports `attempt` to everyone waiting on it, if nobody has yet. Must be called on
+    /// `managerQueue`.
     private func finish(_ attempt: ConnectAttempt, _ error: MedtrumConnectError?) {
         guard attempt.claim() else {
             return
@@ -79,29 +124,104 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             self.attempt = nil
         }
 
-        // Never on the caller's thread. Completions issue blocking BLE writes: from the main thread
-        // that freezes the UI for up to 30s per packet (syncPumpTime sends three), and from
-        // managerQueue it would deadlock outright - that is the queue the response has to be
-        // delivered on. Today the managerQueue callers only ever report an error, and every
-        // completion returns early on error before writing, but nothing enforces that.
-        DispatchQueue.global(qos: .userInitiated).async {
-            attempt.completion(error)
+        if error == nil {
+            reconnectAttempts = 0
+            reconnectTask?.cancel()
+            reconnectTask = nil
+            rememberPeripheral()
+        } else {
+            scheduleReconnect()
+        }
+
+        for completion in attempt.completions {
+            report(error, to: completion)
+        }
+    }
+
+    private func rememberPeripheral() {
+        guard let pumpManager, let peripheral, pumpManager.state.peripheralIdentifier != peripheral.identifier else {
+            return
+        }
+
+        pumpManager.state.peripheralIdentifier = peripheral.identifier
+        pumpManager.notifyStateDidChange()
+    }
+
+    /// Must be called on `managerQueue`.
+    private func scheduleReconnect() {
+        // `ensureConnectedOnQueue` can retrieve the peripheral from stored identifier
+        guard peripheral != nil || pumpManager?.state.peripheralIdentifier != nil else {
+            // otherwise we would be retrying a scan, which doesn't work in the background
+            return
+        }
+
+        let seconds: TimeInterval = reconnectAttempts == 0
+            ? 0
+            : min(TimeInterval(1 << min(reconnectAttempts, 6)), 60)
+        reconnectAttempts += 1
+
+        logger.info("Scheduling reconnect #\(reconnectAttempts) in \(Int(seconds))s")
+
+        reconnectTask?.cancel()
+        reconnectTask = Task { [weak self] in
+            if seconds > 0 {
+                try? await Task.sleep(nanoseconds: UInt64(seconds) * 1_000_000_000)
+                if Task.isCancelled {
+                    return
+                }
+            }
+
+            guard let self else {
+                return
+            }
+
+            managerQueue.async {
+                guard self.attempt == nil,
+                      !self.isConnectedOnQueue,
+                      self.peripheral != nil || self.pumpManager?.state.peripheralIdentifier != nil
+                else {
+                    return
+                }
+
+                self.ensureConnectedOnQueue { error in
+                    if let error = error {
+                        self.logger.warning("Failed to auto-reconnect: \(error)")
+                    }
+                }
+            }
         }
     }
 
     func ensureConnected(_ completion: @escaping (MedtrumConnectError?) -> Void) {
-        guard attempt == nil else {
-            logger.error("EnsureConnected is already running...")
-            completion(.failedToConnectToDevice)
+        managerQueue.async {
+            self.ensureConnectedOnQueue(completion)
+        }
+    }
+
+    private func ensureConnectedOnQueue(_ completion: @escaping (MedtrumConnectError?) -> Void) {
+        // Wait on the connect already in flight instead of failing. A connect owns the link for as
+        // long as auth, synchronize and subscribe take, and anything the loop or the user asks for
+        // in that window used to be turned away outright - a bolus issued in the same second as a
+        // reconnect would fail while the link it needed came up moments later.
+        if let inFlight = attempt {
+            logger.debug("EnsureConnected is already running, waiting on it")
+            inFlight.addCompletion(completion)
             return
         }
 
         let attempt = ConnectAttempt(completion)
         self.attempt = attempt
 
-        if let peripheral = peripheral, peripheral.state == .connected {
+        if isConnectedOnQueue {
             logger.debug("Already connect!")
             finish(attempt, nil)
+            return
+        }
+
+        if let peripheral = peripheral, peripheral.state == .connected {
+            logger.warning("Connected but the session is not ready, dropping the link to rebuild it")
+            startTimeout(attempt, seconds: .seconds(15))
+            manager.cancelPeripheralConnection(peripheral)
             return
         }
 
@@ -178,6 +298,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     private func armTimeout(_ attempt: ConnectAttempt, seconds: TimeInterval) {
         attempt.timeout?.cancel()
         attempt.armedAt = .now
+        attempt.timeoutGeneration &+= 1
+        let generation = attempt.timeoutGeneration
 
         attempt.timeout = Task { [weak self, weak attempt] in
             do {
@@ -187,45 +309,54 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
                 return
             }
 
-            // The one condition that matters: is this still the attempt in flight? Covers being
-            // superseded by a re-arm, and waking a moment before cancellation landed.
-            guard let self, let attempt, self.attempt === attempt else {
+            guard let self else {
                 return
             }
 
-            // `Task.sleep` is frozen while iOS has the app suspended, so waking far past the budget
-            // means we were asleep for most of it rather than waiting on a pump that never answered
-            // - and we typically wake because the connection we were waiting for just arrived. Give
-            // the attempt the budget it never got instead of failing a connect that may be landing
-            // in this very instant. Bounded, so a phone that keeps suspending still terminates.
-            let elapsed = Date.now.timeIntervalSince(attempt.armedAt)
-            if elapsed > seconds * 2, attempt.remainingExtensions > 0 {
-                attempt.remainingExtensions -= 1
-                self.logger
-                    .warning(
-                        "Timeout woke after \(Int(elapsed))s of a \(Int(seconds))s budget - app was suspended, re-arming"
-                    )
-                self.armTimeout(attempt, seconds: seconds)
-                return
+            managerQueue.async { [weak self, weak attempt] in
+                // is this still the attempt in flight? Covers being superseded by a re-arm, and waking a moment before cancellation landed.
+                guard let self, let attempt, self.attempt === attempt,
+                      attempt.timeoutGeneration == generation
+                else {
+                    return
+                }
+
+                // `Task.sleep` is frozen while iOS has the app suspended, so waking far past the budget
+                // means we were asleep for most of it rather than waiting on a pump that never answered
+                // - and we typically wake because the connection we were waiting for just arrived. Give
+                // the attempt the budget it never got instead of failing a connect that may be landing
+                // in this very instant. Bounded, so a phone that keeps suspending still terminates.
+                let elapsed = Date.now.timeIntervalSince(attempt.armedAt)
+                if elapsed > seconds * 2, attempt.remainingExtensions > 0 {
+                    attempt.remainingExtensions -= 1
+                    self.logger
+                        .warning(
+                            "Timeout woke after \(Int(elapsed))s of a \(Int(seconds))s budget - app was suspended, re-arming"
+                        )
+                    self.armTimeout(attempt, seconds: seconds)
+                    return
+                }
+
+                // Don't skip this just because the peripheral is connected by now: the link coming up
+                // is not the same as being ready, since auth, synchronize and subscribe still follow.
+                // Skipping would leave the attempt in flight with nothing to clear it, wedging every
+                // later ensureConnected. didConnect re-arms us on a longer budget.
+                self.logger.error("Failed to connect: Timeout reached...")
+
+                if self.manager.isScanning {
+                    self.manager.stopScan()
+                    self.scanCompletion = nil
+                }
+
+                self.finish(attempt, .failedToConnectToDevice)
             }
-
-            // Don't skip this just because the peripheral is connected by now: the link coming up
-            // is not the same as being ready, since auth, synchronize and subscribe still follow.
-            // Skipping would leave the attempt in flight with nothing to clear it, wedging every
-            // later ensureConnected. didConnect re-arms us on a longer budget.
-            self.logger.error("Failed to connect: Timeout reached...")
-
-            if self.manager.isScanning {
-                self.manager.stopScan()
-                self.scanCompletion = nil
-            }
-
-            self.finish(attempt, .failedToConnectToDevice)
         }
     }
 
     func write(_ packet: any MedtrumBasePacketProtocol) -> MedtrumWriteResult<Any> {
-        guard let peripheralManager else {
+        // Only the lookup is serialised. writePacket blocks for up to 30s waiting for a response
+        // that is delivered on managerQueue, so it must not be holding the queue while it waits.
+        guard let peripheralManager = managerQueue.sync(execute: { self.peripheralManager }) else {
             return .failure(error: .noManager)
         }
 
@@ -233,14 +364,24 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     }
 
     func disconnect(force: Bool = false) {
-        forcedDisconnect = force
+        managerQueue.async {
+            self.disconnectOnQueue(force: force)
+        }
+    }
 
-        if let peripheral, peripheral.state == .connected {
+    private func disconnectOnQueue(force: Bool) {
+        // forcedDisconnect is set to true only here, normal disconnects should not abort the force disconnect
+        if force {
+            forcedDisconnect = true
+        }
+
+        // both .connected AND .connecting
+        if let peripheral, peripheral.state != .disconnected {
             manager.cancelPeripheralConnection(peripheral)
         }
 
         if force {
-            clearPeripheral()
+            clearPeripheralOnQueue()
         }
     }
 
@@ -248,13 +389,38 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     /// swapped for another one. It also drops the stored identifier, so the next connect has to
     /// find the base by scanning, which is fine: both of those are foreground activities.
     func clearPeripheral() {
+        managerQueue.async {
+            self.clearPeripheralOnQueue()
+        }
+    }
+
+    private func clearPeripheralOnQueue() {
+        if manager.isScanning {
+            manager.stopScan()
+        }
+        scanCompletion = nil
+
+        pumpManager?.state.isConnected = false
+
         peripheral = nil
+        // didDisconnectPeripheral returns early on a forced disconnect, so this is the only place
+        // the forced path can invalidate the manager - releasing it is not enough, its auth/sync
+        // worker holds its own reference and would keep writing to pumpManager.state.
+        peripheralManager?.cleanup()
         peripheralManager = nil
 
         if pumpManager?.state.peripheralIdentifier != nil {
             pumpManager?.state.peripheralIdentifier = nil
             pumpManager?.notifyStateDidChange()
         }
+
+        if let attempt = attempt {
+            finish(attempt, .failedToFindDevice)
+        }
+
+        reconnectTask?.cancel()
+        reconnectTask = nil
+        reconnectAttempts = 0
     }
 }
 
@@ -292,8 +458,8 @@ extension BluetoothManager {
             return
         }
 
-        if !isConnected, pumpManager?.state.pumpState == .active {
-            ensureConnected { error in
+        if !isConnectedOnQueue, pumpManager?.state.pumpState == .active {
+            ensureConnectedOnQueue { error in
                 if let error = error {
                     self.logger.error("Failed to auto reconnect on boot: \(error)")
                 }
@@ -349,8 +515,27 @@ extension BluetoothManager {
         )
     }
 
-    func centralManager(_: CBCentralManager, didConnect peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         logger.info("Connected to pump: \(peripheral.name ?? "<NO_NAME>")!")
+
+        if forcedDisconnect {
+            logger.info("Dropping a connection that landed after a forced disconnect")
+            central.cancelPeripheralConnection(peripheral)
+            return
+        }
+
+        guard isCurrent(peripheral) else {
+            logger.info("Dropping a connection for a peripheral we are not driving")
+            central.cancelPeripheralConnection(peripheral)
+            return
+        }
+
+        // A real reconnect passes through didDisconnect first, which cleans the manager up - so a
+        // ready session here means this callback is a duplicate.
+        if peripheralManager?.isReady == true {
+            logger.info("Ignoring duplicate didConnect - session already established")
+            return
+        }
 
         // This guard drops the link rather than just returning. `peripheral` is already set at this
         // point, so bailing out would leave a live peripheral with no PeripheralManager behind it:
@@ -358,7 +543,7 @@ extension BluetoothManager {
         // .noManager, and nothing clears that until the link happens to drop on its own.
         guard let pumpManager = pumpManager else {
             logger.warning("No pumpManager...")
-            disconnect(force: true)
+            disconnectOnQueue(force: true)
             return
         }
 
@@ -386,15 +571,15 @@ extension BluetoothManager {
         forcedDisconnect = false
 
         self.peripheral = peripheral
-        // Remember what to reconnect to. Only identifiers that actually produced a connection get
-        // stored, and it survives an app restart, so the scan path is only ever needed for pairing.
-        if pumpManager.state.peripheralIdentifier != peripheral.identifier {
-            pumpManager.state.peripheralIdentifier = peripheral.identifier
-            pumpManager.notifyStateDidChange()
-        }
 
+        peripheralManager?.cleanup()
         peripheralManager = PeripheralManager(peripheral, self, pumpManager) { [weak self] error in
-            self?.finish(attempt, error)
+            // Called from two queues: the CBPeripheralDelegate callbacks report discovery failures
+            // on managerQueue, while the auth flow runs on a global worker and reports from there.
+            // Land both on managerQueue, since that is where finish reads and clears the attempt.
+            self?.managerQueue.async {
+                self?.finish(attempt, error)
+            }
         }
 
         // The link is up but the flow is not done - auth, synchronize and subscribe still have to
@@ -427,6 +612,11 @@ extension BluetoothManager {
                 "Device disconnected, name: \(peripheral.name ?? "<NO_NAME>"), error: \(error?.localizedDescription ?? "No error")"
             )
 
+        guard isCurrent(peripheral) else {
+            logger.info("Ignoring disconnect for a peripheral we are not driving")
+            return
+        }
+
         if forcedDisconnect {
             forcedDisconnect = false
             return
@@ -443,14 +633,10 @@ extension BluetoothManager {
         }
 
         if let attempt = attempt {
+            logger.info("Disconnected during the connect sequence")
             finish(attempt, .failedToConnectToDevice)
-
         } else {
-            ensureConnected { error in
-                if let error = error {
-                    self.logger.warning("Failed to auto-reconnect: \(error)")
-                }
-            }
+            scheduleReconnect()
         }
     }
 
@@ -459,6 +645,11 @@ extension BluetoothManager {
             .info(
                 "Device connect error, name: \(peripheral.name ?? "<NO_NAME>"), error: \(error?.localizedDescription ?? "No error")"
             )
+
+        guard isCurrent(peripheral) else {
+            logger.info("Ignoring connect error for a peripheral we are not driving")
+            return
+        }
 
         if let pumpManager = self.pumpManager {
             pumpManager.state.isConnected = false

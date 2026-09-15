@@ -553,6 +553,7 @@ struct MedtrumKitSettings: View {
                         if let tempRemaining = viewModel.tempBasalRemaining {
                             Text(tempRemaining)
                                 .foregroundColor(.secondary)
+                                .font(.caption)
                         }
                     }
                 }
