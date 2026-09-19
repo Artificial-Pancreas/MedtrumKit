@@ -288,6 +288,7 @@
 				tr,
 				uk,
 				vi,
+				"pt-PT",
 			);
 			mainGroup = B7D3A8C62C148CC4002EE003;
 			productRefGroup = B7D3A8D12C148CC4002EE003 /* Products */;
