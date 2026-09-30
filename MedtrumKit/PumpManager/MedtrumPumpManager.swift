@@ -1,7 +1,7 @@
 import CoreBluetooth
-import UIKit
 import HealthKit
 import LoopKit
+import UIKit
 
 public class MedtrumPumpManager: DeviceManager {
     public static let pluginIdentifier = "Medtrum"
@@ -20,12 +20,26 @@ public class MedtrumPumpManager: DeviceManager {
         state.rawValue
     }
 
-    let bluetooth: BluetoothManager
+    private let logDeviceIdentifierLock = NSLock()
+    private var logDeviceIdentifierStorage = ""
+
+    /// for host-app logging
+    var logDeviceIdentifier: String {
+        logDeviceIdentifierLock.withLock { logDeviceIdentifierStorage }
+    }
+
+    private func refreshLogDeviceIdentifier() {
+        let identifier = state.pumpSN.hexEncodedString()
+        logDeviceIdentifierLock.withLock { logDeviceIdentifierStorage = identifier }
+    }
+
+    var bluetooth: BluetoothManager!
     init(state: MedtrumPumpState) {
         self.state = state
         oldState = MedtrumPumpState(rawValue: state.rawValue)
-        bluetooth = BluetoothManager()
-        
+        bluetooth = BluetoothManager(knownPeripheralIdentifier: state.peripheralIdentifier)
+        refreshLogDeviceIdentifier()
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(appMovedToBackground),
@@ -41,6 +55,16 @@ public class MedtrumPumpManager: DeviceManager {
 
         bluetooth.pumpManager = self
         MedtrumLogger.pumpManager = self
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        log.info("MedtrumPumpManager deallocated")
+    }
+
+    public func forgetBluetoothManager() {
+        bluetooth?.pumpManager = nil
+        bluetooth = nil
     }
 
     /// background sync, doesn't lock loops
@@ -161,7 +185,7 @@ public class MedtrumPumpManager: DeviceManager {
             udiDeviceIdentifier: nil
         )
     }
-    
+
     private var mustProvideBLEHeartbeat = false
     private var lastHeartbeat: Date = .distantPast
 
@@ -240,7 +264,7 @@ public extension MedtrumPumpManager {
             return
         }
 
-        guard state.pumpState.rawValue >= PatchState.active.rawValue else {
+        guard !state.pumpState.isSetup else {
             log.error("(ensureCurrentPumpData) patch not in active state yet")
             completion?(nil)
             return
@@ -696,9 +720,21 @@ public extension MedtrumPumpManager {
                 return
             }
 
-            guard self.state.pumpState.rawValue < PatchState.priming.rawValue else {
-                self.log.info("Patch already activated!")
+            guard !self.state.pumpState.isTerminated else {
+                self.log.error("Cannot prime, patch session is over: \(self.state.pumpState.description)")
+                completion(.failure(error: .patchNotPrimeable(state: self.state.pumpState)))
+                return
+            }
+
+            guard self.state.pumpState.isBeforePriming else {
+                self.log.info("Patch is already priming or primed!")
                 completion(.success)
+                return
+            }
+
+            guard self.state.pumpState == .filled else {
+                self.log.warning("Patch is not filled yet, refusing to prime. State: \(self.state.pumpState)")
+                completion(.failure(error: .patchNotFilled(state: self.state.pumpState)))
                 return
             }
 
@@ -724,7 +760,13 @@ public extension MedtrumPumpManager {
                 return
             }
 
-            guard self.state.pumpState.rawValue < PatchState.active.rawValue else {
+            guard !self.state.pumpState.isTerminated else {
+                self.log.error("Cannot activate, patch session is over: \(self.state.pumpState.description)")
+                completion(.failure(error: .patchNotActivatable(state: self.state.pumpState)))
+                return
+            }
+
+            guard !self.state.pumpState.isRunning else {
                 self.log.info("Patch already activated!")
                 completion(.success)
                 return
@@ -937,6 +979,8 @@ public extension MedtrumPumpManager {
     }
 
     func notifyStateDidChange() {
+        refreshLogDeviceIdentifier()
+
         DispatchQueue.main.async {
             let status = self.status(self.state)
             let oldStatus = self.status(self.oldState)
@@ -1071,7 +1115,7 @@ public extension MedtrumPumpManager {
     }
 
     private func ensureConnectedAndActive(_ completion: @escaping (MedtrumConnectError?) -> Void) {
-        guard state.pumpState.rawValue >= PatchState.active.rawValue else {
+        guard !state.pumpState.isSetup else {
             log.warning("No active patch, failing immediately")
             completion(.failedToFindDevice)
             return
@@ -1097,7 +1141,7 @@ public extension MedtrumPumpManager {
         // Not dispatching here; if delegate queue is blocked, timestamps will be delayed
         pumpManagerDelegate?.deviceManager(
             self,
-            logEventForDeviceIdentifier: state.pumpSN.hexEncodedString(),
+            logEventForDeviceIdentifier: logDeviceIdentifier,
             type: type,
             message: message,
             completion: nil

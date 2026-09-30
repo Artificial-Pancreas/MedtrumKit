@@ -1,7 +1,7 @@
 import CoreBluetooth
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate {
-    public var pumpManager: MedtrumPumpManager?
+    public weak var pumpManager: MedtrumPumpManager?
 
     let logger = MedtrumLogger(category: "BluetoothManager")
 
@@ -33,7 +33,21 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         return false
     }
 
-    override init() {
+    deinit {
+        logger.info("BluetoothManager deallocated")
+    }
+
+    /// The identifier we were paired with when the central was created. `CBCentralManager` can
+    /// deliver `willRestoreState` on `managerQueue` the moment it exists - which is inside
+    /// `MedtrumPumpManager.init`, before that initialiser reaches `bluetooth.pumpManager = self` - so
+    /// restoration cannot rely on reading the identifier off `pumpManager`. It is only read while
+    /// validating restoration, which happens once at creation and therefore before anything can
+    /// change it; `pumpManager` is the authority everywhere else.
+    private let identifierAtLaunch: UUID?
+
+    init(knownPeripheralIdentifier: UUID?) {
+        identifierAtLaunch = knownPeripheralIdentifier
+
         super.init()
 
         managerQueue.sync {
@@ -133,7 +147,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             scheduleReconnect()
         }
 
-        for completion in attempt.completions {
+        for completion in attempt.takeCompletions() {
             report(error, to: completion)
         }
     }
@@ -228,6 +242,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         if let peripheral = peripheral {
             // We've the peripheral reference to a previous connection
             // Just try to reconnect
+            logger.info("Reconnecting to the peripheral of the previous connection")
             startTimeout(attempt, seconds: .seconds(15))
             connect(peripheral: peripheral)
             return
@@ -247,14 +262,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             return
         }
 
-        let connectedDevices = manager.retrieveConnectedPeripherals(withServices: [CBUUID.SERVICE_UUID])
-        if let peripheral = connectedDevices.first(where: { $0.name == "MT" }) {
-            // Phone is already connected, but the app is not
-            startTimeout(attempt, seconds: .seconds(15))
-            connect(peripheral: peripheral)
-            return
-        }
-
         guard var pumpSNState = pumpManager?.state.pumpSN else {
             logger.error("No pump serial number found")
             finish(attempt, .failedToFindDevice)
@@ -265,6 +272,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
 
         // We are disconnected and have no reference to the previous connection
         // Start to scan for patch and reconnect the long way
+        logger.info("No known peripheral, scanning for the base with our serial number")
         startTimeout(attempt, seconds: .seconds(15))
         startScan { [weak self] result in
             guard let self else {
@@ -458,7 +466,7 @@ extension BluetoothManager {
             return
         }
 
-        if !isConnectedOnQueue, pumpManager?.state.pumpState == .active {
+        if !isConnectedOnQueue, pumpManager?.state.pumpState.isRunning == true {
             ensureConnectedOnQueue { error in
                 if let error = error {
                     self.logger.error("Failed to auto reconnect on boot: \(error)")
@@ -573,12 +581,16 @@ extension BluetoothManager {
         self.peripheral = peripheral
 
         peripheralManager?.cleanup()
-        peripheralManager = PeripheralManager(peripheral, self, pumpManager) { [weak self] error in
+        peripheralManager = PeripheralManager(peripheral, self, pumpManager) { [weak self, weak attempt] error in
             // Called from two queues: the CBPeripheralDelegate callbacks report discovery failures
             // on managerQueue, while the auth flow runs on a global worker and reports from there.
             // Land both on managerQueue, since that is where finish reads and clears the attempt.
             self?.managerQueue.async {
-                self?.finish(attempt, error)
+                guard let self, let attempt else {
+                    return
+                }
+
+                self.finish(attempt, error)
             }
         }
 
@@ -592,18 +604,30 @@ extension BluetoothManager {
 
     func centralManager(_ centralManager: CBCentralManager, willRestoreState dict: [String: Any]) {
         let peripherals = dict[CBCentralManagerRestoredStatePeripheralsKey] as? [CBPeripheral] ?? []
-        guard let peripheral = peripherals.first else {
+        guard !peripherals.isEmpty else {
             logger.warning("No restored peripherals!")
             return
         }
 
-        if peripheral.services?.first(where: { $0.uuid == CBUUID.SERVICE_UUID }) == nil {
-            logger.warning("Couldnt restore state, since no service is available...")
-            centralManager.cancelPeripheralConnection(peripheral)
-            return
-        }
+        // `pumpManager` is usually still nil here - see `identifierAtLaunch`.
+        let knownIdentifier = pumpManager?.state.peripheralIdentifier ?? identifierAtLaunch
 
-        self.peripheral = peripheral
+        for peripheral in peripherals {
+            if peripheral.services?.first(where: { $0.uuid == CBUUID.SERVICE_UUID }) == nil {
+                logger.warning("Couldnt restore state, since no service is available...")
+                centralManager.cancelPeripheralConnection(peripheral)
+                continue
+            }
+
+            guard peripheral.identifier == knownIdentifier else {
+                logger.warning("Dropping restored peripheral \(peripheral.identifier): not our known base")
+                centralManager.cancelPeripheralConnection(peripheral)
+                continue
+            }
+
+            logger.info("Restored our known base \(peripheral.identifier)")
+            self.peripheral = peripheral
+        }
     }
 
     func centralManager(_: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
